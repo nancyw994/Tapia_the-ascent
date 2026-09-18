@@ -1,0 +1,39 @@
+{
+  "claims": [
+    {
+      "claim_id": "c01",
+      "sentence": "All morning people have been asking me about a blog post by Matt Shumer that\nhas gone viral.",
+      "reason": "Claims the post went viral, a verifiable popularity/attention claim."
+    },
+    {
+      "claim_id": "c02",
+      "sentence": "It is a masterpiece of hype, written in the style of old\ndirect marketing campaigns, with bold-faced call outs like “I know this is\nreal because it happened to me first” and “I am no longer needed for the\nactual technical work of my job”.",
+      "reason": "Attributes specific direct quotes to Shumer's blog post that can be verified against the original."
+    },
+    {
+      "claim_id": "c03",
+      "sentence": "He\n> gives no actual data to support this claim that the latest coding systems\n> can write whole complex apps without making errors.",
+      "reason": "Testable claim about absence of supporting data in Shumer's post."
+    },
+    {
+      "claim_id": "c04",
+      "sentence": "Similarly, when he\n> describes how AIs are doing longer and longer tasks on METR’s famous\n> task-time benchmark, he neglects to say the criterion on that benchmark is\n> 50% correct, not 100%, and that the benchmark is only about coding and not\n> tasks in general.",
+      "reason": "Specific factual claim about METR benchmark methodology that can be verified against METR's published criteria."
+    },
+    {
+      "claim_id": "c05",
+      "sentence": "No AI system can reliably do every five-hour long task\n> humans can do without error, or even close.",
+      "reason": "A measurable, testable claim about current AI system capabilities."
+    },
+    {
+      "claim_id": "c06",
+      "sentence": "Shumer ignored a different METR study where coders sometimes imagined\n   productivity gains while actually losing productivity.",
+      "reason": "References a specific study with a testable finding that can be checked for existence and content."
+    },
+    {
+      "claim_id": "c07",
+      "sentence": "Other users do not report “it’s usually perfect.”",
+      "reason": "A factual claim about user reports/reviews that can be checked against actual user testimonials."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "run_id": "example-shumer_2026-02-09",
+  "user": null,
+  "filename": "shumer_2026-02-09.md",
+  "title": "Something Big Is Happening",
+  "words": 4908,
+  "created_at": "2026-09-18T20:17:24+00:00",
+  "example": true,
+  "counts": {
+    "claims": 12,
+    "INSUFFICIENT_EVIDENCE": 6,
+    "NOT_FAKE": 6
+  },
+  "steps_done": 5,
+  "updated_at": "2026-09-18T20:17:24+00:00"
+}

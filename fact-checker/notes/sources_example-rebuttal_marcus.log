@@ -1,0 +1,169 @@
+# Source ledger
+
+Every URL below was fetched during this run.
+The essay under review is not an independent source.
+
+## c04 — 2026-09-18 20:17 UTC
+Query: `METR task-time benchmark 50% success criterion`
+
+- https://metr.org/time-horizons/ — Task-Completion Time Horizons of Frontier AI Models - METR
+  > May 8, 2026 · The task-completion time horizon is the task duration (measured by human expert completion time) at which an AI agent is predicted to succeed with a given level of reliability. For example, the 50%-time horizon is the duration
+- https://metr.theo-bearman.com/dashboard.html — Measuring AI Ability to Complete Long Tasks | METR
+  > A 50% time horizon of 4 hours means the model succeeds 50% of the time on tasks that take skilled humans 4 hours to complete. Key Limitations: Individual model estimates have wide confidence intervals (~2x in each direction).
+- https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/ — Measuring AI Ability to Complete Long Software Tasks - METR
+  > Mar 19, 2025 · We propose measuring AI performance in terms of the length of tasks AI agents can complete. We show that this metric has been consistently exponentially increasing over the past 6 years, with a doubling time of around 7 month
+- https://www.lesswrong.com/posts/deesrjitvXM4xYGZd/metr-measuring-ai-ability-to-complete-long-tasks — METR: Measuring AI Ability to Complete Long Tasks — LessWrong
+  > Mar 19, 2025 · Summary: We propose measuring AI performance in terms of the length of tasks AI agents can complete. We show that this metric has been consistently exponentially increasing over the past 6 years, with a doubling time of aroun
+- https://arxiv.org/html/2503.14499v1 — Measuring AI Ability to Complete Long Tasks - arXiv.org
+  > Mar 18, 2025 · To quantify the capabilities of AI systems in terms of human capabilities, we propose a new metric: 50%-task-completion time horizon. This is the time humans typically take to complete tasks that AI models can complete with 5
+
+## c01 — 2026-09-18 20:17 UTC
+Query: `Matt Shumer blog post viral`
+
+- https://fortune.com/2026/02/12/matt-shumers-viral-blog-about-ais-looming-impact-on-knowledge-workers-is-based-on-flawed-assumptions/ — The flawed assumptions behind Matt Shumer’s viral X post on ...
+  > Feb 12, 2026 · AI Influencer Matt Shumer penned a viral blog on X about AI’s potential to disrupt, and ultimately automate, almost all knowledge work that has racked up more than 55 million views in the...
+- https://thinkingthroughai.substack.com/p/matt-shumers-viral-ai-post50m-views — Matt Shumer's Viral AI Post—50M views in 72h— Exemplifies the ...
+  > Feb 12, 2026 · Deja Vu: a sensationalist post steeped in the ecosystem goes viral to everyone else. It's misleading, but also makes points that deserve even more attention.
+- https://finance.yahoo.com/news/matt-shumer-viral-blog-ai-180322170.html?fr=sycsrp_catchall — Matt Shumer’s viral blog about AI’s looming impact on ...
+  > Feb 12, 2026 · AI Influencer Matt Shumer penned a viral blog on X about AI's potential to disrupt, and ultimately automate, almost all knowledge work that has racked up more than 55 million views in the past 24 ...
+- https://www.cnbc.com/2026/02/13/investor-matt-shumer-says-viral-essay-wasnt-meant-to-scare-people.html — Investor Matt Shumer says viral essay wasn't meant to scare ...
+  > Feb 13, 2026 · Investor Matt Shumer published a viral essay on social media this week that warned about the disruptive potential of AI. The essay exploded across platforms like Elon Musk's X, racking up...
+- https://garymarcus.substack.com/p/about-that-matt-shumer-post-that — About that Matt Shumer post that has nearly 50 million views
+  > Feb 11, 2026 · All morning people have been asking me about a blog post by Matt Shumer that has gone viral, with nearly 50 million views on X. It’s a masterpiece of hype, written in the style of the old direct marketing campaigns, with bold
+
+## c02 — 2026-09-18 20:17 UTC
+Query: `Matt Shumer AI hype blog post quotes`
+
+- (none) — search-error
+  > DNSError: DNSError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Matt%20Shumer%20AI%20hype%20blog%20post%20quotes) > error resolving DNS > DNS error: no records found for Q
+
+## c03 — 2026-09-18 20:17 UTC
+Query: `Matt Shumer coding AI apps no errors claim`
+
+- (none) — search-error
+  > DNSError: DNSError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Matt%20Shumer%20coding%20AI%20apps%20no%20errors%20claim) > error resolving DNS > DNS error: no records fou
+
+## c04 — 2026-09-18 20:17 UTC
+Query: `METR benchmark report coding tasks`
+
+- https://metr.org/time-horizons/ — Task-Completion Time Horizons of Frontier AI Models - METR
+  > May 8, 2026 · Our task distribution is limited primarily to software engineering, machine learning, or cybersecurity tasks, and we expect time horizons to vary greatly across domains.
+- https://metr.org/ — METR
+  > Aug 26, 2026 · Task-Completion Time Horizons of Frontier AI Models We propose measuring AI performance in terms of the length of tasks AI agents can complete. We show an exponential increase in this time horizon metric over the past 6 years
+- https://github.com/METR/task-standard — GitHub - METR/task-standard: METR Task Standard · GitHub
+  > The goal of the METR Task Standard is to define a common format for such tasks, so that everyone can evaluate their agents on tasks developed by other parties, rather than just their own.
+- https://metr.theo-bearman.com/dashboard.html — Measuring AI Ability to Complete Long Tasks | METR
+  > Performance varies dramatically across domains — these benchmarks focus on software and research tasks. The long-term trend slope is more robust than specific model measurements.
+- https://epoch.ai/publications/mirrorcode-preliminary-results — MirrorCode: Evidence AI can already do some weeks-long coding ...
+  > Apr 10, 2026 · Early results from MirrorCode benchmark with METR: AI agents can complete weeks-long coding tasks, including reimplementing a 16,000-line codebase.
+
+## c01 — 2026-09-18 20:17 UTC
+Query: `Matt Shumer blog post original source`
+
+- https://en.wikipedia.org/wiki/Something_Big_Is_Happening — Something Big Is Happening - Wikipedia
+  > External links The February 9 2026 original essay by Matt Shumer on shumer.dev. The February 10 2026 popular post on X by Matt Shumer. This article about a scientific essay or essay collection is a stub. You can help Wikipedia by adding mis
+- https://fortune.com/2026/02/12/matt-shumers-viral-blog-about-ais-looming-impact-on-knowledge-workers-is-based-on-flawed-assumptions/ — The flawed assumptions behind Matt Shumer’s viral X post on ...
+  > Feb 12, 2026 · AI Influencer Matt Shumer penned a viral blog on X about AI’s potential to disrupt, and ultimately automate, almost all knowledge work that has racked up more than 55 million views in the past ...
+- https://x.com/mattshumer_ — Matt Shumer (@mattshumer_) / X
+  > My buddy @ mattshumer_ built a Call of Duty clone with a single prompt. He shared it with the internet & woke up to 15M+ views. But what people don't realize is he developed an agentic workflow that allowed him to build such a crazy impress
+- https://x.com/mattshumer_/status/2079682942423429370 — Matt Shumer on X: "This is crazy... Read this blog from ...
+  > Jul 21, 2026 · Read this blog from HuggingFace, written BEFORE they knew it was an OpenAI model that attacked them: huggingface.co/blog/security-… we had a significant security incident during evaluation of our models. we are sharing what w
+- https://gist.github.com/SeanZoR/fe264d7b3672d1ba7cb06ba896ef8b50 — Something Big Is Happening - Matt Shumer (Feb 2026) · GitHub
+  > Feb 9, 2026 · After six years building an AI startup, he's writing this for non-tech family and friends asking about AI's implications. He acknowledges the honest version sounds implausible, but the gap between what he's been saying publicl
+
+## c02 — 2026-09-18 20:17 UTC
+Query: `Matt Shumer no longer needed for technical work`
+
+- https://giganectar.com/matt-shumer-ai-viral-essay-gpt-5-2-metr-benchmark-job-disruption-2026/ — “I Am No Longer Needed” — AI CEO’s Warning Hits 80M Views but ...
+  > Feb 18, 2026 · His core claim: AI crossed a threshold where he could describe a software product in plain English, walk away, and return hours later to find it built — tested, functional, and requiring no corrections. “I am no longer needed
+- https://www.linkedin.com/posts/transformation-nomads_i-am-no-longer-needed-for-the-actual-technical-activity-7428036116726898688-Jovo — “I am no longer needed for the actual technical work of my ...
+  > In education? “I am no longer needed for the actual technical work of my job.” At that moment, the conversation can no longer be about tools. It must be about purpose. About leadership...
+- https://quillette.com/2026/02/16/keep-calm-and-adapt-ai-matt-shumer-automation/ — AI Won't End Software Engineering — It Will Transform It
+  > Feb 16, 2026 · Matt Shumer’s viral essay about AI is part of a long history of fear produced by technological change. Software can now write software better than even the most advanced human experts. And where software has gone, the other l
+- https://www.linkedin.com/pulse/pyramids-fear-i-am-longer-needed-actual-technical-work-alex-curiman-nieme — Pyramids of Fear: I Am No Longer Needed for the Actual ...
+  > Mar 12, 2026 · Matt Shumer’s recent Fortune piece jolted me. He compares the current artificial‑intelligence boom to February 2020, when only a few people were talking about a virus and within weeks the...
+- https://www.allblogthings.com/2026/02/matt-shumers-essay-on-ais-disruptive-power-draws-80-million-views-on-x.html — Matt Shumer's Essay on AI's Disruptive Power Draws 80 Million ...
+  > Feb 14, 2026 · "I am no longer needed for the actual technical work of my job," he stated in the now-viral AI article and added further: "I describe what I want built, in plain English, and it just appears.
+
+## c03 — 2026-09-18 20:17 UTC
+Query: `Matt Shumer blog post data evidence`
+
+- https://en.wikipedia.org/wiki/Something_Big_Is_Happening — Something Big Is Happening - Wikipedia
+  > Many workers in the technology sector criticized the article in blog posts shared on Hacker News; Edward Zitron commented that "while coding LLMs can test products, or scan/fix some bugs, this suggests they A) do this autonomously without h
+- https://thinkingthroughai.substack.com/p/matt-shumers-viral-ai-post50m-views — Matt Shumer's Viral AI Post—50M views in 72h— Exemplifies the ...
+  > Feb 12, 2026 · I am currently using the latest model of Claude, the same version the author is basing his post on, and just today, multiple times, it filled in a spreadsheet I asked it to process, overwriting a column I needed, after strugg
+- https://fortune.com/2026/02/12/matt-shumers-viral-blog-about-ais-looming-impact-on-knowledge-workers-is-based-on-flawed-assumptions/ — The flawed assumptions behind Matt Shumer’s viral X post on ...
+  > Feb 12, 2026 · AI Influencer Matt Shumer penned a viral blog on X about AI’s potential to disrupt, and ultimately automate, almost all knowledge work that has racked up more than 55 million views in the...
+- https://finance.yahoo.com/news/matt-shumer-viral-blog-ai-180322170.html?fr=sycsrp_catchall — Matt Shumer’s viral blog about AI’s looming impact on ...
+  > Feb 12, 2026 · AI Influencer Matt Shumer penned a viral blog on X about AI's potential to disrupt, and ultimately automate, almost all knowledge work that has racked up more than 55 million views in the...
+- https://wdctv.news/the-flawed-assumptions-behind-matt-shumers-viral-x-post-on-ais-looming-impact/ — The flawed assumptions behind Matt Shumer’s viral X post on ...
+  > Feb 12, 2026 · AI Influencer Matt Shumer penned a viral blog on X about AI’s potential to disrupt, and ultimately automate, almost all knowledge work that has racked up more than 55 million views in the past 24 hours.
+
+## c05 — 2026-09-18 20:17 UTC
+Query: `AI five-hour task reliability error rate`
+
+- (none) — search-error
+  > DNSError: DNSError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=AI%20five-hour%20task%20reliability%20error%20rate) > error resolving DNS > DNS error: no records found for
+
+## c07 — 2026-09-18 20:17 UTC
+Query: `AI coding tool users perfect results survey`
+
+- https://elite-ai-assisted-coding.dev/p/ai-coding-toolbox-survey-results — AI Coding Toolbox — Survey Results - by Eleanor Berger
+  > Sep 24, 2025 · Below we report each category in the order presented, including adoption and the most-used tools. All results are reported as percentage of participants responding to the category or item.
+- https://www.digitalapplied.com/blog/ai-coding-adoption-statistics-2026-50-data-points — AI Coding Adoption 2026: 50 Statistics From 7 Surveys
+  > May 25, 2026 · 50+ AI coding adoption stats for 2026 — sourced from Stack Overflow, JetBrains, GitHub Octoverse, DORA, McKinsey, GitClear, Veracode, and DX. Each cited.
+- https://github.com/AI-Coding-Survey/survey-spring-2025 — GitHub - AI-Coding-Survey/survey-spring-2025: Mapping AI's ...
+  > Jun 1, 2025 · This repository hosts an open-source survey examining how software engineers use AI-assisted coding tools in their daily work. The survey explores usage patterns, benefits, challenges, and organizational impact of tools like G
+- https://www.digitalapplied.com/blog/ai-coding-tool-adoption-2026-developer-survey — AI Coding Tool Adoption 2026: Developer Survey Results
+  > Apr 13, 2026 · Between January and March 2026, Digital Applied surveyed 2,847 developers across 320 agencies and in-house engineering teams to measure how AI coding tools are actually being adopted, how time is spent in AI-assisted workflow
+- https://agentmarketcap.ai/blog/2026/04/14/jetbrains-ai-pulse-survey-developer-coding-tool-adoption-2026 — 10,000 Developers Ranked Their AI Coding Tools: The JetBrains ...
+  > Apr 14, 2026 · JetBrains surveyed 10,000+ developers across 8 languages — 90% use AI tools at work, but satisfaction leaders aren't who you'd expect.
+
+## c05 — 2026-09-18 20:17 UTC
+Query: `METR long task benchmark study results`
+
+- https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/ — Measuring AI Ability to Complete Long Software Tasks - METR
+  > Mar 19, 2025 · We propose measuring AI performance in terms of the length of tasks AI agents can complete. We show that this metric has been consistently exponentially increasing over the past 6 years, with a doubling time of around 7 month
+- https://metr.org/time-horizons/ — Task-Completion Time Horizons of Frontier AI Models - METR
+  > May 8, 2026 · To estimate the time horizons of frontier AI agents, we first estimate the duration it takes a human expert to complete each of our tasks. For each agent, we fit a logistic curve to predict the probability it successfully comp
+- https://metr.theo-bearman.com/dashboard.html — Measuring AI Ability to Complete Long Tasks | METR
+  > Performance varies dramatically across domains — these benchmarks focus on software and research tasks. The long-term trend slope is more robust than specific model measurements.
+- https://epoch.ai/publications/mirrorcode-preliminary-results — MirrorCode: Evidence AI can already do some weeks-long coding ...
+  > Apr 10, 2026 · These are preliminary results, full results can be seen in a follow-up here. We present early results from MirrorCode, a benchmark (co-developed with METR) of long-horizon coding tasks derived from real software applications.
+- https://www.rivista.ai/wp-content/uploads/2025/08/2503.14499v2.pdf — Measuring AI Ability to Complete Long Tasks
+  > To investigate the applicability of our results to other benchmarks, and to real task distributions, we performed four supplementary experiments. First, we check whether the 2023-2025 trend without the SWAA dataset retrodicts the trend sinc
+
+## c06 — 2026-09-18 20:17 UTC
+Query: `METR study coders imagined productivity gains`
+
+- (none) — search-error
+  > DNSError: DNSError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=METR%20study%20coders%20imagined%20productivity%20gains) > error resolving DNS > DNS error: no records foun
+
+## c06 — 2026-09-18 20:17 UTC
+Query: `METR randomized controlled trial developer productivity AI`
+
+- https://arxiv.org/abs/2507.09089 — [2507.09089] Measuring the Impact of Early-2025 AI on ...A randomized trial by METR found that experienced developers ...METR Study: AI Coding Tools Made Devs 19% Slower in 2025Measuring the Impact of Early-2025 AI on Experienced Open ...METR Flips From -19% Slower to +18% Faster With AI
+  > Jul 12, 2025 · Each task is randomly assigned to allow or disallow usage of early 2025 AI tools. When AI tools are allowed, developers primarily use Cursor Pro, a popular code editor, and Claude 3.5/3.7 Sonnet. Before starting tasks, develo
+- https://scienceblog.com/t-a-randomized-trial-by-metr-found-that-experienced-developers-completed-real-coding-tasks-19-slower-when-allowed-to-use-ai-tools-yet-afterwards-they-estimated-on-average-that-ai-had-made-them-20-fast/ — A randomized trial by METR found that experienced developers ...
+  > Jul 11, 2026 · In a randomized controlled trial posted in July 2025, METR reported that experienced open-source developers took 19% longer to complete real coding tasks when they were allowed to use AI tools.
+- https://particula.tech/blog/ai-coding-tools-developer-productivity-paradox — METR Study: AI Coding Tools Made Devs 19% Slower in 2025
+  > Mar 13, 2026 · In July 2025, METR (a nonprofit AI research organization) published results from a randomized controlled trial, the gold standard of research methodology, measuring how AI coding tools affect experienced developer productivit
+- https://valueaddvc.com/blog/ai-coding-productivity-study-data-what-metr-mckinsey-and-github-actually-found-in-2026 — METR Flips From -19% Slower to +18% Faster With AI
+  > Jul 10, 2026 · METR's own randomized controlled trial found experienced developers were 19% slower using AI coding tools in early 2025 — and the same research group now estimates those developers are 18% faster a year later.
+- https://metr.org/Early_2025_AI_Experienced_OS_Devs_Study-paper.pdf — Measuring the Impact of Early-2025 AI on Experienced Open ...
+  > To directly measure the impact of AI tools on developer productivity, we conduct a randomized controlled trial by having 16 developers complete 246 tasks (2.0 hours on average) on well-known open-source repositories (23,000 stars on average
+
+## c07 — 2026-09-18 20:18 UTC
+Query: `AI coding assistant reliability user reports`
+
+- https://bestai.com/research/ai-coding-assistants-2026 — AI Coding Assistants: A Comprehensive Analysis
+  > Our AI evaluation agents tested 12 coding assistants across 50 real-world programming tasks spanning Python, JavaScript, Rust, and Go. We measured code correctness, response latency, context understanding, multi-file reasoning capabilities,
+- https://uvik.net/blog/ai-coding-assistant-statistics/ — AI Coding Assistant Statistics 2026: Adoption & Trust | Uvik ...
+  > Sep 3, 2026 · AI coding assistants have shifted from optional tools to routine infrastructure for a large share of developers, with adoption continuing to rise in 2025–2026. Usage and trust are moving in opposite directions: more developers
+- https://konabayev.com/blog/ai-code-assistant-statistics-2026/ — AI Code Assistant Statistics 2026: Copilot, Cursor and Claude ...
+  > May 10, 2026 · Source-backed 2026 AI code assistant statistics on developer adoption, Copilot, Cursor, Claude Code, agents, productivity, trust and risk.
+- https://arxiv.org/pdf/2508.12285 — “My productivity is boosted, but ...” Demystifying Users ...
+  > Unlike previous studies that conduct observational research in controlled and simulated environments, we analyze extensive, first-hand user reviews of AI coding assistants, which capture developers' authentic perspectives and experiences dr
+- https://worldmetrics.org/ai-coding-assistant-statistics/ — Ai Coding Assistant Statistics 2026 - worldmetrics.org
+  > Feb 24, 2026 · AI coding assistants boost developers with high accuracy, acceptance, productivity gains, and strong satisfaction. AI coding assistants are now accepted by 92% of users, yet the quality gap is just as visible in benchmarks wh
+

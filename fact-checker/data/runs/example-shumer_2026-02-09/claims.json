@@ -1,0 +1,64 @@
+{
+  "claims": [
+    {
+      "claim_id": "c01",
+      "sentence": "Then, on February 5th, two major AI labs released new models on the same day: GPT-5.3 Codex from OpenAI, and Opus 4.6 from Anthropic (the makers of Claude, one of the main competitors to ChatGPT).",
+      "reason": "Names specific products, companies, and a release date that can be fact-checked."
+    },
+    {
+      "claim_id": "c02",
+      "sentence": "On February 5th, 2026, new models arrived that made everything before them feel like a different era.",
+      "reason": "Specific date and event claim about model releases that can be verified."
+    },
+    {
+      "claim_id": "c03",
+      "sentence": "The most recent measurement (Claude Opus 4.5, from November) showed the AI completing tasks that take a human expert nearly five hours.",
+      "reason": "Specific measurable claim from a named organization (METR) that can be verified."
+    },
+    {
+      "claim_id": "c04",
+      "sentence": "And that number is doubling approximately every seven months, with recent data suggesting it may be accelerating to as fast as every four months.",
+      "reason": "Specific statistical trend claim attributed to METR's data that can be verified."
+    },
+    {
+      "claim_id": "c05",
+      "sentence": "Amodei has said that AI models \"substantially smarter than almost all humans at almost all tasks\" are on track for 2026 or 2027.",
+      "reason": "Attributed prediction with specific timeline that can be verified against Amodei's statements."
+    },
+    {
+      "claim_id": "c06",
+      "sentence": "\"GPT-5.3-Codex is our first model that was instrumental in creating itself. The Codex team used early versions to debug its own training, manage its own deployment, and diagnose test results and evaluations.\"",
+      "reason": "Direct quote attributed to OpenAI documentation, verifiable against source material."
+    },
+    {
+      "claim_id": "c07",
+      "sentence": "Dario Amodei, the CEO of Anthropic, says AI is now writing \"much of the code\" at his company, and that the feedback loop between current AI and next-generation AI is \"gathering steam month by month.\"",
+      "reason": "Direct attributed quotes about company practices that can be verified."
+    },
+    {
+      "claim_id": "c08",
+      "sentence": "He says we may be \"only 1–2 years away from a point where the current generation of AI autonomously builds the next.\"",
+      "reason": "Specific attributed prediction with timeline that can be checked against source."
+    },
+    {
+      "claim_id": "c09",
+      "sentence": "Dario Amodei, who is probably the most safety-focused CEO in the AI industry, has publicly predicted that AI will eliminate 50% of entry-level white-collar jobs within one to five years.",
+      "reason": "Specific attributed prediction with a statistic that can be checked against public statements."
+    },
+    {
+      "claim_id": "c10",
+      "sentence": "Amodei says the answer is obvious: \"the single most serious national security threat we've faced in a century, possibly ever.\"",
+      "reason": "Direct quote attributed to a named individual that can be verified against source material."
+    },
+    {
+      "claim_id": "c11",
+      "sentence": "He wrote a 20,000-word essay about it last month, framing this moment as a test of whether humanity is mature enough to handle what it's creating.",
+      "reason": "Specific claim about an essay's existence, length, and timing that can be verified."
+    },
+    {
+      "claim_id": "c12",
+      "sentence": "This isn't hypothetical; Anthropic has documented their own AI attempting deception, manipulation, and blackmail in controlled tests.",
+      "reason": "Specific factual claim about documented AI behavior that can be verified against Anthropic's research."
+    }
+  ]
+}
