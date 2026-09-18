@@ -1,0 +1,78 @@
+fact-checker/
+
+├── config/                          # all definitions, no code
+
+│   ├── claim_definition.md          # what counts as a claim vs. opinion/prediction/rhetoric
+
+│   ├── claim_taxonomy.yaml          # types: empirical/scientific, event, statistic, attribution (X said Y), forecast
+
+│   ├── claim_labels.yaml            # the three labels from the brief: supported_in_text / verifiable / opinion
+
+│   ├── source_tiers.yaml            # source-of-truth ranking: gov/official → peer-reviewed → wire/major press → company blog → other
+
+│   ├── confidence_rubric.yaml       # how badges are assigned (agreement, tier weight, recency, direct vs. indirect evidence)
+
+│   └── prompts/
+
+│       ├── extractor.md
+
+│       ├── classifier.md
+
+│       ├── searcher.md
+
+│       ├── comparator.md
+
+│       ├── annotator.md
+
+│       └── verifier.md
+
+│
+
+├── pipeline/                        # one module per stage, each reads previous stage's JSON
+
+│   ├── 01_extract.py                # essay → claims.json (claim text, location in essay, type)
+
+│   ├── 02_classify.py               # claims.json → classified.json (adds label; only "verifiable" proceeds)
+
+│   ├── 03_search.py                 # classified.json → evidence.json (queries, hits, tier, stance, url, date)
+
+│   ├── 04_compare.py                # evidence.json → verdicts.json (per-claim verdict + confidence + reasoning)
+
+│   ├── 05_annotate.py               # verdicts.json + essay → annotated.md / .html with badges
+
+│   └── run.py                       # orchestrates, writes every source consulted to notes/
+
+│
+
+├── verify/                          # the human-in-the-loop layer
+
+│   ├── verifier_agent.py            # second-pass agent that challenges verdicts (checks reasoning vs. evidence)
+
+│   ├── manual_review.md             # your hand-checked verdicts: claim, agent said, you found, why it differed
+
+│   └── error_log.md                 # every claim the agent got wrong + how you caught it
+
+│
+
+├── data/
+
+│   ├── essays/                      # shumer_2026-02-09.md, rebuttal_*.md, self-found/
+
+│   └── runs/<run_id>/               # claims.json, classified.json, evidence.json, verdicts.json, annotated.md
+
+│
+
+├── notes/
+
+│   └── sources_<run_id>.log         # the scratch file the brief asks for: every URL fetched, when, for which claim
+
+│
+
+├── docs/
+
+│   ├── pipeline.md                  # the diagram: extract → classify → search → compare → annotate → verify
+
+│   └── judges_summary.md            # picks, what broke, what you caught
+
+└── README.md
+
