@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import re
 from pathlib import Path
 
 VERDICT_LABELS = {
@@ -23,6 +24,73 @@ VERDICT_COLORS = {
     "unverifiable": "#475467",
     "opinion": "#6941c6",
 }
+
+
+def _coverage_line(coverage: dict) -> str:
+    if not coverage:
+        return ""
+    return (
+        f" · {int(coverage.get('claims_found') or 0)} found, "
+        f"{int(coverage.get('claims_checked') or 0)} checked, "
+        f"{int(coverage.get('reprints_dropped') or 0)} reprints dropped, "
+        f"{int(coverage.get('pending_review') or 0)} pending review"
+    )
+
+
+def payload_from_web(
+    *,
+    essay_id: str,
+    claims: list[dict],
+    evidence: list[dict],
+    verdicts: list[dict],
+    coverage: dict | None = None,
+    generated_at: str = "",
+) -> dict:
+    """Map a web session's step JSON onto the CLI annotate payload."""
+    ev_by = {row.get("claim_id"): row for row in evidence or []}
+    claim_by = {row.get("claim_id"): row for row in claims or []}
+    out: list[dict] = []
+    for row in verdicts or []:
+        cid = row.get("claim_id")
+        sources = (ev_by.get(cid) or {}).get("sources") or []
+        cited = set(row.get("supporting_source_ids") or [])
+        picked = [src for src in sources if src.get("source_id") in cited] or sources[:4]
+        override = row.get("human_override") or {}
+        why = str(row.get("reason") or "")
+        if override:
+            agent_v = override.get("agent_verdict") or row.get("agent_verdict") or ""
+            agent_r = override.get("agent_reason") or row.get("agent_reason") or ""
+            why = (
+                f"Human override ({agent_v} → {override.get('verdict')}): "
+                f"{override.get('why')}. Agent: {agent_r}"
+            )
+        try:
+            conf = float(row.get("confidence") or 0)
+        except (TypeError, ValueError):
+            conf = 0.0
+        if conf > 1:
+            conf = conf / 100.0
+        out.append(
+            {
+                "id": cid,
+                "quote": (claim_by.get(cid) or {}).get("sentence") or "",
+                "verdict": row.get("verdict") or "unverifiable",
+                "confidence": conf,
+                "label": "human" if override else "",
+                "why": why,
+                "sources": [
+                    {"url": src.get("url"), "title": src.get("title"), "quote": src.get("snippet") or ""}
+                    for src in picked
+                ],
+            }
+        )
+    return {
+        "essay_id": essay_id,
+        "agent": "claim-checker",
+        "generated_at": generated_at,
+        "coverage": coverage or {},
+        "claims": out,
+    }
 
 
 def highlight_essay(essay: str, claims: list[dict]) -> str:
@@ -58,6 +126,112 @@ def highlight_essay(essay: str, claims: list[dict]) -> str:
         last = end
     parts.append(html.escape(essay[last:]))
     return "".join(parts).replace("\n", "<br>\n")
+
+
+def _pdf_text(value: object) -> str:
+    text = str(value or "")
+    text = (
+        text.replace("\u201c", '"')
+        .replace("\u201d", '"')
+        .replace("\u2018", "'")
+        .replace("\u2019", "'")
+        .replace("\u2014", "--")
+        .replace("\u2013", "-")
+        .replace("\u2026", "...")
+        .replace("\u00a0", " ")
+    )
+    return re.sub(r"[^\x09\x0a\x0d\x20-\x7e]", "?", text)
+
+
+def _pdf_rgb(hex_color: str) -> tuple[int, int, int]:
+    raw = (hex_color or "#475467").lstrip("#")
+    if len(raw) != 6:
+        raw = "475467"
+    return int(raw[0:2], 16), int(raw[2:4], 16), int(raw[4:6], 16)
+
+
+def build_pdf(essay: str, payload: dict) -> bytes:
+    """Session report PDF: coverage, claim cards, then the article text."""
+    try:
+        from fpdf import FPDF
+    except ImportError as exc:
+        raise RuntimeError("PDF export needs fpdf2. Run: pip install fpdf2") from exc
+
+    class Report(FPDF):
+        def footer(self) -> None:
+            self.set_y(-12)
+            self.set_font("Helvetica", "", 8)
+            self.set_text_color(102, 112, 133)
+            self.set_x(self.l_margin)
+            self.cell(self.epw, 8, f"Page {self.page_no()}  |  badges are claims, not a newsroom verdict", align="C")
+
+    pdf = Report(format="Letter")
+    pdf.set_auto_page_break(auto=True, margin=18)
+    pdf.add_page()
+    pdf.set_margins(16, 16, 16)
+
+    title = _pdf_text(payload.get("essay_id") or "Annotated essay")
+    def write(height: float, text: str) -> None:
+        pdf.set_x(pdf.l_margin)
+        pdf.multi_cell(pdf.epw, height, text or " ")
+
+    pdf.set_font("Helvetica", "B", 18)
+    pdf.set_text_color(16, 24, 40)
+    write(8, title)
+    pdf.set_font("Helvetica", "", 10)
+    pdf.set_text_color(102, 112, 133)
+    write(
+        5,
+        _pdf_text(
+            f"Agent: {payload.get('agent') or 'claim-checker'}  |  {payload.get('generated_at') or ''}"
+            f"{_coverage_line(payload.get('coverage') or {})}"
+        ),
+    )
+    pdf.ln(2)
+    pdf.set_font("Helvetica", "", 9)
+    write(5, "Coverage of this run, not a fake-news score for the article.")
+    pdf.ln(3)
+
+    for claim in payload.get("claims") or []:
+        verdict = claim.get("verdict") or "unverifiable"
+        label = VERDICT_LABELS.get(verdict, str(verdict).upper())
+        r, g, b = _pdf_rgb(VERDICT_COLORS.get(verdict, "#475467"))
+        if pdf.get_y() > 250:
+            pdf.add_page()
+        pdf.set_fill_color(r, g, b)
+        pdf.set_text_color(255, 255, 255)
+        pdf.set_font("Helvetica", "B", 9)
+        human = "  HUMAN" if claim.get("label") == "human" else ""
+        try:
+            conf = f"{float(claim.get('confidence') or 0):.0%}"
+        except (TypeError, ValueError):
+            conf = "--"
+        pdf.set_x(pdf.l_margin)
+        pdf.cell(pdf.epw, 7, _pdf_text(f"  {claim.get('id')}  {label}{human}  {conf}"), fill=True)
+        pdf.ln(8)
+        pdf.set_text_color(16, 24, 40)
+        pdf.set_font("Helvetica", "I", 11)
+        write(6, _pdf_text(f'"{claim.get("quote") or ""}"'))
+        pdf.set_font("Helvetica", "", 10)
+        write(5, _pdf_text(claim.get("why") or ""))
+        for src in claim.get("sources") or []:
+            pdf.set_font("Helvetica", "", 8)
+            pdf.set_text_color(21, 94, 239)
+            write(4, _pdf_text(src.get("title") or src.get("url") or ""))
+            pdf.set_text_color(71, 84, 103)
+            if src.get("url"):
+                write(4, _pdf_text(src.get("url")))
+            if src.get("quote"):
+                write(4, _pdf_text(src.get("quote")))
+        pdf.set_text_color(16, 24, 40)
+        pdf.ln(3)
+
+    pdf.add_page()
+    pdf.set_font("Helvetica", "B", 14)
+    write(8, "Article")
+    pdf.set_font("Helvetica", "", 10)
+    write(5, _pdf_text(essay or ""))
+    return bytes(pdf.output())
 
 
 def render_sources(sources: list[dict]) -> str:
@@ -114,6 +288,7 @@ def build_html(essay: str, payload: dict) -> str:
     title = html.escape(payload.get("essay_id") or "Annotated essay")
     agent = html.escape(payload.get("agent") or "claim-checker")
     generated = html.escape(payload.get("generated_at") or "")
+    coverage_line = _coverage_line(payload.get("coverage") or {})
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,7 +319,7 @@ def build_html(essay: str, payload: dict) -> str:
 <body>
   <header class="top">
     <h1>{title}</h1>
-    <p>Agent: {agent} · {generated} · badges are claims, not a newsroom verdict</p>
+    <p>Agent: {agent} · {generated} · badges are claims, not a newsroom verdict{coverage_line}</p>
   </header>
   <main>
     <section class="essay">

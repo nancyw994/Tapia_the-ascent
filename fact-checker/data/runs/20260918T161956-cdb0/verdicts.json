@@ -1,0 +1,98 @@
+{
+  "verdicts": [
+    {
+      "claim_id": "c01",
+      "verdict": "supported",
+      "confidence": 85,
+      "reason": "Multiple independent sources, including a JAMA Internal Medicine study, confirm that automotive assembly plant closures in the US were associated with significant increases in opioid overdose mortality in affected communities. This aligns with the claim's assertion that factory closures contribute to rising opioid overdose deaths in some parts of the US.",
+      "supporting_source_ids": [
+        "c01_s1",
+        "c01_s2",
+        "c01_s3",
+        "c01_s4",
+        "c01_s5"
+      ]
+    },
+    {
+      "claim_id": "c02",
+      "verdict": "supported",
+      "confidence": 85,
+      "reason": "Multiple independent sources confirm Australia enacted a nationwide under-16 social media ban, Norway has proposed similar age-verification legislation, and the UK has an Online Safety Act protecting children online. These corroborate the claim that these three countries are adopting protections for children online.",
+      "supporting_source_ids": [
+        "c02_s1",
+        "c02_s2",
+        "c02_s3",
+        "c02_s5"
+      ]
+    },
+    {
+      "claim_id": "c03",
+      "verdict": "supported",
+      "confidence": 82,
+      "reason": "Multiple independent sources confirm China's new AI companion regulations restrict emotional-dependence-inducing designs and ban virtual partners/relatives for minors, matching the claim's scope. Sources agree on the core provisions, though exact effective dates vary slightly (July 15 vs July 21) across outlets.",
+      "supporting_source_ids": [
+        "c03_s1",
+        "c03_s2",
+        "c03_s3",
+        "c03_s5"
+      ]
+    },
+    {
+      "claim_id": "c04",
+      "verdict": "supported",
+      "confidence": 75,
+      "reason": "Viz.ai's own platform data states its AI Care Pathways are deployed in 2,000 hospitals across the United States, matching the claim's figure and scope. However, this is the company's self-reported figure rather than an independent verification, slightly limiting confidence.",
+      "supporting_source_ids": [
+        "c04_s1"
+      ]
+    },
+    {
+      "claim_id": "c05",
+      "verdict": "contradicted",
+      "confidence": 65,
+      "reason": "The announcement was made in May 2025 for a 20-year, $200 billion spending plan ending in 2045, meaning about 20 years remained at that time, not 19. As of the claim's context, roughly 19-20 years would remain depending on exact timing, but sources consistently cite '20 years' as the plan duration with no indication only 19 remain.",
+      "supporting_source_ids": [
+        "c05_s1",
+        "c05_s2",
+        "c05_s3"
+      ]
+    },
+    {
+      "claim_id": "c06",
+      "verdict": "supported",
+      "confidence": 62,
+      "reason": "The Gates Foundation source directly states a goal to cut child deaths in half again over the next 20 years, matching the claim's framing of repeating a past halving. However, the claim's assertion that this exact halving occurred specifically from 2000 to 2024 is not independently verified in the snippets, only implied context about past progress.",
+      "supporting_source_ids": [
+        "c06_s1",
+        "c06_s2"
+      ]
+    },
+    {
+      "claim_id": "c07",
+      "verdict": "supported",
+      "confidence": 92,
+      "reason": "Multiple independent sources confirm that William H. Gates II, Bill Gates' father, died in 2020 from Alzheimer's disease at age 94. The date, cause, and identity align with the claim as stated.",
+      "supporting_source_ids": [
+        "c07_s1",
+        "c07_s2",
+        "c07_s3",
+        "c07_s4"
+      ]
+    },
+    {
+      "claim_id": "c08",
+      "verdict": "unverifiable",
+      "confidence": 0,
+      "reason": "No independent sources were retrieved for this claim.",
+      "supporting_source_ids": []
+    }
+  ],
+  "coverage": {
+    "claims_found": 8,
+    "claims_checked": 7,
+    "reprints_dropped": 4,
+    "independent_enough": 7,
+    "pending_review": 1,
+    "human_reviewed": 0
+  }
+}

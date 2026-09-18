@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.util
 import json
 import re
 import secrets
@@ -29,12 +30,18 @@ import steps  # noqa: E402
 from fetch_article import fetch_url_markdown  # noqa: E402
 from lib import ROOT, read_json, write_json  # noqa: E402
 
+_anno_spec = importlib.util.spec_from_file_location("annotate_html", WEB.parent / "pipeline" / "05_annotate.py")
+annotate = importlib.util.module_from_spec(_anno_spec)
+assert _anno_spec.loader is not None
+_anno_spec.loader.exec_module(annotate)
+
 ARTICLE_TYPES = {".md", ".txt"}
 MAX_BODY = 600_000
 MIN_CHARS, MAX_CHARS = 200, 200_000
 RUNS = ROOT / "data" / "runs"
 USERS_FILE = ROOT / "data" / "users.json"
 SAMPLE = ROOT / "data" / "essays" / "shumer_2026-02-09.md"
+ERROR_LOG = ROOT / "verify" / "error_log.md"
 RUN_ID = re.compile(r"^[A-Za-z0-9_-]{1,64}$")
 PBKDF2_ROUNDS = 200_000
 
@@ -50,6 +57,7 @@ FILE_FOR = {key: filename for key, _, filename in STEP_INFO.values()}
 
 lock = threading.Lock()
 sessions: dict[str, dict] = {}
+log_lock = threading.Lock()
 
 
 def now_iso() -> str:
@@ -151,7 +159,10 @@ def run_data(run_dir: Path) -> dict:
         path = run_dir / filename
         if path.is_file():
             try:
-                data[key] = read_json(path)[key]
+                payload = read_json(path)
+                data[key] = payload[key]
+                if key == "verdicts" and isinstance(payload, dict) and "coverage" in payload:
+                    data["coverage"] = payload["coverage"]
             except (json.JSONDecodeError, KeyError):
                 pass
     return data
@@ -174,6 +185,74 @@ def save_meta(run_dir: Path, data: dict, **fields) -> dict:
     return meta
 
 
+def persist_verdicts(session: dict) -> dict:
+    coverage = steps.article_coverage(session["data"].get("claims") or [], session["data"].get("evidence") or [], session["data"].get("verdicts") or [])
+    session["data"]["coverage"] = coverage
+    write_json(session["dir"] / "verdicts.json", {"verdicts": session["data"]["verdicts"], "coverage": coverage})
+    write_json(
+        session["dir"] / "overrides.json",
+        [
+            {"claim_id": row["claim_id"], **row["human_override"]}
+            for row in session["data"]["verdicts"]
+            if row.get("human_override")
+        ],
+    )
+    save_meta(session["dir"], session["data"])
+    return coverage
+
+
+def append_human_catch(session: dict, claim: dict, agent_verdict: str, agent_conf, human_verdict: str, why: str) -> None:
+    sentence = str(claim.get("sentence") or "")
+    snippet = sentence if len(sentence) < 140 else sentence[:137] + "..."
+    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    sid = session["dir"].name
+    filename = session.get("filename") or "article.md"
+    block = (
+        f"\n## Session `{sid}` — {filename} ({stamp})\n\n"
+        f"**{claim['claim_id']}.** “{snippet}”\n\n"
+        f"- Agent: `{agent_verdict}` @ {agent_conf}%\n"
+        f"- Human: `{human_verdict}`\n"
+        f"- Why: {why}\n"
+    )
+    ERROR_LOG.parent.mkdir(parents=True, exist_ok=True)
+    with log_lock:
+        with ERROR_LOG.open("a", encoding="utf-8") as handle:
+            handle.write(block)
+        with (session["dir"] / "human_review.md").open("a", encoding="utf-8") as handle:
+            handle.write(block)
+
+
+def session_payload(session: dict) -> dict:
+    data = session["data"]
+    if "verdicts" not in data:
+        raise ValueError("run verdicts before exporting")
+    coverage = data.get("coverage") or steps.article_coverage(
+        data.get("claims") or [], data.get("evidence") or [], data.get("verdicts") or []
+    )
+    return annotate.payload_from_web(
+        essay_id=session.get("filename") or session["dir"].name,
+        claims=data.get("claims") or [],
+        evidence=data.get("evidence") or [],
+        verdicts=data.get("verdicts") or [],
+        coverage=coverage,
+        generated_at=now_iso(),
+    )
+
+
+def export_html(session: dict) -> bytes:
+    payload = session_payload(session)
+    html = annotate.build_html(session["article"], payload)
+    (session["dir"] / "annotated.html").write_text(html, encoding="utf-8")
+    return html.encode("utf-8")
+
+
+def export_pdf(session: dict) -> bytes:
+    payload = session_payload(session)
+    pdf = annotate.build_pdf(session["article"], payload)
+    (session["dir"] / "annotated.pdf").write_bytes(pdf)
+    return pdf
+
+
 def run_step(session: dict, step: str) -> dict:
     key, needs, filename = STEP_INFO[step]
     data = session["data"]
@@ -193,7 +272,11 @@ def run_step(session: dict, step: str) -> dict:
     for later in DATA_ORDER[DATA_ORDER.index(key) :]:
         data.pop(later, None)  # a re-run invalidates everything downstream
         (session["dir"] / FILE_FOR[later]).unlink(missing_ok=True)
+    data.pop("coverage", None)
     data[key] = result
+    if step == "verdict":
+        coverage = persist_verdicts(session)
+        return {"verdicts": result, "coverage": coverage}
     write_json(session["dir"] / filename, {key: result})
     save_meta(session["dir"], data)
     return {key: result}
@@ -219,8 +302,35 @@ class Handler(BaseHTTPRequestHandler):
         return load_users()["tokens"].get(token) if token else None
 
     def _session_for(self, run_id: str, user: str) -> dict | None:
+        if not RUN_ID.match(run_id or ""):
+            return None
         session = sessions.get(run_id)
-        return session if session and session["user"] == user else None
+        if session and session.get("user") == user:
+            return session
+        run_dir = RUNS / run_id
+        meta = read_meta(run_dir) if run_dir.is_dir() else None
+        source = article_file(run_dir) if meta else None
+        if not meta or not source or meta.get("example") or meta.get("user") != user:
+            return None
+        source_json = {}
+        if (run_dir / "source.json").is_file():
+            try:
+                source_json = read_json(run_dir / "source.json")
+            except json.JSONDecodeError:
+                source_json = {}
+        session = {
+            "article": source.read_text(encoding="utf-8"),
+            "essay_url": str(source_json.get("url") or ""),
+            "filename": str(meta.get("filename") or source.name),
+            "data": run_data(run_dir),
+            "dir": run_dir,
+            "log": ROOT / "notes" / f"sources_{run_id}.log",
+            "user": user,
+            "running": False,
+            "stream": Stream(),
+        }
+        sessions[run_id] = session
+        return session
 
     def log_message(self, fmt: str, *args) -> None:  # keep the terminal for pipeline output
         if "/api/progress" not in (args[0] if args else ""):
@@ -272,6 +382,14 @@ class Handler(BaseHTTPRequestHandler):
             return self._from_url(user, body)
         if path == "/api/step":
             return self._step(user, body)
+        if path == "/api/override":
+            return self._override(user, body)
+        if path == "/api/claims":
+            return self._claims(user, body)
+        if path == "/api/export":
+            return self._export(user, body, kind="html")
+        if path == "/api/export-pdf":
+            return self._export(user, body, kind="pdf")
         self._json(404, {"error": "not found"})
 
     # --- accounts --------------------------------------------------------------------
@@ -323,10 +441,18 @@ class Handler(BaseHTTPRequestHandler):
         article, data = source.read_text(encoding="utf-8"), run_data(run_dir)
         if not meta.get("example"):  # let the owner carry on from where they stopped
             with lock:
+                source_json = {}
+                if (run_dir / "source.json").is_file():
+                    try:
+                        source_json = read_json(run_dir / "source.json")
+                    except json.JSONDecodeError:
+                        source_json = {}
                 sessions.setdefault(
                     run_id,
                     {
                         "article": article,
+                        "essay_url": str(source_json.get("url") or ""),
+                        "filename": str(meta.get("filename") or source.name),
                         "data": data,
                         "dir": run_dir,
                         "log": ROOT / "notes" / f"sources_{run_id}.log",
@@ -340,7 +466,7 @@ class Handler(BaseHTTPRequestHandler):
 
     # --- running ---------------------------------------------------------------------
 
-    def _upload(self, user: str, body: dict) -> None:
+    def _upload(self, user: str, body: dict, essay_url: str = "") -> None:
         filename, text = str(body.get("filename") or ""), body.get("text")
         suffix = Path(filename).suffix.lower()
         if suffix not in ARTICLE_TYPES:
@@ -367,6 +493,7 @@ class Handler(BaseHTTPRequestHandler):
         run_dir = RUNS / run_id
         run_dir.mkdir(parents=True, exist_ok=True)
         (run_dir / f"article{suffix}").write_text(text, encoding="utf-8")
+        write_json(run_dir / "source.json", {"url": essay_url, "filename": Path(filename).name})
         meta = save_meta(
             run_dir,
             {},
@@ -382,6 +509,8 @@ class Handler(BaseHTTPRequestHandler):
         with lock:
             sessions[run_id] = {
                 "article": text,
+                "essay_url": essay_url,
+                "filename": Path(filename).name,
                 "data": {},
                 "dir": run_dir,
                 "log": ROOT / "notes" / f"sources_{run_id}.log",
@@ -391,6 +520,17 @@ class Handler(BaseHTTPRequestHandler):
                 "stream": Stream(),
             }
         self._json(200, {"run_id": run_id, "meta": meta, "text": text})  # a fetched link's text is new to the page
+
+    def _from_url(self, user: str, body: dict) -> None:
+        url = str(body.get("url") or "").strip()
+        try:
+            text, canonical = fetch_url_markdown(url)
+        except ValueError as exc:
+            return self._json(400, {"error": str(exc)})
+        except Exception as exc:  # noqa: BLE001
+            return self._json(500, {"error": f"{type(exc).__name__}: {exc}"})
+        header = f"# Source\n\n{canonical}\n\n"
+        self._upload(user, {"filename": "article.md", "text": header + text + "\n"}, essay_url=canonical)
 
     def _progress(self, user: str, run_id: str, cursor: str) -> None:
         session = self._session_for(run_id, user)
@@ -402,7 +542,7 @@ class Handler(BaseHTTPRequestHandler):
     def _step(self, user: str, body: dict) -> None:
         step = body.get("step")
         with lock:
-            session = self._session_for(str(body.get("run_id")), user)
+            session = self._session_for(str(body.get("run_id") or body.get("session_id") or ""), user)
             if session is None or step not in STEP_INFO:
                 return self._json(400, {"error": "unknown run or step"})
             if session["running"]:
@@ -417,6 +557,105 @@ class Handler(BaseHTTPRequestHandler):
             self._json(500, {"error": f"{type(exc).__name__}: {exc}"})
         finally:
             session["running"] = False
+
+    def _save_claims(self, session: dict, claims: list) -> None:
+        session["data"]["claims"] = claims
+        for later in DATA_ORDER[DATA_ORDER.index("claims") + 1 :]:
+            session["data"].pop(later, None)
+        session["data"].pop("coverage", None)
+        write_json(session["dir"] / "claims.json", {"claims": claims})
+        for name in ("classifications.json", "evidence.json", "verdicts.json", "overrides.json"):
+            path = session["dir"] / name
+            if path.is_file():
+                path.unlink()
+        save_meta(session["dir"], session["data"])
+
+    def _claims(self, user: str, body: dict) -> None:
+        session = self._session_for(str(body.get("run_id") or body.get("session_id") or ""), user)
+        if session is None:
+            return self._json(400, {"error": "unknown run"})
+        if "claims" not in session["data"]:
+            return self._json(400, {"error": "extract claims first"})
+        action = str(body.get("action") or "")
+        try:
+            if action == "remove":
+                claims = steps.drop_claim(session["article"], session["data"]["claims"], str(body.get("claim_id") or ""))
+            elif action == "add":
+                claims = steps.add_claim(
+                    session["article"],
+                    session["data"]["claims"],
+                    str(body.get("sentence") or ""),
+                    str(body.get("reason") or ""),
+                )
+            else:
+                return self._json(400, {"error": "action must be add or remove"})
+        except ValueError as exc:
+            return self._json(400, {"error": str(exc)})
+        self._save_claims(session, claims)
+        self._json(200, {"claims": claims})
+
+    def _override(self, user: str, body: dict) -> None:
+        session = self._session_for(str(body.get("run_id") or body.get("session_id") or ""), user)
+        if session is None:
+            return self._json(400, {"error": "unknown run"})
+        verdicts = session["data"].get("verdicts")
+        if not verdicts:
+            return self._json(400, {"error": "run verdicts before overriding"})
+        claim_id = str(body.get("claim_id") or "")
+        human = steps.normalize_verdict(body.get("verdict"))
+        why = str(body.get("why") or "").strip()
+        if human not in steps.VERDICTS:
+            return self._json(400, {"error": "verdict must be supported, contradicted, misleading, unverifiable, or opinion"})
+        if len(why) < 8:
+            return self._json(400, {"error": "write one sentence explaining why the agent is wrong"})
+        if len(why) > 500:
+            return self._json(400, {"error": "override reason is too long"})
+        claims = {row["claim_id"]: row for row in session["data"].get("claims") or []}
+        claim = claims.get(claim_id)
+        if claim is None:
+            return self._json(400, {"error": "unknown claim"})
+        row = next((item for item in verdicts if item.get("claim_id") == claim_id), None)
+        if row is None:
+            return self._json(400, {"error": "unknown claim"})
+        agent_verdict = row.get("agent_verdict") or (row.get("human_override") or {}).get("agent_verdict") or row.get("verdict")
+        agent_reason = row.get("agent_reason") or (row.get("human_override") or {}).get("agent_reason") or row.get("reason")
+        agent_conf = row.get("confidence") or 0
+        row["agent_verdict"] = agent_verdict
+        row["agent_reason"] = agent_reason
+        row["verdict"] = human
+        row["reason"] = why
+        row["human_override"] = {
+            "verdict": human,
+            "why": why,
+            "at": now_iso(),
+            "agent_verdict": agent_verdict,
+            "agent_reason": agent_reason,
+        }
+        coverage = persist_verdicts(session)
+        append_human_catch(session, claim, agent_verdict, agent_conf, human, why)
+        self._json(200, {"verdicts": verdicts, "coverage": coverage})
+
+    def _export(self, user: str, body: dict, kind: str = "html") -> None:
+        session = self._session_for(str(body.get("run_id") or body.get("session_id") or ""), user)
+        if session is None:
+            return self._json(400, {"error": "unknown run"})
+        try:
+            payload = export_pdf(session) if kind == "pdf" else export_html(session)
+        except ValueError as exc:
+            return self._json(400, {"error": str(exc)})
+        except RuntimeError as exc:
+            return self._json(500, {"error": str(exc)})
+        if kind == "pdf":
+            name, content_type = f"annotated-{session['dir'].name}.pdf", "application/pdf"
+        else:
+            name, content_type = f"annotated-{session['dir'].name}.html", "text/html; charset=utf-8"
+        self.send_response(200)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(len(payload)))
+        self.send_header("Content-Disposition", f'attachment; filename="{name}"')
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+        self.wfile.write(payload)
 
 
 def main() -> None:

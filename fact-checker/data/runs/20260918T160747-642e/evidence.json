@@ -1,0 +1,424 @@
+{
+  "evidence": [
+    {
+      "claim_id": "c01",
+      "sources": [
+        {
+          "title": "The Anxious Generation - Wikipedia",
+          "publisher": "Wikipedia",
+          "date": null,
+          "url": "https://en.wikipedia.org/wiki/The_Anxious_Generation",
+          "relevance_score": 10,
+          "stance": "context",
+          "reason": "Discusses the book's overall thesis on smartphones and mental health but does not mention the specific 'young trees exposed to wind' quote.",
+          "snippet": "Haidt examines statistics for those under 18 on a number of mental health criteria, including mental health diagnoses such as anxiety disorders and major depression, self-harm episodes, and suicide rates. For each, there was a sudden uptick around 2010 when smartphones became widely available.",
+          "source_id": "c01_s1"
+        },
+        {
+          "title": "The Anxious Generation: How the Great Rewiring of Childhood ...The Anxious Generation by Jonathan Haidt - Oprah.comAmazon.com: The Anxious Generation: 9781802063271: Haidt ...The Anxious Generation — BookThe Anxious Generation - Books | Jonathan HaidtThe Anxious Generation - Penguin Books UK",
+          "publisher": "Amazon",
+          "date": "2024-03-26",
+          "url": "https://www.amazon.com/Anxious-Generation-Rewiring-Childhood-Epidemic/dp/0593655036",
+          "relevance_score": 10,
+          "stance": "context",
+          "reason": "General description of the book's premise about teen mental illness, no mention of the specific quote.",
+          "snippet": "Mar 26, 2024 · In The Anxious Generation, social psychologist Jonathan Haidt (pronounced \"height\") lays out the facts about the epidemic of teen mental illness that hit many countries at the same time. The Anxious Generation By Jonathan Haidt Publisher: Penguin Press Pages: 400 Tags: Self-Improvement Teens Oct 10, 2024 · In \"The Anxious Generation\", Haidt shows how, between 2010 and 2015, childhoo",
+          "source_id": "c01_s2"
+        },
+        {
+          "title": "Amazon.com: The Anxious Generation: 9781802063271: Haidt ...The Anxious Generation — BookThe Anxious Generation - Books | Jonathan HaidtThe Anxious Generation - Penguin Books UK",
+          "publisher": "Amazon",
+          "date": "2024-10-10",
+          "url": "https://www.amazon.com/Anxious-Generation-Haidt-Jonathan/dp/1802063277",
+          "relevance_score": 10,
+          "stance": "context",
+          "reason": "Summarizes book's themes on smartphones and childhood but does not reference the specific quote about trees and wind.",
+          "snippet": "Oct 10, 2024 · In \"The Anxious Generation\", Haidt shows how, between 2010 and 2015, childhood and adolescence got rewired. As teens traded in their flip phones for smartphones packed with social media apps, time online soared, including time spent comparing oneself to a vast pool of others. Jon Haidt’s #1 New York Times bestseller documents how the rise of smartphones and social media, as well as ",
+          "source_id": "c01_s3"
+        },
+        {
+          "title": "The Anxious Generation — Book",
+          "publisher": "anxiousgeneration.com",
+          "date": null,
+          "url": "https://www.anxiousgeneration.com/book",
+          "relevance_score": 10,
+          "stance": "context",
+          "reason": "Describes the book's broad thesis on smartphones and mental health crisis but does not confirm the specific quoted passage.",
+          "snippet": "Jon Haidt’s #1 New York Times bestseller documents how the rise of smartphones and social media, as well as the decline of independence and free play, rapidly rewired childhood and caused a global mental health crisis for kids and teens.",
+          "source_id": "c01_s4"
+        },
+        {
+          "title": "The Anxious Generation by Jonathan Haidt - Oprah.com",
+          "publisher": "Oprah.com",
+          "date": null,
+          "url": "https://www.oprah.com/book/the-anxious-generation-by-jonathan-haidt",
+          "relevance_score": 5,
+          "stance": "irrelevant",
+          "reason": "Only lists publisher and page count, does not address the claim's content.",
+          "snippet": "The Anxious Generation By Jonathan Haidt Publisher: Penguin Press Pages: 400 Tags: Self-Improvement Teens",
+          "source_id": "c01_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c02",
+      "sources": [
+        {
+          "title": "China Bans AI Romantic Partners, Virtual Relatives for Minors",
+          "publisher": "Sixth Tone",
+          "date": "2026-07-21",
+          "url": "https://www.sixthtone.com/news/1018790",
+          "relevance_score": 95,
+          "stance": "supports",
+          "reason": "Directly confirms China bans AI romantic partners and virtual relatives for minors and regulates emotional-bond simulation.",
+          "snippet": "Jul 21, 2026 · China’s first regulations on AI companion services have taken effect, setting new limits on chatbots designed to simulate emotional bonds with users and barring platforms from offering virtual partners or relatives to minors.",
+          "source_id": "c02_s1"
+        },
+        {
+          "title": "China's AI companion rules: what Beijing is really banning",
+          "publisher": "Artificial Intelligence News",
+          "date": "2026-07-06",
+          "url": "https://www.artificialintelligence-news.com/news/china-ai-companion-rules/",
+          "relevance_score": 85,
+          "stance": "supports",
+          "reason": "Confirms China bars virtual companion/family-member services for minors, supporting the claim's minors-focused restrictions.",
+          "snippet": "Jul 6, 2026 · What China’s AI companion rules set out The substance is more considered than a blunt clampdown suggests. Providers are barred from offering virtual companion or virtual family-member services to minors, and must obtain guardian consent before serving users under 14.",
+          "source_id": "c02_s2"
+        },
+        {
+          "title": "China Bans AI Companions for Minors Amid Addiction Concerns",
+          "publisher": "Omega Technology Solutions Group",
+          "date": "2026-07-23",
+          "url": "https://www.omegatechnologysolutionsgroupinc.com/blog/china-bans-ai-companions-for-minors-amid-addiction-concerns-3e2d41",
+          "relevance_score": 85,
+          "stance": "supports",
+          "reason": "Confirms China's ban on minors using AI companions and rules targeting emotional dependency/addiction, matching the claim's broader scope.",
+          "snippet": "Jul 23, 2026 · New restrictions target emotional dependency on chatbots as Beijing positions itself as a global AI governance leader. China has banned minors from using AI companion apps and imposed new platform requirements to prevent emotional dependency and addiction.",
+          "source_id": "c02_s3"
+        },
+        {
+          "title": "China’s AI companion rules ban minors but spare adult users",
+          "publisher": "Ecostylia",
+          "date": "2026-07-16",
+          "url": "https://www.ecostylia.com/en/china-ai-companions-banned/",
+          "relevance_score": 85,
+          "stance": "supports",
+          "reason": "Confirms the regulation bans virtual companions for minors and imposes obligations to prevent dependence, supporting the claim.",
+          "snippet": "Jul 16, 2026 · As of July 15, 2026, China has begun regulating emotional interaction services that sustainably simulate a human personality. The regulation, signed by five agencies, bans virtual companions for minors and imposes heavy obligations for adults. Doubao and Qwen have removed personalized agents.",
+          "source_id": "c02_s4"
+        },
+        {
+          "title": "China Regulates AI Companion Services, Banning Minor Access ...",
+          "publisher": "Licentium",
+          "date": "2026-07-01",
+          "url": "https://www.licentium.io/post/china-regulates-ai-companion-services-banning-minor-access-effective-15-july-2026",
+          "relevance_score": 85,
+          "stance": "supports",
+          "reason": "Confirms the Measures prohibit virtual companion/relative services for minors and mandate addiction-detection mechanisms, matching the claim.",
+          "snippet": "Jul 1, 2026 · The Measures prohibit AI virtual companion and virtual relative services for minors, require algorithm filing and security assessment for covered providers, and mandate addiction-detection mechanisms.",
+          "source_id": "c02_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c03",
+      "sources": [
+        {
+          "title": "HMPI AI Adoption and Hospital Performance: Evidence from ...",
+          "publisher": "HMPI",
+          "date": "2026-07-09",
+          "url": "https://hmpi.org/2026/07/09/ai-adoption-and-hospital-performance-evidence-from-2979-u-s-hospitals/",
+          "relevance_score": 15,
+          "stance": "partially_supports",
+          "reason": "References AHA database analysis across 2,979 US hospitals, related to but not confirming the specific 'nearly 2,000' figure.",
+          "snippet": "Jul 9, 2026 · This paper provides a statistical analysis of data from the American Hospital Association (AHA) database and an empirical examination of the relationship between hospital AI adoptions levels and operational efficiency, comparing data outcomes across various U.S. hospitals.",
+          "source_id": "c03_s1"
+        },
+        {
+          "title": "Uptake of Generative AI Integrated With Electronic Health ...",
+          "publisher": "JAMA Network",
+          "date": "2025-12-12",
+          "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2842683",
+          "relevance_score": 10,
+          "stance": "irrelevant",
+          "reason": "Survey on generative AI adoption in US hospitals but no mention of a 2,000 hospital number.",
+          "snippet": "Dec 12, 2025 · This survey study describes the current and planned implementation of generative artificial intelligence (AI) in nonfederal acute care US hospitals.",
+          "source_id": "c03_s2"
+        },
+        {
+          "title": "AI in Hospitals: 2025 Adoption Trends & Statistics",
+          "publisher": "IntuitionLabs",
+          "date": null,
+          "url": "https://intuitionlabs.ai/pdfs/ai-in-hospitals-2025-adoption-trends-statistics.pdf",
+          "relevance_score": 10,
+          "stance": "partially_supports",
+          "reason": "Cites AHA data on AI usage percentages by hospital size but does not give an exact count of 2,000 hospitals.",
+          "snippet": "The 2023–2024 American Hospital Association (AHA) IT Supplement data show that in both years, large hospitals (>400 beds) had AI usage around 90–96%, whereas small hospitals (<100 beds) were at only 53–59%【",
+          "source_id": "c03_s3"
+        },
+        {
+          "title": "AI Adoption in U.S. Hospitals: Trends and Use Cases",
+          "publisher": "IntuitionLabs",
+          "date": "2026-07-30",
+          "url": "https://intuitionlabs.ai/articles/ai-adoption-us-hospitals-trends",
+          "relevance_score": 5,
+          "stance": "irrelevant",
+          "reason": "Discusses AI adoption trends broadly but does not mention a specific count of nearly 2,000 hospitals.",
+          "snippet": "Jul 30, 2026 · An analysis of AI adoption trends in U.S. hospitals through 2025-2026. Examines clinical and operational use cases including ambient AI scribes, Epic's new AI tools, FDA regulatory updates, and ethical considerations in healthcare.",
+          "source_id": "c03_s4"
+        },
+        {
+          "title": "The landscape of AI implementation in US hospitals - Nature",
+          "publisher": "Nature",
+          "date": "2026-01-15",
+          "url": "https://www.nature.com/articles/s44360-025-00016-7",
+          "relevance_score": 5,
+          "stance": "irrelevant",
+          "reason": "Describes AI deployment patterns baseline but gives no specific hospital count matching the claim.",
+          "snippet": "Jan 15, 2026 · These findings provide a baseline snapshot of early AI deployment patterns in US hospitals in 2023 and 2024, highlighting the uneven and context-dependent nature of implementation.",
+          "source_id": "c03_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c04",
+      "sources": [
+        {
+          "title": "Bill Gates releases 2026 Gates Foundation letter detailing ...",
+          "publisher": "artthreat.net",
+          "date": "2026-05-30",
+          "url": "https://artthreat.net/39959-69299-bill-gates-releases-2026-gates-foundation-letter-detailing-ambitious-2045-goals/",
+          "relevance_score": 45,
+          "stance": "partially_supports",
+          "reason": "Dated May 2026, one year after the original announcement, consistent with roughly 19 years remaining, though the snippet doesn't explicitly say '19 years left'.",
+          "snippet": "May 30, 2026 · With a historic $9 billion annual payout commitment and plans to spend $200 billion total before its December 31, 2045 closure, the Gates Foundation is intensifying efforts to address global poverty, disease, and inequality.",
+          "source_id": "c04_s1"
+        },
+        {
+          "title": "Gates Foundation Commits to Historic $9 Billion Annual Payout ...",
+          "publisher": "Gates Foundation",
+          "date": "2026-01",
+          "url": "https://www.gatesfoundation.org/ideas/media-center/press-releases/2026/01/historic-annual-budget-to-accelerate-mission",
+          "relevance_score": 40,
+          "stance": "partially_supports",
+          "reason": "Dated January 2026, this references the same $200 billion/20-year plan announced in 2025, implying about 19 years may remain, though it doesn't state that explicitly.",
+          "snippet": "The increase in spending is part of the foundation's commitment to accelerate its mission ahead of its planned closure in 2045. Last May, foundation Chair Bill Gates announced the foundation will invest an additional $200 billion, double what it spent during its first 25 years, before closing at the end of 2045.",
+          "source_id": "c04_s2"
+        },
+        {
+          "title": "Gates Foundation Will Double Spending Over Next 20 Years to Accelerate ...",
+          "publisher": "Gates Foundation",
+          "date": "2025-05-08",
+          "url": "https://www.gatesfoundation.org/ideas/media-center/press-releases/2025/05/25th-anniversary-announcement",
+          "relevance_score": 20,
+          "stance": "context",
+          "reason": "Confirms $200 billion spend over 20 years starting 2025, but this snippet dates from the original announcement, not supporting a '19 years left' framing.",
+          "snippet": "On foundation's 25th anniversary, Bill Gates outlines ambitious goals, inspiration for donating most of his resources and new timeline to spend-down by 2045 SEATTLE (May 8, 2025) - On the occasion of its 25 th year, the Gates Foundation today made a new commitment to accelerate its mission to help all people live healthy, productive lives by spending $200 billion over the next 20 years ...",
+          "source_id": "c04_s3"
+        },
+        {
+          "title": "The final 20 years of the Gates Foundation - The Lancet",
+          "publisher": "The Lancet",
+          "date": null,
+          "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)01081-5/fulltext?dgcid=raven_jbs_etoc_email",
+          "relevance_score": 15,
+          "stance": "context",
+          "reason": "States $200 billion over 'next 20 years' until 2045 but does not mention 19 years remaining.",
+          "snippet": "Over the next 20 years, the Gates Foundation expects to spend more than US$200 billion on health and development projects before ceasing operations on Dec 31, 2045.",
+          "source_id": "c04_s4"
+        },
+        {
+          "title": "Gates Foundation Will Double Spending Over Next 20 Years to Accelerate ...",
+          "publisher": "PR Newswire",
+          "date": null,
+          "url": "https://www.prnewswire.com/news-releases/gates-foundation-will-double-spending-over-next-20-years-to-accelerate-progress-on-saving-and-improving-lives-302449250.html",
+          "relevance_score": 15,
+          "stance": "context",
+          "reason": "Reiterates $200 billion over next 20 years to 2045, consistent with original 20-year framing, not 19 years left.",
+          "snippet": "The exact amount will depend on the markets and inflation, but I expect the foundation will spend more than $200 billion between now and 2045. This figure includes the balance of the endowment and ...",
+          "source_id": "c04_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c05",
+      "sources": [
+        {
+          "title": "Why I’m Still Optimistic About Global Health - Bill Gates",
+          "publisher": "Gates Foundation",
+          "date": "2025-09-22",
+          "url": "https://www.gatesfoundation.org/ideas/articles/cut-child-mortality-global-health",
+          "relevance_score": 90,
+          "stance": "supports",
+          "reason": "States the goal of cutting child deaths in half again over the next 20 years, directly matching the claim's core assertion.",
+          "snippet": "Sep 22, 2025 · If the world invests in child health and scales lifesaving innovations, we could cut child deaths in half again over the next 20 years. A suite of new approaches to malaria, including innovations that prevent mosquitoes from carrying parasites, could all but eradicate the disease.",
+          "source_id": "c05_s1"
+        },
+        {
+          "title": "How to cut child mortality in half… again - LinkedIn",
+          "publisher": "LinkedIn (Bill Gates)",
+          "date": "2024-04-03",
+          "url": "https://www.linkedin.com/pulse/how-cut-child-mortality-half-again-bill-gates-xwrcc/",
+          "relevance_score": 70,
+          "stance": "partially_supports",
+          "reason": "Confirms child mortality was cut in half over roughly thirty years and frames the goal of repeating that, though timeframe differs slightly from 2000-2024.",
+          "snippet": "Apr 3, 2024 · In 1990, the possibility that the world would be able to cut child mortality in half over the next thirty years would have seemed just as remote. But that’s exactly what happened.",
+          "source_id": "c05_s2"
+        },
+        {
+          "title": "2025 Report - Goalkeepers",
+          "publisher": "Goalkeepers (Gates Foundation)",
+          "date": "2025",
+          "url": "https://goalkeepers.gatesfoundation.org/report/2025-report/",
+          "relevance_score": 50,
+          "stance": "context",
+          "reason": "General framing of decades of progress on child mortality without specifying the halving-again goal or exact years.",
+          "snippet": "By Bill Gates Chair, Gates Foundation A Generation of Progress, A Choice to Make The death of a child is always a tragedy. But there's something especially devastating about a child dying of a disease we know how to prevent. For decades, the world made steady progress saving children's lives. But now, as challenges mount, that progress is ...",
+          "source_id": "c05_s3"
+        },
+        {
+          "title": "Gates Foundation Urges Targeted Funding as Child Deaths ...",
+          "publisher": "Gates Foundation",
+          "date": "2025-12-03",
+          "url": "https://www.gatesfoundation.org/ideas/media-center/press-releases/2025/12/goalkeepers-child-deaths-rising-high-impact-solutions",
+          "relevance_score": 40,
+          "stance": "context",
+          "reason": "Discusses child mortality trends and funding but does not specify the 'halve again' goal or the 2000-2024 timeframe.",
+          "snippet": "Dec 3, 2025 · According to Gates, investment in the development of next-generation innovations could end some of the deadliest threats to children, such as malaria and pneumonia, for good. Modeling in the report projects that sustained funding in these innovations could save millions of children by 2045.",
+          "source_id": "c05_s4"
+        },
+        {
+          "title": "2025 GOALKEEPERS REPORT - gatesfoundation.org",
+          "publisher": "Gates Foundation",
+          "date": "2025",
+          "url": "https://www.gatesfoundation.org/-/media/goalkeepers/reports/2025-goalkeepers-report_en.pdf?rev=959aaff0d53f4e19b5ec05ec9d57570a",
+          "relevance_score": 30,
+          "stance": "context",
+          "reason": "Technical report on modeling child mortality innovations but doesn't explicitly state the halving goal or historical timeframe.",
+          "snippet": "The innovations included a portfolio of products and effect sizes on cause-specific mortality using simulations from the Gates Foundation. IHME used these effect sizes to estimate both cause-specific and total under-5 lives saved through innovation activities.",
+          "source_id": "c05_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c06",
+      "sources": [
+        {
+          "title": "The Disaster after 9/11: The Department of Homeland Security ...",
+          "publisher": "Homeland Security Affairs Journal",
+          "date": "2001-09-11",
+          "url": "https://www.hsaj.org/articles/174",
+          "relevance_score": 40,
+          "stance": "partially_supports",
+          "reason": "Describes the government's reorganization of homeland defense after 9/11, supporting the reorganization aspect but not the WWII comparison.",
+          "snippet": "Sep 11, 2001 · In reorganizing homeland defense after 9/11, the government had three options: White House control, power sharing between agencies, or congressional control.",
+          "source_id": "c06_s1"
+        },
+        {
+          "title": "How did Sept. 11 reshape national security? : Sources ... - NPR",
+          "publisher": "NPR",
+          "date": "2026-09-09",
+          "url": "https://www.npr.org/2026/09/09/nx-s1-5910810/sept-11-national-security-intelligence",
+          "relevance_score": 30,
+          "stance": "partially_supports",
+          "reason": "States a new national security architecture was created after 9/11, supporting the idea of major restructuring but not specifying it as the biggest since WWII.",
+          "snippet": "Sep 9, 2026 · A fourth plane crashed into a field in Shanksville, Pa.. Sept. 11, 2001 represented a new kind of national security threat, and a new national security architecture was created to confront it.",
+          "source_id": "c06_s2"
+        },
+        {
+          "title": "25 Years After 9/11: How the Homeland Security Mission Has ...",
+          "publisher": "HSToday",
+          "date": "2026-09-11",
+          "url": "https://www.hstoday.us/911/25-years-after-9-11-the-evolution-of-homeland-security-and-the-challenges-of-a-new-security-era/",
+          "relevance_score": 20,
+          "stance": "context",
+          "reason": "Discusses general improvements to national security since 9/11 but doesn't mention the scale of government reorganization compared to WWII.",
+          "snippet": "Sep 11, 2026 · Twenty-five years after 9/11, we should honor those who died on that day, those who responded, those who went on to serve in the military and government, and the thousands of professionals who have dedicated the last 25 years to improving national security. We ought to acknowledge the advancements as well.",
+          "source_id": "c06_s3"
+        },
+        {
+          "title": "25th Anniversary Report: National Security Improvements and ...",
+          "publisher": "House Committee on Homeland Security",
+          "date": "2026-09-10",
+          "url": "https://homeland.house.gov/2026/09/10/25th-anniversary-report-national-security-improvements-and-the-domestic-threat-landscape-25-years-after-9-11-01/",
+          "relevance_score": 20,
+          "stance": "context",
+          "reason": "Focuses on national security improvements and threat landscape assessment, not the historical scale of reorganization since WWII.",
+          "snippet": "Sep 10, 2026 · “In keeping with the mandate to prevent and deter future domestic terror attacks, this report provides a comprehensive assessment of the United States’ domestic threat landscape and assesses improvements made to the country’s national security posture over the last twenty-five years.",
+          "source_id": "c06_s4"
+        },
+        {
+          "title": "9/11 anniversary: How national security has evolved in 25 years",
+          "publisher": "Axios",
+          "date": "2026-09-11",
+          "url": "https://www.axios.com/2026/09/11/911-anniversary-national-security-changes",
+          "relevance_score": 15,
+          "stance": "context",
+          "reason": "Discusses evolution of national security norms post-9/11 but does not address the WWII-scale reorganization claim.",
+          "snippet": "Sep 11, 2026 · Twenty-five years after the Sept. 11 attacks, some lessons remain deeply ingrained in the national security apparatus — while others have faded. The big picture: A vast majority of Americans say the attacks forever changed the country. But some key post-9/11 security norms — like airport screening, intelligence gathering and international cooperation — have evolved with new technolo",
+          "source_id": "c06_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c07",
+      "sources": [
+        {
+          "title": "Bill Gates Sr. - Wikipedia",
+          "publisher": "Wikipedia",
+          "date": "2020-09-14",
+          "url": "https://en.wikipedia.org/wiki/Bill_Gates_Sr.",
+          "relevance_score": 90,
+          "stance": "supports",
+          "reason": "Confirms Bill Gates Sr. (father of claimant, presumably Bill Gates) died of Alzheimer's disease on September 14, 2020.",
+          "snippet": "In 2018, it was revealed that Gates was suffering from Alzheimer's disease. [29][30] He died on September 14, 2020, aged 94, at his beach home on Hood Canal in Washington state. [4]",
+          "source_id": "c07_s1"
+        },
+        {
+          "title": "Bill Gates Sr., father of Microsoft founder, dies age 94",
+          "publisher": "New York Daily News",
+          "date": "2020-09-15",
+          "url": "https://www.nydailynews.com/2020/09/15/bill-gates-mourns-fathers-death-at-age-94-i-will-miss-my-dad-every-day/",
+          "relevance_score": 90,
+          "stance": "supports",
+          "reason": "Reports William H. Gates Sr. died in 2020 with Alzheimer's disease as the cause, quoting Bill Gates saying he will miss 'my dad'.",
+          "snippet": "Sep 15, 2020 · William H. Gates Sr., civic leader and father of Microsoft founder and philanthropist Bill Gates, has died. He was 94. The cause was Alzheimer’s disease, the family said.",
+          "source_id": "c07_s2"
+        },
+        {
+          "title": "5 Years After Dad's Alzheimer's Death, Bill Gates Is ... - Yahoo",
+          "publisher": "Yahoo",
+          "date": "2025-06-17",
+          "url": "https://www.yahoo.com/news/5-years-dads-alzheimers-death-210808777.html?fr=sycsrp_catchall",
+          "relevance_score": 85,
+          "stance": "supports",
+          "reason": "States Gates' dad died in 2020 after living with Alzheimer's disease.",
+          "snippet": "Jun 17, 2025 · Gates' dad, William, who died in 2020, lived with the disease before his death. Bill Gates is \"really excited\" about the progress recently made in the fight against Alzheimer's disease...",
+          "source_id": "c07_s3"
+        },
+        {
+          "title": "Bill Gates' Father William Dead at 94: 'He Was Everything I ...",
+          "publisher": "People",
+          "date": "2020-09-15",
+          "url": "https://people.com/human-interest/bill-gates-father-dead-at-94/",
+          "relevance_score": 80,
+          "stance": "supports",
+          "reason": "Confirms William Gates Sr. died at 94 in 2020, aligning with the claim of the father's death that year.",
+          "snippet": "Sep 15, 2020 · Bill Gates ' father — former attorney William H. Gates Sr. — has died. He was 94. The Microsoft billionaire, 64, announced the death in a post published on his blog Tuesday, writing, \"My...",
+          "source_id": "c07_s4"
+        },
+        {
+          "title": "5 Years After Dad’s Alzheimer’s Death, Bill Gates Is ...",
+          "publisher": "Headline Society",
+          "date": "2025-06-17",
+          "url": "https://headlinesociety.com/2025/06/17/5-years-after-dads-alzheimers-death-bill-gates-is-optimistic-about-progress-made-in-fighting-the-disease/",
+          "relevance_score": 40,
+          "stance": "context",
+          "reason": "References Bill Gates' father's Alzheimer's death without repeating the specific year or cause explicitly in the snippet.",
+          "snippet": "Jun 17, 2025 · Renowned tech mogul, Bill Gates, recently expressed his excitement about the advancements being made in the battle against Alzheimer’s disease. In a heartfelt essay published on Gates Notes, Gates conveyed his optimism about the significant headway achieved in combating Alzheimer’s.",
+          "source_id": "c07_s5"
+        }
+      ]
+    }
+  ]
+}

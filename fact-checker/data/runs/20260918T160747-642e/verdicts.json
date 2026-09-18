@@ -1,0 +1,74 @@
+{
+  "verdicts": [
+    {
+      "claim_id": "c01",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 20,
+      "reason": "The sources confirm general themes of Haidt's book about smartphones, social media, and teen mental health, but none of them contain or verify the specific quote about 'young trees exposed to wind' or the claim that this observation is 'even more true for AI.' There is no evidence to confirm or deny the exact wording or the AI comparison attributed to the author.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c02",
+      "verdict": "NOT_FAKE",
+      "confidence": 85,
+      "reason": "Multiple sources confirm China's new AI companion regulations restrict emotional-dependency-fostering designs and ban virtual relatives and romantic partners for minors, matching the claim's details. The scope, timing, and content align across independent reports from Sixth Tone, AI News, and others.",
+      "supporting_source_ids": [
+        "c02_s1",
+        "c02_s2",
+        "c02_s3",
+        "c02_s4",
+        "c02_s5"
+      ]
+    },
+    {
+      "claim_id": "c03",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 20,
+      "reason": "None of the sources provide a specific figure of nearly 2,000 U.S. hospitals using the technology in question; they discuss general AI adoption trends and percentages by hospital size without a concrete count matching the claim. The snippets are too vague or off-topic to confirm or refute the specific number cited.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c04",
+      "verdict": "NOT_FAKE",
+      "confidence": 70,
+      "reason": "Sources confirm the Gates Foundation committed in May 2025 to spend $200 billion over a 20-year period ending December 31, 2045. Given the dated sources from 2026, one year would have elapsed, leaving approximately 19 years remaining, consistent with the claim.",
+      "supporting_source_ids": [
+        "c04_s2",
+        "c04_s3",
+        "c04_s4"
+      ]
+    },
+    {
+      "claim_id": "c05",
+      "verdict": "FAKE",
+      "confidence": 65,
+      "reason": "The Gates Foundation sources describe the past achievement of halving child mortality as occurring from 1990 to roughly 2020 (a 30-year period), not from 2000 to 2024 as the claim states. The future goal of halving deaths again over the next 20 years is confirmed, but the historical timeframe cited in the claim misstates the actual period.",
+      "supporting_source_ids": [
+        "c05_s1",
+        "c05_s2"
+      ]
+    },
+    {
+      "claim_id": "c06",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 30,
+      "reason": "The sources confirm a major national security reorganization occurred after 9/11, but none explicitly verify the specific claim that this was the government's 'biggest reorganization since World War II.' The snippets discuss the reorganization's purpose and impact but do not address this comparative historical scale claim.",
+      "supporting_source_ids": [
+        "c06_s1",
+        "c06_s2"
+      ]
+    },
+    {
+      "claim_id": "c07",
+      "verdict": "NOT_FAKE",
+      "confidence": 90,
+      "reason": "Multiple sources confirm William H. Gates Sr., father of Bill Gates, died in 2020 at age 94 from Alzheimer's disease. This matches the claim's details of the year and cause of death.",
+      "supporting_source_ids": [
+        "c07_s1",
+        "c07_s2",
+        "c07_s3",
+        "c07_s4"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "classifications": [
+    {
+      "claim_id": "c01",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "It's a testable claim about a general societal trend linking factory closures to opioid overdose deaths."
+    },
+    {
+      "claim_id": "c02",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "It describes a broad, testable societal/policy trend across multiple countries rather than a single specific event."
+    },
+    {
+      "claim_id": "c03",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It describes specific regulatory rules and provisions tied to a particular policy/announcement."
+    },
+    {
+      "claim_id": "c04",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It describes the current deployment of a specific product/technology in a specific number of hospitals."
+    },
+    {
+      "claim_id": "c05",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It refers to a specific organization's (Gates Foundation) financial timeline and plans."
+    },
+    {
+      "claim_id": "c06",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It describes specific goals set by a named organization (the foundation)."
+    },
+    {
+      "claim_id": "c07",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It describes a specific personal event involving a named individual and date."
+    },
+    {
+      "claim_id": "c08",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It describes a specific past action/announcement made by the speaker regarding a robot tax proposal."
+    }
+  ]
+}

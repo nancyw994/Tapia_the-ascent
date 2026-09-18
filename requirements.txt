@@ -2,6 +2,7 @@ openai>=1.67.0
 ddgs>=9.14.4
 numpy>=1.26.4
 requests>=2.32.3
+fpdf2>=2.8.0
 pyyaml>=6.0
 beautifulsoup4>=4.12.3
 tldextract>=5.1.2
