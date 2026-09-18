@@ -204,6 +204,33 @@ def _rank(claim: dict, hits: list[dict], model: str, emit: Emit = None) -> dict[
         return {}  # unscored sources are still shown, flagged as such
 
 
+_FETCH_FAILURE_REASONS = {
+    "http_error": "the site blocked or refused the request",
+    "blocked_robots": "the site's robots.txt disallows automated access",
+    "unsupported_content": "unsupported file type (e.g. a PDF)",
+    "fetch_error": "the page could not be reached",
+    "too_many_redirects": "too many redirects",
+    "blocked_url": "not a safe URL to fetch",
+    "document_too_large": "the page was too large to check",
+}
+
+
+def _exclusion_reason(hit: dict) -> str | None:
+    """Why a fetched-or-attempted hit didn't count as evidence, for display next to it."""
+    if hit.get("eligible"):
+        return None
+    status = hit.get("status")
+    if status and status != "verified":
+        return _FETCH_FAILURE_REASONS.get(status, "could not be verified")
+    if hit.get("reprint"):
+        return "looks like a reprint of this article, not an independent source"
+    if hit.get("tier") is not None and not hit.get("can_support"):
+        return "not on the trusted-source list"
+    if hit.get("relevance") == "none":
+        return "fetched, but no matching passage was found on the page"
+    return "not independently verified"
+
+
 def _sources_for(
     claim: dict, queries: list[str], log_path: Path, model: str, emit: Emit = None, essay_text: str = "", essay_url: str = ""
 ) -> list[dict]:
@@ -253,6 +280,7 @@ def _sources_for(
                 "tier": hit.get("tier"),
                 "tier_name": hit.get("tier_name"),
                 "eligible": bool(hit.get("eligible")),
+                "exclusion_reason": _exclusion_reason(hit),
             }
         )
     sources.sort(key=lambda s: s["relevance_score"], reverse=True)
