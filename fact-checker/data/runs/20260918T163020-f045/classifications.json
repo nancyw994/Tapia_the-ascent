@@ -1,0 +1,46 @@
+{
+  "classifications": [
+    {
+      "claim_id": "c01",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "It states a testable causal trend linking factory closures to opioid overdose deaths."
+    },
+    {
+      "claim_id": "c02",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It describes specific named countries taking specific policy actions."
+    },
+    {
+      "claim_id": "c03",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It describes specific rules/regulations enacted, tied to a specific policy action."
+    },
+    {
+      "claim_id": "c04",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It describes a specific measurable fact about adoption in named institutions (hospitals), tied to a specific product/status."
+    },
+    {
+      "claim_id": "c05",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It refers to a specific organization's (Gates Foundation) specific plan and timeline."
+    },
+    {
+      "claim_id": "c06",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It refers to a specific organization's stated goals tied to a specific historical timeframe."
+    },
+    {
+      "claim_id": "c07",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It is a specific personal event about a named individual's death and date."
+    }
+  ]
+}

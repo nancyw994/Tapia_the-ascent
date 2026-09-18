@@ -4,7 +4,7 @@
     python web/server.py            # http://127.0.0.1:8000
 
 Sign in (a demo account stored in data/users.json on this machine), then upload a .md
-article and run one step at a time. Each step streams the model's output to the page and
+article or paste a URL (fetched into article.md) and run one step at a time. Each step streams the model's output to the page and
 saves its result to data/runs/<run_id>/, which is also what the history sidebar lists.
 """
 
@@ -26,6 +26,7 @@ WEB = Path(__file__).resolve().parent
 sys.path.insert(0, str(WEB.parent / "pipeline"))
 
 import steps  # noqa: E402
+from fetch_article import fetch_url_markdown  # noqa: E402
 from lib import ROOT, read_json, write_json  # noqa: E402
 
 ARTICLE_TYPES = {".md", ".txt"}
@@ -184,7 +185,7 @@ def run_step(session: dict, step: str) -> dict:
     elif step == "classify":
         result = steps.classify_claims(data["claims"], emit=emit)
     elif step == "sources":
-        result = steps.find_sources(data["claims"], session["log"], essay_text=session["article"], emit=emit)
+        result = steps.find_sources(data["claims"], session["log"], emit=emit, essay_url=session.get("essay_url") or "")
     else:
         result = steps.decide_verdicts(data["claims"], data["evidence"], emit=emit)
     for later in DATA_ORDER[DATA_ORDER.index(key) :]:
@@ -265,6 +266,8 @@ class Handler(BaseHTTPRequestHandler):
             return self._signout()
         if path == "/api/upload":
             return self._upload(user, body)
+        if path == "/api/from-url":
+            return self._from_url(user, body)
         if path == "/api/step":
             return self._step(user, body)
         self._json(404, {"error": "not found"})
@@ -326,6 +329,7 @@ class Handler(BaseHTTPRequestHandler):
                         "dir": run_dir,
                         "log": ROOT / "notes" / f"sources_{run_id}.log",
                         "user": user,
+                        "essay_url": meta.get("source_url") or "",
                         "running": False,
                         "stream": Stream(),
                     },
@@ -339,6 +343,20 @@ class Handler(BaseHTTPRequestHandler):
         suffix = Path(filename).suffix.lower()
         if suffix not in ARTICLE_TYPES:
             return self._json(400, {"error": "please upload a .md or .txt file"})
+        self._start_run(user, filename, text)
+
+    def _from_url(self, user: str, body: dict) -> None:
+        url = str(body.get("url") or "").strip()
+        try:
+            text, canonical = fetch_url_markdown(url)
+        except ValueError as exc:
+            return self._json(400, {"error": str(exc)})
+        except Exception as exc:  # noqa: BLE001
+            return self._json(502, {"error": f"could not fetch that link: {type(exc).__name__}: {exc}"})
+        self._start_run(user, "article.md", f"# Source\n\n{canonical}\n\n{text}\n", essay_url=canonical)
+
+    def _start_run(self, user: str, filename: str, text, essay_url: str = "") -> None:
+        suffix = Path(filename).suffix.lower()
         if not isinstance(text, str) or len(text.strip()) < MIN_CHARS:
             return self._json(400, {"error": f"the article is too short (need at least {MIN_CHARS} characters)"})
         if len(text) > MAX_CHARS:
@@ -357,6 +375,7 @@ class Handler(BaseHTTPRequestHandler):
             words=len(text.split()),
             created_at=now_iso(),
             example=False,
+            source_url=essay_url,
         )
         with lock:
             sessions[run_id] = {
@@ -365,10 +384,11 @@ class Handler(BaseHTTPRequestHandler):
                 "dir": run_dir,
                 "log": ROOT / "notes" / f"sources_{run_id}.log",
                 "user": user,
+                "essay_url": essay_url,
                 "running": False,
                 "stream": Stream(),
             }
-        self._json(200, {"run_id": run_id, "meta": meta})
+        self._json(200, {"run_id": run_id, "meta": meta, "text": text})  # a fetched link's text is new to the page
 
     def _progress(self, user: str, run_id: str, cursor: str) -> None:
         session = self._session_for(run_id, user)
