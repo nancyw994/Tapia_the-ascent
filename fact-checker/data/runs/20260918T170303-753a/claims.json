@@ -1,0 +1,44 @@
+{
+  "claims": [
+    {
+      "claim_id": "c01",
+      "sentence": "To learn more, we asked dermatologist Amy Kassouf, MD, to share why your skin still darkens with sunscreen — and why that might not necessarily be a good thing.",
+      "reason": "Names a specific expert source whose credentials and involvement can be verified."
+    },
+    {
+      "claim_id": "c02",
+      "sentence": "UVB rays also increase your risk for skin cancers, like melanoma.",
+      "reason": "A medical claim linking UVB exposure to a specific disease that is scientifically verifiable."
+    },
+    {
+      "claim_id": "c03",
+      "sentence": "As an example, sunscreen with an SPF of 30 blocks about 97% of the sun's UVB rays.",
+      "reason": "A specific statistic about SPF 30's UVB blocking efficacy that can be verified."
+    },
+    {
+      "claim_id": "c04",
+      "sentence": "This means it should take 30 times longer for your skin to burn with this level of sunscreen than without it.",
+      "reason": "A specific quantifiable claim about sunscreen effectiveness that can be tested."
+    },
+    {
+      "claim_id": "c05",
+      "sentence": "\"When you expose your skin to the sun, melanocyte cells in your body make more melanin [a pigment in skin, hair and eyes] to protect against burning,\" says Dr. Kassouf.",
+      "reason": "An attributed scientific claim about the biological mechanism of tanning that can be verified."
+    },
+    {
+      "claim_id": "c06",
+      "sentence": "A review of studies found no link between sunscreen use and vitamin D deficiency — which is good news.",
+      "reason": "Attributes a specific research finding that can be checked against actual studies."
+    },
+    {
+      "claim_id": "c07",
+      "sentence": "Apply two tablespoons (the size of a shot glass) of sunscreen 30 minutes before going outside.",
+      "reason": "A specific quantitative recommendation that can be verified against dermatological guidelines."
+    },
+    {
+      "claim_id": "c08",
+      "sentence": "But whatever you do, skip tanning beds, which expose you to 10 times more UVA rays than the sun.",
+      "reason": "A specific measurable comparison claim about UVA exposure that can be fact-checked."
+    }
+  ]
+}

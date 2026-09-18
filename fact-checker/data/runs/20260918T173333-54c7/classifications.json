@@ -1,0 +1,76 @@
+{
+  "classifications": [
+    {
+      "claim_id": "c01",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "Refers to a specific person (Dr. Amy Kassouf) being consulted for this article."
+    },
+    {
+      "claim_id": "c02",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A testable statement about UVB rays increasing skin cancer risk."
+    },
+    {
+      "claim_id": "c03",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "Describes a general, testable definition of how SPF measures UVB protection."
+    },
+    {
+      "claim_id": "c04",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A testable, measurable claim about the percentage of UVB rays blocked by SPF 30 sunscreen."
+    },
+    {
+      "claim_id": "c05",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A testable, measurable claim about the relative time to sunburn with SPF sunscreen."
+    },
+    {
+      "claim_id": "c06",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "Attributes a specific statement about melanocyte cells to a named individual, Dr. Kassouf."
+    },
+    {
+      "claim_id": "c07",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A testable claim referencing a review of studies on sunscreen use and vitamin D levels."
+    },
+    {
+      "claim_id": "c08",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A general, testable recommendation regarding sunscreen SPF level and type."
+    },
+    {
+      "claim_id": "c09",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A general, testable guideline for the amount and timing of sunscreen application."
+    },
+    {
+      "claim_id": "c10",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A general, testable guideline for reapplying sunscreen based on activity."
+    },
+    {
+      "claim_id": "c11",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A general, testable claim about UV ray strength during specific daytime hours."
+    },
+    {
+      "claim_id": "c12",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A testable, measurable claim comparing UVA ray exposure from tanning beds to the sun."
+    }
+  ]
+}

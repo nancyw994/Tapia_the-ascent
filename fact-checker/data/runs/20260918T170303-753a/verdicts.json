@@ -1,0 +1,60 @@
+{
+  "verdicts": [
+    {
+      "claim_id": "c01",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "No independent sources were retrieved for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c02",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "The model's verdict could not be read; treat this claim as unchecked.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c03",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "No independent sources were retrieved for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c04",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "No independently-verified source (fetched, correctly attributed, relevant) was found for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c05",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "No independently-verified source (fetched, correctly attributed, relevant) was found for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c06",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "No independently-verified source (fetched, correctly attributed, relevant) was found for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c07",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "The model's verdict could not be read; treat this claim as unchecked.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c08",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "No independently-verified source (fetched, correctly attributed, relevant) was found for this claim.",
+      "supporting_source_ids": []
+    }
+  ]
+}

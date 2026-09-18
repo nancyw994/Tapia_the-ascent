@@ -124,16 +124,27 @@ def stream_api(model: str, system: str, user: str, on_token) -> str:
         extra_body={"models": [model, *cfg.FALLBACK_MODELS]},
     )
     parts: list[str] = []
+    finished = False
     for chunk in stream:
         if not chunk.choices:
             continue
-        delta = chunk.choices[0].delta
-        # Providers that expose a separate thinking channel send it as `reasoning`.
+        choice = chunk.choices[0]
+        delta = choice.delta
+        if finished and (getattr(delta, "content", None) or getattr(delta, "reasoning", None)):
+            # OpenRouter's model fallback can restart generation mid-stream (e.g. the
+            # primary model errors out partway through). That looks like a second,
+            # separate reply arriving after the first already finished — concatenating
+            # it onto `parts` would produce two full JSON objects back to back with no
+            # separator, which fails to parse. Keep only the reply that's still in progress.
+            parts = []
+            finished = False
         if thought := (getattr(delta, "reasoning", None) or ""):
             on_token(thought, True)
         if text := (getattr(delta, "content", None) or ""):
             parts.append(text)
             on_token(text, False)
+        if getattr(choice, "finish_reason", None):
+            finished = True
     return "".join(parts)
 
 

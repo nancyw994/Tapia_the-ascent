@@ -1,0 +1,108 @@
+{
+  "verdicts": [
+    {
+      "claim_id": "c01",
+      "verdict": "unverifiable",
+      "confidence": 0,
+      "reason": "No independently-verified source (fetched, correctly attributed, relevant) was found for this claim. 1 reprint(s) of this essay were dropped.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c02",
+      "verdict": "supported",
+      "confidence": 70,
+      "reason": "Sources from cancer.org and skincancer.org confirm that UV radiation exposure, including sunburns and sun damage, is linked to increased melanoma risk. While the snippets discuss UV rays generally rather than isolating UVB specifically, this aligns with established medical consensus that UVB is a primary contributor to skin cancer risk including melanoma.",
+      "supporting_source_ids": [
+        "c02_s3",
+        "c02_s5"
+      ]
+    },
+    {
+      "claim_id": "c03",
+      "verdict": "unverifiable",
+      "confidence": 0,
+      "reason": "No independently-verified source (fetched, correctly attributed, relevant) was found for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c04",
+      "verdict": "supported",
+      "confidence": 75,
+      "reason": "The skincancer.org snippet confirms the standard SPF-to-UVB-blocking percentage scale (SPF15 ~93%), which corresponds to the widely cited figure that SPF 30 blocks about 97% of UVB rays. The snippet directly addresses the percentage claim, supporting the accuracy of the stated figure.",
+      "supporting_source_ids": [
+        "c04_s3"
+      ]
+    },
+    {
+      "claim_id": "c05",
+      "verdict": "unverifiable",
+      "confidence": 0,
+      "reason": "No independently-verified source (fetched, correctly attributed, relevant) was found for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c06",
+      "verdict": "unverifiable",
+      "confidence": 0,
+      "reason": "No independently-verified source (fetched, correctly attributed, relevant) was found for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c07",
+      "verdict": "unverifiable",
+      "confidence": 0,
+      "reason": "No independently-verified source (fetched, correctly attributed, relevant) was found for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c08",
+      "verdict": "supported",
+      "confidence": 92,
+      "reason": "AAD explicitly recommends choosing a broad-spectrum sunscreen with SPF 30 or higher, matching the claim exactly. Skincancer.org corroborates that higher SPF broad-spectrum products offer more protection.",
+      "supporting_source_ids": [
+        "c08_s1",
+        "c08_s5"
+      ]
+    },
+    {
+      "claim_id": "c09",
+      "verdict": "supported",
+      "confidence": 72,
+      "reason": "The skincancer.org source confirms the specific quantity described — two tablespoons, equivalent to a shot glass — as the recommended amount of sunscreen for exposed skin. However, the snippet does not mention the 30-minute-before-going-outside timing detail, so that portion is unverified by this source alone.",
+      "supporting_source_ids": [
+        "c09_s1"
+      ]
+    },
+    {
+      "claim_id": "c10",
+      "verdict": "supported",
+      "confidence": 75,
+      "reason": "The AAD source confirms reapplying sunscreen roughly every two hours, or more often after swimming or sweating, matching the claim's guidance. The claim's added detail about outdoor sports aligns with the general sweating/activity caveat mentioned.",
+      "supporting_source_ids": [
+        "c10_s2"
+      ]
+    },
+    {
+      "claim_id": "c11",
+      "verdict": "unverifiable",
+      "confidence": 0,
+      "reason": "No independently-verified source (fetched, correctly attributed, relevant) was found for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c12",
+      "verdict": "unverifiable",
+      "confidence": 0,
+      "reason": "No independently-verified source (fetched, correctly attributed, relevant) was found for this claim.",
+      "supporting_source_ids": []
+    }
+  ],
+  "coverage": {
+    "claims_found": 12,
+    "claims_checked": 12,
+    "reprints_dropped": 1,
+    "independent_enough": 12,
+    "pending_review": 7,
+    "human_reviewed": 0
+  }
+}

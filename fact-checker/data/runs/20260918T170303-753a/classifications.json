@@ -1,0 +1,52 @@
+{
+  "classifications": [
+    {
+      "claim_id": "c01",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "This describes a specific interview with a named individual, Dr. Amy Kassouf."
+    },
+    {
+      "claim_id": "c02",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "This is a testable scientific statement about UVB rays and cancer risk."
+    },
+    {
+      "claim_id": "c03",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "This is a testable, measurable claim about sunscreen SPF effectiveness."
+    },
+    {
+      "claim_id": "c04",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "This is a testable claim about the measurable effect of sunscreen on burn time."
+    },
+    {
+      "claim_id": "c05",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "This is a testable scientific statement about melanocyte cell function, attributed to a source."
+    },
+    {
+      "claim_id": "c06",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "This refers to a general scientific finding from a review of studies, not one specific event."
+    },
+    {
+      "claim_id": "c07",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "This is a general, testable recommendation regarding sunscreen application."
+    },
+    {
+      "claim_id": "c08",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "This is a testable, measurable comparative claim about UVA ray exposure from tanning beds."
+    }
+  ]
+}

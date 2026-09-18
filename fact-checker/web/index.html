@@ -112,6 +112,10 @@
     .src .score { font-weight: 700; color: var(--sc); font-size: 1.05rem; align-self: center; text-align: center; }
     .src a { font-weight: 600; font-size: 0.9rem; color: var(--ink); }
     .src.cited { outline: 2px solid var(--sc); }
+    .src.untrusted { opacity: 0.62; }
+    .src.untrusted a { color: var(--muted); text-decoration: line-through; }
+    .badge-unverified { display: inline-block; font-size: 0.68rem; font-weight: 700; color: #b42318; background: #fef3f2; border: 1px solid #fecdca; border-radius: 999px; padding: 0.05rem 0.5rem; margin-left: 0.3rem; }
+    .badge-tier { display: inline-block; font-size: 0.68rem; font-weight: 600; color: var(--blue); background: #eff4ff; border-radius: 999px; padding: 0.05rem 0.5rem; margin-left: 0.3rem; }
     details summary { cursor: pointer; font-size: 0.82rem; color: var(--blue); margin-top: 0.5rem; }
 
     .bar { height: 6px; background: #eaecf0; border-radius: 3px; flex: 1; min-width: 60px; overflow: hidden; }
@@ -774,13 +778,25 @@ function relevanceColor(score) {
 }
 
 function sourceHtml(s, cited) {
-  const col = relevanceColor(s.relevance_score);
+  // A stance/relevance score is just the model's read of a search snippet — it says nothing
+  // about whether the source can actually be trusted. `eligible` is the real gate: it means
+  // the page was fetched, its domain checked against our trust tiers, and relevant text found.
+  // Only eligible sources can ever be cited into a verdict (see steps.py _decide()); an
+  // ineligible one showing "supports" here is the model's opinion of unverified text, not
+  // evidence, so it must never look as credible as a verified source.
+  const untrusted = s.eligible === false;
+  const col = untrusted ? { solid: "#98a2b3", tint: "#98a2b31f" } : relevanceColor(s.relevance_score);
   const href = /^https?:\/\//i.test(s.url) ? s.url : "#";
   const score = (s.relevance_score > 0 ? "+" : "") + s.relevance_score;
-  return `<div class="src ${cited ? "cited" : ""}" style="--sc:${col.solid};--sc-bg:${col.tint}">
+  const badge = untrusted
+    ? `<span class="badge-unverified">${esc(s.exclusion_reason || "not independently verified")}</span>`
+    : s.tier_name
+    ? `<span class="badge-tier">${esc(s.tier_name)}</span>`
+    : "";
+  return `<div class="src ${cited ? "cited" : ""} ${untrusted ? "untrusted" : ""}" style="--sc:${col.solid};--sc-bg:${col.tint}">
     <div class="score">${score}</div>
     <div><a href="${esc(href)}" target="_blank" rel="noopener">${esc(s.title)}</a>
-      <div class="meta">${esc(s.publisher)} · ${esc(s.date || "date unknown")} · ${esc(s.stance.replace("_", " "))}${cited ? " · <b>cited in verdict</b>" : ""}</div>
+      <div class="meta">${esc(s.publisher)} · ${esc(s.date || "date unknown")} · ${esc(s.stance.replace("_", " "))}${badge}${cited ? " · <b>cited in verdict</b>" : ""}</div>
       <p class="why">${esc(s.reason)}</p></div></div>`;
 }
 
