@@ -1,0 +1,86 @@
+# Source-of-truth ranking. The searcher tags every hit with a tier; the comparator
+# weights evidence by it. Lower tier number = more authoritative.
+
+version: 1
+
+tiers:
+  1:
+    name: government_official
+    description: Government agencies, courts, regulators, central banks, official statistics offices, primary filings.
+    weight: 1.0
+    examples:
+      - "*.gov"
+      - "*.gov.uk"
+      - "europa.eu"
+      - "sec.gov"
+      - "federalreserve.gov"
+      - "bls.gov"
+      - "courtlistener.com"
+    notes: Also the primary source for an attribution claim (the speaker's own post, transcript, or filing).
+
+  2:
+    name: peer_reviewed
+    description: Journals, conference proceedings, preprints from established labs, official benchmark leaderboards.
+    weight: 0.9
+    examples:
+      - "nature.com"
+      - "science.org"
+      - "arxiv.org"
+      - "aclanthology.org"
+      - "openreview.net"
+      - "pubmed.ncbi.nlm.nih.gov"
+    notes: Preprints get 0.8 unless a published version is found.
+
+  3:
+    name: wire_major_press
+    description: Wire services and major newspapers or broadcasters with editorial standards and corrections policies.
+    weight: 0.75
+    examples:
+      - "reuters.com"
+      - "apnews.com"
+      - "bloomberg.com"
+      - "ft.com"
+      - "wsj.com"
+      - "nytimes.com"
+      - "washingtonpost.com"
+      - "bbc.com"
+      - "theinformation.com"
+    notes: Opinion sections of these outlets count as tier 5.
+
+  4:
+    name: company_blog
+    description: A company or lab writing about itself. Launch posts, model cards, press releases, investor decks.
+    weight: 0.6
+    examples:
+      - "openai.com/blog"
+      - "anthropic.com/news"
+      - "blog.google"
+      - "*.prnewswire.com"
+    notes: Primary for "the company announced X"; weak for "the product does X well".
+
+  5:
+    name: other
+    description: Everything else. Personal blogs, social media, forums, aggregators, Wikipedia, unknown domains.
+    weight: 0.3
+    examples:
+      - "medium.com"
+      - "substack.com"
+      - "x.com"
+      - "reddit.com"
+      - "wikipedia.org"
+    notes: Wikipedia may be used to locate a tier 1-3 citation but is never itself the evidence.
+
+# Domain overrides. The searcher checks these before falling back to pattern matching.
+overrides:
+  "x.com": 5
+  "twitter.com": 5
+  "wikipedia.org": 5
+  "arxiv.org": 2
+  "huggingface.co/papers": 2
+  "lmarena.ai": 2
+  "sec.gov": 1
+
+# What to do when a claim's only evidence is tier 4 or 5.
+low_tier_policy:
+  max_confidence: low
+  require_agreement: 2        # at least two independent tier-5 sources before counting as evidence at all

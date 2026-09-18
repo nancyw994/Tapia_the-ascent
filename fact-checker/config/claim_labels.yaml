@@ -1,0 +1,57 @@
+# The three labels from the brief. The classifier assigns exactly one per claim.
+# Only `verifiable` claims proceed to search. The other two stop at classification
+# and go straight to the annotator.
+
+version: 1
+
+labels:
+  supported_in_text:
+    description: >
+      The essay itself supplies the evidence for the claim: a linked source, a quoted
+      document, a table, or a worked example that a reader can inspect without leaving
+      the page. The claim is checkable, but the check is "does the essay's own support
+      actually say this?", not "is it true in the world?"
+    decision_rule:
+      - the claim has an inline citation, link, footnote, or quoted primary material
+      - AND that material, read on its own, states or directly implies the claim
+    proceeds_to_search: false
+    proceeds_to_verifier: true        # the verifier spot-checks that the cited support really says it
+    badge: supported_in_text
+    badge_text: "Supported in text"
+    required_fields:
+      - support_excerpt               # the sentence(s) in the essay that supply the evidence
+      - support_url                   # the link, if any
+
+  verifiable:
+    description: >
+      A factual claim that could be checked against external evidence, and the essay does
+      not supply that evidence itself. This is the label that triggers search.
+    decision_rule:
+      - the claim is a fact about the world (see claim_definition.md)
+      - AND it is specific enough that a search could confirm or refute it
+      - AND the essay does not already cite adequate support
+    proceeds_to_search: true
+    proceeds_to_verifier: true
+    badge: assigned_by_comparator     # supported / contradicted / mixed / unverified
+    required_fields:
+      - search_hint                   # one line: what would settle this claim
+
+  opinion:
+    description: >
+      A judgement, prediction, preference, or piece of rhetoric. Nothing to verify.
+      Forecasts fall here for pipeline purposes but keep `type: forecast` so the
+      annotator can give them a distinct badge.
+    decision_rule:
+      - the statement is evaluative, predictive, or rhetorical
+      - OR it is too vague for any search to settle
+    proceeds_to_search: false
+    proceeds_to_verifier: false
+    badge: opinion
+    badge_text: "Opinion"
+    forecast_badge_text: "Forecast"
+
+# When the classifier cannot decide between two labels.
+tie_breaks:
+  - if the essay cites something but the citation does not clearly support the claim, use `verifiable`
+  - if a claim is factual but hopelessly vague, use `opinion` and set `vague: true`
+  - if a forecast rests on a checkable premise, emit the premise as a separate `verifiable` claim

@@ -1,0 +1,76 @@
+# Claim types. The extractor assigns exactly one type per claim.
+# The searcher uses `search_strategy` to build queries; the comparator uses
+# `evidence_needed` to decide what counts as a match.
+
+version: 1
+
+types:
+  empirical_scientific:
+    description: >
+      A statement about how the world works that is settled (or contested) by research:
+      scientific findings, benchmark results, technical capabilities, measurements.
+    examples:
+      - "GPT-class models can now pass the bar exam."
+      - "Transformer inference cost has fallen tenfold since 2022."
+    evidence_needed: peer-reviewed paper, official benchmark report, or replication
+    search_strategy:
+      - search the exact finding plus the name of the benchmark or study
+      - prefer arxiv, journal, and lab-report domains
+      - check publication date against the essay date
+
+  event:
+    description: >
+      Something that happened at a particular time and place: a launch, an announcement,
+      a resignation, a court ruling, a deal.
+    examples:
+      - "OpenAI released a new model in January."
+      - "The company laid off 10% of staff last week."
+    evidence_needed: contemporaneous reporting from a wire service or major outlet, or the primary announcement
+    search_strategy:
+      - search the actor plus the action plus the approximate date
+      - prefer primary announcement, then wire services
+      - record the event date, not just the article date
+
+  statistic:
+    description: >
+      A number, rate, ranking, or quantity presented as fact. Includes vague quantities
+      ("most", "the majority") when they imply a measurable proportion.
+    examples:
+      - "Unemployment is 3.9%."
+      - "Over half of Fortune 500 companies use the tool."
+    evidence_needed: the original dataset, report, or survey that produced the number
+    search_strategy:
+      - search the number plus its subject and unit
+      - find the originating source, not a secondary quotation of it
+      - note the measurement period and methodology
+
+  attribution:
+    description: >
+      A claim that a named person or organization said, wrote, or believes something.
+      Verified by whether the quote or paraphrase is accurate and in context.
+    examples:
+      - "Sam Altman said AGI is a few thousand days away."
+      - "The Fed chair warned that rates would stay high."
+    evidence_needed: the primary transcript, post, filing, or interview; secondary reporting only as fallback
+    search_strategy:
+      - search the exact quoted phrase in quotation marks
+      - search the speaker plus the topic if the exact phrase fails
+      - check surrounding context for misquotation
+
+  forecast:
+    description: >
+      A prediction about the future. Cannot be verified now. Extracted so the annotator can
+      flag it, and so its premise (if any) can be pulled out as a separate claim.
+    examples:
+      - "By 2030 most white-collar work will be automated."
+      - "This will be the biggest shift since the internet."
+    evidence_needed: none; not sent to search
+    search_strategy: []
+
+# How the extractor should break ties when a claim fits more than one type.
+precedence:
+  - attribution     # "X said [number]" is an attribution first; the number is a separate claim
+  - statistic
+  - event
+  - empirical_scientific
+  - forecast
