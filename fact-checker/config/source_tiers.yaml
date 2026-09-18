@@ -1,4 +1,10 @@
 # Lower number = more trusted. Tier 0 cannot support a verdict.
+#
+# Loaded at runtime by pipeline/source_verification.py (SourcePolicy). Reprint
+# detection (tier 0) also runs dynamically per-run from --essay-url and content
+# overlap, so the hosts below are a backstop, not the only reprint signal.
+# `can_support: false` (tiers 0 and 5) means a hit at that tier can never, by
+# itself, back a SUPPORTED/CONTRADICTED verdict — it can only corroborate.
 
 tiers:
   0:
@@ -14,25 +20,55 @@ tiers:
       snippet_is_essay_quote: true
   1:
     name: official
-    description: Government, lab, or first-party product docs.
+    description: >
+      Government/intergovernmental bodies (any country), international health
+      authorities, major nonprofit medical/scientific institutions, and
+      first-party lab/product docs.
     can_support: true
     match:
       hosts:
+        - .gov
+        - .gov.uk
+        - .gov.au
+        - .gc.ca
+        - .govt.nz
+        - .europa.eu
+        - who.int
+        - ecdc.europa.eu
+        - nhs.uk
+        - mayoclinic.org
+        - aad.org
         - metr.org
         - openai.com
         - anthropic.com
-        - .gov
-        - who.int
   2:
     name: peer_reviewed
-    description: Papers, system cards used as primary technical notes.
+    description: >
+      Peer-reviewed papers and indices of peer-reviewed literature — treated
+      as primary technical/scientific sources.
     can_support: true
     match:
       hosts:
         - arxiv.org
+        - ncbi.nlm.nih.gov
+        - pubmed.ncbi.nlm.nih.gov
+        - scholar.google.com
+        - doi.org
+        - nature.com
+        - science.org
+        - sciencedirect.com
+        - cell.com
+        - pnas.org
+        - nejm.org
+        - thelancet.com
+        - jamanetwork.com
+        - bmj.com
+        - cochranelibrary.com
+        - springer.com
+        - onlinelibrary.wiley.com
   3:
     name: major_press
-    description: Wire and major press that is NOT reprinting the essay.
+    description: Wire services and major press that is NOT reprinting the essay.
     can_support: true
     match:
       hosts:
@@ -43,17 +79,38 @@ tiers:
         - fortune.com
         - businessinsider.com
         - the-decoder.com
+        - cnn.com
+        - bbc.com
+        - bbc.co.uk
+        - npr.org
+        - washingtonpost.com
+        - theguardian.com
+        - wsj.com
   4:
     name: company_blog
-    description: Corporate or founder blogs other than the essay.
+    description: Corporate or founder blogs other than the essay. Not yet populated per-project.
     can_support: true
   5:
     name: other
-    description: Wikipedia, social, random blogs. Corroborate only.
+    description: Wikipedia, social, random/unvetted blogs. Corroborate only, never sole support.
     can_support: false
 
 independence:
   min_sources: 2
   min_distinct_hosts: 2
+  # A single eligible source at or above this trust tier (lower = more trusted,
+  # see `tiers` above) is sufficient on its own — official/peer-reviewed sources
+  # don't need a second corroborating hit the way a company blog would.
+  single_source_min_tier: 2
+  single_source_confidence_cap: 0.75
   reject_if_all_tier_0: true
   reject_if_snippet_contains_full_claim: true
+
+retrieval:
+  max_redirects: 4
+  max_document_bytes: 2000000
+  respect_robots_txt: true
+  accepted_content_types:
+    - text/html
+    - application/xhtml+xml
+    - text/plain

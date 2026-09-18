@@ -1,0 +1,201 @@
+{
+  "essay_id": "sunscreen_tanning_clevelandclinic",
+  "essay_path": "fact-checker\\data\\essays\\sunscreen_tanning_clevelandclinic.txt",
+  "essay_url": "https://health.clevelandclinic.org/does-sunscreen-prevent-tanning",
+  "generated_at": "2026-09-18T20:20:04.412096+00:00",
+  "agent": "pipeline/04_compare.py + anthropic/claude-sonnet-5",
+  "claims": [
+    {
+      "id": "c01",
+      "quote": "we asked dermatologist Amy Kassouf, MD, to share why your skin still darkens with sunscreen",
+      "taxonomy": "attribution",
+      "char_start": 671,
+      "label": "supported_in_text",
+      "proceeds_to_search": false,
+      "verdict": "opinion",
+      "confidence": 0.7,
+      "sources": [],
+      "why": "Classification was not verifiable; no lookup."
+    },
+    {
+      "id": "c02",
+      "quote": "sunscreen — even with the highest sun protection factor (SPF) — can't block all ultraviolet (UV) light.",
+      "taxonomy": "attribution",
+      "char_start": 881,
+      "label": "verifiable",
+      "proceeds_to_search": true,
+      "verdict": "unverifiable",
+      "confidence": 0.4,
+      "sources": [
+        {
+          "url": "https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/sun-protection-factor-spf",
+          "title": "Sun Protection Factor (SPF) | FDA",
+          "quote": "The https:// ensures that you are connecting to the official website and that any information you provide is encrypted and transmitted securely. Search Menu Home About FDA FDA Organization Center for Drug Evaluation and Research (CDER) Sun Protection Factor (SPF) Center for Drug Evaluation and Research (CDER) In this section Sun Protection Factor (SPF) SPF is a measure of how much solar energy (UV radiation) is required to produce sunburn on protected skin (i.e., in the presence of sunscreen) relative to the amount of solar energy required to produce sunburn on unprotected skin.",
+          "tier": 1,
+          "tier_name": "official"
+        }
+      ],
+      "why": "The FDA snippet only defines SPF as a measure of solar energy needed to cause sunburn, without stating that no SPF level can block all UV light."
+    },
+    {
+      "id": "c03",
+      "quote": "sunscreen with an SPF of 30 blocks about 97% of the sun's UVB rays",
+      "taxonomy": "statistic",
+      "char_start": 1692,
+      "label": "verifiable",
+      "proceeds_to_search": true,
+      "verdict": "supported",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://www.aad.org/media/stats-sunscreen",
+          "title": "Sunscreen FAQs",
+          "quote": "Is a high-number SPF better than a low-number one? Dermatologists recommend using a sunscreen with an SPF of at least 30, which blocks 97% of the sun's UVB rays.",
+          "tier": 1,
+          "tier_name": "official"
+        }
+      ],
+      "why": "The AAD's official Sunscreen FAQs page states that SPF 30 sunscreen blocks 97% of the sun's UVB rays, matching the claim exactly."
+    },
+    {
+      "id": "c04",
+      "quote": "it should take 30 times longer for your skin to burn with this level of sunscreen than without it",
+      "taxonomy": "statistic",
+      "char_start": 1771,
+      "label": "verifiable",
+      "proceeds_to_search": true,
+      "verdict": "unverifiable",
+      "confidence": 0.35,
+      "sources": [],
+      "why": "No eligible independent sources were retrieved."
+    },
+    {
+      "id": "c05",
+      "quote": "You'll still tan or burn with sunscreen,\" states Dr. Kassouf. \"But skin damage occurs more slowly.",
+      "taxonomy": "attribution",
+      "char_start": 2355,
+      "label": "verifiable",
+      "proceeds_to_search": true,
+      "verdict": "unverifiable",
+      "confidence": 0.35,
+      "sources": [],
+      "why": "No eligible independent sources were retrieved."
+    },
+    {
+      "id": "c06",
+      "quote": "When you expose your skin to the sun, melanocyte cells in your body make more melanin [a pigment in skin, hair and eyes] to protect against burning,\" says Dr. Kassouf.",
+      "taxonomy": "attribution",
+      "char_start": 2627,
+      "label": "verifiable",
+      "proceeds_to_search": true,
+      "verdict": "unverifiable",
+      "confidence": 0.35,
+      "sources": [],
+      "why": "No eligible independent sources were retrieved."
+    },
+    {
+      "id": "c07",
+      "quote": "This increase in melanin causes skin to darken into a tan.",
+      "taxonomy": "empirical",
+      "char_start": 2796,
+      "label": "verifiable",
+      "proceeds_to_search": true,
+      "verdict": "unverifiable",
+      "confidence": 0.35,
+      "sources": [],
+      "why": "No eligible independent sources were retrieved."
+    },
+    {
+      "id": "c08",
+      "quote": "A review of studies found no link between sunscreen use and vitamin D deficiency",
+      "taxonomy": "statistic",
+      "char_start": 3816,
+      "label": "verifiable",
+      "proceeds_to_search": true,
+      "verdict": "unverifiable",
+      "confidence": 0.35,
+      "sources": [],
+      "why": "No eligible independent sources were retrieved."
+    },
+    {
+      "id": "c09",
+      "quote": "foods and supplements are safer ways to get the nutrient without putting yourself at risk for skin cancer, says Dr. Kassouf",
+      "taxonomy": "attribution",
+      "char_start": 4255,
+      "label": "verifiable",
+      "proceeds_to_search": true,
+      "verdict": "unverifiable",
+      "confidence": 0.1,
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s41598-020-70078-y",
+          "title": "25-Hydroxyvitamin D status, vitamin D intake, and skin cancer risk: a systematic review and dose–response meta-analysis of prospective studies | Scientific Reports",
+          "quote": "In the meantime, to ensure continued support, we are displaying the site without styles and JavaScript. View all journals Saved research Search Log in Content Explore content About the journal Publish with us Sign up for alerts RSS feed 25-Hydroxyvitamin D status, vitamin D intake, and skin cancer risk: a systematic review and dose–response meta-analysis of prospective studies Download PDF Download PDF Article Open access Published: 04 August 2020 25-Hydroxyvitamin D status, vitamin D intake, and skin cancer risk: a systematic review and dose–response meta-analysis of prospective studies Yahya Mahamat-Saleh 1 , 2 , Dagfinn Aune ORCID: orcid.org/0000-0002-4533-1722 3 , 4 , 5 & Sabrina Schlesinger 6 Scientific Reports volume 10 , Article number: 13151 ( 2020 ) Cite this article Save article View saved research 16k Accesses 35 Altmetric Metrics details Abstract Sun exposure is a major environmental risk factor for skin cancers and is also an important source of vitamin D.",
+          "tier": 2,
+          "tier_name": "peer_reviewed"
+        }
+      ],
+      "why": "The provided snippet is from an unrelated meta-analysis on vitamin D and skin cancer risk and does not include any quote or attribution from a Dr. Kassouf about foods/supplements being safer sources of the nutrient."
+    },
+    {
+      "id": "c10",
+      "quote": "Apply two tablespoons (the size of a shot glass) of sunscreen 30 minutes before going outside.",
+      "taxonomy": "empirical",
+      "char_start": 4557,
+      "label": "verifiable",
+      "proceeds_to_search": true,
+      "verdict": "unverifiable",
+      "confidence": 0.35,
+      "sources": [],
+      "why": "No eligible independent sources were retrieved."
+    },
+    {
+      "id": "c11",
+      "quote": "If you really want to look tan, try self-tanning products,\" advises Dr. Kassouf.",
+      "taxonomy": "attribution",
+      "char_start": 5220,
+      "label": "verifiable",
+      "proceeds_to_search": true,
+      "verdict": "unverifiable",
+      "confidence": 0.35,
+      "sources": [],
+      "why": "No eligible independent sources were retrieved."
+    },
+    {
+      "id": "c12",
+      "quote": "skip tanning beds, which expose you to 10 times more UVA rays than the sun",
+      "taxonomy": "statistic",
+      "char_start": 5506,
+      "label": "verifiable",
+      "proceeds_to_search": true,
+      "verdict": "unverifiable",
+      "confidence": 0.35,
+      "sources": [],
+      "why": "No eligible independent sources were retrieved."
+    },
+    {
+      "id": "c13",
+      "quote": "tanning pills and nasal tanning sprays, which can pose significant health risks",
+      "taxonomy": "empirical",
+      "char_start": 5596,
+      "label": "verifiable",
+      "proceeds_to_search": true,
+      "verdict": "unverifiable",
+      "confidence": 0.35,
+      "sources": [],
+      "why": "No eligible independent sources were retrieved."
+    },
+    {
+      "id": "c14",
+      "quote": "there's no such thing as a safe or healthy tan from sun exposure",
+      "taxonomy": "rhetoric",
+      "char_start": 5152,
+      "label": "opinion",
+      "proceeds_to_search": false,
+      "verdict": "opinion",
+      "confidence": 0.7,
+      "sources": [],
+      "why": "Classification was not verifiable; no lookup."
+    }
+  ]
+}

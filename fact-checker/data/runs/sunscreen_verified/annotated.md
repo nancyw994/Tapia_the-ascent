@@ -1,0 +1,181 @@
+# sunscreen_tanning_clevelandclinic
+
+Agent: pipeline/04_compare.py + anthropic/claude-sonnet-5
+
+## c01 — OPINION
+> we asked dermatologist Amy Kassouf, MD, to share why your skin still darkens with sunscreen
+
+Classification was not verifiable; no lookup.
+
+## c02 — UNVERIFIABLE
+> sunscreen — even with the highest sun protection factor (SPF) — can't block all ultraviolet (UV) light.
+
+The FDA snippet only defines SPF as a measure of solar energy needed to cause sunburn, without stating that no SPF level can block all UV light.
+
+## c03 — SUPPORTED
+> sunscreen with an SPF of 30 blocks about 97% of the sun's UVB rays
+
+The AAD's official Sunscreen FAQs page states that SPF 30 sunscreen blocks 97% of the sun's UVB rays, matching the claim exactly.
+
+## c04 — UNVERIFIABLE
+> it should take 30 times longer for your skin to burn with this level of sunscreen than without it
+
+No eligible independent sources were retrieved.
+
+## c05 — UNVERIFIABLE
+> You'll still tan or burn with sunscreen," states Dr. Kassouf. "But skin damage occurs more slowly.
+
+No eligible independent sources were retrieved.
+
+## c06 — UNVERIFIABLE
+> When you expose your skin to the sun, melanocyte cells in your body make more melanin [a pigment in skin, hair and eyes] to protect against burning," says Dr. Kassouf.
+
+No eligible independent sources were retrieved.
+
+## c07 — UNVERIFIABLE
+> This increase in melanin causes skin to darken into a tan.
+
+No eligible independent sources were retrieved.
+
+## c08 — UNVERIFIABLE
+> A review of studies found no link between sunscreen use and vitamin D deficiency
+
+No eligible independent sources were retrieved.
+
+## c09 — UNVERIFIABLE
+> foods and supplements are safer ways to get the nutrient without putting yourself at risk for skin cancer, says Dr. Kassouf
+
+The provided snippet is from an unrelated meta-analysis on vitamin D and skin cancer risk and does not include any quote or attribution from a Dr. Kassouf about foods/supplements being safer sources of the nutrient.
+
+## c10 — UNVERIFIABLE
+> Apply two tablespoons (the size of a shot glass) of sunscreen 30 minutes before going outside.
+
+No eligible independent sources were retrieved.
+
+## c11 — UNVERIFIABLE
+> If you really want to look tan, try self-tanning products," advises Dr. Kassouf.
+
+No eligible independent sources were retrieved.
+
+## c12 — UNVERIFIABLE
+> skip tanning beds, which expose you to 10 times more UVA rays than the sun
+
+No eligible independent sources were retrieved.
+
+## c13 — UNVERIFIABLE
+> tanning pills and nasal tanning sprays, which can pose significant health risks
+
+No eligible independent sources were retrieved.
+
+## c14 — OPINION
+> there's no such thing as a safe or healthy tan from sun exposure
+
+Classification was not verifiable; no lookup.
+
+## Essay
+
+How Sunscreen Affects Tanning
+
+March 11, 2025/Health Conditions/Skin Care & Beauty
+
+You can still get a tan (a sign of skin damage) while wearing sunscreen.
+
+Here comes the sun! That warmth beaming down from the sky feels delightful — and the urge to soak up those rays may convince you to expose a little more skin than usual to get that sun-kissed glow.
+
+But just as you're tempted to skip sunscreen, your brain reminds you of some not-so-great consequences of that decision:
+
+- Painful, blistering sunburn
+- Skin cancer
+- Wrinkles
+
+So, as you wisely slather on sunscreen, a question comes to mind: Will you get any color at all?
+
+The answer: Probably.
+
+To learn more, we asked dermatologist Amy Kassouf, MD, to share why your skin still darkens with sunscreen — and why that might not necessarily be a good thing.
+
+Why do you tan when you use sunscreen?
+
+You get a tan because "sunscreen — even with the highest sun protection factor (SPF) — can't block all ultraviolet (UV) light."
+
+Two types of UV light can affect your skin: UVA and UVB.
+
+UVA rays
+
+UVA rays penetrate deep into your skin. These rays make you tan. But they can also make you burn. Damage from UVA rays can cause:
+
+- Basal cell and squamous cell carcinomas
+- Freckles
+- Hyperpigmentation
+- Melasma and melasma mustache
+- Premature skin aging (photoaging)
+- Skin cancer
+- Sunspots and age spots
+
+UVB rays
+
+UVB rays mostly affect your skin's top layer (epidermis). These rays cause sunburn. UVB rays also increase your risk for skin cancers, like melanoma.
+
+Does SPF prevent tanning?
+
+SPF measures how long it takes UVB rays (and only UVB rays) to cause sunburn when wearing sunscreen versus going without.
+
+As an example, sunscreen with an SPF of 30 blocks about 97% of the sun's UVB rays. This means it should take 30 times longer for your skin to burn with this level of sunscreen than without it.
+
+Of course, that's assuming you apply enough sunscreen (most of us don't). And that you hit all areas (most of us overlook certain body parts). And that you reapply frequently (another task that most of us fail).
+
+Only broad-spectrum sunscreens protect against both UVB rays that cause sunburns and UVA rays that cause tanning. The higher the broad-spectrum SPF, the higher the UVA and UVB protection.
+
+But even if you ace Sunscreen Application 101, some rays still affect your skin. "You'll still tan or burn with sunscreen," states Dr. Kassouf. "But skin damage occurs more slowly."
+
+Is tanning bad for your skin even if you use sunscreen?
+
+Yes. Regardless of whether you wear sunscreen, a suntan is a sign of skin damage. And this damage is permanent.
+
+"When you expose your skin to the sun, melanocyte cells in your body make more melanin [a pigment in skin, hair and eyes] to protect against burning," says Dr. Kassouf. "This increase in melanin causes skin to darken into a tan."
+
+Can you wear sunscreen over a tan?
+
+Yes. Even if you have a tan, you should wear sunscreen anytime you're exposed to UV light because it's still possible to get too much UV exposure and develop a sunburn.
+
+Plus, certain medications can make your skin more sensitive to the sun's rays.
+
+Applying sunscreen every day — whether you're headed to the beach or the office — is the best way to lower your risk of skin cancer, sunburn and wrinkles. This sunscreen rule applies equally to people of color, who can also experience the harmful effects of UV radiation, including skin cancer and hyperpigmentation.
+
+The two main types of sunscreen — mineral and chemical — protect your skin in slightly different ways:
+
+- Mineral sunscreen creates a physical barrier so the UV rays can't penetrate your skin.
+- Chemical sunscreen has chemicals that keep UV rays from penetrating deep into your skin.
+
+Won't wearing sunscreen over a tan lead to vitamin D deficiency?
+
+No. A review of studies found no link between sunscreen use and vitamin D deficiency — which is good news. That's because your body needs vitamin D for strong bones and a healthy immune system.
+
+Your body makes vitamin D by absorbing UVB rays, which (as we mentioned) still get through even when you wear sunscreen. You don't need to allow even more to get through by skipping the sunscreen.
+
+If you're concerned about a vitamin D deficiency, foods and supplements are safer ways to get the nutrient without putting yourself at risk for skin cancer, says Dr. Kassouf.
+
+Protect your skin from the sun
+
+To prevent suntans and sunburns, follow these steps when applying sunscreen:
+
+- Choose a broad-spectrum sunscreen with an SPF of at least 30.
+- Apply two tablespoons (the size of a shot glass) of sunscreen 30 minutes before going outside.
+- Reapply the same amount of sunscreen every two hours or more frequently if you're in or near water, playing outdoor sports or sweating a lot.
+
+These skin-protective tips can also help lower your risk of sun damage:
+
+- Limit time outdoors between 10 a.m. and 3 p.m. when UV rays are strongest.
+- Seek shade under a beach umbrella, canopy or tree.
+- Wear sun-protective clothing, wide-brimmed hats and sunglasses.
+
+The safest way to tan
+
+While you might like the way your skin looks when it darkens, there's no such thing as a safe or healthy tan from sun exposure.
+
+"If you really want to look tan, try self-tanning products," advises Dr. Kassouf.
+
+Spray tans are another option, although the chemicals can trigger skin irritation or allergic reactions. It's also important not to inhale the chemicals during your tanning session.
+
+But whatever you do, skip tanning beds, which expose you to 10 times more UVA rays than the sun. And say no to tanning pills and nasal tanning sprays, which can pose significant health risks.
+

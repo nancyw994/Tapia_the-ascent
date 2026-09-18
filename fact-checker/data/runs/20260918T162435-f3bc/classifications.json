@@ -1,0 +1,76 @@
+{
+  "classifications": [
+    {
+      "claim_id": "c01",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "General testable statement about health effects of UVA ray damage."
+    },
+    {
+      "claim_id": "c02",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "General testable statement about UVB rays and skin cancer risk."
+    },
+    {
+      "claim_id": "c03",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "General testable statement defining how SPF works scientifically."
+    },
+    {
+      "claim_id": "c04",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "Testable measurable claim about SPF 30 blocking a specific percentage of UVB rays."
+    },
+    {
+      "claim_id": "c05",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "Testable measurable claim about sunscreen extending time to burn."
+    },
+    {
+      "claim_id": "c06",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "General testable statement about broad-spectrum sunscreen protection."
+    },
+    {
+      "claim_id": "c07",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "Attributed quote from a specific named person, Dr. Kassouf."
+    },
+    {
+      "claim_id": "c08",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "Attributed quote from a specific named person, Dr. Kassouf, explaining melanin production."
+    },
+    {
+      "claim_id": "c09",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "Refers to a specific study review finding on sunscreen and vitamin D deficiency."
+    },
+    {
+      "claim_id": "c10",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "General testable statement about spray tans and skin reactions."
+    },
+    {
+      "claim_id": "c11",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "General testable measurable claim comparing UVA exposure from tanning beds to the sun."
+    },
+    {
+      "claim_id": "c12",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "General testable statement about health risks of tanning pills and nasal sprays."
+    }
+  ]
+}
