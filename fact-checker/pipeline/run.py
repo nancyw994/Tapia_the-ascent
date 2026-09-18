@@ -20,6 +20,17 @@ def call(script: str, args: list[str]) -> None:
     subprocess.run(cmd, check=True)
 
 
+def require_openai() -> None:
+    try:
+        import openai  # noqa: F401
+    except ModuleNotFoundError:
+        venv = ROOT.parent / ".venv" / "bin" / "python3"
+        sys.exit(
+            "No module named 'openai'. Use the project venv, not system Python:\n"
+            f"  {venv} fact-checker/pipeline/run.py"
+        )
+
+
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--essay", type=Path, default=ROOT / "data/essays/shumer_2026-02-09.md")
@@ -29,6 +40,7 @@ def main() -> None:
     p.add_argument("--base-url", default="http://127.0.0.1:11434/v1")
     p.add_argument("--max-verify", type=int, default=8)
     args = p.parse_args()
+    require_openai()
 
     run_dir = ROOT / "data" / "runs" / args.run_id
     run_dir.mkdir(parents=True, exist_ok=True)

@@ -29,8 +29,8 @@ Open http://127.0.0.1:8000
 
 The agent-started server does **not** inherit a key you exported in another tab. Restart the server in the terminal where you ran `export`. You can also put `OPENROUTER_API_KEY=...` in a gitignored `.env` next to this README.
 
-CLI without the webpage (local Ollama):
+CLI without the webpage (local Ollama). Use the venv so `openai` is installed:
 
 ```bash
-python3 fact-checker/pipeline/run.py
+.venv/bin/python3 fact-checker/pipeline/run.py
 ```
