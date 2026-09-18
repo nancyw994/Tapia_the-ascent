@@ -1,0 +1,76 @@
+{
+  "classifications": [
+    {
+      "claim_id": "c01",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "General testable claim about UVB rays increasing skin cancer risk."
+    },
+    {
+      "claim_id": "c02",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "Defines a measurable concept (SPF) in general scientific terms."
+    },
+    {
+      "claim_id": "c03",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "States a measurable statistic about SPF 30's UVB blocking ability."
+    },
+    {
+      "claim_id": "c04",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "General testable claim about relative burn time with sunscreen."
+    },
+    {
+      "claim_id": "c05",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "General claim about the protective scope of broad-spectrum sunscreens."
+    },
+    {
+      "claim_id": "c06",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "Quoted statement conveys a general testable fact about sunscreen limitations, not a specific event."
+    },
+    {
+      "claim_id": "c07",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "General claim that tanning indicates skin damage regardless of sunscreen use."
+    },
+    {
+      "claim_id": "c08",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "General testable claim about permanence of skin damage."
+    },
+    {
+      "claim_id": "c09",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "Quoted statement explains a general biological mechanism, not tied to a specific event."
+    },
+    {
+      "claim_id": "c10",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "General claim about UV effects on people of color."
+    },
+    {
+      "claim_id": "c11",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "General finding from research about sunscreen and vitamin D, no specific study named."
+    },
+    {
+      "claim_id": "c12",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "General comparative claim about UVA exposure from tanning beds versus sun."
+    }
+  ]
+}

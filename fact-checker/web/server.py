@@ -185,7 +185,9 @@ def run_step(session: dict, step: str) -> dict:
     elif step == "classify":
         result = steps.classify_claims(data["claims"], emit=emit)
     elif step == "sources":
-        result = steps.find_sources(data["claims"], session["log"], emit=emit, essay_url=session.get("essay_url") or "")
+        result = steps.find_sources(
+            data["claims"], session["log"], emit=emit, essay_text=session["article"], essay_url=session.get("essay_url") or ""
+        )
     else:
         result = steps.decide_verdicts(data["claims"], data["evidence"], emit=emit)
     for later in DATA_ORDER[DATA_ORDER.index(key) :]:

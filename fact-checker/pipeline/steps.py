@@ -204,7 +204,9 @@ def _rank(claim: dict, hits: list[dict], model: str, emit: Emit = None) -> dict[
         return {}  # unscored sources are still shown, flagged as such
 
 
-def _sources_for(claim: dict, queries: list[str], log_path: Path, model: str, emit: Emit = None, essay_url: str = "") -> list[dict]:
+def _sources_for(
+    claim: dict, queries: list[str], log_path: Path, model: str, emit: Emit = None, essay_text: str = "", essay_url: str = ""
+) -> list[dict]:
     cid = claim["claim_id"]
     note = (lambda text: emit({"task": f"search-{cid}", "label": f"{cid}: searching the web", "type": "note", "text": text})) if emit else _silent
     seen: set[str] = set()
@@ -261,7 +263,12 @@ def _sources_for(claim: dict, queries: list[str], log_path: Path, model: str, em
 
 
 def find_sources(
-    claims: list[dict], log_path: Path, model: str = DEFAULT_MODEL, emit: Emit = None, essay_url: str = ""
+    claims: list[dict],
+    log_path: Path,
+    model: str = DEFAULT_MODEL,
+    emit: Emit = None,
+    essay_text: str = "",
+    essay_url: str = "",
 ) -> list[dict]:
     plan = _ask(
         "plan_queries.md",
@@ -278,7 +285,8 @@ def find_sources(
         planned = plan.get(claim["claim_id"]) or []
         queries = [str(q).strip() for q in planned if str(q).strip()][:2] or [claim["sentence"][:120]]
         try:
-            return {"claim_id": claim["claim_id"], "sources": _sources_for(claim, queries, log_path, model, emit, essay_url)}
+            sources = _sources_for(claim, queries, log_path, model, emit, essay_text, essay_url)
+            return {"claim_id": claim["claim_id"], "sources": sources}
         except Exception as exc:  # noqa: BLE001  one claim failing must not sink the others
             return {"claim_id": claim["claim_id"], "sources": [], "error": f"{type(exc).__name__}: {exc}"}
 
