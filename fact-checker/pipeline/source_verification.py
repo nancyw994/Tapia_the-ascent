@@ -194,6 +194,47 @@ class SourcePolicy:
         return tuple(self.retrieval.get("accepted_content_types", TEXT_CONTENT_TYPES))
 
 
+def independent_hits(hits: list[dict]) -> list[dict]:
+    """Verified hits (see SourceVerifier.verify) that are eligible to support a verdict,
+    deduped to one per publisher domain. Shared by every entry point (CLI pipeline, web UI)
+    so "what counts as independent evidence" is defined once.
+    """
+    kept = []
+    seen_publishers: set[str] = set()
+    for hit in hits:
+        if not hit.get("eligible"):
+            continue
+        publisher = hit.get("publisher") or hit.get("host") or hit.get("final_url") or hit.get("url")
+        if not publisher or publisher in seen_publishers:
+            continue
+        seen_publishers.add(publisher)
+        kept.append(hit)
+    return kept
+
+
+def sufficient_evidence(independent: list[dict], policy: SourcePolicy) -> bool:
+    """≥min_sources independent hits, OR exactly one hit trusted enough to stand alone."""
+    if len(independent) >= policy.min_sources:
+        return True
+    single_tier = policy.independence.get("single_source_min_tier")
+    if single_tier is not None and len(independent) == 1:
+        tier = independent[0].get("tier")
+        return tier is not None and tier <= single_tier
+    return False
+
+
+def cap_single_source_confidence(confidence: float, independent: list[dict], policy: SourcePolicy, scale: float = 1.0) -> float:
+    """Cap confidence when a verdict rests on exactly one (still-eligible) source.
+
+    Call only after `sufficient_evidence` has passed. `scale` converts the policy's
+    0-1 cap to a caller's own confidence scale (e.g. 100 for a 0-100 scale).
+    """
+    if len(independent) >= policy.min_sources:
+        return confidence
+    cap = float(policy.independence.get("single_source_confidence_cap", 0.0)) * scale
+    return min(confidence, cap)
+
+
 class SourceVerifier:
     """Fetch pages with SSRF/redirect/content limits and create evidence records."""
 
