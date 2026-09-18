@@ -1,0 +1,413 @@
+{
+  "evidence": [
+    {
+      "claim_id": "c01",
+      "sources": [
+        {
+          "title": "About that Matt Shumer post that has nearly 50 million views",
+          "publisher": "Gary Marcus (Substack)",
+          "date": "2026-02-11",
+          "url": "https://garymarcus.substack.com/p/about-that-matt-shumer-post-that",
+          "relevance_score": 100,
+          "stance": "supports",
+          "reason": "The snippet directly states, \"All morning people have been asking me about a blog post by Matt Shumer that has gone viral,\" matching the claim exactly.",
+          "snippet": "Feb 11, 2026 · All morning people have been asking me about a blog post by Matt Shumer that has gone viral, with nearly 50 million views on X. It’s a masterpiece of hype, written in the style of the old direct marketing campaigns, with bold-faced call outs like “I know this is real because it happened to me first” and “I am no longer needed for the ...",
+          "source_id": "c01_s1"
+        },
+        {
+          "title": "The flawed assumptions behind Matt Shumer’s viral X post on ...",
+          "publisher": "Fortune",
+          "date": "2026-02-12",
+          "url": "https://fortune.com/2026/02/12/matt-shumers-viral-blog-about-ais-looming-impact-on-knowledge-workers-is-based-on-flawed-assumptions/",
+          "relevance_score": 85,
+          "stance": "supports",
+          "reason": "The snippet says Matt Shumer wrote a viral blog on X that received more than 55 million views, corroborating that his post had gone viral.",
+          "snippet": "Feb 12, 2026 · AI Influencer Matt Shumer penned a viral blog on X about AI’s potential to disrupt, and ultimately automate, almost all knowledge work that has racked up more than 55 million views in the...",
+          "source_id": "c01_s2"
+        },
+        {
+          "title": "Matt Shumer’s viral blog about AI’s looming impact on ...",
+          "publisher": "Yahoo Finance",
+          "date": "2026-02-12",
+          "url": "https://finance.yahoo.com/news/matt-shumer-viral-blog-ai-180322170.html?fr=sycsrp_catchall",
+          "relevance_score": 85,
+          "stance": "supports",
+          "reason": "The snippet reports that Matt Shumer penned a viral blog on X with more than 55 million views, supporting the claim that the post had gone viral.",
+          "snippet": "Feb 12, 2026 · AI Influencer Matt Shumer penned a viral blog on X about AI's potential to disrupt, and ultimately automate, almost all knowledge work that has racked up more than 55 million views in the past 24 ...",
+          "source_id": "c01_s3"
+        },
+        {
+          "title": "Investor Matt Shumer says viral essay wasn't meant to scare ...",
+          "publisher": "CNBC",
+          "date": "2026-02-13",
+          "url": "https://www.cnbc.com/2026/02/13/investor-matt-shumer-says-viral-essay-wasnt-meant-to-scare-people.html",
+          "relevance_score": 75,
+          "stance": "partially_supports",
+          "reason": "The snippet calls Shumer's essay viral and says it spread across platforms, but it does not address the speaker being asked about it all morning.",
+          "snippet": "Feb 13, 2026 · Investor Matt Shumer published a viral essay on social media this week that warned about the disruptive potential of AI. The essay exploded across platforms like Elon Musk's X, racking up...",
+          "source_id": "c01_s4"
+        },
+        {
+          "title": "Matt Shumer's Viral AI Post—50M views in 72h— Exemplifies the ...",
+          "publisher": "Thinking Through AI (Substack)",
+          "date": "2026-02-12",
+          "url": "https://thinkingthroughai.substack.com/p/matt-shumers-viral-ai-post50m-views",
+          "relevance_score": 70,
+          "stance": "partially_supports",
+          "reason": "The snippet describes Matt Shumer's post as viral and says it received 50 million views in 72 hours, but does not mention people asking the speaker about it all morning.",
+          "snippet": "Feb 12, 2026 · Deja Vu: a sensationalist post steeped in the ecosystem goes viral to everyone else. It's misleading, but also makes points that deserve even more attention.",
+          "source_id": "c01_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c02",
+      "sources": [
+        {
+          "title": "“I Am No Longer Needed” — AI CEO’s Warning Hits 80M Views but ...",
+          "publisher": "GigaNectar",
+          "date": "2026-02-18",
+          "url": "https://giganectar.com/matt-shumer-ai-viral-essay-gpt-5-2-metr-benchmark-job-disruption-2026/",
+          "relevance_score": 45,
+          "stance": "partially_supports",
+          "reason": "The snippet attributes the quote “I am no longer needed for the actual technical work of my job” to the essay but does not describe its direct-marketing style or the other quoted callout.",
+          "snippet": "Feb 18, 2026 · His core claim: AI crossed a threshold where he could describe a software product in plain English, walk away, and return hours later to find it built — tested, functional, and requiring no corrections. “I am no longer needed for the actual technical work of my job,” he stated in the essay.",
+          "source_id": "c02_s1"
+        },
+        {
+          "title": "Matt Shumer's Essay on AI's Disruptive Power Draws 80 Million ...",
+          "publisher": "AllBlogThings",
+          "date": "2026-02-14",
+          "url": "https://www.allblogthings.com/2026/02/matt-shumers-essay-on-ais-disruptive-power-draws-80-million-views-on-x.html",
+          "relevance_score": 40,
+          "stance": "partially_supports",
+          "reason": "The snippet quotes “I am no longer needed for the actual technical work of my job” from the viral article but does not support the assertion that it is written like an old direct-marketing campaign or include the other quote.",
+          "snippet": "Feb 14, 2026 · \"I am no longer needed for the actual technical work of my job,\" he stated in the now-viral AI article and added further: \"I describe what I want built, in plain English, and it just appears.",
+          "source_id": "c02_s2"
+        },
+        {
+          "title": "“I am no longer needed for the actual technical work of my ...",
+          "publisher": "LinkedIn",
+          "date": null,
+          "url": "https://www.linkedin.com/posts/transformation-nomads_i-am-no-longer-needed-for-the-actual-technical-activity-7428036116726898688-Jovo",
+          "relevance_score": 20,
+          "stance": "partially_supports",
+          "reason": "The snippet repeats one of the claim's quoted lines but offers no evidence about the essay's overall style or hype.",
+          "snippet": "In education? “I am no longer needed for the actual technical work of my job.” At that moment, the conversation can no longer be about tools. It must be about purpose. About leadership...",
+          "source_id": "c02_s3"
+        },
+        {
+          "title": "AI Won't End Software Engineering — It Will Transform It",
+          "publisher": "Quillette",
+          "date": "2026-02-16",
+          "url": "https://quillette.com/2026/02/16/keep-calm-and-adapt-ai-matt-shumer-automation/",
+          "relevance_score": 10,
+          "stance": "context",
+          "reason": "The snippet identifies Matt Shumer's viral AI essay and characterizes it as part of a history of technological fear, but does not substantiate the claimed writing style or quotations.",
+          "snippet": "Feb 16, 2026 · Matt Shumer’s viral essay about AI is part of a long history of fear produced by technological change. Software can now write software better than even the most advanced human experts. And where software has gone, the other learned professions will follow.",
+          "source_id": "c02_s4"
+        },
+        {
+          "title": "Pyramids of Fear: I Am No Longer Needed for the Actual ...",
+          "publisher": "LinkedIn",
+          "date": "2026-03-12",
+          "url": "https://www.linkedin.com/pulse/pyramids-fear-i-am-longer-needed-actual-technical-work-alex-curiman-nieme",
+          "relevance_score": 5,
+          "stance": "context",
+          "reason": "The snippet says Matt Shumer's Fortune piece was jolting and compares the AI boom with February 2020, but does not address the claimed direct-marketing style or quoted language.",
+          "snippet": "Mar 12, 2026 · Matt Shumer’s recent Fortune piece jolted me. He compares the current artificial‑intelligence boom to February 2020, when only a few people were talking about a virus and within weeks the...",
+          "source_id": "c02_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c03",
+      "sources": [
+        {
+          "title": "Matt Shumer's Viral AI Post—50M views in 72h— Exemplifies the ...",
+          "publisher": "Thinking Through AI",
+          "date": "2026-02-12",
+          "url": "https://thinkingthroughai.substack.com/p/matt-shumers-viral-ai-post50m-views",
+          "relevance_score": 20,
+          "stance": "partially_supports",
+          "reason": "The snippet gives an anecdotal example of the latest Claude making spreadsheet errors, but it does not establish whether he provided data for his claim about coding systems.",
+          "snippet": "Feb 12, 2026 · I am currently using the latest model of Claude, the same version the author is basing his post on, and just today, multiple times, it filled in a spreadsheet I asked it to process, overwriting a column I needed, after struggling to complete it, with irrelevant data I never asked for.",
+          "source_id": "c03_s1"
+        },
+        {
+          "title": "The flawed assumptions behind Matt Shumer’s viral X post on ...",
+          "publisher": "Fortune",
+          "date": "2026-02-12",
+          "url": "https://fortune.com/2026/02/12/matt-shumers-viral-blog-about-ais-looming-impact-on-knowledge-workers-is-based-on-flawed-assumptions/",
+          "relevance_score": 5,
+          "stance": "context",
+          "reason": "The title characterizes Matt Shumer's post as based on flawed assumptions, but the snippet does not say whether it contains actual data supporting error-free complex-app development.",
+          "snippet": "Feb 12, 2026 · AI Influencer Matt Shumer penned a viral blog on X about AI’s potential to disrupt, and ultimately automate, almost all knowledge work that has racked up more than 55 million views in the...",
+          "source_id": "c03_s2"
+        },
+        {
+          "title": "The flawed assumptions behind Matt Shumer’s viral X post on ...",
+          "publisher": "WDC TV",
+          "date": "2026-02-12",
+          "url": "https://wdctv.news/the-flawed-assumptions-behind-matt-shumers-viral-x-post-on-ais-looming-impact/",
+          "relevance_score": 5,
+          "stance": "context",
+          "reason": "The title calls Shumer's post flawed, but the snippet does not state whether he supplied data for the specific claim about error-free app creation.",
+          "snippet": "Feb 12, 2026 · AI Influencer Matt Shumer penned a viral blog on X about AI’s potential to disrupt, and ultimately automate, almost all knowledge work that has racked up more than 55 million views in the past 24 hours.",
+          "source_id": "c03_s3"
+        },
+        {
+          "title": "Matt Shumer’s viral blog about AI’s looming impact on ...",
+          "publisher": "Yahoo Finance",
+          "date": "2026-02-12",
+          "url": "https://finance.yahoo.com/news/matt-shumer-viral-blog-ai-180322170.html?fr=sycsrp_catchall",
+          "relevance_score": 0,
+          "stance": "context",
+          "reason": "The snippet describes Shumer's viral post about AI automating knowledge work but does not address evidence for coding systems writing complex apps without errors.",
+          "snippet": "Feb 12, 2026 · AI Influencer Matt Shumer penned a viral blog on X about AI's potential to disrupt, and ultimately automate, almost all knowledge work that has racked up more than 55 million views in the...",
+          "source_id": "c03_s4"
+        }
+      ]
+    },
+    {
+      "claim_id": "c04",
+      "sources": [
+        {
+          "title": "Measuring AI Ability to Complete Long Tasks - arXiv.org",
+          "publisher": "arXiv",
+          "date": "2025-03-18",
+          "url": "https://arxiv.org/html/2503.14499v1",
+          "relevance_score": 75,
+          "stance": "partially_supports",
+          "reason": "The snippet explicitly says the metric is a 50%-task-completion time horizon for tasks models complete with a 50% success rate, but does not say the tasks are only coding tasks.",
+          "snippet": "Mar 18, 2025 · To quantify the capabilities of AI systems in terms of human capabilities, we propose a new metric: 50%-task-completion time horizon. This is the time humans typically take to complete tasks that AI models can complete with 50% success rate.",
+          "source_id": "c04_s1"
+        },
+        {
+          "title": "Measuring AI Ability to Complete Long Tasks | METR",
+          "publisher": "METR",
+          "date": null,
+          "url": "https://metr.theo-bearman.com/dashboard.html",
+          "relevance_score": 70,
+          "stance": "partially_supports",
+          "reason": "The snippet states that a 50% time horizon means a model succeeds 50% of the time, but it does not establish the benchmark's task domain.",
+          "snippet": "A 50% time horizon of 4 hours means the model succeeds 50% of the time on tasks that take skilled humans 4 hours to complete. Key Limitations: Individual model estimates have wide confidence intervals (~2x in each direction).",
+          "source_id": "c04_s2"
+        },
+        {
+          "title": "Task-Completion Time Horizons of Frontier AI Models - METR",
+          "publisher": "METR",
+          "date": "2026-05-08",
+          "url": "https://metr.org/time-horizons/",
+          "relevance_score": 65,
+          "stance": "partially_supports",
+          "reason": "The snippet explicitly defines the 50%-time horizon as the duration at which an agent succeeds half the time, but does not state that the benchmark is limited to coding.",
+          "snippet": "May 8, 2026 · The task-completion time horizon is the task duration (measured by human expert completion time) at which an AI agent is predicted to succeed with a given level of reliability. For example, the 50%-time horizon is the duration at which an agent is predicted to succeed half the time.",
+          "source_id": "c04_s3"
+        },
+        {
+          "title": "Measuring AI Ability to Complete Long Software Tasks - METR",
+          "publisher": "METR",
+          "date": "2025-03-19",
+          "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
+          "relevance_score": 55,
+          "stance": "partially_supports",
+          "reason": "The title identifies the work as measuring long software tasks, supporting the coding-specific scope, but the snippet does not mention the 50% correctness criterion.",
+          "snippet": "Mar 19, 2025 · We propose measuring AI performance in terms of the length of tasks AI agents can complete. We show that this metric has been consistently exponentially increasing over the past 6 years, with a doubling time of around 7 months.",
+          "source_id": "c04_s4"
+        },
+        {
+          "title": "METR: Measuring AI Ability to Complete Long Tasks — LessWrong",
+          "publisher": "LessWrong",
+          "date": "2025-03-19",
+          "url": "https://www.lesswrong.com/posts/deesrjitvXM4xYGZd/metr-measuring-ai-ability-to-complete-long-tasks",
+          "relevance_score": 35,
+          "stance": "partially_supports",
+          "reason": "The snippet describes METR's metric for the length of tasks agents can complete, but does not mention either the 50% success threshold or a coding-only scope.",
+          "snippet": "Mar 19, 2025 · Summary: We propose measuring AI performance in terms of the length of tasks AI agents can complete. We show that this metric has been consistently exponentially increasing over the past 6 years, with a doubling time of around 7 months.",
+          "source_id": "c04_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c05",
+      "sources": [
+        {
+          "title": "Measuring AI Ability to Complete Long Tasks | METR",
+          "publisher": "METR",
+          "date": null,
+          "url": "https://metr.theo-bearman.com/dashboard.html",
+          "relevance_score": 20,
+          "stance": "partially_supports",
+          "reason": "The snippet limits the benchmarks to software and research tasks and says performance varies across domains, which supports caution about a universal claim but does not establish five-hour reliability levels.",
+          "snippet": "Performance varies dramatically across domains — these benchmarks focus on software and research tasks. The long-term trend slope is more robust than specific model measurements.",
+          "source_id": "c05_s1"
+        },
+        {
+          "title": "Task-Completion Time Horizons of Frontier AI Models - METR",
+          "publisher": "METR",
+          "date": "2026-05-08",
+          "url": "https://metr.org/time-horizons/",
+          "relevance_score": 15,
+          "stance": "context",
+          "reason": "The snippet describes estimating frontier-agent success probabilities by human task duration, but provides no result about universal reliable performance on five-hour tasks.",
+          "snippet": "May 8, 2026 · To estimate the time horizons of frontier AI agents, we first estimate the duration it takes a human expert to complete each of our tasks. For each agent, we fit a logistic curve to predict the probability it successfully completes tasks as a function of human task duration.",
+          "source_id": "c05_s2"
+        },
+        {
+          "title": "Measuring AI Ability to Complete Long Software Tasks - METR",
+          "publisher": "METR",
+          "date": "2025-03-19",
+          "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
+          "relevance_score": 10,
+          "stance": "context",
+          "reason": "The snippet says AI task-completion length has increased exponentially, but does not assess whether any system can reliably perform every five-hour task humans can do without error.",
+          "snippet": "Mar 19, 2025 · We propose measuring AI performance in terms of the length of tasks AI agents can complete. We show that this metric has been consistently exponentially increasing over the past 6 years, with a doubling time of around 7 months.",
+          "source_id": "c05_s3"
+        },
+        {
+          "title": "MirrorCode: Evidence AI can already do some weeks-long coding ...",
+          "publisher": "Epoch AI",
+          "date": "2026-04-10",
+          "url": "https://epoch.ai/publications/mirrorcode-preliminary-results",
+          "relevance_score": 5,
+          "stance": "context",
+          "reason": "The snippet reports preliminary benchmarking of some weeks-long coding tasks, which does not show that an AI can reliably complete every five-hour task humans can do.",
+          "snippet": "Apr 10, 2026 · These are preliminary results, full results can be seen in a follow-up here. We present early results from MirrorCode, a benchmark (co-developed with METR) of long-horizon coding tasks derived from real software applications.",
+          "source_id": "c05_s4"
+        },
+        {
+          "title": "Measuring AI Ability to Complete Long Tasks",
+          "publisher": "Rivista AI",
+          "date": "2025-08",
+          "url": "https://www.rivista.ai/wp-content/uploads/2025/08/2503.14499v2.pdf",
+          "relevance_score": 5,
+          "stance": "context",
+          "reason": "The snippet discusses supplementary trend-validation experiments, without addressing universal error-free or near-error-free AI performance on five-hour tasks.",
+          "snippet": "To investigate the applicability of our results to other benchmarks, and to real task distributions, we performed four supplementary experiments. First, we check whether the 2023-2025 trend without the SWAA dataset retrodicts the trend since 2019, and find that the trends agree.",
+          "source_id": "c05_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c06",
+      "sources": [
+        {
+          "title": "[2507.09089] Measuring the Impact of Early-2025 AI on ...A randomized trial by METR found that experienced developers ...METR Study: AI Coding Tools Made Devs 19% Slower in 2025Measuring the Impact of Early-2025 AI on Experienced Open ...METR Flips From -19% Slower to +18% Faster With AI",
+          "publisher": "arXiv",
+          "date": "2025-07-12",
+          "url": "https://arxiv.org/abs/2507.09089",
+          "relevance_score": 75,
+          "stance": "partially_supports",
+          "reason": "The snippet says METR developers forecast that AI would reduce completion time by 24%, while the result title reports they were 19% slower, but it does not mention Shumer or whether he ignored the study.",
+          "snippet": "Jul 12, 2025 · Each task is randomly assigned to allow or disallow usage of early 2025 AI tools. When AI tools are allowed, developers primarily use Cursor Pro, a popular code editor, and Claude 3.5/3.7 Sonnet. Before starting tasks, developers forecast that allowing AI will reduce completion time by 24%. Jul 11, 2026 · In a randomized controlled trial posted in July 2025, METR reported that exper",
+          "source_id": "c06_s1"
+        },
+        {
+          "title": "A randomized trial by METR found that experienced developers ...",
+          "publisher": "ScienceBlog",
+          "date": "2026-07-11",
+          "url": "https://scienceblog.com/t-a-randomized-trial-by-metr-found-that-experienced-developers-completed-real-coding-tasks-19-slower-when-allowed-to-use-ai-tools-yet-afterwards-they-estimated-on-average-that-ai-had-made-them-20-fast/",
+          "relevance_score": 70,
+          "stance": "partially_supports",
+          "reason": "The title says developers later estimated AI made them 20% faster, while the snippet says the METR trial found they took 19% longer, but it does not address Shumer.",
+          "snippet": "Jul 11, 2026 · In a randomized controlled trial posted in July 2025, METR reported that experienced open-source developers took 19% longer to complete real coding tasks when they were allowed to use AI tools.",
+          "source_id": "c06_s2"
+        },
+        {
+          "title": "METR Flips From -19% Slower to +18% Faster With AI",
+          "publisher": "Value Add VC",
+          "date": "2026-07-10",
+          "url": "https://valueaddvc.com/blog/ai-coding-productivity-study-data-what-metr-mckinsey-and-github-actually-found-in-2026",
+          "relevance_score": 35,
+          "stance": "context",
+          "reason": "The snippet reports that METR found developers 19% slower using AI in early 2025, but it does not describe developers imagining productivity gains or Shumer ignoring the study.",
+          "snippet": "Jul 10, 2026 · METR's own randomized controlled trial found experienced developers were 19% slower using AI coding tools in early 2025 — and the same research group now estimates those developers are 18% faster a year later.",
+          "source_id": "c06_s3"
+        },
+        {
+          "title": "METR Study: AI Coding Tools Made Devs 19% Slower in 2025",
+          "publisher": "Particula",
+          "date": "2026-03-13",
+          "url": "https://particula.tech/blog/ai-coding-tools-developer-productivity-paradox",
+          "relevance_score": 30,
+          "stance": "context",
+          "reason": "The snippet identifies a July 2025 METR randomized trial on experienced developer productivity but does not state that developers perceived gains despite losing productivity or mention Shumer.",
+          "snippet": "Mar 13, 2026 · In July 2025, METR (a nonprofit AI research organization) published results from a randomized controlled trial, the gold standard of research methodology, measuring how AI coding tools affect experienced developer productivity. The study ran from February to June 2025, and its design was meticulous.",
+          "source_id": "c06_s4"
+        },
+        {
+          "title": "Measuring the Impact of Early-2025 AI on Experienced Open ...",
+          "publisher": "METR",
+          "date": null,
+          "url": "https://metr.org/Early_2025_AI_Experienced_OS_Devs_Study-paper.pdf",
+          "relevance_score": 20,
+          "stance": "context",
+          "reason": "The snippet describes METR's randomized trial design and participants but provides no findings about perceived versus actual productivity or Shumer.",
+          "snippet": "To directly measure the impact of AI tools on developer productivity, we conduct a randomized controlled trial by having 16 developers complete 246 tasks (2.0 hours on average) on well-known open-source repositories (23,000 stars on average) they regularly contribute to.",
+          "source_id": "c06_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c07",
+      "sources": [
+        {
+          "title": "AI Coding Assistant Statistics 2026: Adoption & Trust | Uvik ...",
+          "publisher": "Uvik",
+          "date": "2026-09-03",
+          "url": "https://uvik.net/blog/ai-coding-assistant-statistics/",
+          "relevance_score": 40,
+          "stance": "supports",
+          "reason": "States that trust in AI coding output accuracy is declining even as usage rises, indicating users do not view it as usually perfect.",
+          "snippet": "Sep 3, 2026 · AI coding assistants have shifted from optional tools to routine infrastructure for a large share of developers, with adoption continuing to rise in 2025–2026. Usage and trust are moving in opposite directions: more developers use AI coding tools, but fewer say they trust the output to be accurate.",
+          "source_id": "c07_s1"
+        },
+        {
+          "title": "AI Code Assistant Statistics 2026: Copilot, Cursor and Claude ...",
+          "publisher": "Konabayev",
+          "date": "2026-05-10",
+          "url": "https://konabayev.com/blog/ai-code-assistant-statistics-2026/",
+          "relevance_score": 15,
+          "stance": "context",
+          "reason": "Covers general statistics on trust and risk in AI coding tools but snippet lacks specific claim about 'usually perfect' sentiment.",
+          "snippet": "May 10, 2026 · Source-backed 2026 AI code assistant statistics on developer adoption, Copilot, Cursor, Claude Code, agents, productivity, trust and risk.",
+          "source_id": "c07_s2"
+        },
+        {
+          "title": "AI Coding Tool Adoption 2026: Developer Survey Results",
+          "publisher": "Digital Applied",
+          "date": "2026-04-13",
+          "url": "https://www.digitalapplied.com/blog/ai-coding-tool-adoption-2026-developer-survey",
+          "relevance_score": 10,
+          "stance": "partially_supports",
+          "reason": "Mentions a gap between benchmark leaderboards and production reality, suggesting AI coding isn't perfect, but doesn't directly address user reports.",
+          "snippet": "Apr 13, 2026 · Between January and March 2026, Digital Applied surveyed 2,847 developers across 320 agencies and in-house engineering teams to measure how AI coding tools are actually being adopted, how time is spent in AI-assisted workflows, and where the gap between benchmark leaderboards and production reality is widening.",
+          "source_id": "c07_s3"
+        },
+        {
+          "title": "10,000 Developers Ranked Their AI Coding Tools: The JetBrains ...",
+          "publisher": "AgentMarketCap",
+          "date": "2026-04-14",
+          "url": "https://agentmarketcap.ai/blog/2026/04/14/jetbrains-ai-pulse-survey-developer-coding-tool-adoption-2026",
+          "relevance_score": 10,
+          "stance": "context",
+          "reason": "Notes high adoption and varying satisfaction among developers but does not directly confirm or deny users saying it's 'usually perfect'.",
+          "snippet": "Apr 14, 2026 · JetBrains surveyed 10,000+ developers across 8 languages — 90% use AI tools at work, but satisfaction leaders aren't who you'd expect.",
+          "source_id": "c07_s4"
+        },
+        {
+          "title": "AI Coding Toolbox — Survey Results - by Eleanor Berger",
+          "publisher": "elite-ai-assisted-coding.dev",
+          "date": "2025-09-24",
+          "url": "https://elite-ai-assisted-coding.dev/p/ai-coding-toolbox-survey-results",
+          "relevance_score": 5,
+          "stance": "context",
+          "reason": "General survey results on AI coding tools with no mention of user perceptions of perfection or reliability.",
+          "snippet": "Sep 24, 2025 · Below we report each category in the order presented, including adoption and the most-used tools. All results are reported as percentage of participants responding to the category or item.",
+          "source_id": "c07_s5"
+        }
+      ]
+    }
+  ]
+}

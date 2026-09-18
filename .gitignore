@@ -5,3 +5,6 @@ __pycache__/
 *.db
 .env
 fact-checker/.env
+
+# local demo accounts: password hashes and sign-in tokens
+fact-checker/data/users.json

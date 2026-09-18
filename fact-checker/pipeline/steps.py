@@ -97,16 +97,43 @@ def article_coverage(claims: list[dict], evidence: list[dict], verdicts: list[di
 
 _log_lock = threading.Lock()  # claims are searched in threads; keep ledger entries whole
 
+# Called with one event dict per start / token / note / end, for the live view in the browser.
+Emit = Callable[[dict], None] | None
 
-def _ask(prompt: str, payload, model: str, parse: Callable, is_ok: Callable, tries: int = 2):
-    """Call the model, parse the reply, and retry a malformed reply instead of degrading silently."""
+
+def _silent(kind: str, **fields) -> None:
+    pass
+
+
+def _ask(
+    prompt: str,
+    payload,
+    model: str,
+    parse: Callable,
+    is_ok: Callable,
+    tries: int = 2,
+    emit: Emit = None,
+    task: str = "",
+    label: str = "",
+):
+    """Call the model, parse the reply, and retry a malformed reply instead of degrading silently.
+
+    With `emit`, the reply is streamed so the page can show it arriving token by token.
+    """
     text = payload if isinstance(payload, str) else json.dumps(payload, ensure_ascii=False)
+    say = (lambda kind, **f: emit({"task": task, "label": label, "type": kind, **f})) if emit else _silent
+    on_token = (lambda chunk, thinking: say("token", text=chunk, reasoning=thinking)) if emit else None
+    say("start")
     reply = ""
-    for _ in range(tries):
-        reply = chat(make_client(API_BACKEND), model, load_prompt(prompt), text)
+    for attempt in range(tries):
+        if attempt:
+            say("note", text="That reply could not be parsed — asking again.")
+        reply = chat(make_client(API_BACKEND), model, load_prompt(prompt), text, on_token=on_token)
         data = parse(reply)
         if is_ok(data):
+            say("end")
             return data
+    say("end", failed=True)
     raise RuntimeError(f"{prompt}: no usable reply after {tries} tries; last reply: {reply[:200]!r}")
 
 
@@ -138,7 +165,7 @@ def _locate(article: str, sentence: str) -> tuple[int, int] | None:
 
 
 def article_windows(article: str, size: int = WINDOW_CHARS, overlap: int = WINDOW_OVERLAP) -> list[str]:
-    """Split a long article so later paragraphs are not dropped by a single 12-claim cap."""
+    """Split a long article so later paragraphs are not dropped by a single-pass cap."""
     text = article or ""
     n = len(text)
     if n <= size:
@@ -154,8 +181,7 @@ def article_windows(article: str, size: int = WINDOW_CHARS, overlap: int = WINDO
                 end = cut + 1 if cut >= start + 800 else end
             else:
                 end = cut
-        chunk = text[start:end].strip()
-        if chunk:
+        if text[start:end].strip():
             windows.append(text[start:end])
         if end >= n:
             break
@@ -190,9 +216,10 @@ def _renumber_claims(article: str, claims: list[dict]) -> list[dict]:
     return out
 
 
-def extract_claims(article: str, model: str = DEFAULT_MODEL) -> list[dict]:
+def extract_claims(article: str, model: str = DEFAULT_MODEL, emit: Emit = None) -> list[dict]:
     found: list[tuple[tuple[int, int], str]] = []
-    for window in article_windows(article):
+    windows = article_windows(article)
+    for i, window in enumerate(windows, start=1):
         if len(found) >= MAX_CLAIMS:
             break
         try:
@@ -202,6 +229,9 @@ def extract_claims(article: str, model: str = DEFAULT_MODEL) -> list[dict]:
                 model,
                 extract_json_array,
                 lambda d: isinstance(d, list),
+                emit=emit,
+                task=f"extract-{i}",
+                label=f"Reading section {i} of {len(windows)}",
             )
         except RuntimeError:
             continue
@@ -259,10 +289,10 @@ def drop_claim(article: str, claims: list[dict], claim_id: str) -> list[dict]:
     return _renumber_claims(article, kept)
 
 
-# --- Step 4: classify each claim -----------------------------------------------------
 
 
-def classify_claims(claims: list[dict], model: str = DEFAULT_MODEL) -> list[dict]:
+
+def classify_claims(claims: list[dict], model: str = DEFAULT_MODEL, emit: Emit = None) -> list[dict]:
     payload = [{"claim_id": c["claim_id"], "sentence": c["sentence"]} for c in claims]
     expected = {c["claim_id"] for c in claims}
 
@@ -270,7 +300,16 @@ def classify_claims(claims: list[dict], model: str = DEFAULT_MODEL) -> list[dict
         rows = extract_json_array(reply)
         return {str(r.get("claim_id")): r for r in rows if isinstance(r, dict) and r.get("type") in TYPE_COLORS}
 
-    rows = _ask("classify_type.md", payload, model, parse, lambda r: expected <= r.keys())
+    rows = _ask(
+        "classify_type.md",
+        payload,
+        model,
+        parse,
+        lambda r: expected <= r.keys(),
+        emit=emit,
+        task="classify",
+        label=f"Sorting {len(claims)} claims into scientific / general vs event",
+    )
     return [
         {
             "claim_id": c["claim_id"],
@@ -289,7 +328,7 @@ def _valid_date(value) -> str | None:
     return value if isinstance(value, str) and re.fullmatch(r"\d{4}(-\d{2}(-\d{2})?)?", value) else None
 
 
-def _rank(claim: dict, hits: list[dict], model: str) -> dict[int, dict]:
+def _rank(claim: dict, hits: list[dict], model: str, emit: Emit = None) -> dict[int, dict]:
     payload = {
         "claim": {"claim_id": claim["claim_id"], "sentence": claim["sentence"]},
         "results": [{"index": i, "title": h["title"], "url": h["url"], "snippet": h["quote"]} for i, h in enumerate(hits)],
@@ -300,16 +339,30 @@ def _rank(claim: dict, hits: list[dict], model: str) -> dict[int, dict]:
         return {int(r["index"]): r for r in rows if isinstance(r, dict) and str(r.get("index", "")).isdigit()}
 
     try:
-        return _ask("rank_sources.md", payload, model, parse, bool)
+        return _ask(
+            "rank_sources.md",
+            payload,
+            model,
+            parse,
+            bool,
+            emit=emit,
+            task=f"rank-{claim['claim_id']}",
+            label=f"{claim['claim_id']}: scoring {len(hits)} search results",
+        )
     except RuntimeError:
         return {}  # unscored sources are still shown, flagged as such
 
 
-def _sources_for(claim: dict, queries: list[str], log_path: Path, model: str, essay_url: str = "") -> tuple[list[dict], int]:
+def _sources_for(
+    claim: dict, queries: list[str], log_path: Path, model: str, emit: Emit = None, essay_url: str = ""
+) -> tuple[list[dict], int]:
+    cid = claim["claim_id"]
+    note = (lambda text: emit({"task": f"search-{cid}", "label": f"{cid}: searching the web", "type": "note", "text": text})) if emit else _silent
     seen: set[str] = set()
     hits: list[dict] = []
     dropped = 0
     for query in queries:
+        note(f"searching: {query}")
         batch = search_web(query, limit=5)
         with _log_lock:
             append_source_log(log_path, claim["claim_id"], query, batch)
@@ -317,16 +370,16 @@ def _sources_for(claim: dict, queries: list[str], log_path: Path, model: str, es
             url = hit.get("url") or ""
             if not url or url in seen:
                 continue
-            # Drop pages that just quote the claim back (not independent).
             if is_reprint(hit, claim["sentence"], essay_url):
                 dropped += 1
                 continue
             seen.add(url)
             hits.append(hit)
     hits = hits[:8]
+    note(f"{len(hits)} independent result{'' if len(hits) == 1 else 's'} kept")
     if not hits:
         return [], dropped
-    rows = _rank(claim, hits, model)
+    rows = _rank(claim, hits, model, emit)
     sources = []
     for i, hit in enumerate(hits):
         row = rows.get(i, {})
@@ -350,20 +403,25 @@ def _sources_for(claim: dict, queries: list[str], log_path: Path, model: str, es
     return sources, dropped
 
 
-def find_sources(claims: list[dict], log_path: Path, model: str = DEFAULT_MODEL, essay_url: str = "") -> list[dict]:
+def find_sources(
+    claims: list[dict], log_path: Path, model: str = DEFAULT_MODEL, emit: Emit = None, essay_url: str = ""
+) -> list[dict]:
     plan = _ask(
         "plan_queries.md",
         [{"claim_id": c["claim_id"], "sentence": c["sentence"]} for c in claims],
         model,
         extract_json_object,
         bool,
+        emit=emit,
+        task="queries",
+        label="Writing search queries for every claim",
     )
 
     def work(claim: dict) -> dict:
         planned = plan.get(claim["claim_id"]) or []
         queries = [str(q).strip() for q in planned if str(q).strip()][:2] or [claim["sentence"][:120]]
         try:
-            sources, dropped = _sources_for(claim, queries, log_path, model, essay_url)
+            sources, dropped = _sources_for(claim, queries, log_path, model, emit=emit, essay_url=essay_url)
             return {"claim_id": claim["claim_id"], "sources": sources, "reprints_dropped": dropped}
         except Exception as exc:  # noqa: BLE001  one claim failing must not sink the others
             return {"claim_id": claim["claim_id"], "sources": [], "reprints_dropped": 0, "error": f"{type(exc).__name__}: {exc}"}
@@ -375,7 +433,7 @@ def find_sources(claims: list[dict], log_path: Path, model: str = DEFAULT_MODEL,
 # --- Step 8: final verdict -----------------------------------------------------------
 
 
-def _decide(claim: dict, sources: list[dict], model: str, reprints_dropped: int = 0) -> dict:
+def _decide(claim: dict, sources: list[dict], model: str, emit: Emit = None, reprints_dropped: int = 0) -> dict:
     def insufficient(reason: str) -> dict:
         return {
             "claim_id": claim["claim_id"],
@@ -404,14 +462,22 @@ def _decide(claim: dict, sources: list[dict], model: str, reprints_dropped: int 
         return data
 
     try:
-        data = _ask("final_verdict.md", payload, model, parse, lambda d: d["verdict"] in VERDICTS and d.get("reason"))
+        data = _ask(
+            "final_verdict.md",
+            payload,
+            model,
+            parse,
+            lambda d: d["verdict"] in VERDICTS and d.get("reason"),
+            emit=emit,
+            task=f"verdict-{claim['claim_id']}",
+            label=f"{claim['claim_id']}: weighing {len(sources)} sources",
+        )
     except RuntimeError:
         return insufficient("The model's verdict could not be read; treat this claim as unchecked.")
     valid_ids = {s["source_id"] for s in sources}
     cited = [i for i in data.get("supporting_source_ids") or [] if i in valid_ids]
     verdict, reason = data["verdict"], str(data["reason"]).strip()
     if verdict not in {"unverifiable", "opinion"} and not cited:
-        # A supported / contradicted / misleading call that cites no retrieved source is not grounded.
         verdict, reason = "unverifiable", f"{reason} (Downgraded: no retrieved source was cited.)"
     return {
         "claim_id": claim["claim_id"],
@@ -422,13 +488,21 @@ def _decide(claim: dict, sources: list[dict], model: str, reprints_dropped: int 
     }
 
 
-def decide_verdicts(claims: list[dict], evidence: list[dict], model: str = DEFAULT_MODEL) -> list[dict]:
+def decide_verdicts(
+    claims: list[dict], evidence: list[dict], model: str = DEFAULT_MODEL, emit: Emit = None
+) -> list[dict]:
     sources_by_claim = {e["claim_id"]: e for e in evidence}
 
     def work(claim: dict) -> dict:
         row = sources_by_claim.get(claim["claim_id"]) or {}
         try:
-            return _decide(claim, row.get("sources") or [], model, int(row.get("reprints_dropped") or 0))
+            return _decide(
+                claim,
+                row.get("sources") or [],
+                model,
+                emit=emit,
+                reprints_dropped=int(row.get("reprints_dropped") or 0),
+            )
         except Exception as exc:  # noqa: BLE001
             return {
                 "claim_id": claim["claim_id"],
@@ -440,3 +514,4 @@ def decide_verdicts(claims: list[dict], evidence: list[dict], model: str = DEFAU
 
     with ThreadPoolExecutor(WORKERS) as pool:
         return list(pool.map(work, claims))
+

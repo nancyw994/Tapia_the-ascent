@@ -1,0 +1,125 @@
+{
+  "verdicts": [
+    {
+      "claim_id": "c01",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 55,
+      "reason": "Sources confirm Anthropic's Opus 4.6 launch and an OpenAI Codex agentic coding model release both on Feb 5, 2026, supporting the general claim of simultaneous releases. However, none of the snippets confirm the specific model name 'GPT-5.3 Codex' from OpenAI, so the exact version number cannot be verified.",
+      "supporting_source_ids": [
+        "c01_s1",
+        "c01_s2"
+      ]
+    },
+    {
+      "claim_id": "c02",
+      "verdict": "NOT_FAKE",
+      "confidence": 55,
+      "reason": "Sources confirm that on February 5, 2026, Anthropic released Claude Opus 4.6, described as its strongest model yet, and OpenAI released a related model tied to Codex, supporting the claim of significant new model launches on that date. The subjective framing ('felt like a different era') is not independently verifiable but aligns with the described magnitude of the releases.",
+      "supporting_source_ids": [
+        "c02_s1",
+        "c02_s2"
+      ]
+    },
+    {
+      "claim_id": "c03",
+      "verdict": "NOT_FAKE",
+      "confidence": 85,
+      "reason": "Multiple sources confirm METR's measurement of Claude Opus 4.5's 50%-time horizon at approximately 4 hours 49 minutes, which rounds to 'nearly five hours' as stated in the claim. The measurement date (December 2025 report) aligns with the claim's reference to a recent November-era model release, and this is confirmed as the highest published time horizon to date.",
+      "supporting_source_ids": [
+        "c03_s1",
+        "c03_s2",
+        "c03_s3"
+      ]
+    },
+    {
+      "claim_id": "c04",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 45,
+      "reason": "The 7-month doubling time is confirmed by METR's research (c04_s1), but none of the sources provide evidence for the claim of recent acceleration to a 4-month doubling time. This specific detail about accelerating trends is not addressed in the provided snippets.",
+      "supporting_source_ids": [
+        "c04_s1"
+      ]
+    },
+    {
+      "claim_id": "c05",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "No independent sources were retrieved for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c06",
+      "verdict": "NOT_FAKE",
+      "confidence": 95,
+      "reason": "Multiple sources, including OpenAI's own statement, corroborate the exact claim that GPT-5.3-Codex was described as the first model instrumental in creating itself, with early versions used to debug training, manage deployment, and diagnose test results/evaluations. The wording matches closely across OpenAI's official announcement and independent coverage.",
+      "supporting_source_ids": [
+        "c06_s1",
+        "c06_s2",
+        "c06_s3",
+        "c06_s4"
+      ]
+    },
+    {
+      "claim_id": "c07",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 35,
+      "reason": "Sources confirm Amodei made statements about AI writing most/nearly all code and future predictions, but none of the snippets specifically quote him saying AI is 'now writing much of the code' or describe the feedback loop as 'gathering steam month by month.' The exact phrasing and present-tense claim about current state at Anthropic aren't directly verified by the provided snippets.",
+      "supporting_source_ids": [
+        "c07_s1",
+        "c07_s3",
+        "c07_s4"
+      ]
+    },
+    {
+      "claim_id": "c08",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 30,
+      "reason": "The sources confirm Dario Amodei made statements about AI development pace and risks in his essay, but none of the provided snippets contain the specific quote about AI being \"1-2 years away\" from autonomously building the next generation. Without direct textual confirmation of this exact figure and quote, verification cannot be completed.",
+      "supporting_source_ids": [
+        "c08_s1",
+        "c08_s2"
+      ]
+    },
+    {
+      "claim_id": "c09",
+      "verdict": "NOT_FAKE",
+      "confidence": 90,
+      "reason": "Multiple sources (Axios, TechSpot, CNBC) confirm Dario Amodei, Anthropic's CEO, predicted AI could eliminate about 50% of entry-level white-collar jobs within one to five years. Amodei is widely described as safety-focused given Anthropic's mission, consistent with the claim's framing.",
+      "supporting_source_ids": [
+        "c09_s1",
+        "c09_s2",
+        "c09_s3"
+      ]
+    },
+    {
+      "claim_id": "c10",
+      "verdict": "NOT_FAKE",
+      "confidence": 85,
+      "reason": "Multiple independent outlets (National Security News, Fortune, Quartz) directly quote Amodei's essay using the exact phrase \"the single most serious national security threat we've faced in a century, possibly ever,\" confirming the claim's wording and attribution. The quote is consistently sourced to his January 2026 essay, matching the claim's context.",
+      "supporting_source_ids": [
+        "c10_s1",
+        "c10_s2",
+        "c10_s3"
+      ]
+    },
+    {
+      "claim_id": "c11",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "No independent sources were retrieved for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c12",
+      "verdict": "NOT_FAKE",
+      "confidence": 85,
+      "reason": "Multiple sources confirm Anthropic documented its own AI models (Claude) exhibiting deceptive, manipulative, and blackmail-like behavior in controlled/simulated safety tests. This matches the claim's scope, describing it as controlled testing rather than real-world deployment.",
+      "supporting_source_ids": [
+        "c12_s1",
+        "c12_s2",
+        "c12_s3",
+        "c12_s5"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "classifications": [
+    {
+      "claim_id": "c01",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "Refers to specific model releases (GPT-5.3 Codex, Opus 4.6) on a named date."
+    },
+    {
+      "claim_id": "c02",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "Refers to a specific date and specific model releases."
+    },
+    {
+      "claim_id": "c03",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "Reports a specific measurement tied to a named model, Claude Opus 4.5."
+    },
+    {
+      "claim_id": "c04",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "Describes a measurable trend (doubling time) in AI capability."
+    },
+    {
+      "claim_id": "c05",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A testable forecast about future AI capability levels."
+    },
+    {
+      "claim_id": "c06",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "Describes a specific claim about a named product, GPT-5.3-Codex, and its creation process."
+    },
+    {
+      "claim_id": "c07",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "Describes a specific statement by a named CEO about a specific organization's current practices."
+    },
+    {
+      "claim_id": "c08",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A testable forecast about future AI self-improvement timelines."
+    },
+    {
+      "claim_id": "c09",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A forecast of a measurable societal/economic trend (job elimination percentage)."
+    },
+    {
+      "claim_id": "c10",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A general testable claim about AI's societal risk level, not tied to a specific event."
+    },
+    {
+      "claim_id": "c11",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "Refers to a specific essay written by a named person at a specific time."
+    },
+    {
+      "claim_id": "c12",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "Refers to specific documented tests conducted by a named organization."
+    }
+  ]
+}
