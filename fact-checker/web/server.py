@@ -4,7 +4,7 @@
     python web/server.py            # http://127.0.0.1:8000
 
 Sign in (a demo account stored in data/users.json on this machine), then upload a .md
-article and run one step at a time. Each step streams the model's output to the page and
+article or paste a URL (fetched into article.md) and run one step at a time. Each step streams the model's output to the page and
 saves its result to data/runs/<run_id>/, which is also what the history sidebar lists.
 """
 
@@ -455,6 +455,7 @@ class Handler(BaseHTTPRequestHandler):
                         "dir": run_dir,
                         "log": ROOT / "notes" / f"sources_{run_id}.log",
                         "user": user,
+                        "essay_url": meta.get("source_url") or "",
                         "running": False,
                         "stream": Stream(),
                     },
@@ -468,6 +469,20 @@ class Handler(BaseHTTPRequestHandler):
         suffix = Path(filename).suffix.lower()
         if suffix not in ARTICLE_TYPES:
             return self._json(400, {"error": "please upload a .md or .txt file"})
+        self._start_run(user, filename, text)
+
+    def _from_url(self, user: str, body: dict) -> None:
+        url = str(body.get("url") or "").strip()
+        try:
+            text, canonical = fetch_url_markdown(url)
+        except ValueError as exc:
+            return self._json(400, {"error": str(exc)})
+        except Exception as exc:  # noqa: BLE001
+            return self._json(502, {"error": f"could not fetch that link: {type(exc).__name__}: {exc}"})
+        self._start_run(user, "article.md", f"# Source\n\n{canonical}\n\n{text}\n", essay_url=canonical)
+
+    def _start_run(self, user: str, filename: str, text, essay_url: str = "") -> None:
+        suffix = Path(filename).suffix.lower()
         if not isinstance(text, str) or len(text.strip()) < MIN_CHARS:
             return self._json(400, {"error": f"the article is too short (need at least {MIN_CHARS} characters)"})
         if len(text) > MAX_CHARS:
@@ -487,6 +502,7 @@ class Handler(BaseHTTPRequestHandler):
             words=len(text.split()),
             created_at=now_iso(),
             example=False,
+            source_url=essay_url,
         )
         with lock:
             sessions[run_id] = {
@@ -497,10 +513,11 @@ class Handler(BaseHTTPRequestHandler):
                 "dir": run_dir,
                 "log": ROOT / "notes" / f"sources_{run_id}.log",
                 "user": user,
+                "essay_url": essay_url,
                 "running": False,
                 "stream": Stream(),
             }
-        self._json(200, {"run_id": run_id, "meta": meta})
+        self._json(200, {"run_id": run_id, "meta": meta, "text": text})  # a fetched link's text is new to the page
 
     def _from_url(self, user: str, body: dict) -> None:
         url = str(body.get("url") or "").strip()

@@ -1,0 +1,64 @@
+{
+  "claims": [
+    {
+      "claim_id": "c01",
+      "sentence": "Damage from UVA rays can cause:\n\n- Basal cell and squamous cell carcinomas\n- Freckles\n- Hyperpigmentation\n- Melasma and melasma mustache\n- Premature skin aging (photoaging)\n- Skin cancer\n- Sunspots and age spots",
+      "reason": "A list of specific medical consequences attributed to UVA exposure that can be verified."
+    },
+    {
+      "claim_id": "c02",
+      "sentence": "UVB rays also increase your risk for skin cancers, like melanoma.",
+      "reason": "A medical claim linking UVB exposure to a specific type of cancer, verifiable via research."
+    },
+    {
+      "claim_id": "c03",
+      "sentence": "SPF measures how long it takes UVB rays (and only UVB rays) to cause sunburn when wearing sunscreen versus going without.",
+      "reason": "A definitional claim about what SPF measures that can be fact-checked scientifically."
+    },
+    {
+      "claim_id": "c04",
+      "sentence": "As an example, sunscreen with an SPF of 30 blocks about 97% of the sun's UVB rays.",
+      "reason": "A specific statistic about SPF 30 effectiveness that can be verified."
+    },
+    {
+      "claim_id": "c05",
+      "sentence": "This means it should take 30 times longer for your skin to burn with this level of sunscreen than without it.",
+      "reason": "A measurable claim about sunscreen's protective effect duration."
+    },
+    {
+      "claim_id": "c06",
+      "sentence": "Only broad-spectrum sunscreens protect against both UVB rays that cause sunburns and UVA rays that cause tanning.",
+      "reason": "A factual claim about sunscreen types and their protective scope that is testable."
+    },
+    {
+      "claim_id": "c07",
+      "sentence": "\"You'll still tan or burn with sunscreen,\" states Dr. Kassouf.",
+      "reason": "A direct attributed claim about sunscreen's limitations that is testable against dermatological evidence."
+    },
+    {
+      "claim_id": "c08",
+      "sentence": "\"When you expose your skin to the sun, melanocyte cells in your body make more melanin [a pigment in skin, hair and eyes] to protect against burning,\" says Dr. Kassouf.",
+      "reason": "An attributed scientific explanation of tanning mechanism that can be fact-checked."
+    },
+    {
+      "claim_id": "c09",
+      "sentence": "A review of studies found no link between sunscreen use and vitamin D deficiency — which is good news.",
+      "reason": "Cites specific research findings that can be verified against actual studies."
+    },
+    {
+      "claim_id": "c10",
+      "sentence": "Spray tans are another option, although the chemicals can trigger skin irritation or allergic reactions.",
+      "reason": "A health claim about spray tan side effects that is testable."
+    },
+    {
+      "claim_id": "c11",
+      "sentence": "But whatever you do, skip tanning beds, which expose you to 10 times more UVA rays than the sun.",
+      "reason": "A specific statistic comparing tanning bed UVA exposure to natural sun exposure."
+    },
+    {
+      "claim_id": "c12",
+      "sentence": "And say no to tanning pills and nasal tanning sprays, which can pose significant health risks.",
+      "reason": "A claim about health risks of specific tanning products that can be verified."
+    }
+  ]
+}

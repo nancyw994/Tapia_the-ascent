@@ -1,0 +1,312 @@
+{
+  "evidence": [
+    {
+      "claim_id": "c01",
+      "sources": [
+        {
+          "title": "Association Between Automotive Assembly Plant Closures and ...",
+          "publisher": "Opportunity for Health",
+          "date": "2019-12-31",
+          "url": "https://opportunityforhealth.org/research/association-between-automotive-assembly-plant-closures-and-opioid-overdose-mortality-in-the-united-states-a-difference-in-differences-analysis/",
+          "relevance_score": 95,
+          "stance": "supports",
+          "reason": "Directly states automotive plant closures are associated with meaningful increases in opioid overdose mortality in affected US communities.",
+          "snippet": "Dec 31, 2019 · Our findings indicate that the closure of automotive assembly plants is associated with meaningful increases in opioid overdose mortality in affected communities.",
+          "source_id": "c01_s1"
+        },
+        {
+          "title": "Association Between Automotive Assembly Plant Closures and ...",
+          "publisher": "ResearchGate",
+          "date": "2019-12-30",
+          "url": "https://www.researchgate.net/publication/338264626_Association_Between_Automotive_Assembly_Plant_Closures_and_Opioid_Overdose_Mortality_in_the_United_States_A_Difference-in-Differences_Analysis",
+          "relevance_score": 95,
+          "stance": "supports",
+          "reason": "Confirms statistically significant increases in opioid overdose mortality linked to automotive plant closures.",
+          "snippet": "Dec 30, 2019 · Automotive assembly plant closures were associated with statistically significant increases in opioid overdose mortality.",
+          "source_id": "c01_s2"
+        },
+        {
+          "title": "Association Between Automotive Assembly Plant Closures and ...",
+          "publisher": "Ovid/JAMA Internal Medicine",
+          "date": null,
+          "url": "https://www.ovid.com/journals/jaim/fulltext/10.1001/jamainternmed.2019.5686~association-between-automotive-assembly-plant-closures-and",
+          "relevance_score": 90,
+          "stance": "supports",
+          "reason": "States plant closures from 1999-2016 were associated with increases in opioid overdose mortality, supporting the claim's substance.",
+          "snippet": "From 1999 to 2016, automotive assembly plant closures were associated with increases in opioid overdose mortality. These findings highlight the potential importance of eroding economic opportunity as a factor in the US opioid overdose crisis.",
+          "source_id": "c01_s3"
+        },
+        {
+          "title": "Association Between Automotive Assembly Plant Closures and ...",
+          "publisher": "Semantic Scholar",
+          "date": "2019-12-30",
+          "url": "https://www.semanticscholar.org/paper/Association-Between-Automotive-Assembly-Plant-and-Venkataramani-Bair/6c6bcac7ad906880de516e045e9d8eca268ab3b2",
+          "relevance_score": 90,
+          "stance": "supports",
+          "reason": "States plant closures were associated with increases in opioid overdose mortality due to declining economic opportunity.",
+          "snippet": "Dec 30, 2019 · Automotive assembly plant closures were associated with increases in opioid overdose mortality, highlighting the potential importance of the role of declining economic opportunity in the US opioid overdose crisis.",
+          "source_id": "c01_s4"
+        },
+        {
+          "title": "Association Between Automotive Assembly Plant Closures and ...",
+          "publisher": "Scilit",
+          "date": null,
+          "url": "https://www.scilit.com/publications/8baf30dc524474549a36a29d89fe1198",
+          "relevance_score": 20,
+          "stance": "context",
+          "reason": "Only provides background on rising opioid mortality in the US without directly linking it to factory closures.",
+          "snippet": "During the past 2 decades, the United States has experienced a widespread and significant increase in opioid overdose mortality, particularly among working-age adults.",
+          "source_id": "c01_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c02",
+      "sources": []
+    },
+    {
+      "claim_id": "c03",
+      "sources": [
+        {
+          "title": "China Just Banned AI Companions. Here's What It Actually Says",
+          "publisher": "LocalWaifu",
+          "date": "2026-08-27",
+          "url": "https://localwaifu.com/blog/china-ai-companion-ban/",
+          "relevance_score": 90,
+          "stance": "supports",
+          "reason": "States China's ban covers AI companions for minors and outlaws designs creating emotional dependence, matching the claim closely.",
+          "snippet": "Aug 27, 2026 · China banned AI companions for minors and outlawed design that creates emotional dependence. What the law actually says, and what it means for your app.",
+          "source_id": "c03_s1"
+        },
+        {
+          "title": "China’s AI Companion Rules Take Effect July 15, 2026—Five ...",
+          "publisher": "Artur Markus",
+          "date": "2026-06-19",
+          "url": "https://www.arturmarkus.com/chinas-ai-companion-rules-take-effect-july-15-2026-five-agencies-ban-virtual-partners-for-minors-mandate-addiction-detection/",
+          "relevance_score": 90,
+          "stance": "supports",
+          "reason": "Confirms China's rules ban virtual girlfriends/boyfriends (romantic partners) for minors under the new regulation.",
+          "snippet": "Jun 19, 2026 · Five Chinese government agencies just created the world’s first dedicated regulation for emotionally interactive AI, banning virtual girlfriends and boyfriends for anyone under 18. While Western regulators debate definitions, China ships enforceable code.",
+          "source_id": "c03_s2"
+        },
+        {
+          "title": "China bans AI companion apps that stirs emotional dependence",
+          "publisher": "MediaNama",
+          "date": "2026-07-20",
+          "url": "https://www.medianama.com/2026/07/223-china-bans-ai-companion-apps-emotional-dependence-low-birth/",
+          "relevance_score": 85,
+          "stance": "supports",
+          "reason": "Confirms China's directive banning AI companion apps designed to foster emotional dependence.",
+          "snippet": "Jul 20, 2026 · Beijing has directed companies offering AI companion apps to stop creating chatbots that encourage emotional attachment. This measure aims to promote human relationships and increase...",
+          "source_id": "c03_s3"
+        },
+        {
+          "title": "Character.AI Bans Minors After Teen Suicide Lawsuit — Inside ...",
+          "publisher": "AI Insights News",
+          "date": "2025-10-30",
+          "url": "https://aiinsightsnews.net/character-ai-minors-ban/",
+          "relevance_score": 10,
+          "stance": "context",
+          "reason": "Reports a single company's (Character.AI) policy change for minors, not a broad regulatory ban on emotional dependence or virtual relatives/partners.",
+          "snippet": "Oct 30, 2025 · In a defining moment for the AI companion industry, Character.AI has announced a sweeping new policy: beginning November 25, 2025, users under 18 will no longer be able to engage in open conversations with its chatbots — a move now widely referred to as the Character.AI minors ban.",
+          "source_id": "c03_s4"
+        },
+        {
+          "title": "35+ States Regulate AI Companions: Mid-2026 Update | AI Haven",
+          "publisher": "AI Haven",
+          "date": "2026-07-06",
+          "url": "https://aihaven.com/news/state-ai-companion-laws-mid-2026-patchwork/",
+          "relevance_score": 5,
+          "stance": "context",
+          "reason": "Discusses US state AI companion laws, not the specific rules described in the claim (likely China's regulation).",
+          "snippet": "Jul 6, 2026 · Tennessee's SB 1580 took effect July 1, 2026, as companion chatbot laws spread across 35+ states with disclosure, safety, and minor protection mandates.",
+          "source_id": "c03_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c04",
+      "sources": [
+        {
+          "title": "A Decade of Increasing Access to Life Saving ... - viz.ai",
+          "publisher": "Viz.ai",
+          "date": "2026-07-28",
+          "url": "https://www.viz.ai/news/a-decade-of-increasing-access-to-life-saving-treatments-viz-ai-celebrates-10-years-2000-hospitals-and-230-million-patients",
+          "relevance_score": 90,
+          "stance": "supports",
+          "reason": "States the Viz Platform is deployed in 2,000 hospitals across the United States, directly matching the 'nearly 2,000' claim.",
+          "snippet": "Jul 28, 2026 · Viz.ai is the leader in building and deploying AI-powered Care Pathways and helping doctors do their work. The Viz Platform is deployed in 2,000 hospitals across the United States and trusted by many of the leading life sciences companies.",
+          "source_id": "c04_s1"
+        },
+        {
+          "title": "AI Adoption in US Hospitals Statistics: Survey",
+          "publisher": "IntuitionLabs",
+          "date": null,
+          "url": "https://intuitionlabs.ai/pdfs/ai-adoption-us-hospitals-survey-data.pdf",
+          "relevance_score": 10,
+          "stance": "context",
+          "reason": "Notes there is no single consistent figure for how many US hospitals use AI, providing context but not confirming the specific claim.",
+          "snippet": "ealthcare ai statistics 2026 Executive Summary There is no single correct answer to \"how many US hospitals use AI,\" because the surveys and studies that produce these figures measure different populations, technologies, years, and stages of deployment, and this report reconciles .",
+          "source_id": "c04_s2"
+        },
+        {
+          "title": "AI Adoption in U.S. Hospitals: Trends and Use Cases",
+          "publisher": "IntuitionLabs",
+          "date": null,
+          "url": "https://intuitionlabs.ai/articles/ai-adoption-us-hospitals-trends",
+          "relevance_score": 5,
+          "stance": "irrelevant",
+          "reason": "General overview of AI adoption trends without a specific hospital count matching the claim.",
+          "snippet": "Jul 30, 2026 · An analysis of AI adoption trends in U.S. hospitals through 2025-2026. Examines clinical and operational use cases including ambient AI scribes, Epic's new AI tools, FDA regulatory updates, and ethical considerations in healthcare.",
+          "source_id": "c04_s3"
+        },
+        {
+          "title": "The landscape of AI implementation in US hospitals - Nature",
+          "publisher": "Nature",
+          "date": "2026-01-15",
+          "url": "https://www.nature.com/articles/s44360-025-00016-7",
+          "relevance_score": 5,
+          "stance": "irrelevant",
+          "reason": "Discusses AI implementation patterns in US hospitals generally but gives no specific '2,000 hospitals' figure.",
+          "snippet": "Jan 15, 2026 · These findings provide a baseline snapshot of early AI deployment patterns in US hospitals in 2023 and 2024, highlighting the uneven and context-dependent nature of implementation.",
+          "source_id": "c04_s4"
+        },
+        {
+          "title": "One of the world’s most prominent hospitals is testing how AI ...",
+          "publisher": "CNN",
+          "date": "2026-07-16",
+          "url": "https://www.cnn.com/2026/07/16/tech/mayo-clinic-ai-healthcare",
+          "relevance_score": 5,
+          "stance": "irrelevant",
+          "reason": "Focuses on Mayo Clinic's AI use, not a nationwide count of hospitals using a given technology.",
+          "snippet": "Jul 16, 2026 · But Record Time is just one way that Mayo Clinic, one of the world’s most well-known hospital systems, is using AI in hopes of improving patient care and, ultimately, saving lives.",
+          "source_id": "c04_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c05",
+      "sources": []
+    },
+    {
+      "claim_id": "c06",
+      "sources": [
+        {
+          "title": "Gates: Cuts will impact child mortality rates - PressReader",
+          "publisher": "PressReader/The Spectrum Daily News",
+          "date": "2025-12-07",
+          "url": "https://www.pressreader.com/usa/the-spectrum-daily-news/20251207/281895894561037",
+          "relevance_score": 40,
+          "stance": "partially_supports",
+          "reason": "Confirms child deaths roughly halved since 2000 but does not mention a new goal to halve again.",
+          "snippet": "Dec 7, 2025 · In 2024, an estimated 4.6 million children died before turning 5. This year, it is set to be 4.8 million, Gates said. Child deaths have roughly halved since 2000. “For decades, the world made steady progress saving children’s lives.",
+          "source_id": "c06_s1"
+        },
+        {
+          "title": "Child Deaths Will Rise for First Time This Century After Aid ...",
+          "publisher": "U.S. News",
+          "date": "2025-12-04",
+          "url": "https://www.usnews.com/news/world/articles/2025-12-04/child-deaths-will-rise-this-year-as-aid-cuts-reverse-progress-says-gates",
+          "relevance_score": 40,
+          "stance": "partially_supports",
+          "reason": "Confirms child deaths halved since 2000 but does not mention a stated goal to repeat that halving.",
+          "snippet": "Dec 4, 2025 · In 2024, an estimated 4.6 million children died before turning five. This year, it is set to be 4.8 million, Gates said. Child deaths have roughly halved since 2000.",
+          "source_id": "c06_s2"
+        },
+        {
+          "title": "Goalkeepers 2026 Report",
+          "publisher": "Goalkeepers/Gates Foundation",
+          "date": null,
+          "url": "https://goalkeepers.gatesfoundation.org/report/2026-report/",
+          "relevance_score": 25,
+          "stance": "context",
+          "reason": "References child death trends 2000-2045 chart but no explicit statement of halving goal.",
+          "snippet": "3 days ago · Children are still dying from preventable causes Under-5 child deaths 2000–2045 (millions)",
+          "source_id": "c06_s3"
+        },
+        {
+          "title": "Gates Foundation Urges Targeted Funding as Child Deaths ...",
+          "publisher": "Gates Foundation",
+          "date": "2025-12-03",
+          "url": "https://www.gatesfoundation.org/ideas/media-center/press-releases/2025/12/goalkeepers-child-deaths-rising-high-impact-solutions",
+          "relevance_score": 20,
+          "stance": "context",
+          "reason": "Discusses projected rise in child deaths but doesn't address a foundation goal to halve deaths again.",
+          "snippet": "Dec 3, 2025 · SEATTLE (December 3, 2025) – The number of children dying before their 5 th birthday is projected to rise for the first time this century, reversing decades of global progress, according to new data published today in the Gates Foundation’s 2025 Goalkeepers Report.",
+          "source_id": "c06_s4"
+        },
+        {
+          "title": "Gates Foundation Warns: Child Mortality Could Increase as ...",
+          "publisher": "QR News (via Reuters)",
+          "date": "2025-12-04",
+          "url": "https://qrnews.kz/en/news/gates-foundation-warns-child-mortality-could-increase-as-global-aid-declines-wcDr3",
+          "relevance_score": 15,
+          "stance": "context",
+          "reason": "Discusses projected increase in child deaths due to aid cuts, not a goal to halve deaths again.",
+          "snippet": "Dec 4, 2025 · According to the Bill & Melinda Gates Foundation, the reduction in international aid could result in around 200,000 more children under the age of five dying this year compared to 2024, Reuters reported.",
+          "source_id": "c06_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c07",
+      "sources": [
+        {
+          "title": "Bill Gates Sr., father of Microsoft founder, dies age 94",
+          "publisher": "New York Daily News",
+          "date": "2020-09-15",
+          "url": "https://www.nydailynews.com/2020/09/15/bill-gates-mourns-fathers-death-at-age-94-i-will-miss-my-dad-every-day/",
+          "relevance_score": 100,
+          "stance": "supports",
+          "reason": "States Bill Gates' father died in 2020 with Alzheimer's disease as the cause.",
+          "snippet": "Sep 15, 2020 · William H. Gates Sr., civic leader and father of Microsoft founder and philanthropist Bill Gates, has died. He was 94. The cause was Alzheimer’s disease, the family said.",
+          "source_id": "c07_s1"
+        },
+        {
+          "title": "Bill Gates Sr. - Wikipedia",
+          "publisher": "Wikipedia",
+          "date": "2020-09-14",
+          "url": "https://en.wikipedia.org/wiki/Bill_Gates_Sr.",
+          "relevance_score": 95,
+          "stance": "supports",
+          "reason": "Confirms Bill Gates Sr. had Alzheimer's and died on September 14, 2020.",
+          "snippet": "In 2018, it was revealed that Gates was suffering from Alzheimer's disease. [29][30] He died on September 14, 2020, aged 94, at his beach home on Hood Canal in Washington state. [4]",
+          "source_id": "c07_s2"
+        },
+        {
+          "title": "5 Years After Dad's Alzheimer's Death, Bill Gates Is ... - Yahoo",
+          "publisher": "Yahoo",
+          "date": "2025-06-17",
+          "url": "https://www.yahoo.com/news/5-years-dads-alzheimers-death-210808777.html?fr=sycsrp_catchall",
+          "relevance_score": 90,
+          "stance": "supports",
+          "reason": "Confirms Bill Gates' dad died in 2020 after living with Alzheimer's disease.",
+          "snippet": "Jun 17, 2025 · Gates' dad, William, who died in 2020, lived with the disease before his death. Bill Gates is \"really excited\" about the progress recently made in the fight against Alzheimer's disease...",
+          "source_id": "c07_s3"
+        },
+        {
+          "title": "5 Years After Dad’s Alzheimer’s Death, Bill Gates Is ...",
+          "publisher": "Headline Society",
+          "date": "2025-06-17",
+          "url": "https://headlinesociety.com/2025/06/17/5-years-after-dads-alzheimers-death-bill-gates-is-optimistic-about-progress-made-in-fighting-the-disease/",
+          "relevance_score": 85,
+          "stance": "supports",
+          "reason": "Reiterates that Bill Gates' father died of Alzheimer's, referencing the 2020 death.",
+          "snippet": "Jun 17, 2025 · Renowned tech mogul, Bill Gates, recently expressed his excitement about the advancements being made in the battle against Alzheimer’s disease. In a heartfelt essay published on Gates Notes, Gates conveyed his optimism about the significant headway achieved in combating Alzheimer’s.",
+          "source_id": "c07_s4"
+        },
+        {
+          "title": "Andy Burnham's dad has died following a battle with Alzheimer ...",
+          "publisher": "MSN",
+          "date": null,
+          "url": "https://www.msn.com/en-us/news/other/andy-burnham-s-dad-has-died-following-a-battle-with-alzheimer-s-disease/ar-AA2cbtjn",
+          "relevance_score": 0,
+          "stance": "irrelevant",
+          "reason": "Refers to Andy Burnham's father's death from Alzheimer's, unrelated to the claimant.",
+          "snippet": "Andy Burnham’s father Roy has died after a battle with Alzheimer’s disease, Downing Street has announced. The prime minister has cancelled his engagements for today and tomorrow following his ...",
+          "source_id": "c07_s5"
+        }
+      ]
+    }
+  ]
+}

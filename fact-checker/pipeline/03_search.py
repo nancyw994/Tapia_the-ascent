@@ -6,21 +6,14 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lib import (
-    append_source_log,
-    assign_tier,
-    chat,
-    extract_json_object,
-    host,
-    load_prompt,
-    make_client,
-    read_json,
-    search_web,
-    write_json,
-)
+from lib import append_source_log, chat, extract_json_object, load_prompt, make_client, read_json, search_web, write_json
+from source_verification import SourcePolicy, SourceVerifier
+
+VERIFY_WORKERS = 6  # hits are verified (fetched) in parallel; network-bound, not CPU-bound
 
 
 def queries_for(client, model: str, claim: dict) -> list[str]:
@@ -50,6 +43,12 @@ def run(
 ) -> dict:
     payload = read_json(classified_path)
     client = make_client(base_url)
+    verifier = SourceVerifier(SourcePolicy())
+    essay_text = ""
+    essay_path = payload.get("essay_path")
+    if essay_path and Path(essay_path).exists():
+        essay_text = Path(essay_path).read_text(encoding="utf-8")
+
     evidence = []
     verified = 0
     for claim in payload.get("claims") or []:
@@ -64,7 +63,7 @@ def run(
             qs = queries_for(client, model, claim)
             row["queries"] = qs
             seen = set()
-            hits = []
+            raw_hits = []
             for query in qs:
                 batch = search_web(query)
                 append_source_log(log_path, claim["id"], query, batch)
@@ -73,12 +72,14 @@ def run(
                     if not url or url in seen:
                         continue
                     seen.add(url)
-                    hit = dict(hit)
-                    hit["host"] = host(url)
-                    hit["tier"] = assign_tier(hit, claim.get("quote") or "", essay_url)
-                    hit["stance"] = "unknown"
-                    hits.append(hit)
-            row["hits"] = hits
+                    raw_hits.append(hit)
+
+            def verify_one(hit: dict) -> dict:
+                verdict = verifier.verify(hit, claim.get("quote") or "", essay_text, essay_url)
+                return {**hit, **verdict}
+
+            with ThreadPoolExecutor(VERIFY_WORKERS) as pool:
+                row["hits"] = list(pool.map(verify_one, raw_hits))
             verified += 1
         evidence.append(row)
     out = {**payload, "evidence": evidence}

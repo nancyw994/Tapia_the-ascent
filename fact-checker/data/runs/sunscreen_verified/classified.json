@@ -1,0 +1,118 @@
+{
+  "essay_path": "fact-checker\\data\\essays\\sunscreen_tanning_clevelandclinic.txt",
+  "essay_id": "sunscreen_tanning_clevelandclinic",
+  "claims": [
+    {
+      "id": "c01",
+      "quote": "we asked dermatologist Amy Kassouf, MD, to share why your skin still darkens with sunscreen",
+      "taxonomy": "attribution",
+      "char_start": 671,
+      "label": "supported_in_text",
+      "proceeds_to_search": false
+    },
+    {
+      "id": "c02",
+      "quote": "sunscreen — even with the highest sun protection factor (SPF) — can't block all ultraviolet (UV) light.",
+      "taxonomy": "attribution",
+      "char_start": 881,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c03",
+      "quote": "sunscreen with an SPF of 30 blocks about 97% of the sun's UVB rays",
+      "taxonomy": "statistic",
+      "char_start": 1692,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c04",
+      "quote": "it should take 30 times longer for your skin to burn with this level of sunscreen than without it",
+      "taxonomy": "statistic",
+      "char_start": 1771,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c05",
+      "quote": "You'll still tan or burn with sunscreen,\" states Dr. Kassouf. \"But skin damage occurs more slowly.",
+      "taxonomy": "attribution",
+      "char_start": 2355,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c06",
+      "quote": "When you expose your skin to the sun, melanocyte cells in your body make more melanin [a pigment in skin, hair and eyes] to protect against burning,\" says Dr. Kassouf.",
+      "taxonomy": "attribution",
+      "char_start": 2627,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c07",
+      "quote": "This increase in melanin causes skin to darken into a tan.",
+      "taxonomy": "empirical",
+      "char_start": 2796,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c08",
+      "quote": "A review of studies found no link between sunscreen use and vitamin D deficiency",
+      "taxonomy": "statistic",
+      "char_start": 3816,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c09",
+      "quote": "foods and supplements are safer ways to get the nutrient without putting yourself at risk for skin cancer, says Dr. Kassouf",
+      "taxonomy": "attribution",
+      "char_start": 4255,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c10",
+      "quote": "Apply two tablespoons (the size of a shot glass) of sunscreen 30 minutes before going outside.",
+      "taxonomy": "empirical",
+      "char_start": 4557,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c11",
+      "quote": "If you really want to look tan, try self-tanning products,\" advises Dr. Kassouf.",
+      "taxonomy": "attribution",
+      "char_start": 5220,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c12",
+      "quote": "skip tanning beds, which expose you to 10 times more UVA rays than the sun",
+      "taxonomy": "statistic",
+      "char_start": 5506,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c13",
+      "quote": "tanning pills and nasal tanning sprays, which can pose significant health risks",
+      "taxonomy": "empirical",
+      "char_start": 5596,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c14",
+      "quote": "there's no such thing as a safe or healthy tan from sun exposure",
+      "taxonomy": "rhetoric",
+      "char_start": 5152,
+      "label": "opinion",
+      "proceeds_to_search": false
+    }
+  ]
+}

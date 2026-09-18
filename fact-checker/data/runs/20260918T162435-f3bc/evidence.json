@@ -1,0 +1,444 @@
+{
+  "evidence": [
+    {
+      "claim_id": "c01",
+      "sources": [
+        {
+          "title": "The Damaging Effects of Long UVA (UVA1) Rays: A Major ... - MDPI",
+          "publisher": "MDPI",
+          "date": "2022-07-26",
+          "url": "https://www.mdpi.com/1422-0067/23/15/8243",
+          "relevance_score": 40,
+          "stance": "partially_supports",
+          "reason": "Reviews damaging effects of UVA1 rays including biological/clinical effects, supporting general premise of UVA-caused skin damage but not listing specific conditions.",
+          "snippet": "Jul 26, 2022 · In this review, we synthetize the biological and clinical effects of UVA1 and the complementary effects of UVA1 with pollutants or Vis.",
+          "source_id": "c01_s1"
+        },
+        {
+          "title": "Sun Safety Facts | Skin Cancer | CDC",
+          "publisher": "CDC",
+          "date": "2026-06-17",
+          "url": "https://www.cdc.gov/skin-cancer/sun-safety/index.html",
+          "relevance_score": 30,
+          "stance": "partially_supports",
+          "reason": "States UV rays cause most skin cancers and damage skin cells, supporting part of the claim but not the specific list of conditions.",
+          "snippet": "Jun 17, 2026 · Overview Spending time outside is a great way to be physically active and reduce stress. You can work and play outside without raising your skin cancer risk by protecting your skin from the sun. Most skin cancers are caused by too much exposure to ultraviolet (UV) rays. UV rays are an invisible kind of radiation that comes from the sun and tanning beds. UV rays can damage skin cells",
+          "source_id": "c01_s2"
+        },
+        {
+          "title": "Ultraviolet Radiation | Radiation and Your Health | CDC",
+          "publisher": "CDC",
+          "date": "2026-07-06",
+          "url": "https://www.cdc.gov/radiation-health/features/uv-radiation.html",
+          "relevance_score": 20,
+          "stance": "context",
+          "reason": "Confirms UVA penetrates deeper and affects health but does not specifically confirm the listed conditions.",
+          "snippet": "Jul 6, 2026 · Almost all the UV radiation that reaches earth is UVA though some UVB radiation reaches earth. UVA and UVB radiation can both affect health, but UVA penetrates deeper into the skin and is more constant throughout the year.",
+          "source_id": "c01_s3"
+        },
+        {
+          "title": "Beneficial health effects of ultraviolet radiation: expert ...",
+          "publisher": "Springer",
+          "date": "2025-06-04",
+          "url": "https://link.springer.com/article/10.1007/s43630-025-00743-6",
+          "relevance_score": 5,
+          "stance": "irrelevant",
+          "reason": "General review of UV health effects, no specific mention of the claimed conditions.",
+          "snippet": "Jun 4, 2025 · This narrative review provides an overview of the health effects of UVR exposure that should be used to inform public health recommendations regarding sunlight exposure.",
+          "source_id": "c01_s4"
+        },
+        {
+          "title": "Beneficial health effects of ultraviolet radiation: expert ...",
+          "publisher": "Springer",
+          "date": "2025",
+          "url": "https://link.springer.com/content/pdf/10.1007/s43630-025-00743-6.pdf",
+          "relevance_score": 0,
+          "stance": "irrelevant",
+          "reason": "Snippet discusses beneficial health effects of UV radiation, not the listed skin damage conditions from UVA.",
+          "snippet": "To address this issue more firmly, a scientific meeting of leading experts was held in Washington, D.C. on May 27–28, 2024, to present and discuss recent research on beneficial health effects from sun exposure and human health.",
+          "source_id": "c01_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c02",
+      "sources": [
+        {
+          "title": "Mechanisms and prevention of UV-induced melanoma - PMC",
+          "publisher": "PMC/NCBI",
+          "date": null,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5760354/",
+          "relevance_score": 95,
+          "stance": "supports",
+          "reason": "Explicitly states UVB (and UVA) exposure is a major risk factor for melanoma development.",
+          "snippet": "Summary Melanoma is the deadliest form of skin cancer and its incidence is rising, creating a costly and significant clinical problem. Exposure to ultraviolet (UV) radiation, namely UVA (315-400 nm) and UVB (280-315 nm), is a major risk factor for melanoma development. Cumulative UV radiation exposure from sunlight or tanning beds contributes to UV-induced DNA damage, oxidative stress, and ...",
+          "source_id": "c02_s1"
+        },
+        {
+          "title": "Does UV Radiation Cause Cancer? | American Cancer Society",
+          "publisher": "American Cancer Society",
+          "date": null,
+          "url": "https://www.cancer.org/cancer/risk-prevention/sun-and-uv/uv-radiation.html",
+          "relevance_score": 85,
+          "stance": "supports",
+          "reason": "States UV radiation exposure is a major risk factor for skin cancers including melanoma, supporting the claim though not isolating UVB specifically.",
+          "snippet": "Exposure to ultraviolet (UV) radiation is a major risk factor for skin cancers, including basal cell carcinoma, squamous cell carcinoma, and melanoma. Learn what UV radiation is, how exposure happens, what research says about its health effects and cancer risk, and steps you can take to limit your exposure.",
+          "source_id": "c02_s2"
+        },
+        {
+          "title": "Skin Photodamage and Melanomagenesis: A Comprehensive Review - MDPI",
+          "publisher": "MDPI",
+          "date": null,
+          "url": "https://www.mdpi.com/2072-6694/17/11/1784",
+          "relevance_score": 60,
+          "stance": "partially_supports",
+          "reason": "Confirms UV radiation causes melanoma but does not specifically call out UVB.",
+          "snippet": "Melanoma is the most aggressive form of skin cancer, and its increasing incidence is a major public health concern. One of the main causes of melanoma is exposure to ultraviolet radiation from the sun, which damages the DNA in skin cells and increases the risk of cancer. However, genetics also play a role in determining who is more likely to develop this disease. This overview aims to explore ...",
+          "source_id": "c02_s3"
+        },
+        {
+          "title": "UV Exposure and the Risk of Cutaneous Melanoma in Skin of Color",
+          "publisher": "JAMA Network",
+          "date": null,
+          "url": "https://jamanetwork.com/journals/jamadermatology/fullarticle/2774113",
+          "relevance_score": 55,
+          "stance": "partially_supports",
+          "reason": "Reviews UV exposure link to melanoma risk but does not specify UVB or general skin cancers.",
+          "snippet": "This systematic review critically assesses and synthesizes the published data regarding the association between UV exposure and the risk of cutaneous melanoma in skin of color.",
+          "source_id": "c02_s4"
+        },
+        {
+          "title": "Global assessment of surface ultraviolet radiation and malignant skin ...",
+          "publisher": "Nature",
+          "date": "2025",
+          "url": "https://www.nature.com/articles/s41598-025-23066-z",
+          "relevance_score": 40,
+          "stance": "partially_supports",
+          "reason": "Confirms UV radiation broadly increases skin cancer risk but does not specifically distinguish UVB or melanoma.",
+          "snippet": "Climate change are altering ultraviolet (UV) radiation levels reaching the Earth's surface. Enhanced UV radiation poses significant risks to human health, notably increasing the risk of skin cancer.",
+          "source_id": "c02_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c03",
+      "sources": []
+    },
+    {
+      "claim_id": "c04",
+      "sources": []
+    },
+    {
+      "claim_id": "c05",
+      "sources": [
+        {
+          "title": "How Long Does SPF 30 Last? The Real Answer — Beauty Nexus Pro",
+          "publisher": "Beauty Nexus Pro",
+          "date": "2026-05-19",
+          "url": "https://beautynexuspro.com/skincare-routines/how-long-does-30-sunscreen-last",
+          "relevance_score": 90,
+          "stance": "supports",
+          "reason": "States SPF 30 means it takes 30 times longer for skin to redden than without sunscreen, matching the claim.",
+          "snippet": "May 19, 2026 · SPF 30 means that, under ideal laboratory conditions, it would take 30 times longer for your skin to redden compared to wearing no sunscreen. So if you normally burn in 10 minutes without protection, SPF 30 theoretically extends that to 300 minutes—or 5 hours.",
+          "source_id": "c05_s1"
+        },
+        {
+          "title": "How Long Does SPF 30 Last and When Should You Reapply?",
+          "publisher": "Biology Insights",
+          "date": "2025-12-14",
+          "url": "https://biologyinsights.com/how-long-does-spf-30-last-and-when-should-you-reapply/",
+          "relevance_score": 90,
+          "stance": "supports",
+          "reason": "Confirms SPF 30 theoretically allows 30 times longer before burning than unprotected skin.",
+          "snippet": "Dec 14, 2025 · Sun Protection Factor 30 is a scientific measure of how much solar energy is required to cause a sunburn on protected skin compared to unprotected skin. Theoretically, if skin takes ten minutes to burn without sunscreen, SPF 30 allows 30 times longer before burning (300 minutes).",
+          "source_id": "c05_s2"
+        },
+        {
+          "title": "How Long Does SPF 30 Sunscreen Last? (2026) — Beauty Nexus Pro",
+          "publisher": "Beauty Nexus Pro",
+          "date": "2026-03-20",
+          "url": "https://beautynexuspro.com/skincare-routines/how-long-does-spf-30-sunscreen-last",
+          "relevance_score": 90,
+          "stance": "supports",
+          "reason": "Directly states SPF 30 means it takes 30 times longer to burn than without sunscreen.",
+          "snippet": "Mar 20, 2026 · SPF—or Sun Protection Factor—is a lab-measured ratio comparing how long it takes *protected* skin to redden versus *unprotected* skin under controlled UVB light. An SPF 30 means it would take 30 times longer for your skin to burn than if you wore no sunscreen—if applied at the FDA-mandated thickness of 2 mg/cm².",
+          "source_id": "c05_s3"
+        },
+        {
+          "title": "Sunscreen SPF Calculator - Estimate Your Protected Sun Time",
+          "publisher": "Every Calculators",
+          "date": null,
+          "url": "https://everycalculators.com/sunscreen-spf-calculator.html",
+          "relevance_score": 85,
+          "stance": "supports",
+          "reason": "Explains that SPF 30 multiplies natural burn time by 30, directly supporting the claim's math.",
+          "snippet": "Formula Explained: The calculator multiplies your natural burn time by the SPF value of your sunscreen. For example, if you naturally burn in 10 minutes and use SPF 30, you're theoretically protected for 30 times longer (10 minutes * 30 = 300 minutes).",
+          "source_id": "c05_s4"
+        },
+        {
+          "title": "Sun Protection Factor (SPF) | FDA - U.S. Food and Drug ...",
+          "publisher": "FDA",
+          "date": null,
+          "url": "https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/sun-protection-factor-spf",
+          "relevance_score": 40,
+          "stance": "context",
+          "reason": "Describes how FDA measures SPF but doesn't state the 30x burn time figure explicitly.",
+          "snippet": "This page describes how the FDA determines and evaluates sun protection factor in over-the-counter sunscreen products and the science behind this evaluation.",
+          "source_id": "c05_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c06",
+      "sources": [
+        {
+          "title": "Sunscreen: How to Help Protect Your Skin from the Sun | FDA",
+          "publisher": "FDA",
+          "date": "2026-06-09",
+          "url": "https://www.fda.gov/drugs/understanding-over-counter-medicines/sunscreen-how-help-protect-your-skin-sun",
+          "relevance_score": 90,
+          "stance": "supports",
+          "reason": "Authoritative FDA source confirms broad spectrum sunscreens protect against both UVA and UVB, and non-broad-spectrum ones do not carry this claim.",
+          "snippet": "Jun 9, 2026 · Broad spectrum sunscreens help protect against both forms of UV radiation - UVA and UVB. However, not all sunscreens are broad spectrum, so it is important to look for this description on...",
+          "source_id": "c06_s1"
+        },
+        {
+          "title": "5 Best Broad-Spectrum Sunscreens - Sept. 2026 - BestReviewsDifference Between UVA vs. UVB Rays & Finding Your Best SunscreenWhat Is Broad-Spectrum Sunscreen? UVA, UVB ExplainedBroad Spectrum Sunscreen: UVA/UVB Truth (2026)Broad Spectrum Sunscreens with UVA & UVB Protection | VichyBreaking Down Broad-Spectrum Protection: Why Your Sunscreen ...Sun protection explained: SPF, UVA/UVB and what ‘broad ...",
+          "publisher": "BestReviews",
+          "date": "2026",
+          "url": "https://bestreviews.com/beauty-and-personal-care/sunscreens/best-broad-spectrum-sunscreens",
+          "relevance_score": 70,
+          "stance": "supports",
+          "reason": "States broad-spectrum sunscreens protect from both UVA and UVB rays.",
+          "snippet": "Jan 6, 2022 · Broad-spectrum, also called full-spectrum, sunscreens protect you from UVA and UVB. They do this either by reflecting the sun’s rays or absorbing the light and converting it into a small amount of heat. See full list on laroche-posay.us See full list on laroche-posay.us See full list on laroche-posay.us Apr 30, 2026 · Broad-spectrum sunscreen protects against both UVA and UVB rays. L",
+          "source_id": "c06_s2"
+        },
+        {
+          "title": "What Is Broad-Spectrum Sunscreen? UVA, UVB Explained",
+          "publisher": "Science Insights",
+          "date": "2026-04-30",
+          "url": "https://scienceinsights.org/what-is-broad-spectrum-sunscreen-uva-uvb-explained/",
+          "relevance_score": 70,
+          "stance": "supports",
+          "reason": "States broad-spectrum sunscreen protects against both UVA and UVB rays.",
+          "snippet": "Apr 30, 2026 · Broad-spectrum sunscreen protects against both UVA and UVB rays. Learn what that label really means and how to choose one that actually works.",
+          "source_id": "c06_s3"
+        },
+        {
+          "title": "Difference Between UVA vs. UVB Rays & Finding Your Best SunscreenWhat Is Broad-Spectrum Sunscreen? UVA, UVB ExplainedBroad Spectrum Sunscreen: UVA/UVB Truth (2026)Broad Spectrum Sunscreens with UVA & UVB Protection | VichyBreaking Down Broad-Spectrum Protection: Why Your Sunscreen ...Sun protection explained: SPF, UVA/UVB and what ‘broad ...",
+          "publisher": "La Roche-Posay",
+          "date": "2026-04-30",
+          "url": "https://www.laroche-posay.us/skincare-tips-and-advice/sun-protection/uva-vs-uvb-rays-finding-the-best-sunscreen-for-you.html",
+          "relevance_score": 65,
+          "stance": "partially_supports",
+          "reason": "Confirms broad-spectrum protects against UVA and UVB but notes protection isn't automatic or equal across brands, slightly qualifying the claim.",
+          "snippet": "See full list on laroche-posay.us See full list on laroche-posay.us See full list on laroche-posay.us Apr 30, 2026 · Broad-spectrum sunscreen protects against both UVA and UVB rays. Learn what that label really means and how to choose one that actually works. Jan 24, 2026 · Does broad spectrum sunscreen protect against UVA and UVB? Yes—but not automatically, not equally across brands, and certainl",
+          "source_id": "c06_s4"
+        },
+        {
+          "title": "Broad Spectrum Sunscreens with UVA & UVB Protection | Vichy",
+          "publisher": "Vichy",
+          "date": null,
+          "url": "https://www.vichyusa.com/skin-care/skin-care-product-type/sunscreen",
+          "relevance_score": 65,
+          "stance": "supports",
+          "reason": "States broad spectrum sunscreens prevent damage from both UVA and UVB rays.",
+          "snippet": "Discover sunscreens with broad spectrum protection that prevent damage from both UVA and UVB rays. Formulas are dermatologist tested for safety and efficacy.",
+          "source_id": "c06_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c07",
+      "sources": [
+        {
+          "title": "sunburn - Cleveland Clinic",
+          "publisher": "Cleveland Clinic",
+          "date": "2025-05-22",
+          "url": "https://health.clevelandclinic.org/tag/sunburn",
+          "relevance_score": 40,
+          "stance": "partially_supports",
+          "reason": "Confirms you can still tan while wearing sunscreen, but does not mention burning or Dr. Kassouf specifically.",
+          "snippet": "May 22, 2025 · Both can protect you from the sun’s rays, but they do it in different ways. Your skin tone determines if a sunburn becomes a suntan. You can still get a tan (a sign of skin damage) while wearing sunscreen. Sunscreen for Babies: When Can You Use Sunscreen and What Kind Is Safest?",
+          "source_id": "c07_s1"
+        },
+        {
+          "title": "Cleveland Clinic: Skip the base tan, lather up on sunscreen ...",
+          "publisher": "WKBN",
+          "date": "2026-03-08",
+          "url": "https://www.wkbn.com/news/ohio/skip-the-base-tan-lather-up-on-sunscreen-dermatologists-suggest/",
+          "relevance_score": 20,
+          "stance": "partially_supports",
+          "reason": "Discusses dermatologists warning about base tans and sunscreen but doesn't cite Dr. Kassouf or explicitly state one can still burn with sunscreen.",
+          "snippet": "Mar 8, 2026 · CLEVELAND (WKBN) – If you’re going somewhere sunny for spring break, you may wonder if it’s worth getting a “base tan” to prevent burning. Dermatologists are warning that not only are they...",
+          "source_id": "c07_s2"
+        },
+        {
+          "title": "UV protection and sunscreens: What to tell patients",
+          "publisher": "CCJM",
+          "date": null,
+          "url": "https://www.ccjm.org/content/ccjom/79/6/427.full.pdf",
+          "relevance_score": 10,
+          "stance": "context",
+          "reason": "Discusses UV radiation and sunscreens generally but doesn't specifically confirm the claim or mention Dr. Kassouf.",
+          "snippet": "In this article, we review UV radiation, the consequences of increased exposure to differ-ent parts of the UV spectrum, tanning, and the fundamentals of sunscreens.",
+          "source_id": "c07_s3"
+        },
+        {
+          "title": "Sunburn: Symptoms & Treatment - Cleveland Clinictanning - Cleveland ClinicUltraviolet (UV) Radiation: What It Is & Its Effect on Your SkinUV protection and sunscreens: What to tell patientsCleveland Clinic: Skip the base tan, lather up on sunscreen ...Tips for Treating Sunburns - newsroom.clevelandclinic.org",
+          "publisher": "Cleveland Clinic",
+          "date": null,
+          "url": "https://my.clevelandclinic.org/health/diseases/21858-sunburn",
+          "relevance_score": 5,
+          "stance": "context",
+          "reason": "General info on sunburn symptoms, no mention of sunscreen use or Dr. Kassouf's claim.",
+          "snippet": "If you get a sunburn, your skin might feel like it’s on fire — a hot and burning sensation that gets worse when you touch it, even with clothing. Symptoms of sunburn depend on how severe your burnis. Symptoms may include: See full list on my.clevelandclinic.org No sunburn is good. But a bad sunburn looks very red and inflamed. You may develop blisters and your skin will likely peel. See full list ",
+          "source_id": "c07_s4"
+        },
+        {
+          "title": "tanning - Cleveland Clinic",
+          "publisher": "Cleveland Clinic",
+          "date": "2023-04-20",
+          "url": "https://health.clevelandclinic.org/tag/tanning",
+          "relevance_score": 0,
+          "stance": "irrelevant",
+          "reason": "About tanning pills, unrelated to sunscreen's effect on tanning or burning.",
+          "snippet": "Apr 20, 2023 · Is It Safe To Use Tanning Pills? The results aren’t great, and the risks — like vision problems — aren’t worth it",
+          "source_id": "c07_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c08",
+      "sources": []
+    },
+    {
+      "claim_id": "c09",
+      "sources": [
+        {
+          "title": "Do sunscreens block vitamin D production? A critical review ...",
+          "publisher": "PMC (NCBI)",
+          "date": null,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9002342/",
+          "relevance_score": 40,
+          "stance": "partially_supports",
+          "reason": "Finds that sunscreens are less likely to block vitamin D production outdoors than lab tests suggest, partially supporting the idea of minimal link to deficiency.",
+          "snippet": "Thus, when tested outdoors, sunscreens with a given SPF, especially with high UVA protection, were less likely to block vitamin D production than when tested in the laboratory.",
+          "source_id": "c09_s1"
+        },
+        {
+          "title": "The effect of sunscreen on vitamin D: a review - PubMed",
+          "publisher": "PubMed",
+          "date": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30945275/",
+          "relevance_score": 20,
+          "stance": "context",
+          "reason": "Snippet only states the review's objective to investigate the sunscreen-vitamin D association, not its actual no-link conclusion.",
+          "snippet": "Background: Sunscreen use can prevent skin cancer, but there are concerns that it may increase the risk of vitamin D deficiency. Objectives: We aimed to review the literature to investigate associations between sunscreen use and vitamin D 3 or 25 hydroxyvitamin D [25 (OH)D] concentration.",
+          "source_id": "c09_s2"
+        },
+        {
+          "title": "The effect of sunscreen on vitamin D: a review - Neale - 2019 ...",
+          "publisher": "Wiley (British Journal of Dermatology)",
+          "date": "2019-04-04",
+          "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/bjd.17980",
+          "relevance_score": 20,
+          "stance": "context",
+          "reason": "Same review as index 1, snippet only outlines background/objective without stating the no-link conclusion explicitly.",
+          "snippet": "Apr 4, 2019 · Sunscreen use can prevent skin cancer, but there are concerns that it may increase the risk of vitamin D deficiency. We aimed to review the literature to investigate associations between sunscreen use and vitamin D 3 or 25 hydroxyvitamin D [25 (OH)D] concentration.",
+          "source_id": "c09_s3"
+        },
+        {
+          "title": "Sunscreen photoprotection and vitamin D status - PMC",
+          "publisher": "PMC (NCBI)",
+          "date": null,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6899926/",
+          "relevance_score": 15,
+          "stance": "context",
+          "reason": "Aims to reach consensus on sunscreen's effect on vitamin D status but snippet does not state a definitive no-link finding.",
+          "snippet": "To review the published evidence to reach a consensus on the influence of photoprotection by sunscreens on vitamin D status, considering other relevant factors.",
+          "source_id": "c09_s4"
+        },
+        {
+          "title": "Sunscreen and 25-Hydroxyvitamin D Levels: Friends or Foes? A ...",
+          "publisher": "ScienceDirect",
+          "date": "2025-06-01",
+          "url": "https://www.sciencedirect.com/science/article/pii/S1530891X25001223",
+          "relevance_score": 10,
+          "stance": "context",
+          "reason": "Snippet notes conflicting findings from observational and interventional studies but gives no conclusion supporting or refuting the claim.",
+          "snippet": "Jun 1, 2025 · To evaluate the impact of sunscreen use on 25-hydroxyvitamin D (25 (OH)D) levels, addressing conflicting findings from observational and interventional studies.",
+          "source_id": "c09_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c10",
+      "sources": [
+        {
+          "title": "How to Treat Allergic Reaction to Spray Tan: An Expert Guide",
+          "publisher": "Freak To Fit",
+          "date": "2024-09-16",
+          "url": "https://freaktofit.com/how-to-treat-allergic-reaction-to-spray-tan-an-expert-guide/",
+          "relevance_score": 90,
+          "stance": "supports",
+          "reason": "Explains that spray tan chemicals (DHA) can cause allergic reactions on skin.",
+          "snippet": "Sep 16, 2024 · What Causes Allergic Reactions to Spray Tans? Spray tan normally includes the use of a substance known as DHA (dihydroxyacetone) which causes a reaction with the skin amino acids thus giving rise to a tanned effect.",
+          "source_id": "c10_s1"
+        },
+        {
+          "title": "Are Spray Tans Harmful To Your Skin? | Truths Unveiled Now",
+          "publisher": "Doctor Guide Online",
+          "date": null,
+          "url": "https://doctorguideonline.com/are-spray-tans-harmful-to-your-skin/",
+          "relevance_score": 90,
+          "stance": "supports",
+          "reason": "Directly states other ingredients in spray tan formulations can trigger allergic reactions or skin irritation.",
+          "snippet": "However, while DHA itself is considered safe, other ingredients in spray tan formulations—such as fragrances, preservatives, and alcohol—can sometimes trigger allergic reactions or skin irritation. Understanding what goes into your spray tan solution is crucial to minimize risks.",
+          "source_id": "c10_s2"
+        },
+        {
+          "title": "Self-Tanner Allergy: DHA vs Fragrance Reactions | Curex",
+          "publisher": "Curex",
+          "date": "2026-06-24",
+          "url": "https://getcurex.com/allergens-and-symptoms/allergy-symptoms-immunotherapy-self-tanners",
+          "relevance_score": 85,
+          "stance": "supports",
+          "reason": "Confirms spray-tan chemicals like methylisothiazolinone can cause true allergic contact dermatitis.",
+          "snippet": "Jun 24, 2026 · Spray-tan rashes can represent true allergic contact dermatitis — specifically from methylisothiazolinone (MI), a preservative used in many spray-tan solutions.",
+          "source_id": "c10_s3"
+        },
+        {
+          "title": "Is Spray Tan Bad for Your Face? Risks Explained",
+          "publisher": "Science Insights",
+          "date": "2026-05-12",
+          "url": "https://scienceinsights.org/is-spray-tan-bad-for-your-face-risks-explained/",
+          "relevance_score": 80,
+          "stance": "supports",
+          "reason": "States spray tans can cause allergic reactions and skin issues, supporting the claim.",
+          "snippet": "May 12, 2026 · Spray tans can cause breakouts, free radical damage, and allergic reactions on your face. Here’s what the risks actually mean for your skin.",
+          "source_id": "c10_s4"
+        },
+        {
+          "title": "Allergic Reactions To Fake Tan: The Fix - Good Looking Tan",
+          "publisher": "Good Looking Tan",
+          "date": "2024-08-10",
+          "url": "https://goodlookingtan.com/allergic-reactions-to-fake-tan/",
+          "relevance_score": 75,
+          "stance": "supports",
+          "reason": "Discusses allergic reactions to fake tan causing red, itchy, sore skin, aligning with claim.",
+          "snippet": "Aug 10, 2024 · Worried your fake tan has left your skin red, itchy and sore? Here is how to tell an allergy from contact dermatitis, and three things that calm it down.",
+          "source_id": "c10_s5"
+        }
+      ]
+    },
+    {
+      "claim_id": "c11",
+      "sources": []
+    },
+    {
+      "claim_id": "c12",
+      "sources": []
+    }
+  ]
+}

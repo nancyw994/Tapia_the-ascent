@@ -9,43 +9,76 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lib import chat, extract_json_object, is_reprint, load_prompt, make_client, now_iso, read_json, write_json
+from lib import chat, extract_json_object, load_prompt, make_client, now_iso, read_json, write_json
+from source_verification import SourcePolicy
 
 
-def independent_hits(claim_quote: str, hits: list[dict], essay_url: str) -> list[dict]:
+def independent_hits(hits: list[dict]) -> list[dict]:
+    """Hits that source_verification.py fetched, tier-classified, and found
+    claim-relevant text in (`eligible`), deduped to one per publisher domain.
+
+    `eligible` already encodes: not a reprint of the essay, from a tier whose
+    policy allows it to support a verdict, and containing text relevant to
+    the claim in the fetched page — not just a search-result snippet.
+    """
     kept = []
-    seen_hosts = set()
+    seen_publishers: set[str] = set()
     for hit in hits:
-        if not hit.get("url"):
+        if not hit.get("eligible"):
             continue
-        if hit.get("tier") == 0 or is_reprint(hit, claim_quote, essay_url):
+        publisher = hit.get("publisher") or hit.get("host") or hit.get("final_url") or hit.get("url")
+        if not publisher or publisher in seen_publishers:
             continue
-        h = hit.get("host") or hit.get("url")
-        if h in seen_hosts:
-            continue
-        seen_hosts.add(h)
+        seen_publishers.add(publisher)
         kept.append(hit)
     return kept
 
 
-def cap_confidence(verdict: str, confidence: float, independent: list, hits: list) -> float:
-    if verdict == "supported" and len(independent) < 2:
-        return min(confidence, 0.0)
-    if any(h.get("tier") == 0 for h in hits) and verdict == "supported":
+def sufficient_evidence(independent: list[dict], policy: SourcePolicy) -> bool:
+    """≥min_sources independent hits, OR exactly one hit trusted enough to stand alone."""
+    if len(independent) >= policy.min_sources:
+        return True
+    single_tier = policy.independence.get("single_source_min_tier")
+    if single_tier is not None and len(independent) == 1:
+        tier = independent[0].get("tier")
+        return tier is not None and tier <= single_tier
+    return False
+
+
+def cap_confidence(verdict: str, confidence: float, independent: list, hits: list, policy: SourcePolicy) -> float:
+    if verdict == "supported" and len(independent) < policy.min_sources:
+        cap = policy.independence.get("single_source_confidence_cap", 0.0)
+        return min(confidence, cap)
+    if any(h.get("reprint") for h in hits) and verdict == "supported":
         return min(confidence, 0.4)
     return max(0.0, min(1.0, confidence))
+
+
+def shape_sources(hits: list[dict]) -> list[dict]:
+    """Trim a verified hit down to what verdicts.json / the annotator need."""
+    return [
+        {
+            "url": h.get("final_url") or h.get("url"),
+            "title": h.get("title"),
+            "quote": h.get("evidence_excerpt") or h.get("quote"),
+            "tier": h.get("tier"),
+            "tier_name": h.get("tier_name"),
+        }
+        for h in hits
+    ]
 
 
 def run(evidence_path: Path, out_path: Path, model: str, base_url: str, essay_url: str) -> dict:
     payload = read_json(evidence_path)
     client = make_client(base_url)
+    policy = SourcePolicy()
     claims = []
     by_id = {c["id"]: c for c in (payload.get("claims") or [])}
     for ev in payload.get("evidence") or []:
         claim = dict(by_id.get(ev["id"]) or {"id": ev["id"], "quote": ev.get("quote")})
         label = ev.get("label") or claim.get("label")
         hits = ev.get("hits") or []
-        independent = independent_hits(ev.get("quote") or "", hits, essay_url)
+        independent = independent_hits(hits)
 
         if label != "verifiable":
             claim["verdict"] = "opinion"
@@ -55,21 +88,28 @@ def run(evidence_path: Path, out_path: Path, model: str, base_url: str, essay_ur
             claims.append(claim)
             continue
 
-        if len(independent) < 2:
+        if not sufficient_evidence(independent, policy):
             claim["verdict"] = "unverifiable"
             claim["confidence"] = 0.35
-            claim["sources"] = independent
-            claim["why"] = "Fewer than two independent, non-reprint sources."
+            claim["sources"] = shape_sources(independent)
+            claim["why"] = (
+                "Fewer than two independent, non-reprint sources, and no single source was"
+                " trusted enough to stand alone."
+                if independent
+                else "No eligible independent sources were retrieved."
+            )
             claims.append(claim)
             continue
 
+        # Ground the comparator in text actually found on the fetched page (evidence_excerpt),
+        # not the raw search-engine snippet, which can misdescribe or predate a redirected page.
         for _ in range(2):  # one retry: a malformed reply would otherwise become a silent "unverifiable"
             data = extract_json_object(
                 chat(
                     client,
                     model,
                     load_prompt("comparator.md"),
-                    json.dumps({"claim": claim, "sources": independent[:4]}, ensure_ascii=False),
+                    json.dumps({"claim": claim, "sources": shape_sources(independent[:4])}, ensure_ascii=False),
                     max_tokens=400,
                 )
             )
@@ -87,11 +127,8 @@ def run(evidence_path: Path, out_path: Path, model: str, base_url: str, essay_ur
             why = "Comparator did not explain the verdict from the snippets."
         claim["label"] = label
         claim["verdict"] = verdict
-        claim["confidence"] = cap_confidence(verdict, confidence, independent, hits)
-        claim["sources"] = [
-            {"url": h.get("url"), "title": h.get("title"), "quote": h.get("quote"), "tier": h.get("tier")}
-            for h in independent[:4]
-        ]
+        claim["confidence"] = cap_confidence(verdict, confidence, independent, hits, policy)
+        claim["sources"] = shape_sources(independent[:4])
         claim["why"] = why
         claims.append(claim)
 

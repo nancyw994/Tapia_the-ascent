@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 from datetime import datetime, timezone
@@ -22,6 +23,21 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "config"
 
 sys.path.insert(0, str(ROOT.parent / "scripts"))  # llm_client.py lives in scripts/
+
+
+def _load_env_file(path: Path) -> None:
+    """Populate os.environ from a .env file (nothing else does this for the repo root .env)."""
+    if not path.exists():
+        return
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        name, _, value = line.partition("=")
+        os.environ.setdefault(name.strip(), value.strip().strip('"').strip("'"))
+
+
+_load_env_file(ROOT.parent / ".env")
 
 # Pass base_url="openrouter" to route every chat() call through scripts/llm_client.ask_llm.
 API_BACKEND = "openrouter"
