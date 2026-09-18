@@ -1,0 +1,76 @@
+{
+  "classifications": [
+    {
+      "claim_id": "c01",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "Describes specific model releases by named companies on a specific date."
+    },
+    {
+      "claim_id": "c02",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "States a measurable historical value in an ongoing capability trend, not tied to a specific event."
+    },
+    {
+      "claim_id": "c03",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "Reports a measurable capability metric (task duration) as part of a trend series."
+    },
+    {
+      "claim_id": "c04",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "Describes a measurable trend (doubling rate) in AI capability."
+    },
+    {
+      "claim_id": "c05",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A forecast of a measurable milestone (AI capability timeline) despite being attributed to a person."
+    },
+    {
+      "claim_id": "c06",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "A specific claim/quote about a named product's role in its own creation."
+    },
+    {
+      "claim_id": "c07",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "A statement from a specific named person about specific organizational practices."
+    },
+    {
+      "claim_id": "c08",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A testable forecast about AI capability timelines, framed as a measurable prediction."
+    },
+    {
+      "claim_id": "c09",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "A forecast of a measurable quantity (percentage of jobs affected) over a time range."
+    },
+    {
+      "claim_id": "c10",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "A qualitative statement/announcement attributed to a specific named person, not a measurable quantity."
+    },
+    {
+      "claim_id": "c11",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "References a specific essay with a specific length and timeframe, making it a concrete event."
+    },
+    {
+      "claim_id": "c12",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "Describes specific documented incidents from a named organization's tests."
+    }
+  ]
+}

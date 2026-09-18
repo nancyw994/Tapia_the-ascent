@@ -43,6 +43,12 @@
     .panel h2 { margin: 0 0 0.75rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
 
     #article { font-family: Georgia, "Times New Roman", serif; line-height: 1.7; white-space: pre-wrap; overflow-wrap: anywhere; }
+    #article .h { font-weight: 700; line-height: 1.35; }
+    #article .hash { display: none; }
+    #article .h1 { font-size: 2rem; }
+    #article .h2 { font-size: 1.55rem; }
+    #article .h3 { font-size: 1.3rem; }
+    #article .h4, #article .h5, #article .h6 { font-size: 1.1rem; }
     mark.q { color: inherit; background: var(--bg-c); box-shadow: inset 0 -2px 0 var(--c); padding: 0 0.1rem; border-radius: 3px; cursor: pointer; }
     mark.q sup { font: 700 0.62rem ui-sans-serif, system-ui, sans-serif; color: var(--c); margin-left: 0.2rem; }
     .flash { animation: flash 1.4s ease-out; }
@@ -256,6 +262,16 @@ function claimStyle(id) {
   return EXTRACT_STYLE;
 }
 
+// Plain text between claim highlights. Markdown heading lines (# .. ######) are enlarged and their
+// "#" marker hidden; the text itself is unchanged, so claim positions stay valid.
+function plainHtml(seg, atLineStart) {
+  return seg.split("\n").map((line, i) => {
+    const m = (i > 0 || atLineStart) && line.match(/^(#{1,6})[ \t]+/);
+    if (!m) return esc(line);
+    return `<span class="h h${m[1].length}"><span class="hash">${esc(m[0])}</span>${esc(line.slice(m[0].length))}</span>`;
+  }).join("\n");
+}
+
 function articleHtml() {
   const spans = [];
   if (S.view >= 2) {
@@ -269,11 +285,11 @@ function articleHtml() {
   for (const [start, end, id] of spans) {
     if (start < last) continue;
     const st = claimStyle(id);
-    html += esc(S.text.slice(last, start));
+    html += plainHtml(S.text.slice(last, start), last === 0 || S.text[last - 1] === "\n");
     html += `<mark class="q" id="m-${id}" data-id="${id}" style="--c:${st.c};--bg-c:${st.bg}">${esc(S.text.slice(start, end))}<sup>${id}</sup></mark>`;
     last = end;
   }
-  return html + esc(S.text.slice(last));
+  return html + plainHtml(S.text.slice(last), last === 0 || S.text[last - 1] === "\n");
 }
 
 function sideHtml() {

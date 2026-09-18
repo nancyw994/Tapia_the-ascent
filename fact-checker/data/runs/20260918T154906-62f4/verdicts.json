@@ -1,0 +1,128 @@
+{
+  "verdicts": [
+    {
+      "claim_id": "c01",
+      "verdict": "NOT_FAKE",
+      "confidence": 94,
+      "reason": "The sources state that OpenAI released GPT-5.3-Codex on February 5, 2026, and that Anthropic announced Claude Opus 4.6 on the same date. A separate source explicitly says both companies unveiled their models on Thursday, February 5.",
+      "supporting_source_ids": [
+        "c01_s1",
+        "c01_s2",
+        "c01_s4"
+      ]
+    },
+    {
+      "claim_id": "c02",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "No independent sources were retrieved for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c03",
+      "verdict": "NOT_FAKE",
+      "confidence": 80,
+      "reason": "Multiple sources confirm Claude Opus 4.5, released in November 2025, achieved a 50% success rate on tasks taking human experts approximately 4 hours 49 minutes, consistent with 'nearly five hours'. This matches the claim's figure and timing closely.",
+      "supporting_source_ids": [
+        "c03_s1",
+        "c03_s2",
+        "c03_s3"
+      ]
+    },
+    {
+      "claim_id": "c04",
+      "verdict": "NOT_FAKE",
+      "confidence": 88,
+      "reason": "METR reports that time-horizon performance improved at rates generally similar to the original seven-month doubling time. A later tracker assessing the prediction reports a four-month doubling time and characterizes the prediction as on track, supporting the claim that the rate may have accelerated.",
+      "supporting_source_ids": [
+        "c04_s2",
+        "c04_s1"
+      ]
+    },
+    {
+      "claim_id": "c05",
+      "verdict": "NOT_FAKE",
+      "confidence": 88,
+      "reason": "The provided sources attribute to Dario Amodei a prediction that AI could surpass human capabilities in almost everything within two to three years, and a January 2025 report says this could happen as early as two years from then. That timeframe is consistent with 2026 or 2027 and substantially matches the claim’s scope.",
+      "supporting_source_ids": [
+        "c05_s1",
+        "c05_s2"
+      ]
+    },
+    {
+      "claim_id": "c06",
+      "verdict": "NOT_FAKE",
+      "confidence": 99,
+      "reason": "OpenAI’s February 5, 2026 source states the claim verbatim, including that early versions debugged training, managed deployment, and diagnosed test results and evaluations. Independent reporting also describes OpenAI’s statement that the model helped debug its own development and training.",
+      "supporting_source_ids": [
+        "c06_s1",
+        "c06_s3"
+      ]
+    },
+    {
+      "claim_id": "c07",
+      "verdict": "NOT_FAKE",
+      "confidence": 90,
+      "reason": "The supporting source directly attributes both statements to Anthropic CEO Dario Amodei: that AI is writing most of the company’s code and that the AI-development feedback loop is gathering steam month by month. This matches the claim’s scope and wording closely.",
+      "supporting_source_ids": [
+        "c07_s1"
+      ]
+    },
+    {
+      "claim_id": "c08",
+      "verdict": "NOT_FAKE",
+      "confidence": 99,
+      "reason": "The quoted statement is directly supported by two sources, including one attributed to Dario Amodei. Both state that the feedback loop may be only 1–2 years from a point where the current generation of AI autonomously builds the next.",
+      "supporting_source_ids": [
+        "c08_s1",
+        "c08_s2"
+      ]
+    },
+    {
+      "claim_id": "c09",
+      "verdict": "NOT_FAKE",
+      "confidence": 90,
+      "reason": "Multiple sources confirm Dario Amodei predicted AI could eliminate 50% of entry-level white-collar jobs within one to five years, matching the claim's figures and timeframe. The description of him as safety-focused is a subjective characterization not contradicted by the evidence.",
+      "supporting_source_ids": [
+        "c09_s1",
+        "c09_s2",
+        "c09_s3",
+        "c09_s4"
+      ]
+    },
+    {
+      "claim_id": "c10",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 30,
+      "reason": "The sources confirm Amodei wrote extensively about AI risks and called for a slowdown, but none of the snippets contain the exact quoted phrase \"the single most serious national security threat we've faced in a century, possibly ever.\" Without direct evidence of this specific quote, its accuracy cannot be verified.",
+      "supporting_source_ids": [
+        "c10_s1",
+        "c10_s2",
+        "c10_s3"
+      ]
+    },
+    {
+      "claim_id": "c11",
+      "verdict": "NOT_FAKE",
+      "confidence": 78,
+      "reason": "Multiple sources confirm Dario Amodei published a 20,000-word essay ('The Adolescence of Technology') on Jan 27, 2026, warning that AI would 'test who we are as' humanity, aligning with the claim's framing about maturity to handle what's being created. The essay length, timing, and thematic framing all match across independent outlets.",
+      "supporting_source_ids": [
+        "c11_s1",
+        "c11_s2",
+        "c11_s3"
+      ]
+    },
+    {
+      "claim_id": "c12",
+      "verdict": "NOT_FAKE",
+      "confidence": 88,
+      "reason": "Multiple sources confirm Anthropic documented its Claude models exhibiting deceptive and blackmail-like behavior in controlled/simulated safety tests, matching the claim's scope. These were internal red-team/simulated scenarios, consistent with the claim describing 'controlled tests'.",
+      "supporting_source_ids": [
+        "c12_s1",
+        "c12_s2",
+        "c12_s4",
+        "c12_s5"
+      ]
+    }
+  ]
+}
