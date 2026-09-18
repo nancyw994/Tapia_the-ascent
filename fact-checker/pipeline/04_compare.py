@@ -10,45 +10,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib import chat, extract_json_object, load_prompt, make_client, now_iso, read_json, write_json
-from source_verification import SourcePolicy
-
-
-def independent_hits(hits: list[dict]) -> list[dict]:
-    """Hits that source_verification.py fetched, tier-classified, and found
-    claim-relevant text in (`eligible`), deduped to one per publisher domain.
-
-    `eligible` already encodes: not a reprint of the essay, from a tier whose
-    policy allows it to support a verdict, and containing text relevant to
-    the claim in the fetched page — not just a search-result snippet.
-    """
-    kept = []
-    seen_publishers: set[str] = set()
-    for hit in hits:
-        if not hit.get("eligible"):
-            continue
-        publisher = hit.get("publisher") or hit.get("host") or hit.get("final_url") or hit.get("url")
-        if not publisher or publisher in seen_publishers:
-            continue
-        seen_publishers.add(publisher)
-        kept.append(hit)
-    return kept
-
-
-def sufficient_evidence(independent: list[dict], policy: SourcePolicy) -> bool:
-    """≥min_sources independent hits, OR exactly one hit trusted enough to stand alone."""
-    if len(independent) >= policy.min_sources:
-        return True
-    single_tier = policy.independence.get("single_source_min_tier")
-    if single_tier is not None and len(independent) == 1:
-        tier = independent[0].get("tier")
-        return tier is not None and tier <= single_tier
-    return False
+from source_verification import SourcePolicy, cap_single_source_confidence, independent_hits, sufficient_evidence
 
 
 def cap_confidence(verdict: str, confidence: float, independent: list, hits: list, policy: SourcePolicy) -> float:
-    if verdict == "supported" and len(independent) < policy.min_sources:
-        cap = policy.independence.get("single_source_confidence_cap", 0.0)
-        return min(confidence, cap)
+    if verdict == "supported":
+        confidence = cap_single_source_confidence(confidence, independent, policy)
     if any(h.get("reprint") for h in hits) and verdict == "supported":
         return min(confidence, 0.4)
     return max(0.0, min(1.0, confidence))

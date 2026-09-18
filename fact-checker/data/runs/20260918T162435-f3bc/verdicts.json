@@ -1,0 +1,118 @@
+{
+  "verdicts": [
+    {
+      "claim_id": "c01",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 30,
+      "reason": "The sources confirm general UVA-related skin damage and cancer risk but do not specifically address most listed conditions like freckles, melasma, hyperpigmentation, or sunspots. The snippets are too thin and general to verify each specific claim item.",
+      "supporting_source_ids": [
+        "c01_s1",
+        "c01_s2",
+        "c01_s3"
+      ]
+    },
+    {
+      "claim_id": "c02",
+      "verdict": "NOT_FAKE",
+      "confidence": 85,
+      "reason": "Multiple sources confirm UV radiation, including UVB, is a major risk factor for skin cancers such as melanoma, supporting the claim's core assertion. The evidence directly ties UVB exposure to increased melanoma risk, matching the claim's scope.",
+      "supporting_source_ids": [
+        "c02_s1",
+        "c02_s2"
+      ]
+    },
+    {
+      "claim_id": "c03",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "No independent sources were retrieved for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c04",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "No independent sources were retrieved for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c05",
+      "verdict": "NOT_FAKE",
+      "confidence": 80,
+      "reason": "Multiple sources (c05_s1, c05_s2, c05_s3, c05_s4) confirm that SPF 30 theoretically extends burn time by 30 times compared to unprotected skin under ideal/lab conditions. The claim aligns with this consistent explanation across independent sources.",
+      "supporting_source_ids": [
+        "c05_s1",
+        "c05_s2",
+        "c05_s3",
+        "c05_s4"
+      ]
+    },
+    {
+      "claim_id": "c06",
+      "verdict": "NOT_FAKE",
+      "confidence": 78,
+      "reason": "Multiple sources (FDA, BestReviews, Science Insights, La Roche-Posay, Vichy) confirm that broad-spectrum sunscreens protect against both UVA and UVB rays, matching the claim's core assertion. The claim's simplified attribution of sunburn to UVB and tanning to UVA aligns with standard dermatological descriptions used in these sources.",
+      "supporting_source_ids": [
+        "c06_s1",
+        "c06_s2",
+        "c06_s3",
+        "c06_s4",
+        "c06_s5"
+      ]
+    },
+    {
+      "claim_id": "c07",
+      "verdict": "NOT_FAKE",
+      "confidence": 60,
+      "reason": "Cleveland Clinic source confirms you can still tan (a sign of skin damage) while wearing sunscreen, supporting the claim's core assertion. Though the specific attribution to 'Dr. Kassouf' isn't directly verifiable in the snippets, the underlying medical fact matches Cleveland Clinic content.",
+      "supporting_source_ids": [
+        "c07_s1",
+        "c07_s2"
+      ]
+    },
+    {
+      "claim_id": "c08",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "No independent sources were retrieved for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c09",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 45,
+      "reason": "The sources show reviews investigating the sunscreen-vitamin D relationship, with one noting real-world sunscreen use is less likely to block vitamin D than lab conditions suggest, but none explicitly state a definitive finding of 'no link' across the body of research. The evidence is too thin and context-only to confirm the specific claim as stated.",
+      "supporting_source_ids": [
+        "c09_s1",
+        "c09_s2",
+        "c09_s3"
+      ]
+    },
+    {
+      "claim_id": "c10",
+      "verdict": "NOT_FAKE",
+      "confidence": 85,
+      "reason": "Multiple sources confirm that spray tan chemicals (DHA, preservatives, fragrances) can trigger skin irritation or allergic reactions, matching the claim's content. No contradicting evidence or dropped caveats were found.",
+      "supporting_source_ids": [
+        "c10_s1",
+        "c10_s2",
+        "c10_s3",
+        "c10_s4"
+      ]
+    },
+    {
+      "claim_id": "c11",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "No independent sources were retrieved for this claim.",
+      "supporting_source_ids": []
+    },
+    {
+      "claim_id": "c12",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "reason": "No independent sources were retrieved for this claim.",
+      "supporting_source_ids": []
+    }
+  ]
+}

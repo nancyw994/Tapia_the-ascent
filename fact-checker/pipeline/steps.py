@@ -25,13 +25,21 @@ from lib import (
     search_web,
 )
 from llm_client import DEFAULT_MODEL  # noqa: E402  (lib.py puts scripts/ on sys.path)
+from source_verification import (
+    SourcePolicy,
+    SourceVerifier,
+    cap_single_source_confidence,
+    independent_hits,
+    sufficient_evidence,
+)
 
-MAX_CLAIMS = 40
+MAX_CLAIMS = 12
 MAX_CLAIMS_PER_WINDOW = 8
 WINDOW_CHARS = 4000
 WINDOW_OVERLAP = 500
 SOURCES_PER_CLAIM = 5
 WORKERS = 4  # claims searched / judged in parallel
+VERIFY_WORKERS = 6  # hits verified (fetched) per claim in parallel; network-bound
 TYPE_COLORS = {"scientific_general": "blue", "event": "orange"}
 STANCES = {"supports", "partially_supports", "contradicts", "context", "irrelevant"}
 VERDICTS = {"supported", "contradicted", "misleading", "unverifiable", "opinion"}
@@ -96,6 +104,8 @@ def article_coverage(claims: list[dict], evidence: list[dict], verdicts: list[di
     }
 
 _log_lock = threading.Lock()  # claims are searched in threads; keep ledger entries whole
+_policy = SourcePolicy()
+_verifier = SourceVerifier(_policy)  # shared requests.Session; safe across the thread pools below
 
 # Called with one event dict per start / token / note / end, for the live view in the browser.
 Emit = Callable[[dict], None] | None
@@ -354,7 +364,7 @@ def _rank(claim: dict, hits: list[dict], model: str, emit: Emit = None) -> dict[
 
 
 def _sources_for(
-    claim: dict, queries: list[str], log_path: Path, model: str, emit: Emit = None, essay_url: str = ""
+    claim: dict, queries: list[str], log_path: Path, model: str, emit: Emit = None, essay_text: str = "", essay_url: str = ""
 ) -> tuple[list[dict], int]:
     cid = claim["claim_id"]
     note = (lambda text: emit({"task": f"search-{cid}", "label": f"{cid}: searching the web", "type": "note", "text": text})) if emit else _silent
@@ -376,9 +386,18 @@ def _sources_for(
             seen.add(url)
             hits.append(hit)
     hits = hits[:8]
-    note(f"{len(hits)} independent result{'' if len(hits) == 1 else 's'} kept")
+    note(f"verifying {len(hits)} result{'' if len(hits) == 1 else 's'} (fetching, checking tier and relevance)")
     if not hits:
         return [], dropped
+
+    def verify_one(hit: dict) -> dict:
+        verdict = _verifier.verify(hit, claim["sentence"], essay_text, essay_url)
+        return {**hit, **verdict}
+
+    with ThreadPoolExecutor(VERIFY_WORKERS) as pool:
+        hits = list(pool.map(verify_one, hits))
+    dropped += sum(1 for h in hits if h.get("reprint"))
+    note(f"{sum(h.get('eligible', False) for h in hits)} of {len(hits)} are independently verified")
     rows = _rank(claim, hits, model, emit)
     sources = []
     for i, hit in enumerate(hits):
@@ -386,14 +405,17 @@ def _sources_for(
         stance = row.get("stance") if row.get("stance") in STANCES else "context"
         sources.append(
             {
-                "title": hit["title"],
-                "publisher": str(row.get("publisher") or "").strip() or host(hit["url"]),
-                "date": _valid_date(row.get("date")),
-                "url": hit["url"],
+                "title": hit.get("title") or "",
+                "publisher": hit.get("publisher") or str(row.get("publisher") or "").strip() or host(hit["url"]),
+                "date": _valid_date(row.get("date")) or (hit.get("published_at") or None),
+                "url": hit.get("final_url") or hit["url"],
                 "relevance_score": _clamp(row.get("relevance_score"), -100, 100),
                 "stance": stance,
                 "reason": str(row.get("reason") or "").strip() or "Not scored: the model's rating was unusable.",
-                "snippet": hit["quote"],
+                "snippet": hit.get("evidence_excerpt") or hit["quote"],
+                "tier": hit.get("tier"),
+                "tier_name": hit.get("tier_name"),
+                "eligible": bool(hit.get("eligible")),
             }
         )
     sources.sort(key=lambda s: s["relevance_score"], reverse=True)
@@ -404,7 +426,12 @@ def _sources_for(
 
 
 def find_sources(
-    claims: list[dict], log_path: Path, model: str = DEFAULT_MODEL, emit: Emit = None, essay_url: str = ""
+    claims: list[dict],
+    log_path: Path,
+    model: str = DEFAULT_MODEL,
+    emit: Emit = None,
+    essay_text: str = "",
+    essay_url: str = "",
 ) -> list[dict]:
     plan = _ask(
         "plan_queries.md",
@@ -421,7 +448,9 @@ def find_sources(
         planned = plan.get(claim["claim_id"]) or []
         queries = [str(q).strip() for q in planned if str(q).strip()][:2] or [claim["sentence"][:120]]
         try:
-            sources, dropped = _sources_for(claim, queries, log_path, model, emit=emit, essay_url=essay_url)
+            sources, dropped = _sources_for(
+                claim, queries, log_path, model, emit=emit, essay_text=essay_text, essay_url=essay_url
+            )
             return {"claim_id": claim["claim_id"], "sources": sources, "reprints_dropped": dropped}
         except Exception as exc:  # noqa: BLE001  one claim failing must not sink the others
             return {"claim_id": claim["claim_id"], "sources": [], "reprints_dropped": 0, "error": f"{type(exc).__name__}: {exc}"}
@@ -448,11 +477,25 @@ def _decide(claim: dict, sources: list[dict], model: str, emit: Emit = None, rep
         if reprints_dropped:
             reason += f" {reprints_dropped} reprint(s) of this essay were dropped."
         return insufficient(reason)
+
+    # Gate on verified, tier-eligible evidence before asking the model.
+    eligible = independent_hits(sources)
+    if not sufficient_evidence(eligible, _policy):
+        extra = f" {reprints_dropped} reprint(s) of this essay were dropped." if reprints_dropped else ""
+        return insufficient(
+            (
+                "Only one independently-verified source was found and it wasn't trusted enough to"
+                " stand alone (needs an official/peer-reviewed source, or a second independent one)."
+                if eligible
+                else "No independently-verified source (fetched, correctly attributed, relevant) was found for this claim."
+            )
+            + extra
+        )
     payload = {
         "claim": {"claim_id": claim["claim_id"], "sentence": claim["sentence"]},
         "sources": [
             {k: s[k] for k in ("source_id", "publisher", "date", "stance", "relevance_score", "snippet")}
-            for s in sources
+            for s in eligible
         ],
     }
 
@@ -470,19 +513,22 @@ def _decide(claim: dict, sources: list[dict], model: str, emit: Emit = None, rep
             lambda d: d["verdict"] in VERDICTS and d.get("reason"),
             emit=emit,
             task=f"verdict-{claim['claim_id']}",
-            label=f"{claim['claim_id']}: weighing {len(sources)} sources",
+            label=f"{claim['claim_id']}: weighing {len(eligible)} verified sources",
         )
     except RuntimeError:
         return insufficient("The model's verdict could not be read; treat this claim as unchecked.")
-    valid_ids = {s["source_id"] for s in sources}
+    valid_ids = {s["source_id"] for s in eligible}
     cited = [i for i in data.get("supporting_source_ids") or [] if i in valid_ids]
     verdict, reason = data["verdict"], str(data["reason"]).strip()
+    confidence = _clamp(data.get("confidence"), 0, 100)
     if verdict not in {"unverifiable", "opinion"} and not cited:
         verdict, reason = "unverifiable", f"{reason} (Downgraded: no retrieved source was cited.)"
+    if verdict not in {"unverifiable", "opinion"}:
+        confidence = int(cap_single_source_confidence(confidence, eligible, _policy, scale=100))
     return {
         "claim_id": claim["claim_id"],
         "verdict": verdict,
-        "confidence": _clamp(data.get("confidence"), 0, 100),
+        "confidence": confidence,
         "reason": reason,
         "supporting_source_ids": cited,
     }
