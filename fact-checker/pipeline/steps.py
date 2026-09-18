@@ -194,7 +194,7 @@ def _rank(claim: dict, hits: list[dict], model: str, emit: Emit = None) -> dict[
         return {}  # unscored sources are still shown, flagged as such
 
 
-def _sources_for(claim: dict, queries: list[str], log_path: Path, model: str, emit: Emit = None) -> list[dict]:
+def _sources_for(claim: dict, queries: list[str], log_path: Path, model: str, emit: Emit = None, essay_url: str = "") -> list[dict]:
     cid = claim["claim_id"]
     note = (lambda text: emit({"task": f"search-{cid}", "label": f"{cid}: searching the web", "type": "note", "text": text})) if emit else _silent
     seen: set[str] = set()
@@ -207,7 +207,7 @@ def _sources_for(claim: dict, queries: list[str], log_path: Path, model: str, em
         for hit in batch:
             url = hit.get("url") or ""
             # Drop empty results and pages that just quote the claim back (not independent).
-            if url and url not in seen and not is_reprint(hit, claim["sentence"]):
+            if url and url not in seen and not is_reprint(hit, claim["sentence"], essay_url):
                 seen.add(url)
                 hits.append(hit)
     hits = hits[:8]
@@ -238,7 +238,9 @@ def _sources_for(claim: dict, queries: list[str], log_path: Path, model: str, em
     return sources
 
 
-def find_sources(claims: list[dict], log_path: Path, model: str = DEFAULT_MODEL, emit: Emit = None) -> list[dict]:
+def find_sources(
+    claims: list[dict], log_path: Path, model: str = DEFAULT_MODEL, emit: Emit = None, essay_url: str = ""
+) -> list[dict]:
     plan = _ask(
         "plan_queries.md",
         [{"claim_id": c["claim_id"], "sentence": c["sentence"]} for c in claims],
@@ -254,7 +256,7 @@ def find_sources(claims: list[dict], log_path: Path, model: str = DEFAULT_MODEL,
         planned = plan.get(claim["claim_id"]) or []
         queries = [str(q).strip() for q in planned if str(q).strip()][:2] or [claim["sentence"][:120]]
         try:
-            return {"claim_id": claim["claim_id"], "sources": _sources_for(claim, queries, log_path, model, emit)}
+            return {"claim_id": claim["claim_id"], "sources": _sources_for(claim, queries, log_path, model, emit, essay_url)}
         except Exception as exc:  # noqa: BLE001  one claim failing must not sink the others
             return {"claim_id": claim["claim_id"], "sources": [], "error": f"{type(exc).__name__}: {exc}"}
 
