@@ -1,0 +1,44 @@
+{
+  "claims": [
+    {
+      "claim_id": "c01",
+      "sentence": "Research suggests that in some parts of the United States, factory closures contribute to a rise in deaths from opioid overdoses.",
+      "reason": "A causal claim attributed to research that can be verified."
+    },
+    {
+      "claim_id": "c02",
+      "sentence": "Countries including Australia, the United Kingdom, and Norway are adopting protections for children online.",
+      "reason": "A specific claim about named countries' policy actions that can be verified."
+    },
+    {
+      "claim_id": "c03",
+      "sentence": "Its rules restrict AI companion apps broadly, bar designs that foster emotional dependence, and ban virtual relatives and romantic partners for minors.",
+      "reason": "A specific claim about Chinese regulations that can be fact-checked."
+    },
+    {
+      "claim_id": "c04",
+      "sentence": "It is being used in nearly 2,000 U.S. hospitals.",
+      "reason": "A specific numeric claim about Viz.ai's adoption that can be verified."
+    },
+    {
+      "claim_id": "c05",
+      "sentence": "The Gates Foundation has 19 years left of the 20 years in which it will spend its remaining $200 billion.",
+      "reason": "A specific financial and timeline claim about the foundation that can be fact-checked."
+    },
+    {
+      "claim_id": "c06",
+      "sentence": "The foundation’s goals include cutting the number of children who die every year in half again, as was done from 2000 to 2024.",
+      "reason": "A specific statistical claim about past and future child mortality reduction that is verifiable."
+    },
+    {
+      "claim_id": "c07",
+      "sentence": "My dad died of Alzheimer’s in 2020.",
+      "reason": "A specific factual/biographical claim with a date that can be verified."
+    },
+    {
+      "claim_id": "c08",
+      "sentence": "I proposed a robot tax years ago and most of the reaction was that it was a strange idea.",
+      "reason": "A factual claim about Gates' past public proposal that can be checked against records."
+    }
+  ]
+}

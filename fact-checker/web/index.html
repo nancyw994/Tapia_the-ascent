@@ -14,9 +14,12 @@
     header.top { background: #101828; color: #fff; padding: 0.9rem 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
     header.top h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.25rem; }
     header.top .file { opacity: 0.7; font-size: 0.85rem; }
-    #action { margin-left: auto; background: var(--blue); color: #fff; border: 0; border-radius: 8px; padding: 0.6rem 1.2rem; font-weight: 600; cursor: pointer; }
+    .actions { margin-left: auto; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    #export, #export-pdf { background: #fff; color: var(--ink); border: 0; border-radius: 8px; padding: 0.6rem 1.2rem; font-weight: 600; cursor: pointer; }
+    #export:hover:not(:disabled), #export-pdf:hover:not(:disabled) { background: #eff4ff; }
+    #action { background: var(--blue); color: #fff; border: 0; border-radius: 8px; padding: 0.6rem 1.2rem; font-weight: 600; cursor: pointer; }
     #action:hover:not(:disabled) { background: #004eeb; }
-    #action:disabled { background: #667085; cursor: progress; }
+    #action:disabled, #export:disabled, #export-pdf:disabled { background: #667085; color: #fff; cursor: progress; }
 
     nav.stepper { display: flex; gap: 0.25rem; padding: 0.6rem 1.5rem; background: #fff; border-bottom: 1px solid var(--line); overflow-x: auto; }
     nav.stepper button { display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.8rem; border: 0; border-radius: 999px; background: transparent; color: var(--muted); font-size: 0.85rem; white-space: nowrap; cursor: default; }
@@ -80,6 +83,20 @@
     .bar i { display: block; height: 100%; }
     .conf { font-size: 0.78rem; color: var(--muted); }
 
+    .coverage { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; margin: 0 0 0.85rem; }
+    .cov { background: var(--bg); border-radius: 10px; padding: 0.65rem 0.75rem; text-align: left; }
+    .cov b { display: block; font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; color: var(--ink); }
+    .cov span { color: var(--muted); font-size: 0.78rem; line-height: 1.3; }
+    .human { font-size: 0.72rem; font-weight: 700; color: #6941c6; background: #f4ebff; padding: 0.12rem 0.45rem; border-radius: 999px; }
+    .agent-why { margin: 0 0 0.4rem; font-size: 0.82rem; color: var(--muted); line-height: 1.45; }
+    .override { margin-top: 0.7rem; display: grid; gap: 0.4rem; }
+    .override select, .override textarea { font: inherit; padding: 0.45rem 0.55rem; border: 1px solid #d0d5dd; border-radius: 6px; width: 100%; }
+    .override textarea { min-height: 3.2rem; resize: vertical; }
+    .ghost { background: none; border: 0; color: #b42318; cursor: pointer; font-size: 0.8rem; font-weight: 600; margin-left: auto; }
+    .add-claim { margin-top: 1rem; display: grid; gap: 0.4rem; padding-top: 0.8rem; border-top: 1px solid var(--line); text-align: left; }
+    .add-claim textarea { font: inherit; padding: 0.45rem 0.55rem; border: 1px solid #d0d5dd; border-radius: 6px; width: 100%; min-height: 3.2rem; resize: vertical; }
+    .add-claim button { background: #101828; color: #fff; border: 0; border-radius: 6px; padding: 0.45rem 0.7rem; font-weight: 600; cursor: pointer; justify-self: start; }
+
     .loading { display: flex; gap: 0.8rem; align-items: center; color: var(--muted); line-height: 1.5; }
     .spin { flex: none; width: 1.3rem; height: 1.3rem; border: 3px solid #d0d5dd; border-top-color: var(--blue); border-radius: 50%; animation: spin 0.9s linear infinite; }
     .retry { margin-top: 0.6rem; }
@@ -93,15 +110,19 @@
   <header class="top">
     <h1>Claim Checker</h1>
     <span class="file" id="filename"></span>
-    <button id="action" hidden></button>
+    <div class="actions" id="actions" hidden>
+      <button type="button" id="export" hidden>Export HTML</button>
+      <button type="button" id="export-pdf" hidden>Export PDF</button>
+      <button type="button" id="action"></button>
+    </div>
   </header>
   <nav class="stepper" id="stepper" hidden></nav>
 
   <section id="landing">
-    <h2>Check an article for fake claims</h2>
+    <h2>Check claims in an article</h2>
     <p>Paste an article <b>URL</b>, or upload a <b>.md</b> / <b>.txt</b> file. A link is fetched into markdown first, then an agent extracts claims, classifies them, looks up sources,
-      and gives each claim a verdict: <b>FAKE</b>, <b>NOT FAKE</b>, or <b>INSUFFICIENT EVIDENCE</b>.
-      You review every step before moving on.</p>
+      and badges each claim: <b>supported</b>, <b>contradicted</b>, <b>misleading</b>, <b>unverifiable</b>, or <b>opinion</b>.
+      <b>Misleading</b> is for a real number with a dropped caveat (the METR demo). You review every step, can override a badge into the error log, and can export annotated HTML or PDF. There is no article-level fake-news stamp.</p>
     <div class="url-row">
       <input id="url" type="url" placeholder="https://www.gatesnotes.com/…" autocomplete="off">
       <button type="button" id="fetch-url">Fetch link</button>
@@ -129,7 +150,7 @@ const STEPS = ["Upload", "Extract claims", "Classify", "Find sources", "Verdicts
 const API_STEP = { 2: "extract", 3: "classify", 4: "sources", 5: "verdict" };
 const NEXT_LABEL = { 1: "Extract claims", 2: "Next: classify claims →", 3: "Next: find sources →", 4: "Next: final verdicts →", 5: "Check another article" };
 const BUSY_TEXT = {
-  2: "Reading the article and extracting checkable claims…",
+  2: "Reading the article in sections so later claims are not dropped…",
   3: "Classifying each claim…",
   4: "Searching the web and ranking sources for every claim. This is the slow step and can take a minute or two…",
   5: "Comparing each claim with its evidence…",
@@ -140,13 +161,16 @@ const TYPE_STYLE = {
   orange: { c: "#c4620a", bg: "#ffead5", name: "Event" },
 };
 const VERDICT_STYLE = {
-  FAKE: { c: "#b42318", bg: "#fee4e2", name: "FAKE" },
-  NOT_FAKE: { c: "#0f7b4c", bg: "#d1fadf", name: "NOT FAKE" },
-  INSUFFICIENT_EVIDENCE: { c: "#475467", bg: "#eaecf0", name: "INSUFFICIENT EVIDENCE" },
+  supported: { c: "#0f7b4c", bg: "#d1fadf", name: "SUPPORTED" },
+  contradicted: { c: "#b42318", bg: "#fee4e2", name: "CONTRADICTED" },
+  misleading: { c: "#b54708", bg: "#fef0c7", name: "MISLEADING" },
+  unverifiable: { c: "#475467", bg: "#eaecf0", name: "UNVERIFIABLE" },
+  opinion: { c: "#6941c6", bg: "#f4ebff", name: "OPINION" },
 };
+const VERDICT_ORDER = ["supported", "contradicted", "misleading", "unverifiable", "opinion"];
 const EXTRACT_STYLE = { c: "#b58900", bg: "#fff4cc" };
 
-const fresh = () => ({ session: null, filename: "", text: "", data: {}, done: 0, view: 1, busy: 0, error: null });
+const fresh = () => ({ session: null, filename: "", text: "", data: {}, done: 0, view: 1, busy: 0, error: null, notice: null });
 let S = fresh();
 
 async function api(path, body) {
@@ -239,6 +263,74 @@ $("#action").addEventListener("click", () => {
   if (S.busy) return;
   if (S.done >= 5) { S = fresh(); render(); } else runStep(S.done + 1);
 });
+$("#export").addEventListener("click", () => exportSession("/api/export", "text/html", "html", "Export HTML"));
+$("#export-pdf").addEventListener("click", () => exportSession("/api/export-pdf", "application/pdf", "pdf", "Export PDF"));
+
+async function exportSession(path, mime, ext, idleLabel) {
+  if (!S.session || S.done < 5 || S.busy) return;
+  const btn = ext === "pdf" ? $("#export-pdf") : $("#export");
+  btn.disabled = true;
+  btn.textContent = "Exporting…";
+  try {
+    const res = await fetch(path, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ session_id: S.session }),
+    });
+    const type = res.headers.get("Content-Type") || "";
+    if (!res.ok || !type.includes(mime.split(";")[0])) {
+      const json = await res.json().catch(() => ({}));
+      throw new Error(json.error || `Export failed (${res.status})`);
+    }
+    const blob = await res.blob();
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `annotated-${S.session}.${ext}`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  } catch (e) {
+    S.notice = e.message;
+    S.view = 5;
+    render();
+  } finally {
+    btn.disabled = false;
+    btn.textContent = idleLabel;
+  }
+}
+
+async function editClaims(body) {
+  try {
+    const json = await api("/api/claims", { session_id: S.session, ...body });
+    S.data = { claims: json.claims };
+    S.done = 2;
+    S.view = 2;
+    S.notice = null;
+    render();
+  } catch (e) {
+    S.notice = e.message;
+    S.view = 2;
+    render();
+  }
+}
+
+async function saveOverride(form) {
+  const claim_id = form.dataset.claim;
+  const verdict = form.verdict.value;
+  const why = form.why.value.trim();
+  try {
+    const json = await api("/api/override", { session_id: S.session, claim_id, verdict, why });
+    S.data.verdicts = json.verdicts;
+    S.data.coverage = json.coverage;
+    S.notice = null;
+    S.error = null;
+    render();
+    focusEl(`card-${claim_id}`);
+  } catch (e) {
+    S.notice = e.message;
+    S.view = 5;
+    render();
+  }
+}
 
 // ---- rendering -------------------------------------------------------------
 function render() {
@@ -246,7 +338,7 @@ function render() {
   $("#landing").hidden = inWorkspace;
   $("#workspace").hidden = !inWorkspace;
   $("#stepper").hidden = !inWorkspace;
-  $("#action").hidden = !inWorkspace;
+  $("#actions").hidden = !inWorkspace;
   $("#filename").textContent = S.filename;
   if (!inWorkspace) return;
 
@@ -263,15 +355,36 @@ function render() {
   const action = $("#action");
   action.disabled = !!S.busy;
   action.textContent = S.busy ? "Running…" : NEXT_LABEL[S.done];
+  const exp = $("#export");
+  const expPdf = $("#export-pdf");
+  exp.hidden = S.done < 5;
+  expPdf.hidden = S.done < 5;
+  exp.disabled = !!S.busy;
+  expPdf.disabled = !!S.busy;
 
   $("#article").innerHTML = articleHtml();
   $("#article").querySelectorAll("mark.q").forEach((m) => m.addEventListener("click", () => focusEl(`card-${m.dataset.id}`)));
   $("#side-title").textContent = TITLES[S.view];
   $("#side").innerHTML = sideHtml();
   $("#side").querySelectorAll("[data-claim]").forEach((el) => el.addEventListener("click", (e) => {
-    if (e.target.closest("a, summary")) return;
+    if (e.target.closest("a, summary, form, select, textarea, button, input")) return;
     focusEl(`m-${el.dataset.claim}`);
   }));
+  $("#side").querySelectorAll("form.override").forEach((form) => {
+    form.addEventListener("submit", (e) => { e.preventDefault(); saveOverride(form); });
+  });
+  $("#side").querySelectorAll("[data-remove]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      editClaims({ action: "remove", claim_id: btn.dataset.remove });
+    });
+  });
+  const addForm = $("#add-claim");
+  if (addForm) addForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    editClaims({ action: "add", sentence: addForm.sentence.value, reason: addForm.reason.value });
+  });
   const retry = $("#retry");
   if (retry) retry.addEventListener("click", () => runStep(S.error.step));
 }
@@ -334,16 +447,24 @@ function sideHtml() {
 function viewUpload() {
   const words = (S.text.match(/\S+/g) || []).length.toLocaleString();
   return `<p><b>${esc(S.filename)}</b> · ${words} words</p>
-    <p class="why">The article is on the left. Click <b>Extract claims</b> and the agent will pick out every sentence that makes a factual, testable claim.</p>`;
+    <p class="why">The article is on the left. Click <b>Extract claims</b> and the agent will read it in sections, then pick checkable sentences. You can delete a miss or paste one the agent skipped. You do not select sentences to start the run.</p>`;
 }
 
 function viewExtract() {
   const claims = S.data.claims || [];
-  return `<p class="summary">${claims.length} claim${claims.length === 1 ? "" : "s"} found. Review them, then click Next.</p>` +
-    claims.map((c) => `<div class="card" id="card-${c.claim_id}" data-claim="${c.claim_id}">
-      <div class="head"><span class="cid">${c.claim_id}</span></div>
+  const notice = S.notice ? `<p class="error">${esc(S.notice)}</p>` : "";
+  const cards = claims.map((c) => `<div class="card" id="card-${c.claim_id}" data-claim="${c.claim_id}">
+      <div class="head"><span class="cid">${c.claim_id}</span>${c.human_added ? `<span class="human">HUMAN</span>` : ""}
+        <button type="button" class="ghost" data-remove="${esc(c.claim_id)}">Remove</button></div>
       <p class="sentence">“${esc(c.sentence)}”</p>
       <p class="why">${esc(c.reason)}</p></div>`).join("");
+  return `${notice}<p class="summary">${claims.length} claim${claims.length === 1 ? "" : "s"} from the whole article (extracted in sections so later paragraphs are not dropped). Remove a bad one, or paste a missed sentence. Do not click the article to drive extraction.</p>${cards}
+    <form class="add-claim" id="add-claim">
+      <label class="meta" for="add-sentence">Add a missed sentence (paste it verbatim from the article)</label>
+      <textarea id="add-sentence" name="sentence" maxlength="800" placeholder="Paste the exact sentence the agent skipped"></textarea>
+      <textarea name="reason" maxlength="200" placeholder="Optional: why this is checkable"></textarea>
+      <button type="submit">Add claim</button>
+    </form>`;
 }
 
 function viewClassify() {
@@ -395,28 +516,66 @@ function viewSources() {
     }).join("");
 }
 
+function coverageHtml(cov) {
+  if (!cov) return "";
+  const cells = [
+    [cov.claims_found, "claims found"],
+    [cov.claims_checked, "checked with independent sources"],
+    [cov.reprints_dropped, "reprints dropped"],
+    [cov.pending_review, "pending human review"],
+  ];
+  const reviewed = cov.human_reviewed
+    ? `<p class="meta">${cov.human_reviewed} human override${cov.human_reviewed === 1 ? "" : "s"} saved to verify/error_log.md.</p>`
+    : "";
+  return `<div class="coverage">${cells.map(([n, label]) => `<div class="cov"><b>${esc(n ?? 0)}</b><span>${label}</span></div>`).join("")}</div>
+    <p class="meta">Coverage of this run, not a fake-news score for the article.</p>${reviewed}`;
+}
+
+function overrideForm(v) {
+  const current = VERDICT_STYLE[v.verdict] ? v.verdict : "unverifiable";
+  const options = VERDICT_ORDER.map((id) => {
+    const sel = id === current ? " selected" : "";
+    return `<option value="${id}"${sel}>${VERDICT_STYLE[id].name}</option>`;
+  }).join("");
+  const why = v.human_override ? v.human_override.why : "";
+  return `<form class="override" data-claim="${esc(v.claim_id)}">
+    <select name="verdict">${options}</select>
+    <textarea name="why" maxlength="500" placeholder="One sentence: why the agent is wrong">${esc(why)}</textarea>
+    <button type="submit">Save override to error log</button>
+  </form>`;
+}
+
 function viewVerdicts() {
   const verdicts = S.data.verdicts || [];
   const ev = byId(S.data.evidence);
   const counts = {};
   verdicts.forEach((v) => { counts[v.verdict] = (counts[v.verdict] || 0) + 1; });
-  const tally = Object.keys(VERDICT_STYLE).filter((k) => counts[k]).map((k) => `${counts[k]} ${VERDICT_STYLE[k].name}`).join(" · ");
+  const tally = VERDICT_ORDER.filter((k) => counts[k]).map((k) => `${counts[k]} ${VERDICT_STYLE[k].name}`).join(" · ");
   const cards = verdicts.map((v) => {
     const c = (S.data.claims || []).find((x) => x.claim_id === v.claim_id) || { sentence: "" };
-    const st = VERDICT_STYLE[v.verdict] || VERDICT_STYLE.INSUFFICIENT_EVIDENCE;
+    const st = VERDICT_STYLE[v.verdict] || VERDICT_STYLE.unverifiable;
     const sources = (ev[v.claim_id] || { sources: [] }).sources;
-    const cited = sources.filter((s) => v.supporting_source_ids.includes(s.source_id));
-    const others = sources.filter((s) => !v.supporting_source_ids.includes(s.source_id));
+    const citedIds = v.supporting_source_ids || [];
+    const cited = sources.filter((s) => citedIds.includes(s.source_id));
+    const others = sources.filter((s) => !citedIds.includes(s.source_id));
+    const human = v.human_override
+      ? `<span class="human">HUMAN</span>`
+      : "";
+    const agentWhy = v.human_override
+      ? `<p class="agent-why">Agent said ${esc((v.agent_verdict || v.human_override.agent_verdict || "").toUpperCase())}: ${esc(v.agent_reason || v.human_override.agent_reason || "")}</p>`
+      : "";
     return `<div class="card" id="card-${v.claim_id}" data-claim="${v.claim_id}" style="border-left:5px solid ${st.c}">
-      <div class="head"><span class="cid">${v.claim_id}</span><span class="pill" style="background:${st.c}">${st.name}</span>
+      <div class="head"><span class="cid">${v.claim_id}</span><span class="pill" style="background:${st.c}">${st.name}</span>${human}
         <div class="bar"><i style="width:${v.confidence}%;background:${st.c}"></i></div><span class="conf">${v.confidence}% confidence</span></div>
       <p class="sentence">“${esc(c.sentence)}”</p>
+      ${agentWhy}
       <p class="why">${esc(v.reason)}</p>
       ${cited.map((s) => sourceHtml(s, true)).join("")}
       ${others.length ? `<details><summary>${others.length} other source${others.length === 1 ? "" : "s"} consulted</summary>${others.map((s) => sourceHtml(s, false)).join("")}</details>` : ""}
+      ${overrideForm(v)}
     </div>`;
   }).join("");
-  return `<p class="summary">${tally}. These are the agent's judgments from search snippets, not ground truth. Check the cited sources before relying on them.</p>${cards}`;
+  return `${S.notice ? `<p class="error">${esc(S.notice)}</p>` : ""}${coverageHtml(S.data.coverage)}<p class="summary">${tally || "No verdicts"}. These are the agent's judgments from retrieved sources, not ground truth. Override a badge when the agent is wrong.</p>${cards}`;
 }
 
 render();
