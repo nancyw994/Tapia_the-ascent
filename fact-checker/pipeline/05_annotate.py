@@ -26,23 +26,18 @@ VERDICT_COLORS = {
 
 
 def highlight_essay(essay: str, claims: list[dict]) -> str:
+    # Claims are not guaranteed to be in essay order, so locate each quote anywhere.
     spans: list[tuple[int, int, dict]] = []
-    remaining = essay
-    cursor = 0
     used: set[str] = set()
     for claim in claims:
         quote = (claim.get("quote") or "").strip()
         if not quote or quote in used:
             continue
-        idx = remaining.find(quote)
-        if idx < 0:
+        start = essay.find(quote)
+        if start < 0:
             continue
-        start = cursor + idx
-        end = start + len(quote)
-        spans.append((start, end, claim))
+        spans.append((start, start + len(quote), claim))
         used.add(quote)
-        cursor = end
-        remaining = essay[cursor:]
     spans.sort(key=lambda item: item[0])
     parts: list[str] = []
     last = 0

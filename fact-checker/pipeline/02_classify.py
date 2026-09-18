@@ -15,14 +15,21 @@ from lib import chat, extract_json_array, load_prompt, make_client, normalize_la
 def run(claims_path: Path, out_path: Path, model: str, base_url: str) -> dict:
     payload = read_json(claims_path)
     client = make_client(base_url)
-    raw = chat(
-        client,
-        model,
-        load_prompt("classifier.md"),
-        json.dumps(payload.get("claims") or [], ensure_ascii=False)[:8000],
-        max_tokens=1200,
-    )
-    by_id = {str(item.get("id")): item for item in extract_json_array(raw) if isinstance(item, dict)}
+    expected = {str(c["id"]) for c in payload.get("claims") or []}
+    for attempt in range(3):
+        raw = chat(
+            client,
+            model,
+            load_prompt("classifier.md"),
+            json.dumps(payload.get("claims") or [], ensure_ascii=False)[:8000],
+            max_tokens=1200,
+        )
+        by_id = {str(item.get("id")): item for item in extract_json_array(raw) if isinstance(item, dict)}
+        if expected <= by_id.keys():
+            break
+    else:
+        # Falling back to taxonomy here would silently label every claim "opinion" and skip search.
+        raise RuntimeError(f"classifier gave no usable labels after 3 tries; last reply: {raw[:200]!r}")
     classified = []
     for claim in payload.get("claims") or []:
         row = dict(claim)

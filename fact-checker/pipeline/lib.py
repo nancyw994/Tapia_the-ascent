@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -18,6 +19,15 @@ except ImportError:  # pragma: no cover
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "config"
+
+sys.path.insert(0, str(ROOT.parent / "scripts"))  # llm_client.py lives in scripts/
+
+# Pass base_url="openrouter" to route every chat() call through scripts/llm_client.ask_llm.
+API_BACKEND = "openrouter"
+
+
+class ApiClient:
+    """Marker client: chat() sends the request through ask_llm (OpenRouter)."""
 
 
 def now_iso() -> str:
@@ -68,10 +78,14 @@ def extract_json_array(text: str) -> list[Any]:
         parsed = json.loads(cleaned)
         return parsed if isinstance(parsed, list) else []
     except json.JSONDecodeError:
-        return {}
+        return []
 
 
-def chat(client: OpenAI, model: str, system: str, user: str, max_tokens: int = 1800) -> str:
+def chat(client: OpenAI | ApiClient, model: str, system: str, user: str, max_tokens: int = 1800) -> str:
+    if isinstance(client, ApiClient):
+        from llm_client import ask_llm
+
+        return ask_llm({"instructions": system}, user, model=model).strip()
     response = client.chat.completions.create(
         model=model,
         messages=[
@@ -84,7 +98,9 @@ def chat(client: OpenAI, model: str, system: str, user: str, max_tokens: int = 1
     return (response.choices[0].message.content or "").strip()
 
 
-def make_client(base_url: str) -> OpenAI:
+def make_client(base_url: str) -> OpenAI | ApiClient:
+    if base_url == API_BACKEND:
+        return ApiClient()
     return OpenAI(api_key="ollama", base_url=base_url)
 
 

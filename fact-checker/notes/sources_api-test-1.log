@@ -1,0 +1,197 @@
+# Source ledger
+
+Every URL below was fetched during this run.
+The essay under review is not an independent source.
+
+## c01 — 2026-09-18 19:23 UTC
+Query: `GPT-5.3 Codex OpenAI release February 5`
+
+- https://en.wikipedia.org/wiki/GPT-5.3-Codex — GPT-5.3-Codex - Wikipedia
+  > GPT-5.3-Codex (Generative Pre-trained Transformer 5.3 Codex) is a large language model (LLM) announced and released by OpenAI on February 5, 2026. [1] It is made as a competitor to Claude 's Opus 4.6, focusing on code generation, speed and 
+- https://en.wikipedia.org/wiki/OpenAI_Codex_(AI_agent) — OpenAI Codex (AI agent) - Wikipedia
+  > In February 2026, OpenAI released a desktop Codex app intended to help users manage multiple coding agents over longer periods and use code to gather or analyze information, [3] and updated the underlying model twice: GPT-5.3-Codex arrived 
+- https://openai.com/index/introducing-gpt-5-3-codex/ — Introducing GPT‑5.3‑Codex - OpenAI
+  > GPT-5.3-Codex is a Codex-native agent that pairs frontier coding performance with general reasoning to support long-horizon, real-world technical work.
+- https://openai.com/index/introducing-gpt-5-3-codex-spark/ — Introducing GPT‑5.3‑Codex‑Spark - OpenAI
+  > Coding Codex-Spark is a highly capable small model optimized for fast inference. On SWE-Bench Pro and Terminal-Bench 2.0, two benchmarks evaluating agentic software engineering capability, GPT‑5.3‑Codex‑Spark demonstrates strong performance
+
+## c01 — 2026-09-18 19:23 UTC
+Query: `Anthropic Opus 4.6 release date announcement`
+
+- https://en.wikipedia.org/wiki/Claude_(AI) — Claude (AI) - Wikipedia
+  > 2 days ago - Sonnet 4.6 was released on February 17, 2026. Anthropic released Opus 4.7 on April 16, 2026. Some social media users reported that Claude Opus 4.7 is worse than the previous version, and refuses too often.
+- https://www.anthropic.com/news/claude-opus-4-6 — Claude Opus 4.6 \ Anthropic
+  > We’ve made substantial upgrades to Claude in Excel, and we’re releasing Claude in PowerPoint in a research preview. This makes Claude much more capable for everyday work. Claude Opus 4.6 is available today on claude.ai, our API, and all ...
+- https://overchat.ai/ai-hub/claude-opus-4-6 — Claude Opus 4.6 is now on Overchat AI — Anthropic's Best ...
+  > 2 weeks ago - Anthropic released Claude Opus 4.6 on February 5, 2026, and it’s a major upgrade to its flagship model.
+- https://medium.com/@ZombieCodeKill/opus-4-6-released-ce4aa32b996d — Opus 4.6 is Released. When is Sonnet 5 coming? | by Kevin O'Shaughnessy | Medium
+  > February 17, 2026 - Let me search for what Anthropic has published about this. Well, it turns out today is literally launch day for me — Opus 4.6 was announced today, February 5, 2026.
+
+## c03 — 2026-09-18 19:23 UTC
+Query: `GPT-4 passes bar exam 2023`
+
+- https://www.iit.edu/news/gpt-4-passes-bar-exam — GPT-4 Passes the Bar Exam | Illinois Institute of Technology
+  > March 15, 2023 - CHICAGO—March 15, 2023—GPT-4, the new multimodal deep learning model from OpenAI, has passed the Uniform Bar Exam, demonstrating an enormous leap for machine learning and proving that an artificial intelligence program can 
+- https://law.stanford.edu/2023/04/19/gpt-4-passes-the-bar-exam-what-that-means-for-artificial-intelligence-tools-in-the-legal-industry/ — GPT-4 Passes the Bar Exam: What That Means for Artificial Intelligence Tools in the Legal Profession - Legal Aggregate - Stanford Law School
+  > April 19, 2023 - It passed the multiple-choice portion of the exam and both components of the written portion, exceeding not only all prior LLM’s scores, but also the average score of real-life bar exam takers, scoring in the 90th percentil
+- https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4389233 — GPT-4 Passes the Bar Exam by Daniel Martin Katz, Michael James Bommarito, Shang Gao, Pablo Arredondo :: SSRN
+  > March 15, 2023 - Katz, Daniel Martin and Bommarito, Michael James and Gao, Shang and Arredondo, Pablo, GPT-4 Passes the Bar Exam (March 15, 2023).
+- https://royalsocietypublishing.org/rsta/article/382/2270/20230254/112538/GPT-4-passes-the-bar-examGPT-4-passes-the-Bar-Exam — GPT-4 passes the bar exam | Philosophical Transactions of the Royal Society A | The Royal Society
+  > April 15, 2024 - Graded across the UBE components, in the manner in which a human test-taker would be, GPT-4 scores approximately 297 points, significantly in excess of the passing threshold for all UBE jurisdictions.
+
+## c03 — 2026-09-18 19:23 UTC
+Query: `OpenAI GPT-4 bar exam score report`
+
+- https://mashable.com/article/openai-gpt-4-exam-scores — OpenAI GPT-4: How it performed on the bar exam and other tests | Mashable
+  > March 16, 2023 - GPT-4 didn't just get into law school, it passed the bar. The AI language model scored in the 88th percentile on the LSATs (Law School Admission Test) and did even better on the Bar (Uniform Bar Exam) by scoring in the 90th
+- https://link.springer.com/article/10.1007/s10506-024-09396-9 — Re-evaluating GPT-4’s bar exam performance | Artificial Intelligence and Law | Springer Nature Link
+  > March 30, 2024 - Perhaps the most widely touted of GPT-4’s at-launch, zero-shot capabilities has been its reported 90th-percentile performance on the Uniform Bar Exam. This paper begins by investigating the methodological challenges in docu
+- https://www.iit.edu/news/gpt-4-passes-bar-exam — GPT-4 Passes the Bar Exam | Illinois Institute of Technology
+  > March 15, 2023 - “The bar exam is an interesting ... including those who couldn't previously afford to hire a lawyer.” · GPT-4 scored a 75 percent on the bar exam, higher than the 68 percent average and good enough to place in the 90th ...
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC10894685/ — GPT-4 passes the bar exam - PMC - NIH
+  > On the MBE, GPT-4 significantly outperforms both human test-takers and prior models, demonstrating a 26% increase over ChatGPT and beating humans in five of seven subject areas. On the MEE and MPT, which have not previously been evaluated b
+
+## c04 — 2026-09-18 19:23 UTC
+Query: `Claude Opus 4.5 METR time horizon five hours`
+
+- https://the-decoder.com/anthropics-claude-opus-4-5-can-tackle-some-tasks-lasting-nearly-five-hours/ — Anthropic's Claude Opus 4.5 can tackle some tasks lasting nearly five hours
+  > December 21, 2025 - The AI research organization METR has published new test results for Claude Opus 4.5. Anthropic's model achieves a so-called 50 percent time horizon of around 4 hours and 49 minutes.
+- https://www.lesswrong.com/posts/q5ejXr4CRuPxkgzJD/claude-opus-4-5-achieves-50-time-horizon-of-around-4-hrs-49 — Claude Opus 4.5 Achieves 50%-Time Horizon Of Around 4 ...
+  > December 19, 2025 - Claude Opus 4.5 Achieves 50%-Time Horizon Of Around 4 hrs 49 Mins ... The CI is extremely wide and METR's own caveats about sparsity at higher horizons.
+- https://www.reddit.com/r/singularity/comments/1pr2ybr/claude_45_opus_achieves_metr_time_horizon_of_4/ — r/singularity on Reddit: Claude 4.5 opus achieves metr time horizon of 4 hours 49 mins
+  > December 20, 2025 - Yes. Highest 80% rn is codex max with 32 mins. I’m using epochs metr estimate of Gemini 3 to approximate ... Epoch predicted 4.9 hours for Gemini 3 pro, but only 2.6 hours for Opus 4.5.
+- https://manifold.markets/jim/claude-45-opuss-metr50-horizon — Claude Opus 4.5's METR-50 time horizon - Manifold Markets
+  > Still is for gpt models. By that, metr for opus is just over 3.5 hours. But Claude models have started diverging since 4 series. Opus might be as low as 2.7 hours. ... Meowdy! Creator's 3:55 guess points to 3h-4h bucket; I’m curious how muc
+
+## c04 — 2026-09-18 19:23 UTC
+Query: `METR task completion time horizon Claude Opus 4.5 November`
+
+- https://metr.org/time-horizons/ — Task-Completion Time Horizons of Frontier AI Models - METR
+  > May 8, 2026 · The task-completion time horizon is the task duration. Calculated for models from 2019 through Nov 2025, 2025: Added Claude Opus 4.5. November ...
+- https://x.com/aidigest_/status/2024939730853658964 — AI Digest on X: "The exponential continues. Nov 2025: Opus ...
+  > Feb 20, 2026 · We estimate that Claude Opus 4.6 has a 50%-time-horizon of around 14.5 hours (95% CI of 6 hrs to 98 hrs) on software tasks. While this is the ... Missing: completion | Show results with: completion
+- https://www.lesswrong.com/posts/q5ejXr4CRuPxkgzJD/claude-opus-4-5-achieves-50-time-horizon-of-around-4-hrs-49 — Claude Opus 4.5 Achieves 50%-Time Horizon Of Around 4 hrs ...
+  > Dec 19, 2025 · We estimate that, on our tasks, Claude Opus 4.5 has a 50%-time horizon of around 4 hrs 49 mins (95% confidence interval of 1 hr 49 mins to 20 ... Missing: November | Show results with: November
+- https://www.reddit.com/r/singularity/comments/1pr39qf/metr_finds_opus_45_has_a_50_time_horizon_of_4/ — METR finds Opus 4.5 has a 50% time horizon of 4 hours 49 ...
+  > Dec 20, 2025 · METR finds Opus 4.5 has a 50% time horizon of 4 hours 49 minutes AI. Claude Opus 4.5 can successfully complete the task 50% of the time. Opus 4 ... Missing: November | Show results with: November
+
+## c05 — 2026-09-18 19:23 UTC
+Query: `METR task length doubling time seven months AI`
+
+- https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/ — Measuring AI Ability to Complete Long Software Tasks - METR
+  > March 19, 2025 - We propose measuring AI performance in terms of the length of tasks AI agents can complete. We show that this metric has been consistently exponentially increasing over the past 6 years, with a doubling time of around 7 mon
+- https://medium.com/@AIchats/are-ai-time-horizon-doubling-every-seven-months-e337162eec83 — Are AI time horizon doubling every seven months? | by Anatol Wegner | Medium
+  > September 21, 2025 - The main claim is that the “50%-task-completion time horizon” for AI models has been “doubling approximately every seven months since 2019” (Abstract, Figure 1).
+- https://medium.com/@AIchats/are-ai-time-horizons-still-doubling-every-7-months-6262ed2bcc6a — Are AI time-horizons (still) doubling every 7 months? | by Anatol Wegner | Medium
+  > March 11, 2026 - This completely invalidates the 128-day or 212-day “doubling time” as a natural law of AI capability scaling. It is, exactly as you suspected, a massaged data science story where the experimental setup was tuned to produce 
+- https://www.lesswrong.com/posts/deesrjitvXM4xYGZd/metr-measuring-ai-ability-to-complete-long-tasks — METR: Measuring AI Ability to Complete Long Tasks
+  > March 19, 2025 - Summary: We propose measuring AI performance in terms of the length of tasks AI agents can complete. We show that this metric has been consistently exponentially increasing over the past 6 years, with a doubling time of aro
+
+## c05 — 2026-09-18 19:23 UTC
+Query: `METR autonomous task horizon doubling every four months`
+
+- https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/ — Measuring AI Ability to Complete Long Software Tasks - METR
+  > Mar 19, 2025 · We propose measuring AI performance in terms of the length of tasks AI agents can complete. We show that this metric has been consistently exponentially increasing over the past 6 years, with a doubling time of around 7 month
+- https://metr.org/time-horizons/ — Task-Completion Time Horizons of Frontier AI Models - METR
+  > May 8, 2026 · To estimate the time horizons of frontier AI agents, we first estimate the duration it takes a human expert to complete each of our tasks. For each agent, we fit a logistic curve to predict the probability it successfully comp
+- https://ai2027-tracker.com/predictions/metr-doubling/ — METR time horizon doubles every 4 months - AI 2027 Tracker
+  > Sep 7, 2026 · The acceleration from 7-month to 4-month doubling is a key claim. METR’s published 2024-onward fit doubles in 105 days; its longer-window fit is about 129 days. These support the approximate four-month pace, subject to fit and
+- https://arxiv.org/html/2503.14499v1 — Measuring AI Ability to Complete Long Tasks - arXiv.org
+  > Mar 18, 2025 · To quantify the capabilities of AI systems in terms of human capabilities, we propose a new metric: 50%-task-completion time horizon. This is the time humans typically take to complete tasks that AI models can complete with 5
+
+## c06 — 2026-09-18 19:23 UTC
+Query: `Amodei AI smarter than humans 2026 2027`
+
+- https://x.com/domcavendish/status/2021545397731446936 — Dominic Cavendish on X: "“Amodei has said that AI models "substantially smarter than almost all humans at almost all tasks" are on track for 2026 or 2027.”" / X
+  > “Amodei has said that AI models "substantially smarter than almost all humans at almost all tasks" are on track for 2026 or 2027.”
+- https://arstechnica.com/ai/2025/01/anthropic-chief-says-ai-could-surpass-almost-all-humans-at-almost-everything-shortly-after-2027/ — Anthropic chief says AI could surpass “almost all humans at almost everything” shortly after 2027 - Ars Technica
+  > January 22, 2025 - Speaking at Journal House in Davos, Amodei said, “I don’t know exactly when it’ll come, I don’t know if it’ll be 2027. I think it’s plausible it could be longer than that. I don’t think it will be a whole bunch longer tha
+- https://www.forbes.com/sites/anishasircar/2026/01/28/anthropic-ceo-warns-superhuman-ai-could-arrive-by-2027-with-civilization-level-risks/ — Anthropic CEO Warns Superhuman AI Could Arrive By 2027 With ‘Civilization-Level’ Risks
+  > January 28, 2026 - This is a looming context, according to Amodei. It’s his definition of “powerful AI” — systems smarter than the world's best scientists across biology, programming, mathematics, engineering and writing, with the ability t
+- https://www.youtube.com/watch?v=u6tLjMWzzs4 — Dario Amodei: AI smarter than Nobel laureates by 2026/2027 | Lex Fridman - YouTube
+  > Anthropic CEO Dario Amodei on the timeline for human-level AI, what 'powerful AI' means, and why he thinks scaling laws won't hit a wall.Full quote: 'We'll g... Published: July 2, 2026
+
+## c06 — 2026-09-18 19:23 UTC
+Query: `Dario Amodei interview AI models 2027 forecast`
+
+- https://www.cnbc.com/2026/09/12/anthropics-amodei-proposes-plan-to-slow-the-pace-of-advancing-ai-capabilities.html — OpenAI rules out IPO this year as Altman, Musk & Amodei warn ...
+  > 6 days ago · In an interview with Fortune published Saturday, OpenAI CEO Sam Altman said that an IPO now would be "ill-advised." Anthropic CEO Dario Amodei also published an essay on Saturday urging AI ...
+- https://www.youtube.com/watch?v=VUKpv-KiC4U — Dario Amodei WARNS: People Have No Idea What's Coming In 2027Anthropic CEO Warns Superhuman AI Could Arrive By 2027 With ...Dario Amodei (CEO of Anthropic): Artificial General ...Anthropic CEO Dario Amodei Predicts AI to Outshine Humans by 2027How Anthropic CEO Dario Amodei’s Writings Help Explain A.I ...Anthropic CEO Dario Amodei Predicts AI Will Rival 'Country of ...
+  > May 18, 2026 · He says end-to-end coding will be solved within 1 to 2 years, that robotics will be revolutionised a year or two after AGI arrives, and that AI-driven economic growth could hit 50% annually in... Jan 28, 2026 · Dario Amodei w
+- https://www.forbes.com/sites/anishasircar/2026/01/28/anthropic-ceo-warns-superhuman-ai-could-arrive-by-2027-with-civilization-level-risks/ — Anthropic CEO Warns Superhuman AI Could Arrive By 2027 With ...
+  > Jan 28, 2026 · Dario Amodei warns that superhuman AI arriving within two years could trigger mass unemployment, bioterrorism and authoritarian control, unless humanity gets serious about the risks right now.
+- https://felloai.com/dario-amodei-ceo-of-anthropic-artificial-general-intelligence-is-coming-in-2027/ — Dario Amodei (CEO of Anthropic): Artificial General ...
+  > Jun 5, 2026 · By 2027, AI systems might not only rival human intelligence but could potentially surpass it in key areas. The question is, will they work with us, or will they spiral out of control?
+
+## c07 — 2026-09-18 19:23 UTC
+Query: `GPT-5.3-Codex self-improvement training claim`
+
+- https://futurism.com/artificial-intelligence/openai-ai-created-using-itself — OpenAI's Latest AI Was Created Using "Itself," Company Claims
+  > February 7, 2026 - GPT-5.3-Codex, supposedly, is its first model “that was instrumental in creating itself,” with its team “blown away” by the results. Is the Singularity nearly upon us? Is this the long-awaited sign of recursive self-impro
+- https://paddo.dev/blog/gpt-5-3-codex-counter-punch/ — GPT-5.3-Codex: The Counter-Punch
+  > February 6, 2026 - Anthropic ships Opus 4.6. An hour later, OpenAI drops GPT-5.3-Codex. Same day. Same benchmarks. Different energy. The model: first to be "instrumental in creating itself" (used early versions during its own training). Ter
+- https://gaga.art/blog/gpt-5-3-codex/ — GPT-5.3-Codex: The Self-Training AI Model Revolution, Better Opus 4.6?
+  > February 6, 2026 - This self-improvement loop accelerated development dramatically, with team members reporting their work fundamentally transformed within just two months. Released simultaneously with Anthropic’s Claude Opus 4.6 (featuring
+- https://www.aicloudit.com/blog/news/openai-gpt-5-3-codex-self-building-ai/ — OpenAI Launches GPT-5.3 Codex: Self-Improving AI Coding Model - AICloudIT
+  > February 6, 2026 - “The Codex team used early versions to debug its own training, manage its own deployment, and diagnose test results and evaluations. Our team was blown away by how much Codex was able to accelerate its own development”. T
+
+## c07 — 2026-09-18 19:23 UTC
+Query: `OpenAI GPT-5.3-Codex system card`
+
+- https://openai.com/index/gpt-5-3-codex-system-card/ — GPT-5.3-Codex System Card | OpenAI
+  > GPT‑5.3‑Codex is the most capable agentic coding model to date, combining the frontier coding performance of GPT‑5.2‑Codex with the reasoning and professional knowledge capabilities of GPT‑5.2. This enables it to take on long-running ...
+- https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf — GPT-5.3-Codex System Card OpenAI February 5, 2026 1
+  > GPT-5.3-Codex performs slightly lower than GPT-5.2-Codex. ... “covert action” as behavior in which an AI system strategically misrepresents, omits, or conceals
+- https://deploymentsafety.openai.com/gpt-5-3-codex — GPT-5.3-Codex System Card - Deployment Safety Hub - OpenAI
+  > February 5, 2026 - GPT‑5.3‑Codex is the most capable agentic coding model to date, combining the frontier coding performance of GPT-5.2-Codex with the reasoning and professional knowledge capabilities of GPT-5.2. This enables it to take on 
+- https://openai.com/index/gpt-5-system-card-addendum-gpt-5-codex/ — Addendum to GPT-5 system card: GPT-5-Codex | OpenAI
+  > GPT-5-Codex adjusts its thinking effort more dynamically based on task complexity, responding quickly to simple conversational queries or small tasks, while independently working for longer on more complex tasks.
+
+## c11 — 2026-09-18 19:23 UTC
+Query: `Amodei "most serious national security threat" AI century`
+
+- https://www.currentaffairs.org/news/ai-and-nationalism-are-a-deadly-combination — AI and Nationalism Are a Deadly Combination
+  > February 18, 2026 - A person might well ask why we are pushing forward at such speed to create something that carries such terrible risks, something that produces what he thinks could reasonably be called “the single most serious national s
+- https://fortune.com/2026/01/27/country-of-geniuses-anthropic-dario-amodei-50-million-nobel-prize-winners/ — Anthropic CEO warns powerful AI with the brainpower of 50M Nobel winners could threaten humanity | Fortune
+  > January 27, 2026 - Anthropic CEO Dario Amodei is urging ... idea that powerful AI constituting a “country of geniuses in a data center” may pose “the single most serious national security threat” faced by humanity in a century....
+- https://nationalsecuritynews.com/2026/01/the-coming-ai-security-challenge-what-national-security-leaders-need-to-know/ — The coming AI security challenge: what national security leaders need to know | National Security News
+  > January 28, 2026 - “The Adolescence of Technology,” published in January 2026, frames the emergence of “powerful AI” as “the single most serious national security threat we’ve faced in a century, possibly ever.” Unlike his previous essay “M
+- https://darioamodei.com/essay/the-adolescence-of-technology — Dario Amodei — The Adolescence of Technology
+  > I think it should be clear that ... most serious national security threat we’ve faced in a century, possibly ever.” It seems like something the best minds of civilization should be focused on. Conversely, I think it would be absurd to shrug
+
+## c11 — 2026-09-18 19:23 UTC
+Query: `Dario Amodei national security threat AI statement source`
+
+- https://nationalsecuritynews.com/2026/01/the-coming-ai-security-challenge-what-national-security-leaders-need-to-know/ — The coming AI security challenge: what national security ...
+  > Jan 28, 2026 · “The Adolescence of Technology,” published in January 2026, frames the emergence of “powerful AI” as “the single most serious national security threat we’ve faced in a century, possibly ever.”
+- https://www.anthropic.com/news/statement-department-of-war — Dario Amodei on the Department of War discussions \ Anthropic
+  > Feb 26, 2026 · A statement from Anthropic CEO Dario Amodei on our discussions with the Department of War and national security uses of AI.
+- https://www.cnbc.com/2026/02/26/anthropic-pentagon-ai-amodei.html — Anthropic CEO Amodei says Pentagon's threats 'do not change ...
+  > Feb 26, 2026 · Anthropic CEO Dario Amodei on Thursday said the company "cannot in good conscience" allow the Department of Defense to use its models in all lawful use cases without limitation, adding that the...
+- https://apnews.com/article/anthropic-ai-dario-amodei-d59552edcb27892d8ee4d98a48397706 — Anthropic CEO Dario Amodei says AI industry needs to slow ...
+  > 6 days ago · 1 of 2 | Leaders of top AI companies say the artificial-intelligence industry should slow its fast-moving development to give safety measures time to catch up. Without such a slowdown, Anthropic CEO Dario Amodei warned that AI 
+
+## c12 — 2026-09-18 19:24 UTC
+Query: `20,000-word essay AI safety last month`
+
+- https://fortune.com/2026/01/27/anthropic-ceo-dario-amodei-essay-warning-ai-adolescence-test-humanity-risks-remedies/ — Anthropic CEO Dario Amodei’s 20,000-word essay on how AI ...
+  > Jan 27, 2026 · Anthropic CEO Dario Amodei at the World Economic Forum meeting in Davos, Switzerland, last week. Yesterday, Amodei published a 20,000-word warning about AI’s imminent risks.
+- https://www.ainvest.com/news/anthropic-ceo-dario-amodei-20-000-word-essay-ai-challenges-solutions-humanity-2601/ — Anthropic CEO Dario Amodei's 20,000-Word Essay on AI ...
+  > Jan 27, 2026 · Anthropic CEO Dario Amodei has released a 20,000-word essay that explores how artificial intelligence will reshape society according to Fortune. The document focuses more on actionable solutions than on dire warnings, reflect
+- https://const-ins.com/anthropic-ceo-dario-amodeis-20000-word-essay-on-how-ai-will-test-humanity-is-a-must-read-but-more-for-his-remedies-than-his-warnings/ — Anthropic CEO Dario Amodei’s 20,000-word essay on how AI ...
+  > Jan 27, 2026 · Among AI companies, Anthropic is known for having perhaps the greatest focus on AI safety—a focus that it has found has actually helped it gain commercial traction among big companies, as Fortune detailed in its January cover
+- https://aileaderscouncil.org/the-adolescence-of-technology-what-dario-amodei-gets-right-about-ais-next-phase/ — The Adolescence of Technology: What Dario Amodei Gets Right ...
+  > Feb 17, 2026 · In a 20,000-word essay titled The Adolescence of Technology, Dario Amodei, Chief Executive Officer of Anthropic, sets out a comprehensive reflection on where AI stands today and where it may be headed.
+
+## c12 — 2026-09-18 19:24 UTC
+Query: `METR autonomy report primary source`
+
+- https://en.wikipedia.org/wiki/METR — METR - Wikipedia
+  > 3 weeks ago - ↑ "Details about METR's preliminary evaluation of Claude 3.7". METR's Autonomy Evaluation Resources. 4 April 2025. Archived from the original on 15 June 2025.
+- https://metr.org/measuring-autonomous-ai-capabilities/ — Resources for Measuring Autonomous AI Capabilities - METR
+  > 3 weeks ago - @misc{metr--measuring-autonomous-ai-capabilities, title = {Resources for Measuring Autonomous AI Capabilities}, author = {METR}, howpublished = {\url{https://metr.org/measuring-autonomous-ai-capabilities/}}, year = {}, month =
+- https://metr.org/research/ — Research - METR
+  > A suite of tasks designed to test autonomous abilities at different difficulty levels. ... Priorities for approximating the full potential capability of an AI agent, and recommended checks for evaluation validity. ... A brief research repor
+- https://metr.github.io/autonomy-evals-guide/ — METR's Autonomy Evaluation Resources
+  > This page has moved to https://evaluations.metr.org/ · If you are not redirected automatically, please click the link above
+

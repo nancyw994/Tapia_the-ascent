@@ -1,0 +1,35 @@
+{
+  "note": "Challenges only. Humans own verify/manual_review.md and error_log.md.",
+  "challenges": [
+    {
+      "claim_id": "c02",
+      "issue": "overconfident",
+      "agent_said": "supported",
+      "challenge": "The essay's characterization of Amodei as 'probably the most safety-focused CEO in the AI industry' is unverifiable rhetoric, yet the claim is marked supported at 0.85 confidence based only on the numeric prediction."
+    },
+    {
+      "claim_id": "c03",
+      "issue": "empty_why",
+      "agent_said": "unverifiable",
+      "challenge": "The why field 'Comparator did not explain the verdict from the snippets' is a schema leftover that gives no actual reasoning despite sources clearly stating the 4hr49min figure contradicts the essay's 'nearly five hours' claim."
+    },
+    {
+      "claim_id": "c03",
+      "issue": "missed_caveat",
+      "agent_said": "unverifiable",
+      "challenge": "The sources explicitly state the time horizon is a 50%-completion threshold with wide confidence intervals (1hr49min to 20hr25min), a critical caveat the verdict fails to surface despite being directly relevant to why 'nearly five hours' is an oversimplification."
+    },
+    {
+      "claim_id": "c04",
+      "issue": "missed_caveat",
+      "agent_said": "misleading",
+      "challenge": "The METR source's doubling time is explicitly a 50%-threshold metric, and the verdict should more clearly flag that the essay's 'doubling every seven months, accelerating to four months' omits this statistical caveat and the uncertainty around the accelerating claim."
+    },
+    {
+      "claim_id": "c01",
+      "issue": "circular_source",
+      "agent_said": "supported",
+      "challenge": "The Wikipedia source for GPT-5.3-Codex directly references and compares to Opus 4.6 in a way that may derive from the same contemporaneous press coverage as the other cited sources, so independence of confirmation should be checked rather than treated as fully independent corroboration."
+    }
+  ]
+}

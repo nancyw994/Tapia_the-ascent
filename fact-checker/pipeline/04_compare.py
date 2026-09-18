@@ -63,15 +63,18 @@ def run(evidence_path: Path, out_path: Path, model: str, base_url: str, essay_ur
             claims.append(claim)
             continue
 
-        data = extract_json_object(
-            chat(
-                client,
-                model,
-                load_prompt("comparator.md"),
-                json.dumps({"claim": claim, "sources": independent[:4]}, ensure_ascii=False),
-                max_tokens=400,
+        for _ in range(2):  # one retry: a malformed reply would otherwise become a silent "unverifiable"
+            data = extract_json_object(
+                chat(
+                    client,
+                    model,
+                    load_prompt("comparator.md"),
+                    json.dumps({"claim": claim, "sources": independent[:4]}, ensure_ascii=False),
+                    max_tokens=400,
+                )
             )
-        )
+            if data.get("verdict") and data.get("why"):
+                break
         verdict = str(data.get("verdict") or "unverifiable").strip().lower()
         if verdict not in {"supported", "contradicted", "misleading", "unverifiable", "opinion"}:
             verdict = "unverifiable"

@@ -1,0 +1,23 @@
+{
+  "note": "Challenges only. Humans own verify/manual_review.md and error_log.md.",
+  "challenges": [
+    {
+      "claim_id": "c04",
+      "issue": "missed_caveat",
+      "agent_said": "misleading",
+      "challenge": "The why field correctly identifies the 50%-success-rate qualifier but the 0.75 confidence seems low given four independent sources unanimously confirm the discrepancy."
+    },
+    {
+      "claim_id": "c05",
+      "issue": "empty_why",
+      "agent_said": "misleading",
+      "challenge": "The why field is truncated/missing entirely, so the misleading verdict has no stated justification despite sources directly supporting the 7-month doubling claim as accurate."
+    },
+    {
+      "claim_id": "c05",
+      "issue": "overconfident",
+      "agent_said": "misleading",
+      "challenge": "The METR source itself confirms the 'doubling every seven months' figure as accurate, so labeling the whole claim misleading rather than just flagging the unverified 'four months' acceleration figure may overstate the issue."
+    }
+  ]
+}
