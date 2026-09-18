@@ -1,0 +1,278 @@
+{
+  "essay_id": "something-big-is-happening",
+  "essay_path": "data/essays/shumer_2026-02-09.md",
+  "claims": [
+    {
+      "id": "c01",
+      "quote": "I've been building an experimental agent that works alongside you on its own computer, helping with the messy parts of getting things done.",
+      "taxonomy": "event",
+      "char_start": null,
+      "label": "opinion",
+      "proceeds_to_search": false
+    },
+    {
+      "id": "c02",
+      "quote": "If you were paying close attention, you might have noticed a few people talking about a virus spreading overseas.",
+      "taxonomy": "rhetoric",
+      "char_start": null,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c03",
+      "quote": "Then, on February 5th, two major AI labs released new models on the same day: GPT-5.3 Codex from OpenAI, and Opus 4.6 from Anthropic (the makers of Claude, one of the main competitors to ChatGPT).",
+      "taxonomy": "event",
+      "char_start": null,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c04",
+      "quote": "I am no longer needed for the actual technical work of my job. I describe what I want built, in plain English, and it just... appears.",
+      "taxonomy": "event",
+      "char_start": null,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c05",
+      "quote": "The AI labs made a deliberate choice. They focused on making AI great at writing code first... because building AI requires a lot of code.",
+      "taxonomy": "event",
+      "char_start": null,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c06",
+      "quote": "The models available today are unrecognizable from what existed even six months ago.",
+      "taxonomy": "event",
+      "char_start": null,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c07",
+      "quote": "The people building these systems say one to five years. Some say less.",
+      "taxonomy": "event",
+      "char_start": null,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c08",
+      "quote": "The most recent measurement (Claude Opus 4.5, from November) showed the AI completing tasks that take a human expert nearly five hours.",
+      "taxonomy": "event",
+      "char_start": null,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c09",
+      "quote": "If AI is smarter than most PhDs, do you really think it can't do most office jobs?",
+      "taxonomy": "event",
+      "char_start": null,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c10",
+      "quote": "There's an organization called METR that actually measures this with data.",
+      "taxonomy": "event",
+      "char_start": null,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "c01",
+      "quote": "I've been building an experimental agent that works alongside you on its own computer, helping with the messy parts of getting things done.",
+      "label": "opinion",
+      "queries": [],
+      "hits": []
+    },
+    {
+      "id": "c02",
+      "quote": "If you were paying close attention, you might have noticed a few people talking about a virus spreading overseas.",
+      "label": "verifiable",
+      "queries": [],
+      "hits": [
+        {
+          "title": "- CORONAVIRUS PREPAREDNESS AND RESPONSE",
+          "url": "https://www.govinfo.gov/content/pkg/CHRG-116hhrg40428/html/CHRG-116hhrg40428.htm",
+          "quote": "South Korea can test more people in one day than we tested over the past two months. So, Dr. Fauci, why are we so far behind Korea in testing and reporting this crisis? Dr. Fauci. Thank you very much, Chairwoman Maloney. I would--I don't like to pass the buck, but Dr. Redfield has the numbers and a little map that he might want to show you about that because I don't have that in front of me. Chair",
+          "tier": 3,
+          "stance": "unknown"
+        },
+        {
+          "title": "Press briefing by the international team studying the origins of the COVID-19 virus \u2013 30 March 2021",
+          "url": "https://www.who.int/publications/m/item/press-briefing-by-the-international-team-studying-the-origins-of-the-covid-19-virus-30-march-2021",
+          "quote": "And they had done testing for SARS-CoV-2 antibodies and found those to be negative, which is some indication. And we also had the opportunity to talk to the scientists in the laboratory about the type of work they were doing. And again, as we know from the report, the most closely related bat coronavirus 2, SARS-CoV-2, the so-called RaTG13, in fact, has not been isolated in the laboratory, but is,",
+          "tier": 3,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c03",
+      "quote": "Then, on February 5th, two major AI labs released new models on the same day: GPT-5.3 Codex from OpenAI, and Opus 4.6 from Anthropic (the makers of Claude, one of the main competitors to ChatGPT).",
+      "label": "verifiable",
+      "queries": [],
+      "hits": [
+        {
+          "title": "GPT-5.3-Codex - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/GPT-5.3-Codex",
+          "quote": "GPT-5.3-Codex (Generative Pre-trained Transformer 5.3 Codex) is a large language model (LLM) announced and released by OpenAI on February 5, 2026. [1] It is made as a competitor to Claude 's Opus 4.6, focusing on code generation, speed and the ability to search repositories, run terminal commands and at the same time, debug code. [citation needed] In technical benchmarks, it is reported that ...",
+          "tier": 3,
+          "stance": "unknown"
+        },
+        {
+          "title": "Anthropic and OpenAI Release Dueling AI Models on the Same Day ...",
+          "url": "https://www.businessinsider.com/anthropic-openai-rivalry-dueling-ai-models-on-the-same-day-2026-2?op=1",
+          "quote": "The rivaling AI companies pushed GPT-5.3-Codex and Claude Opus 4.6, and had back-to-back appearances on a tech and business podcast.",
+          "tier": 3,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c04",
+      "quote": "I am no longer needed for the actual technical work of my job. I describe what I want built, in plain English, and it just... appears.",
+      "label": "verifiable",
+      "queries": [],
+      "hits": [
+        {
+          "title": "Something big is happening in AI \u2014 and most people will be blindsided | Fortune",
+          "url": "https://fortune.com/2026/02/11/something-big-is-happening-ai-february-2020-moment-matt-shumer/",
+          "quote": "February 20, 2026 - I describe what I want built, in plain English, and it just\u2026 appears. Not a rough draft I need to fix. The finished thing. I tell the AI what I want, walk away from my computer for four hours, and come back to find the work done.",
+          "tier": 0,
+          "stance": "unknown"
+        },
+        {
+          "title": "The End of the Coder? \u2013 Communications of the ACM",
+          "url": "https://cacm.acm.org/news/the-end-of-the-coder/",
+          "quote": "June 12, 2026 - \u201cI am no longer needed for the actual technical work of my job,\u201d said Matt Shumer, co-founder of Otherside AI, in an essay that went viral on X in early 2026. Shumer described a workflow that has become common among advanced AI users: \u201cI ...",
+          "tier": 0,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c05",
+      "quote": "The AI labs made a deliberate choice. They focused on making AI great at writing code first... because building AI requires a lot of code.",
+      "label": "verifiable",
+      "queries": [],
+      "hits": [
+        {
+          "title": "These new AI models aren't incremental improvements. This is ...",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7427921288737734656/",
+          "quote": "A smarter version, which writes better code, which builds an even smarter version. Making AI great at coding was the strategy that unlocks everything else. That's why they did it...",
+          "tier": 3,
+          "stance": "unknown"
+        },
+        {
+          "title": "Why AI labs are betting big on AI coding - Fast Company",
+          "url": "https://www.fastcompany.com/91557426/why-ai-labs-are-betting-big-on-ai-coding",
+          "quote": "Jun 11, 2026 \u00b7 Researchers and executives at big AI labs like OpenAI, Anthropic, and Google talk about AI-generated code a lot. Tools like Anthropic\u2019s Claude Code, OpenAI\u2019s Codex, and Google\u2019s AlphaCode 2...",
+          "tier": 3,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c06",
+      "quote": "The models available today are unrecognizable from what existed even six months ago.",
+      "label": "verifiable",
+      "queries": [],
+      "hits": [
+        {
+          "title": "AI is now building the next AI - Thinking Sands",
+          "url": "https://jointhinkingsands.substack.com/p/ai-is-now-building-the-next-ai",
+          "quote": "February 23, 2026 - The models available today are unrecognizable from what existed even six months ago. The debate about whether AI is \u201creally getting better\u201d or \u201chitting a wall\u201d \u2014 which has been going on for over a year \u2014 is over.",
+          "tier": 3,
+          "stance": "unknown"
+        },
+        {
+          "title": "AI CEO warns AI's disruption will be 'much bigger' than COVID: 'The people I care about deserve to hear what is coming'",
+          "url": "https://www.businessinsider.com/matt-shumer-something-big-is-happening-essay-ai-disruption-2026-2",
+          "quote": "February 13, 2026 - Shumer said that many people outside tech wrote off AI years ago after a clunky experience with an early edition of ChatGPT. \"The models available today are unrecognizable from what existed even six months ago,\" he wrote.",
+          "tier": 3,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c07",
+      "quote": "The people building these systems say one to five years. Some say less.",
+      "label": "verifiable",
+      "queries": [],
+      "hits": [
+        {
+          "title": "When is it time for a Five-Year Plan? | Statistical Modeling, Causal Inference, and Social Science",
+          "url": "https://statmodeling.stat.columbia.edu/2026/05/15/when-is-it-time-for-a-five-year-plan/",
+          "quote": "May 15, 2026 - I think the idea was that this is about building the next-generation AI, whatever it will be. I hadn\u2019t heard about all this so I did some searching online and I found out that this is the pitch that\u2019s been coming from various software executives. These guys have tons of money, tons of media exposure, and tons of mystique, so it\u2019s no surprise that lots of politicians would fall under",
+          "tier": 3,
+          "stance": "unknown"
+        },
+        {
+          "title": "Make Something Wonderful | Steve Jobs",
+          "url": "https://book.stevejobsarchive.com/",
+          "quote": "And it was a very, very interesting phenomenon, because I think that that\u2019s exactly what\u2019s going to happen as we start to tie these things [computers] together: they\u2019re going to facilitate communication and facilitate bringing people together in the special interests that they have. And we\u2019re about five years away from really solving the problems of hooking these computers together in the office.",
+          "tier": 3,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c08",
+      "quote": "The most recent measurement (Claude Opus 4.5, from November) showed the AI completing tasks that take a human expert nearly five hours.",
+      "label": "verifiable",
+      "queries": [],
+      "hits": [
+        {
+          "title": "Anthropic's Claude Opus 4.5 can tackle some tasks lasting nearly five hours",
+          "url": "https://the-decoder.com/anthropics-claude-opus-4-5-can-tackle-some-tasks-lasting-nearly-five-hours/",
+          "quote": "December 21, 2025 - AI research organization METR has released new benchmark results for Claude Opus 4.5. Anthropic's latest model achieved a 50 percent time horizon of roughly 4 hours and 49 minutes\u2014the highest score ever recorded.",
+          "tier": 3,
+          "stance": "unknown"
+        },
+        {
+          "title": "Introducing Claude Opus 4.5 \\ Anthropic",
+          "url": "https://www.anthropic.com/news/claude-opus-4-5",
+          "quote": "Claude Opus 4.5 achieved state-of-the-art results for complex enterprise tasks on our benchmarks, outperforming previous models on multi-step reasoning tasks that combine information retrieval, tool use, and deep analysis. Claude Opus 4.5 delivers measurable gains where it matters most: stronger results on our hardest evaluations and consistent performance through 30-minute autonomous coding sessi",
+          "tier": 3,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c09",
+      "quote": "If AI is smarter than most PhDs, do you really think it can't do most office jobs?",
+      "label": "verifiable",
+      "queries": [],
+      "hits": [
+        {
+          "title": "Soumya Malani on X: \"\u26a1\ufe0fMust Read Article !! Few Points: - If AI is smarter than most PhDs, do you really think it can't do most office jobs? Think about what that means for your work. - If your job happens on a screen (if the core of what you do is reading, writing, analyzing, deciding,\" / X",
+          "url": "https://x.com/insharebazaar/status/2021587817324060857",
+          "quote": "February 11, 2026 - Think about what that means for your work. - If your job happens on a screen (if the core of what you do is reading, writing, analyzing, deciding, communicating through a keyboard) then AI is coming for significant parts of it.",
+          "tier": 3,
+          "stance": "unknown"
+        },
+        {
+          "title": "Could A.I. Do Your Job? We Put Agents to the Test. - The New York Times",
+          "url": "https://www.nytimes.com/interactive/2026/07/23/technology/ai-agents-office-jobs.html",
+          "quote": "July 26, 2026 - In our experiment, we deployed A.I. \u201cagents\u201d to act as office workers and found that they were capable of performing some of the tasks we assigned, but not all of them. The agents, which can act autonomously and make decisions based on detailed ...",
+          "tier": 3,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c10",
+      "quote": "There's an organization called METR that actually measures this with data.",
+      "label": "verifiable",
+      "queries": [],
+      "hits": []
+    }
+  ]
+}

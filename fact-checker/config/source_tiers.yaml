@@ -1,0 +1,59 @@
+# Lower number = more trusted. Tier 0 cannot support a verdict.
+
+tiers:
+  0:
+    name: disallowed
+    description: The essay under review, or a reprint/excerpt of it.
+    can_support: false
+    match:
+      hosts:
+        - shumer.dev
+        - somethingbig.ai
+      title_contains:
+        - "Something Big Is Happening"
+      snippet_is_essay_quote: true
+  1:
+    name: official
+    description: Government, lab, or first-party product docs.
+    can_support: true
+    match:
+      hosts:
+        - metr.org
+        - openai.com
+        - anthropic.com
+        - .gov
+        - who.int
+  2:
+    name: peer_reviewed
+    description: Papers, system cards used as primary technical notes.
+    can_support: true
+    match:
+      hosts:
+        - arxiv.org
+  3:
+    name: major_press
+    description: Wire and major press that is NOT reprinting the essay.
+    can_support: true
+    match:
+      hosts:
+        - axios.com
+        - nytimes.com
+        - reuters.com
+        - apnews.com
+        - fortune.com
+        - businessinsider.com
+        - the-decoder.com
+  4:
+    name: company_blog
+    description: Corporate or founder blogs other than the essay.
+    can_support: true
+  5:
+    name: other
+    description: Wikipedia, social, random blogs. Corroborate only.
+    can_support: false
+
+independence:
+  min_sources: 2
+  min_distinct_hosts: 2
+  reject_if_all_tier_0: true
+  reject_if_snippet_contains_full_claim: true

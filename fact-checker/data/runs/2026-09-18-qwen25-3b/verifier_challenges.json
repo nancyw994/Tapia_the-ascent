@@ -1,0 +1,29 @@
+{
+  "note": "Challenges only. Humans own verify/manual_review.md and error_log.md.",
+  "challenges": [
+    {
+      "claim_id": "c02",
+      "issue": "empty_why",
+      "agent_said": "misleading",
+      "challenge": "Reasoning field is empty or a schema leftover."
+    },
+    {
+      "claim_id": "c04",
+      "issue": "circular_source",
+      "agent_said": "supported",
+      "challenge": "Sources reprint the essay; they cannot support the claim."
+    },
+    {
+      "claim_id": "c06",
+      "issue": "circular_source",
+      "agent_said": "supported",
+      "challenge": "Sources reprint the essay; they cannot support the claim."
+    },
+    {
+      "claim_id": "c04",
+      "issue": "circular_source|rhetoric_as_verifiable|empty_why|missed_caveat|overconfident",
+      "agent_said": "supported",
+      "challenge": "The sources quote the exact same claim and future date. The claim is not verifiable as it is a future prediction and the sources do not provide evidence for its accuracy."
+    }
+  ]
+}

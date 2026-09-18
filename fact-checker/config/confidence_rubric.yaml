@@ -1,0 +1,25 @@
+# Badge confidence. Applied in compare; humans can override.
+
+weights:
+  source_agreement: 0.4
+  best_tier: 0.3
+  recency: 0.1
+  evidence_directness: 0.2
+
+caps:
+  supported_if_any_tier_0: 0.4
+  supported_if_reprint_detected: 0.0
+  unverifiable_if_below_two_independent: 0.4
+  misleading_when_caveat_in_source: 0.85
+
+directness:
+  direct: source quote contains the fact as stated
+  indirect: source discusses the topic but not the exact fact
+  circular: source is quoting the essay — treat as tier 0
+
+badges:
+  supported: green
+  contradicted: red
+  misleading: amber
+  unverifiable: gray
+  opinion: purple

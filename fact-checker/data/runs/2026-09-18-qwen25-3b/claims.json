@@ -1,0 +1,66 @@
+{
+  "essay_id": "something-big-is-happening",
+  "essay_path": "data/essays/shumer_2026-02-09.md",
+  "claims": [
+    {
+      "id": "c01",
+      "quote": "I've been building an experimental agent that works alongside you on its own computer, helping with the messy parts of getting things done.",
+      "taxonomy": "event",
+      "char_start": null
+    },
+    {
+      "id": "c02",
+      "quote": "If you were paying close attention, you might have noticed a few people talking about a virus spreading overseas.",
+      "taxonomy": "rhetoric",
+      "char_start": null
+    },
+    {
+      "id": "c03",
+      "quote": "Then, on February 5th, two major AI labs released new models on the same day: GPT-5.3 Codex from OpenAI, and Opus 4.6 from Anthropic (the makers of Claude, one of the main competitors to ChatGPT).",
+      "taxonomy": "event",
+      "char_start": null
+    },
+    {
+      "id": "c04",
+      "quote": "I am no longer needed for the actual technical work of my job. I describe what I want built, in plain English, and it just... appears.",
+      "taxonomy": "event",
+      "char_start": null
+    },
+    {
+      "id": "c05",
+      "quote": "The AI labs made a deliberate choice. They focused on making AI great at writing code first... because building AI requires a lot of code.",
+      "taxonomy": "event",
+      "char_start": null
+    },
+    {
+      "id": "c06",
+      "quote": "The models available today are unrecognizable from what existed even six months ago.",
+      "taxonomy": "event",
+      "char_start": null
+    },
+    {
+      "id": "c07",
+      "quote": "The people building these systems say one to five years. Some say less.",
+      "taxonomy": "event",
+      "char_start": null
+    },
+    {
+      "id": "c08",
+      "quote": "The most recent measurement (Claude Opus 4.5, from November) showed the AI completing tasks that take a human expert nearly five hours.",
+      "taxonomy": "event",
+      "char_start": null
+    },
+    {
+      "id": "c09",
+      "quote": "If AI is smarter than most PhDs, do you really think it can't do most office jobs?",
+      "taxonomy": "event",
+      "char_start": null
+    },
+    {
+      "id": "c10",
+      "quote": "There's an organization called METR that actually measures this with data.",
+      "taxonomy": "event",
+      "char_start": null
+    }
+  ]
+}

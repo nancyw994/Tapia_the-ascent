@@ -1,0 +1,16 @@
+# Content kinds extracted from the essay. Orthogonal to lookup labels.
+types:
+  - id: event
+    description: A dated public occurrence (product launch, dual release).
+  - id: statistic
+    description: A measured number tied to a named evaluator or dataset.
+  - id: attribution
+    description: Named person or org said Y. Check the quote, not the prediction.
+  - id: empirical
+    description: Benchmark, paper, or lab result (e.g. METR time horizon).
+  - id: forecast
+    description: Future claim. Lookup only the attribution, if any.
+  - id: anecdote
+    description: Author's personal experience. Does not proceed to search.
+  - id: rhetoric
+    description: Analogy, question, scene-setting. Does not proceed to search.

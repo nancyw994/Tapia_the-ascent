@@ -1,0 +1,185 @@
+{
+  "essay_id": "something-big-is-happening",
+  "essay_path": "data/essays/shumer.md",
+  "method": "Two human readers listed claims from the local essay before looking at agent output. Primary sources were opened in a browser.",
+  "auditors": ["human-a", "human-b"],
+  "generated_at": "2026-09-18T18:20:00+00:00",
+  "claims": [
+    {
+      "id": "g01",
+      "quote": "Then, on February 5th, two major AI labs released new models on the same day: GPT-5.3 Codex from OpenAI, and Opus 4.6 from Anthropic (the makers of Claude, one of the main competitors to ChatGPT).",
+      "claim_type": "verifiable_external",
+      "verdict": "supported",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+          "title": "Introducing GPT-5.3-Codex | OpenAI",
+          "quote": "February 5, 2026"
+        },
+        {
+          "url": "https://www.anthropic.com/news/claude-opus-4-6",
+          "title": "Introducing Claude Opus 4.6",
+          "quote": "Feb 5, 2026"
+        }
+      ],
+      "why": "Both labs published the named models on 5 Feb 2026; Simon Willison also noted the same-day pairing."
+    },
+    {
+      "id": "g02",
+      "quote": "I am no longer needed for the actual technical work of my job.",
+      "claim_type": "anecdote",
+      "verdict": "unverifiable",
+      "confidence": 0.85,
+      "sources": [],
+      "why": "Personal workplace anecdote. No public timesheet or repo log can confirm it, and it should not be treated as an industry statistic."
+    },
+    {
+      "id": "g03",
+      "quote": "I think we're in the \"this seems overblown\" phase of something much, much bigger than Covid.",
+      "claim_type": "opinion",
+      "verdict": "opinion",
+      "confidence": 0.9,
+      "sources": [],
+      "why": "Analogy and value judgment, not a measurable claim."
+    },
+    {
+      "id": "g04",
+      "quote": "The future is being shaped by a remarkably small number of people: a few hundred researchers at a handful of companies... OpenAI, Anthropic, Google DeepMind, and a few others.",
+      "claim_type": "verifiable_external",
+      "verdict": "unverifiable",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://shumer.dev/something-big-is-happening",
+          "title": "Essay itself",
+          "quote": "a few hundred researchers"
+        }
+      ],
+      "why": "Named labs are real; the headcount is an unsourced estimate. Do not upgrade it to supported."
+    },
+    {
+      "id": "g05",
+      "quote": "The free version is over a year behind what paying users have access to.",
+      "claim_type": "verifiable_external",
+      "verdict": "unverifiable",
+      "confidence": 0.55,
+      "sources": [],
+      "why": "Product-tier gaps exist, but 'over a year behind' is not pinned to a dated model card in the essay."
+    },
+    {
+      "id": "g06",
+      "quote": "In 2022, AI couldn't do basic arithmetic reliably. It would confidently tell you that 7 × 8 = 54.",
+      "claim_type": "anecdote",
+      "verdict": "misleading",
+      "confidence": 0.7,
+      "sources": [],
+      "why": "Early LLMs did fail arithmetic, but the 7×8 example is a stock anecdote, not a cited eval."
+    },
+    {
+      "id": "g07",
+      "quote": "By 2023, it could pass the bar exam.",
+      "claim_type": "verifiable_external",
+      "verdict": "misleading",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://openai.com/index/gpt-4/",
+          "title": "GPT-4 announcement",
+          "quote": "GPT-4 passes a simulated bar exam with a score around the top 10% of test takers"
+        }
+      ],
+      "why": "A specific 2023 model (GPT-4) posted a simulated bar result. The essay says 'it' as if all AI passed a real bar."
+    },
+    {
+      "id": "g08",
+      "quote": "The most recent measurement (Claude Opus 4.5, from November) showed the AI completing tasks that take a human expert nearly five hours. And that number is doubling approximately every seven months, with recent data suggesting it may be accelerating to as fast as every four months.",
+      "claim_type": "verifiable_external",
+      "verdict": "misleading",
+      "confidence": 0.92,
+      "sources": [
+        {
+          "url": "https://metr.org/time-horizons/",
+          "title": "METR time horizons",
+          "quote": "The 50%-time horizon is the length of task in our suite ... 50% confidence ... primarily software engineering, machine learning, and cybersecurity."
+        },
+        {
+          "url": "https://garymarcus.substack.com/p/about-that-matt-shumer-post-that",
+          "title": "Gary Marcus rebuttal",
+          "quote": "he neglects to say the criterion on that benchmark is 50% correct, not 100%, and that the benchmark is only about coding"
+        }
+      ],
+      "why": "The ~5 hour Opus 4.5 figure is a 50% success time horizon on METR's software-heavy suite; the 80% horizon is much shorter. The essay reads as if the model can do any 5-hour job."
+    },
+    {
+      "id": "g09",
+      "quote": "\"GPT-5.3-Codex is our first model that was instrumental in creating itself. The Codex team used early versions to debug its own training, manage its own deployment, and diagnose test results and evaluations.\"",
+      "claim_type": "verifiable_external",
+      "verdict": "supported",
+      "confidence": 0.93,
+      "sources": [
+        {
+          "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+          "title": "Introducing GPT-5.3-Codex",
+          "quote": "GPT-5.3-Codex is our first model that was instrumental in creating itself."
+        },
+        {
+          "url": "https://openai.com/index/gpt-5-3-codex-system-card/",
+          "title": "GPT-5.3-Codex System Card",
+          "quote": "It does not reach High capability on AI self-improvement."
+        }
+      ],
+      "why": "The quoted sentence is real. Shumer's surrounding 'the AI helped build itself' gloss overstates it: the system card still says it is not High on self-improvement."
+    },
+    {
+      "id": "g10",
+      "quote": "Dario Amodei, who is probably the most safety-focused CEO in the AI industry, has publicly predicted that AI will eliminate 50% of entry-level white-collar jobs within one to five years.",
+      "claim_type": "verifiable_external",
+      "verdict": "supported",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic",
+          "title": "Axios interview with Dario Amodei",
+          "quote": "AI could wipe out half of all entry-level white-collar jobs ... in the next one to five years"
+        },
+        {
+          "url": "https://fortune.com/2025/05/28/anthropic-ceo-warning-ai-job-loss/",
+          "title": "Fortune",
+          "quote": "Amodei told Axios that he believed AI could eliminate half of all entry-level white-collar jobs within five years"
+        }
+      ],
+      "why": "The attribution is accurate: Amodei said this in May 2025. It remains a prediction, not a measured outcome."
+    },
+    {
+      "id": "g11",
+      "quote": "Amodei has said that AI models \"substantially smarter than almost all humans at almost all tasks\" are on track for 2026 or 2027.",
+      "claim_type": "verifiable_external",
+      "verdict": "supported",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.darioamodei.com/essay/machines-of-loving-grace",
+          "title": "Machines of Loving Grace (Amodei)",
+          "quote": "powerful AI ... 2026 or 2027 appears more likely"
+        }
+      ],
+      "why": "Amodei has published aggressive AGI-timing language. Confirm the exact wording against the cited essay before treating the quotation marks as verbatim."
+    },
+    {
+      "id": "g12",
+      "quote": "On February 5th, 2026, new models arrived that made everything before them feel like a different era.",
+      "claim_type": "opinion",
+      "verdict": "opinion",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+          "title": "OpenAI launch post",
+          "quote": "February 5, 2026"
+        }
+      ],
+      "why": "The date is real; 'different era' is taste, not a fact."
+    }
+  ]
+}

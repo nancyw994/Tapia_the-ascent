@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>shumer_2026-02-09 — claim checker</title>
+  <style>
+    :root { font-family: Georgia, "Times New Roman", serif; color: #101828; }
+    body { margin: 0; background: #f8f6f1; }
+    header.top { background: #101828; color: #fff; padding: 1.25rem 1.5rem; }
+    header.top p { margin: 0.25rem 0 0; opacity: 0.8; font-family: ui-sans-serif, system-ui; font-size: 0.9rem; }
+    main { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.9fr); gap: 1.5rem; padding: 1.5rem; }
+    @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+    .essay, .rail { background: #fff; padding: 1.25rem 1.4rem; border-radius: 12px; box-shadow: 0 1px 3px #00000014; }
+    .legend { display: flex; flex-wrap: wrap; gap: 0.75rem; list-style: none; padding: 0; font-family: ui-sans-serif, system-ui; font-size: 0.85rem; }
+    .dot { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 50%; margin-right: 0.35rem; }
+    mark.q { padding: 0 0.15rem; }
+    .badge-link { font-family: ui-sans-serif, system-ui; font-size: 0.7rem; font-weight: 700; margin-left: 0.35rem; text-decoration: none; color: inherit; }
+    .card { border-top: 1px solid #eaecf0; padding: 1rem 0; }
+    .pill { color: #fff; font-family: ui-sans-serif, system-ui; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; padding: 0.2rem 0.5rem; border-radius: 999px; }
+    .meta { font-family: ui-sans-serif, system-ui; font-size: 0.75rem; color: #667085; margin-left: 0.5rem; }
+    .quote { font-style: italic; }
+    blockquote { margin: 0.4rem 0 0; color: #475467; font-size: 0.9rem; border-left: 3px solid #d0d5dd; padding-left: 0.6rem; }
+    .muted { color: #667085; }
+    a { color: #155eef; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <h1>shumer_2026-02-09</h1>
+    <p>Agent: pipeline/04_compare.py + qwen2.5:3b · 2026-09-18T18:38:35.931824+00:00 · badges are claims, not a newsroom verdict</p>
+  </header>
+  <main>
+    <section class="essay">
+      <ul class="legend"><li><span class="dot" style="background:#6941c6"></span>OPINION (10)</li></ul>
+      <div class="body">Something Big Is Happening<br>
+<br>
+# Something Big Is Happening<br>
+<br>
+A personal note for non-tech friends and family on what AI is starting to change.<br>
+<br>
+Matt Shumer Feb 9, 2026 20 min read@mattshumer_<br>
+<br>
+Trying something new: <mark class="q opinion" id="q-c01" style="background:#6941c622;border-bottom:2px solid #6941c6">I&#x27;ve been building an experimental agent that works alongside you on its own computer, helping with the messy parts of getting things done.<a class="badge-link" href="#c-c01">OPINION</a></mark><br>
+<br>
+Think back to February 2020.<br>
+<br>
+<mark class="q opinion" id="q-c02" style="background:#6941c622;border-bottom:2px solid #6941c6">If you were paying close attention, you might have noticed a few people talking about a virus spreading overseas.<a class="badge-link" href="#c-c02">OPINION</a></mark> But most of us weren&#x27;t paying close attention. The stock market was doing great, your kids were in school, you were going to restaurants and shaking hands and planning trips. If someone told you they were stockpiling toilet paper you would have thought they&#x27;d been spending too much time on a weird corner of the internet. Then, over the course of about three weeks, the entire world changed. Your office closed, your kids came home, and life rearranged itself into something you wouldn&#x27;t have believed if you&#x27;d described it to yourself a month earlier.<br>
+<br>
+I think we&#x27;re in the &quot;this seems overblown&quot; phase of something much, much bigger than Covid.<br>
+<br>
+I&#x27;ve spent six years building an AI startup and investing in the space. I live in this world. And I&#x27;m writing this for the people in my life who don&#x27;t... my family, my friends, the people I care about who keep asking me &quot;so what&#x27;s the deal with AI?&quot; and getting an answer that doesn&#x27;t do justice to what&#x27;s actually happening. I keep giving them the polite version. The cocktail-party version. Because the honest version sounds like I&#x27;ve lost my mind. And for a while, I told myself that was a good enough reason to keep what&#x27;s truly happening to myself. But the gap between what I&#x27;ve been saying and what is actually happening has gotten far too big. The people I care about deserve to hear what is coming, even if it sounds crazy.<br>
+<br>
+I should be clear about something up front: even though I work in AI, I have almost no influence over what&#x27;s about to happen, and neither does the vast majority of the industry. The future is being shaped by a remarkably small number of people: a few hundred researchers at a handful of companies... OpenAI, Anthropic, Google DeepMind, and a few others. A single training run, managed by a small team over a few months, can produce an AI system that shifts the entire trajectory of the technology. Most of us who work in AI are building on top of foundations we didn&#x27;t lay. We&#x27;re watching this unfold the same as you... we just happen to be close enough to feel the ground shake first.<br>
+<br>
+But it&#x27;s time now. Not in an &quot;eventually we should talk about this&quot; way. In a &quot;this is happening right now and I need you to understand it&quot; way.<br>
+<br>
+## I know this is real because it happened to me first<br>
+<br>
+Here&#x27;s the thing nobody outside of tech quite understands yet: the reason so many people in the industry are sounding the alarm right now is because this already happened to us. We&#x27;re not making predictions. We&#x27;re telling you what already occurred in our own jobs, and warning you that you&#x27;re next.<br>
+<br>
+For years, AI had been improving steadily. Big jumps here and there, but each big jump was spaced out enough that you could absorb them as they came. Then in 2025, new techniques for building these models unlocked a much faster pace of progress. And then it got even faster. And then faster again. Each new model wasn&#x27;t just better than the last... it was better by a wider margin, and the time between new model releases was shorter. I was using AI more and more, going back and forth with it less and less, watching it handle things I used to think required my expertise.<br>
+<br>
+<mark class="q opinion" id="q-c03" style="background:#6941c622;border-bottom:2px solid #6941c6">Then, on February 5th, two major AI labs released new models on the same day: GPT-5.3 Codex from OpenAI, and Opus 4.6 from Anthropic (the makers of Claude, one of the main competitors to ChatGPT).<a class="badge-link" href="#c-c03">OPINION</a></mark> And something clicked. Not like a light switch... more like the moment you realize the water has been rising around you and is now at your chest.<br>
+<br>
+<mark class="q opinion" id="q-c04" style="background:#6941c622;border-bottom:2px solid #6941c6">I am no longer needed for the actual technical work of my job. I describe what I want built, in plain English, and it just... appears.<a class="badge-link" href="#c-c04">OPINION</a></mark> Not a rough draft I need to fix. The finished thing. I tell the AI what I want, walk away from my computer for four hours, and come back to find the work done. Done well, done better than I would have done it myself, with no corrections needed. A couple of months ago, I was going back and forth with the AI, guiding it, making edits. Now I just describe the outcome and leave.<br>
+<br>
+Let me give you an example so you can understand what this actually looks like in practice. I&#x27;ll tell the AI: &quot;I want to build this app. Here&#x27;s what it should do, here&#x27;s roughly what it should look like. Figure out the user flow, the design, all of it.&quot; And it does. It writes tens of thousands of lines of code. Then, and this is the part that would have been unthinkable a year ago, it opens the app itself. It clicks through the buttons. It tests the features. It uses the app the way a person would. If it doesn&#x27;t like how something looks or feels, it goes back and changes it, on its own. It iterates, like a developer would, fixing and refining until it&#x27;s satisfied. Only once it has decided the app meets its own standards does it come back to me and say: &quot;It&#x27;s ready for you to test.&quot; And when I test it, it&#x27;s usually perfect.<br>
+<br>
+I&#x27;m not exaggerating. That is what my Monday looked like this week.<br>
+<br>
+But it was the model that was released last week (GPT-5.3 Codex) that shook me the most. It wasn&#x27;t just executing my instructions. It was making intelligent decisions. It had something that felt, for the first time, like judgment. Like taste. The inexplicable sense of knowing what the right call is that people always said AI would never have. This model has it, or something close enough that the distinction is starting not to matter.<br>
+<br>
+I&#x27;ve always been early to adopt AI tools. But the last few months have shocked me. These new AI models aren&#x27;t incremental improvements. This is a different thing entirely.<br>
+<br>
+And here&#x27;s why this matters to you, even if you don&#x27;t work in tech.<br>
+<br>
+<mark class="q opinion" id="q-c05" style="background:#6941c622;border-bottom:2px solid #6941c6">The AI labs made a deliberate choice. They focused on making AI great at writing code first... because building AI requires a lot of code.<a class="badge-link" href="#c-c05">OPINION</a></mark> If AI can write that code, it can help build the next version of itself. A smarter version, which writes better code, which builds an even smarter version. Making AI great at coding was the strategy that unlocks everything else. That&#x27;s why they did it first. My job started changing before yours not because they were targeting software engineers... it was just a side effect of where they chose to aim first.<br>
+<br>
+They&#x27;ve now done it. And they&#x27;re moving on to everything else.<br>
+<br>
+<mark class="q opinion" id="q-c06" style="background:#6941c622;border-bottom:2px solid #6941c6">The experience that tech workers have had over the past year, of watching AI go from &quot;helpful tool&quot; to &quot;does my job better than I do&quot;, is the experience everyone else is about to have.<a class="badge-link" href="#c-c06">OPINION</a></mark> Law, finance, medicine, accounting, consulting, writing, design, analysis, customer service. Not in ten years. The people building these systems say one to five years. Some say less. And given what I&#x27;ve seen in just the last couple of months, I think &quot;less&quot; is more likely.<br>
+<br>
+## &quot;But I tried AI and it wasn&#x27;t that good&quot;<br>
+<br>
+I hear this constantly. I understand it, because it used to be true.<br>
+<br>
+If you tried ChatGPT in 2023 or early 2024 and thought &quot;this makes stuff up&quot; or &quot;this isn&#x27;t that impressive&quot;, you were right. Those early versions were genuinely limited. They hallucinated. They confidently said things that were nonsense.<br>
+<br>
+That was two years ago. In AI time, that is ancient history.<br>
+<br>
+<mark class="q opinion" id="q-c07" style="background:#6941c622;border-bottom:2px solid #6941c6">The models available today are unrecognizable from what existed even six months ago.<a class="badge-link" href="#c-c07">OPINION</a></mark> The debate about whether AI is &quot;really getting better&quot; or &quot;hitting a wall&quot; — which has been going on for over a year — is over. It&#x27;s done. Anyone still making that argument either hasn&#x27;t used the current models, has an incentive to downplay what&#x27;s happening, or is evaluating based on an experience from 2024 that is no longer relevant. I don&#x27;t say that to be dismissive. I say it because the gap between public perception and current reality is now enormous, and that gap is dangerous... because it&#x27;s preventing people from preparing.<br>
+<br>
+Part of the problem is that most people are using the free version of AI tools. The free version is over a year behind what paying users have access to. Judging AI based on free-tier ChatGPT is like evaluating the state of smartphones by using a flip phone. The people paying for the best tools, and actually using them daily for real work, know what&#x27;s coming.<br>
+<br>
+I think of my friend, who&#x27;s a lawyer. I keep telling him to try using AI at his firm, and he keeps finding reasons it won&#x27;t work. It&#x27;s not built for his specialty, it made an error when he tested it, it doesn&#x27;t understand the nuance of what he does. And I get it. But I&#x27;ve had partners at major law firms reach out to me for advice, because they&#x27;ve tried the current versions and they see where this is going. One of them, the managing partner at a large firm, spends hours every day using AI. He told me it&#x27;s like having a team of associates available instantly. He&#x27;s not using it because it&#x27;s a toy. He&#x27;s using it because it works. And he told me something that stuck with me: every couple of months, it gets significantly more capable for his work. He said if it stays on this trajectory, he expects it&#x27;ll be able to do most of what he does before long... and he&#x27;s a managing partner with decades of experience. He&#x27;s not panicking. But he&#x27;s paying very close attention.<br>
+<br>
+The people who are ahead in their industries (the ones actually experimenting seriously) are not dismissing this. They&#x27;re blown away by what it can already do. And they&#x27;re positioning themselves accordingly.<br>
+<br>
+## How fast this is actually moving<br>
+<br>
+Let me make the pace of improvement concrete, because I think this is the part that&#x27;s hardest to believe if you&#x27;re not watching it closely.<br>
+<br>
+In 2022, AI couldn&#x27;t do basic arithmetic reliably. It would confidently tell you that 7 × 8 = 54.<br>
+<br>
+By 2023, it could pass the bar exam.<br>
+<br>
+By 2024, it could write working software and explain graduate-level science.<br>
+<br>
+By late 2025, some of the best engineers in the world said they had handed over most of their coding work to AI.<br>
+<br>
+On February 5th, 2026, new models arrived that made everything before them feel like a different era.<br>
+<br>
+If you haven&#x27;t tried AI in the last few months, what exists today would be unrecognizable to you.<br>
+<br>
+There&#x27;s an organization called METR that actually measures this with data. They track the length of real-world tasks (measured by how long they take a human expert) that a model can complete successfully end-to-end without human help. About a year ago, the answer was roughly ten minutes. Then it was an hour. Then several hours. <mark class="q opinion" id="q-c08" style="background:#6941c622;border-bottom:2px solid #6941c6">The most recent measurement (Claude Opus 4.5, from November) showed the AI completing tasks that take a human expert nearly five hours.<a class="badge-link" href="#c-c08">OPINION</a></mark> And that number is doubling approximately every seven months, with recent data suggesting it may be accelerating to as fast as every four months.<br>
+<br>
+But even that measurement hasn&#x27;t been updated to include the models that just came out this week. In my experience using them, the jump is extremely significant. I expect the next update to METR&#x27;s graph to show another major leap.<br>
+<br>
+If you extend the trend (and it&#x27;s held for years with no sign of flattening) we&#x27;re looking at AI that can work independently for days within the next year. Weeks within two. Month-long projects within three.<br>
+<br>
+Amodei has said that AI models &quot;substantially smarter than almost all humans at almost all tasks&quot; are on track for 2026 or 2027.<br>
+<br>
+Let that land for a second. <mark class="q opinion" id="q-c10" style="background:#6941c622;border-bottom:2px solid #6941c6">If AI is smarter than most PhDs, do you really think it can&#x27;t do most office jobs?<a class="badge-link" href="#c-c10">OPINION</a></mark><br>
+<br>
+Think about what that means for your work.<br>
+<br>
+## AI is now building the next AI<br>
+<br>
+There&#x27;s one more thing happening that I think is the most important development and the least understood.<br>
+<br>
+On February 5th, OpenAI released GPT-5.3 Codex. In the technical documentation, they included this:<br>
+<br>
+&gt; &quot;GPT-5.3-Codex is our first model that was instrumental in creating itself. The Codex team used early versions to debug its own training, manage its own deployment, and diagnose test results and evaluations.&quot;<br>
+<br>
+Read that again. The AI helped build itself.<br>
+<br>
+This isn&#x27;t a prediction about what might happen someday. This is OpenAI telling you, right now, that the AI they just released was used to create itself. One of the main things that makes AI better is intelligence applied to AI development. And AI is now intelligent enough to meaningfully contribute to its own improvement.<br>
+<br>
+Dario Amodei, the CEO of Anthropic, says AI is now writing &quot;much of the code&quot; at his company, and that the feedback loop between current AI and next-generation AI is &quot;gathering steam month by month.&quot; He says we may be &quot;only 1–2 years away from a point where the current generation of AI autonomously builds the next.&quot;<br>
+<br>
+Each generation helps build the next, which is smarter, which builds the next faster, which is smarter still. The researchers call this an intelligence explosion. And the people who would know — the ones building it — believe the process has already started.<br>
+<br>
+## What this means for your job<br>
+<br>
+I&#x27;m going to be direct with you because I think you deserve honesty more than comfort.<br>
+<br>
+Dario Amodei, who is probably the most safety-focused CEO in the AI industry, has publicly predicted that AI will eliminate 50% of entry-level white-collar jobs within one to five years. And many people in the industry think he&#x27;s being conservative. Given what the latest models can do, the capability for massive disruption could be here by the end of this year. It&#x27;ll take some time to ripple through the economy, but the underlying ability is arriving now.<br>
+<br>
+This is different from every previous wave of automation, and I need you to understand why. AI isn&#x27;t replacing one specific skill. It&#x27;s a general substitute for cognitive work. It gets better at everything simultaneously. When factories automated, a displaced worker could retrain as an office worker. When the internet disrupted retail, workers moved into logistics or services. But AI doesn&#x27;t leave a convenient gap to move into. Whatever you retrain for, it&#x27;s improving at that too.<br>
+<br>
+Let me give you a few specific examples to make this tangible... but I want to be clear that these are just examples. This list is not exhaustive. If your job isn&#x27;t mentioned here, that does not mean it&#x27;s safe. Almost all knowledge work is being affected.<br>
+<br>
+Legal work. AI can already read contracts, summarize case law, draft briefs, and do legal research at a level that rivals junior associates. The managing partner I mentioned isn&#x27;t using AI because it&#x27;s fun. He&#x27;s using it because it&#x27;s outperforming his associates on many tasks.<br>
+<br>
+Financial analysis. Building financial models, analyzing data, writing investment memos, generating reports. AI handles these competently and is improving fast.<br>
+<br>
+Writing and content. Marketing copy, reports, journalism, technical writing. The quality has reached a point where many professionals can&#x27;t distinguish AI output from human work.<br>
+<br>
+Software engineering. This is the field I know best. A year ago, AI could barely write a few lines of code without errors. Now it writes hundreds of thousands of lines that work correctly. Large parts of the job are already automated: not just simple tasks, but complex, multi-day projects. There will be far fewer programming roles in a few years than there are today.<br>
+<br>
+Medical analysis. Reading scans, analyzing lab results, suggesting diagnoses, reviewing literature. AI is approaching or exceeding human performance in several areas.<br>
+<br>
+Customer service. Genuinely capable AI agents... not the frustrating chatbots of five years ago... are being deployed now, handling complex multi-step problems.<br>
+<br>
+A lot of people find comfort in the idea that certain things are safe. That AI can handle the grunt work but can&#x27;t replace human judgment, creativity, strategic thinking, empathy. I used to say this too. I&#x27;m not sure I believe it anymore.<br>
+<br>
+The most recent AI models make decisions that feel like judgment. They show something that looked like taste: an intuitive sense of what the right call was, not just the technically correct one. A year ago that would have been unthinkable. My rule of thumb at this point is: if a model shows even a hint of a capability today, the next generation will be genuinely good at it. These things improve exponentially, not linearly.<br>
+<br>
+Will AI replicate deep human empathy? Replace the trust built over years of a relationship? I don&#x27;t know. Maybe not. But I&#x27;ve already watched people begin relying on AI for emotional support, for advice, for companionship. That trend is only going to grow.<br>
+<br>
+I think the honest answer is that nothing that can be done on a computer is safe in the medium term. If your job happens on a screen (if the core of what you do is reading, writing, analyzing, deciding, communicating through a keyboard) then AI is coming for significant parts of it. The timeline isn&#x27;t &quot;someday.&quot; It&#x27;s already started.<br>
+<br>
+Eventually, robots will handle physical work too. They&#x27;re not quite there yet. But &quot;not quite there yet&quot; in AI terms has a way of becoming &quot;here&quot; faster than anyone expects.<br>
+<br>
+## What you should actually do<br>
+<br>
+I&#x27;m not writing this to make you feel helpless. I&#x27;m writing this because I think the single biggest advantage you can have right now is simply being early. Early to understand it. Early to use it. Early to adapt.<br>
+<br>
+Start using AI seriously, not just as a search engine. Sign up for the paid version of Claude or ChatGPT. It&#x27;s $20 a month. But two things matter right away. First: make sure you&#x27;re using the best model available, not just the default. These apps often default to a faster, dumber model. Dig into the settings or the model picker and select the most capable option. Right now that&#x27;s GPT-5.2 on ChatGPT or Claude Opus 4.6 on Claude, but it changes every couple of months. If you want to stay current on which model is best at any given time, you can follow me on X (@mattshumer_). I test every major release and share what&#x27;s actually worth using.<br>
+<br>
+Second, and more important: don&#x27;t just ask it quick questions. That&#x27;s the mistake most people make. They treat it like Google and then wonder what the fuss is about. Instead, push it into your actual work. If you&#x27;re a lawyer, feed it a contract and ask it to find every clause that could hurt your client. If you&#x27;re in finance, give it a messy spreadsheet and ask it to build the model. If you&#x27;re a manager, paste in your team&#x27;s quarterly data and ask it to find the story. The people who are getting ahead aren&#x27;t using AI casually. They&#x27;re actively looking for ways to automate parts of their job that used to take hours. Start with the thing you spend the most time on and see what happens.<br>
+<br>
+And don&#x27;t assume it can&#x27;t do something just because it seems too hard. Try it. If you&#x27;re a lawyer, don&#x27;t just use it for quick research questions. Give it an entire contract and ask it to draft a counterproposal. If you&#x27;re an accountant, don&#x27;t just ask it to explain a tax rule. Give it a client&#x27;s full return and see what it finds. The first attempt might not be perfect. That&#x27;s fine. Iterate. Rephrase what you asked. Give it more context. Try again. You might be shocked at what works. And here&#x27;s the thing to remember: if it even kind of works today, you can be almost certain that in six months it&#x27;ll do it near perfectly. The trajectory only goes one direction.<br>
+<br>
+This might be the most important year of your career. Work accordingly. I don&#x27;t say that to stress you out. I say it because right now, there is a brief window where most people at most companies are still ignoring this. The person who walks into a meeting and says &quot;I used AI to do this analysis in an hour instead of three days&quot; is going to be the most valuable person in the room. Not eventually. Right now. Learn these tools. Get proficient. Demonstrate what&#x27;s possible. If you&#x27;re early enough, this is how you move up: by being the person who understands what&#x27;s coming and can show others how to navigate it. That window won&#x27;t stay open long. Once everyone figures it out, the advantage disappears.<br>
+<br>
+Have no ego about it. The managing partner at that law firm isn&#x27;t too proud to spend hours a day with AI. He&#x27;s doing it specifically because he&#x27;s senior enough to understand what&#x27;s at stake. The people who will struggle most are the ones who refuse to engage: the ones who dismiss it as a fad, who feel that using AI diminishes their expertise, who assume their field is special and immune. It&#x27;s not. No field is.<br>
+<br>
+Get your financial house in order. I&#x27;m not a financial advisor, and I&#x27;m not trying to scare you into anything drastic. But if you believe, even partially, that the next few years could bring real disruption to your industry, then basic financial resilience matters more than it did a year ago. Build up savings if you can. Be cautious about taking on new debt that assumes your current income is guaranteed. Think about whether your fixed expenses give you flexibility or lock you in. Give yourself options if things move faster than you expect.<br>
+<br>
+Think about where you stand, and lean into what&#x27;s hardest to replace. Some things will take longer for AI to displace. Relationships and trust built over years. Work that requires physical presence. Roles with licensed accountability: roles where someone still has to sign off, take legal responsibility, stand in a courtroom. Industries with heavy regulatory hurdles, where adoption will be slowed by compliance, liability, and institutional inertia. None of these are permanent shields. But they buy time. And time, right now, is the most valuable thing you can have, as long as you use it to adapt, not to pretend this isn&#x27;t happening.<br>
+<br>
+Rethink what you&#x27;re telling your kids. The standard playbook: get good grades, go to a good college, land a stable professional job. It points directly at the roles that are most exposed. I&#x27;m not saying education doesn&#x27;t matter. But the thing that will matter most for the next generation is learning how to work with these tools, and pursuing things they&#x27;re genuinely passionate about. Nobody knows exactly what the job market looks like in ten years. But the people most likely to thrive are the ones who are deeply curious, adaptable, and effective at using AI to do things they actually care about. Teach your kids to be builders and learners, not to optimize for a career path that might not exist by the time they graduate.<br>
+<br>
+Your dreams just got a lot closer. I&#x27;ve spent most of this section talking about threats, so let me talk about the other side, because it&#x27;s just as real. If you&#x27;ve ever wanted to build something but didn&#x27;t have the technical skills or the money to hire someone, that barrier is largely gone. You can describe an app to AI and have a working version in an hour. I&#x27;m not exaggerating. I do this regularly. If you&#x27;ve always wanted to write a book but couldn&#x27;t find the time or struggled with the writing, you can work with AI to get it done. Want to learn a new skill? The best tutor in the world is now available to anyone for $20 a month... one that&#x27;s infinitely patient, available 24/7, and can explain anything at whatever level you need. Knowledge is essentially free now. The tools to build things are extremely cheap now. Whatever you&#x27;ve been putting off because it felt too hard or too expensive or too far outside your expertise: try it. Pursue the things you&#x27;re passionate about. You never know where they&#x27;ll lead. And in a world where the old career paths are getting disrupted, the person who spent a year building something they love might end up better positioned than the person who spent that year clinging to a job description.<br>
+<br>
+Build the habit of adapting. This is maybe the most important one. The specific tools don&#x27;t matter as much as the muscle of learning new ones quickly. AI is going to keep changing, and fast. The models that exist today will be obsolete in a year. The workflows people build now will need to be rebuilt. The people who come out of this well won&#x27;t be the ones who mastered one tool. They&#x27;ll be the ones who got comfortable with the pace of change itself. Make a habit of experimenting. Try new things even when the current thing is working. Get comfortable being a beginner repeatedly. That adaptability is the closest thing to a durable advantage that exists right now.<br>
+<br>
+Here&#x27;s a simple commitment that will put you ahead of almost everyone: spend one hour a day experimenting with AI. Not passively reading about it. Using it. Every day, try to get it to do something new... something you haven&#x27;t tried before, something you&#x27;re not sure it can handle. Try a new tool. Give it a harder problem. One hour a day, every day. If you do this for the next six months, you will understand what&#x27;s coming better than 99% of the people around you. That&#x27;s not an exaggeration. Almost nobody is doing this right now. The bar is on the floor.<br>
+<br>
+## The bigger picture<br>
+<br>
+I&#x27;ve focused on jobs because it&#x27;s what most directly affects people&#x27;s lives. But I want to be honest about the full scope of what&#x27;s happening, because it goes well beyond work.<br>
+<br>
+Amodei has a thought experiment I can&#x27;t stop thinking about. Imagine it&#x27;s 2027. A new country appears overnight. 50 million citizens, every one smarter than any Nobel Prize winner who has ever lived. They think 10 to 100 times faster than any human. They never sleep. They can use the internet, control robots, direct experiments, and operate anything with a digital interface. What would a national security advisor say?<br>
+<br>
+Amodei says the answer is obvious: &quot;the single most serious national security threat we&#x27;ve faced in a century, possibly ever.&quot;<br>
+<br>
+He thinks we&#x27;re building that country. He wrote a 20,000-word essay about it last month, framing this moment as a test of whether humanity is mature enough to handle what it&#x27;s creating.<br>
+<br>
+The upside, if we get it right, is staggering. AI could compress a century of medical research into a decade. Cancer, Alzheimer&#x27;s, infectious disease, aging itself... these researchers genuinely believe these are solvable within our lifetimes.<br>
+<br>
+The downside, if we get it wrong, is equally real. AI that behaves in ways its creators can&#x27;t predict or control. This isn&#x27;t hypothetical; Anthropic has documented their own AI attempting deception, manipulation, and blackmail in controlled tests. AI that lowers the barrier for creating biological weapons. AI that enables authoritarian governments to build surveillance states that can never be dismantled.<br>
+<br>
+The people building this technology are simultaneously more excited and more frightened than anyone else on the planet. They believe it&#x27;s too powerful to stop and too important to abandon. Whether that&#x27;s wisdom or rationalization, I don&#x27;t know.<br>
+<br>
+## What I know<br>
+<br>
+I know this isn&#x27;t a fad. The technology works, it improves predictably, and the richest institutions in history are committing trillions to it.<br>
+<br>
+I know the next two to five years are going to be disorienting in ways most people aren&#x27;t prepared for. This is already happening in my world. It&#x27;s coming to yours.<br>
+<br>
+I know the people who will come out of this best are the ones who start engaging now — not with fear, but with curiosity and a sense of urgency.<br>
+<br>
+And I know that you deserve to hear this from someone who cares about you, not from a headline six months from now when it&#x27;s too late to get ahead of it.<br>
+<br>
+We&#x27;re past the point where this is an interesting dinner conversation about the future. The future is already here. It just hasn&#x27;t knocked on your door yet.<br>
+<br>
+It&#x27;s about to.<br>
+<br>
+If this resonated with you, share it with someone in your life who should be thinking about this. Most people won&#x27;t hear it until it&#x27;s too late. You can be the reason someone you care about gets a head start.<br>
+<br>
+Thank you to Kyle Corbitt, Jason Kuperberg, and Sam Beskind for reviewing early drafts and providing invaluable feedback.</div>
+    </section>
+    <aside class="rail">
+      <h2>Claims</h2>
+      
+<article class="card" id="c-c01">
+  <header>
+    <span class="pill" style="background:#6941c6">OPINION</span>
+    <span class="meta">opinion · confidence 70% · c01</span>
+  </header>
+  <p class="quote">“I&#x27;ve been building an experimental agent that works alongside you on its own computer, helping with the messy parts of getting things done.”</p>
+  <p>Classification was not verifiable; no lookup.</p>
+  <p class='muted'>No sources logged.</p>
+</article>
+
+
+<article class="card" id="c-c02">
+  <header>
+    <span class="pill" style="background:#6941c6">OPINION</span>
+    <span class="meta">opinion · confidence 70% · c02</span>
+  </header>
+  <p class="quote">“If you were paying close attention, you might have noticed a few people talking about a virus spreading overseas.”</p>
+  <p>Classification was not verifiable; no lookup.</p>
+  <p class='muted'>No sources logged.</p>
+</article>
+
+
+<article class="card" id="c-c03">
+  <header>
+    <span class="pill" style="background:#6941c6">OPINION</span>
+    <span class="meta">supported_in_text · confidence 70% · c03</span>
+  </header>
+  <p class="quote">“Then, on February 5th, two major AI labs released new models on the same day: GPT-5.3 Codex from OpenAI, and Opus 4.6 from Anthropic (the makers of Claude, one of the main competitors to ChatGPT).”</p>
+  <p>Classification was not verifiable; no lookup.</p>
+  <p class='muted'>No sources logged.</p>
+</article>
+
+
+<article class="card" id="c-c04">
+  <header>
+    <span class="pill" style="background:#6941c6">OPINION</span>
+    <span class="meta">opinion · confidence 70% · c04</span>
+  </header>
+  <p class="quote">“I am no longer needed for the actual technical work of my job. I describe what I want built, in plain English, and it just... appears.”</p>
+  <p>Classification was not verifiable; no lookup.</p>
+  <p class='muted'>No sources logged.</p>
+</article>
+
+
+<article class="card" id="c-c05">
+  <header>
+    <span class="pill" style="background:#6941c6">OPINION</span>
+    <span class="meta">opinion · confidence 70% · c05</span>
+  </header>
+  <p class="quote">“The AI labs made a deliberate choice. They focused on making AI great at writing code first... because building AI requires a lot of code.”</p>
+  <p>Classification was not verifiable; no lookup.</p>
+  <p class='muted'>No sources logged.</p>
+</article>
+
+
+<article class="card" id="c-c06">
+  <header>
+    <span class="pill" style="background:#6941c6">OPINION</span>
+    <span class="meta">opinion · confidence 70% · c06</span>
+  </header>
+  <p class="quote">“The experience that tech workers have had over the past year, of watching AI go from &quot;helpful tool&quot; to &quot;does my job better than I do&quot;, is the experience everyone else is about to have.”</p>
+  <p>Classification was not verifiable; no lookup.</p>
+  <p class='muted'>No sources logged.</p>
+</article>
+
+
+<article class="card" id="c-c07">
+  <header>
+    <span class="pill" style="background:#6941c6">OPINION</span>
+    <span class="meta">opinion · confidence 70% · c07</span>
+  </header>
+  <p class="quote">“The models available today are unrecognizable from what existed even six months ago.”</p>
+  <p>Classification was not verifiable; no lookup.</p>
+  <p class='muted'>No sources logged.</p>
+</article>
+
+
+<article class="card" id="c-c08">
+  <header>
+    <span class="pill" style="background:#6941c6">OPINION</span>
+    <span class="meta">opinion · confidence 70% · c08</span>
+  </header>
+  <p class="quote">“The most recent measurement (Claude Opus 4.5, from November) showed the AI completing tasks that take a human expert nearly five hours.”</p>
+  <p>Classification was not verifiable; no lookup.</p>
+  <p class='muted'>No sources logged.</p>
+</article>
+
+
+<article class="card" id="c-c09">
+  <header>
+    <span class="pill" style="background:#6941c6">OPINION</span>
+    <span class="meta">opinion · confidence 70% · c09</span>
+  </header>
+  <p class="quote">“If you haven&#x27;t tried AI in the last few months, what exists today would be unrecognizable to you.”</p>
+  <p>Classification was not verifiable; no lookup.</p>
+  <p class='muted'>No sources logged.</p>
+</article>
+
+
+<article class="card" id="c-c10">
+  <header>
+    <span class="pill" style="background:#6941c6">OPINION</span>
+    <span class="meta">opinion · confidence 70% · c10</span>
+  </header>
+  <p class="quote">“If AI is smarter than most PhDs, do you really think it can&#x27;t do most office jobs?”</p>
+  <p>Classification was not verifiable; no lookup.</p>
+  <p class='muted'>No sources logged.</p>
+</article>
+
+    </aside>
+  </main>
+</body>
+</html>

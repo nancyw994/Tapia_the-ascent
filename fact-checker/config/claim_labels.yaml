@@ -1,0 +1,48 @@
+# Two axes. Do not collapse them.
+#
+# CONFLICT FIX vs the TAPIA brief:
+# The brief lists three labels. Those are CLASSIFICATION (whether to search).
+# Badges on the annotated essay are VERDICTS, and must include `misleading`
+# or METR-style caveats cannot be shown.
+
+classification:
+  # Brief names. Only `verifiable` proceeds to search.
+  - id: supported_in_text
+    brief_name: supported_in_text
+    proceeds_to_search: false
+    description: Restates something already in the same essay.
+  - id: verifiable
+    brief_name: verifiable
+    aliases: [verifiable_external]
+    proceeds_to_search: true
+    description: Date, quote, statistic, release, or attributed statement.
+  - id: opinion
+    brief_name: opinion
+    aliases: [anecdote, rhetoric, forecast]
+    proceeds_to_search: false
+    description: Opinion, prediction-as-vibe, anecdote, or rhetoric.
+
+verdicts:
+  - id: supported
+    badge: SUPPORTED
+    description: An independent source quote actually contains the fact.
+  - id: contradicted
+    badge: CONTRADICTED
+    description: Independent sources disagree with the claim.
+  - id: misleading
+    badge: MISLEADING
+    description: >
+      The number, name, or quote is real, but a limitation was dropped so a
+      reader would conclude the wrong thing (METR 50% time horizon described
+      as “AI can do any 5-hour job”).
+  - id: unverifiable
+    badge: UNVERIFIABLE
+    description: Fewer than two independent, non-reprint sources.
+  - id: opinion
+    badge: OPINION
+    description: Classification was opinion/anecdote/rhetoric; not looked up.
+
+rules:
+  - Never mark supported because other sites reprinted this essay.
+  - Never mark a CEO forecast supported-as-fact; at most support the attribution.
+  - Anecdotes cannot become supported via interviews that quote the essay.
