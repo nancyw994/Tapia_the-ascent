@@ -1,0 +1,682 @@
+{
+  "essay_path": "/Users/tianqi/Hackathon/Tapia26_GenAI/tapia2026/fact-checker/data/essays/shumer_2026-02-09.md",
+  "essay_id": "shumer_2026-02-09",
+  "claims": [
+    {
+      "id": "c01",
+      "quote": "on February 5th, two major AI labs released new models on the same day: GPT-5.3 Codex from OpenAI, and Opus 4.6 from Anthropic",
+      "taxonomy": "event",
+      "char_start": 3649,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c02",
+      "quote": "I tell the AI what I want, walk away from my computer for four hours, and come back to find the work done.",
+      "taxonomy": "anecdote",
+      "char_start": 4175,
+      "label": "opinion",
+      "proceeds_to_search": false
+    },
+    {
+      "id": "c03",
+      "quote": "There's an organization called METR that actually measures this with data.",
+      "taxonomy": "attribution",
+      "char_start": 10454,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c04",
+      "quote": "The most recent measurement (Claude Opus 4.5, from November) showed the AI completing tasks that take a human expert nearly five hours.",
+      "taxonomy": "statistic",
+      "char_start": 10784,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c05",
+      "quote": "that number is doubling approximately every seven months, with recent data suggesting it may be accelerating to as fast as every four months.",
+      "taxonomy": "statistic",
+      "char_start": 10924,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c06",
+      "quote": "Amodei has said that AI models \"substantially smarter than almost all humans at almost all tasks\" are on track for 2026 or 2027.",
+      "taxonomy": "attribution",
+      "char_start": 11508,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c07",
+      "quote": "GPT-5.3-Codex is our first model that was instrumental in creating itself. The Codex team used early versions to debug its own training, manage its own deployment, and diagnose test results and evaluations.",
+      "taxonomy": "attribution",
+      "char_start": 12040,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c08",
+      "quote": "Dario Amodei, the CEO of Anthropic, says AI is now writing \"much of the code\" at his company, and that the feedback loop between current AI and next-generation AI is \"gathering steam month by month.\"",
+      "taxonomy": "attribution",
+      "char_start": 12621,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c09",
+      "quote": "Dario Amodei, who is probably the most safety-focused CEO in the AI industry, has publicly predicted that AI will eliminate 50% of entry-level white-collar jobs within one to five years.",
+      "taxonomy": "forecast",
+      "char_start": 13321,
+      "label": "opinion",
+      "proceeds_to_search": false
+    },
+    {
+      "id": "c10",
+      "quote": "In 2022, AI couldn't do basic arithmetic reliably. It would confidently tell you that 7 × 8 = 54.",
+      "taxonomy": "empirical",
+      "char_start": 9923,
+      "label": "opinion",
+      "proceeds_to_search": false
+    },
+    {
+      "id": "c11",
+      "quote": "By 2023, it could pass the bar exam.",
+      "taxonomy": "empirical",
+      "char_start": 10022,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c12",
+      "quote": "Anthropic has documented their own AI attempting deception, manipulation, and blackmail in controlled tests.",
+      "taxonomy": "empirical",
+      "char_start": 26376,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    },
+    {
+      "id": "c13",
+      "quote": "the single most serious national security threat we've faced in a century, possibly ever.",
+      "taxonomy": "attribution",
+      "char_start": 25713,
+      "label": "opinion",
+      "proceeds_to_search": false
+    },
+    {
+      "id": "c14",
+      "quote": "He wrote a 20,000-word essay about it last month, framing this moment as a test of whether humanity is mature enough to handle what it's creating.",
+      "taxonomy": "event",
+      "char_start": 25844,
+      "label": "verifiable",
+      "proceeds_to_search": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "c01",
+      "quote": "on February 5th, two major AI labs released new models on the same day: GPT-5.3 Codex from OpenAI, and Opus 4.6 from Anthropic",
+      "label": "verifiable",
+      "queries": [
+        "GPT-5.3 Codex Opus 4.6 release February 5",
+        "OpenAI GPT-5.3 Codex announcement site:openai.com"
+      ],
+      "hits": [
+        {
+          "title": "GPT-5.3-Codex - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/GPT-5.3-Codex",
+          "quote": "GPT-5.3-Codex (Generative Pre-trained Transformer 5.3 Codex) is a large language model (LLM) announced and released by OpenAI on February 5, 2026. [1] It is made as a competitor to Claude 's Opus 4.6, focusing on code generation, speed and the ability to search repositories, run terminal commands and at the same time, debug code. [citation needed] In technical benchmarks, it is reported that ...",
+          "host": "en.wikipedia.org",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Introducing GPT‑5.3‑Codex - OpenAI",
+          "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+          "quote": "GPT-5.3-Codex is a Codex-native agent that pairs frontier coding performance with general reasoning to support long-horizon, real-world technical work.",
+          "host": "openai.com",
+          "tier": 1,
+          "stance": "unknown"
+        },
+        {
+          "title": "Opus 4.6 and Codex 5.3 - simonwillison.net",
+          "url": "https://simonwillison.net/2026/Feb/5/two-new-models/",
+          "quote": "Two major new model releases today, within about 15 minutes of each other. Anthropic released Opus 4.6. Here's its pelican: OpenAI release GPT-5.3-Codex, albeit only via their Codex app, not yet in their API. Here's its pelican: I've had a bit of preview access to both of these models and to be honest I'm finding it hard to find a good angle to write about them - they're both really good, but ...",
+          "host": "simonwillison.net",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Introducing Claude Opus 4.6 - Anthropic",
+          "url": "https://www.anthropic.com/news/claude-opus-4-6",
+          "quote": "We're upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model.",
+          "host": "anthropic.com",
+          "tier": 1,
+          "stance": "unknown"
+        },
+        {
+          "title": "Introducing GPT-5.3-Codex-Spark | OpenAI",
+          "url": "https://openai.com/index/introducing-gpt-5-3-codex-spark/",
+          "quote": "Introducing GPT-5.3-Codex-Spark—our first real-time coding model. 15x faster generation, 128k context, now in research preview for ChatGPT Pro users.",
+          "host": "openai.com",
+          "tier": 1,
+          "stance": "unknown"
+        },
+        {
+          "title": "GPT-5.3-Codex System Card OpenAI February 5, 2026 1",
+          "url": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+          "quote": "We’ve also introduced additional prompting in the Codex CLI to ensure that the · model gracefully clarifies conflicting edits with the user before proceeding. Table 2: To measure that the intervention was effective, we developed a new destructive actions · evaluation that measures the model’s ability to preserve user-produced changes and avoid taking ... GPT-5.3-Codex is the most capable model we’",
+          "host": "cdn.openai.com",
+          "tier": 1,
+          "stance": "unknown"
+        },
+        {
+          "title": "GPT-5.3-Codex System Card | OpenAI",
+          "url": "https://openai.com/index/gpt-5-3-codex-system-card/",
+          "quote": "GPT‑5.3-Codex is the most capable agentic coding model to date, combining the frontier coding performance of GPT‑5.2-Codex with the reasoning and professional knowledge capabilities of GPT‑5.2.",
+          "host": "openai.com",
+          "tier": 1,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c02",
+      "quote": "I tell the AI what I want, walk away from my computer for four hours, and come back to find the work done.",
+      "label": "opinion",
+      "queries": [],
+      "hits": []
+    },
+    {
+      "id": "c03",
+      "quote": "There's an organization called METR that actually measures this with data.",
+      "label": "verifiable",
+      "queries": [
+        "METR AI task length measurement study",
+        "METR AI time horizon benchmark report"
+      ],
+      "hits": [
+        {
+          "title": "METR - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/METR",
+          "quote": "3 weeks ago - METR releases a \"task-completion time horizon\" for analysed AI models. This measures the \"task duration (measured by human expert completion time) at which an AI agent is predicted to succeed with a given level of reliability.\" The metric is reported in two variants: the 50%-time horizon, which ...",
+          "host": "en.wikipedia.org",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Measuring AI Ability to Complete Long Software Tasks - METR",
+          "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
+          "quote": "March 19, 2025 - We propose measuring AI performance in terms of the *length* of tasks AI agents can complete. We show that this metric has been consistently exponentially increasing over the past 6 years, with a doubling time of around 7 months.",
+          "host": "metr.org",
+          "tier": 1,
+          "stance": "unknown"
+        },
+        {
+          "title": "Task-Completion Time Horizons of Frontier AI Models - METR",
+          "url": "https://metr.org/time-horizons/",
+          "quote": "Our human task duration estimates likely overestimate how long a human expert takes to complete these tasks, as the humans (and AI agents!) have much less context for the task than professionals doing equivalent work in their day-to-day job. For some tasks, we do not have reliable human completion times, so we instead rely on human expert estimates or the task completion times from QA tests. No. T",
+          "host": "metr.org",
+          "tier": 1,
+          "stance": "unknown"
+        },
+        {
+          "title": "METR: Measuring AI Ability to Complete Long Tasks",
+          "url": "https://www.alignmentforum.org/posts/deesrjitvXM4xYGZd/metr-measuring-ai-ability-to-complete-long-tasks",
+          "quote": "First, our work demonstrates an approach to making benchmarks more useful for forecasting: measuring AI performance in terms of the length of tasks the system can complete (as measured by how long the tasks take humans). This allows us to measure how models have improved over a wide range of ...",
+          "host": "alignmentforum.org",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "METR",
+          "url": "https://metr.org/",
+          "quote": "Aug 26, 2026 · We build on our time-horizon work and analyze 9 benchmarks for scientific reasoning, math, robotics, computer use, and self-driving in terms of time-horizon trends; we observe generally similar rates of improvement to the 7-month doubling time in our original time-horizon work.",
+          "host": "metr.org",
+          "tier": 1,
+          "stance": "unknown"
+        },
+        {
+          "title": "Measuring AI Ability to Complete Long Tasks | METR",
+          "url": "https://metr.theo-bearman.com/dashboard.html",
+          "quote": "Time Horizon: The amount of serial human labor (on software/research tasks) that AI can replace at the selected success rate. A 50% time horizon of 4 hours means the model succeeds 50% of the time on tasks that take skilled humans 4 hours to complete.",
+          "host": "metr.theo-bearman.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "METR Time Horizons - epoch.ai",
+          "url": "https://epoch.ai/benchmarks/metr-time-horizons",
+          "quote": "Mar 18, 2025 · The data shown for this benchmark does not come from Epoch AI internal runs: it is sourced from the METR Time Horizons leaderboard.",
+          "host": "epoch.ai",
+          "tier": 5,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c04",
+      "quote": "The most recent measurement (Claude Opus 4.5, from November) showed the AI completing tasks that take a human expert nearly five hours.",
+      "label": "verifiable",
+      "queries": [
+        "Claude Opus 4.5 METR time horizon five hours",
+        "METR task completion time horizon Claude Opus 4.5 November"
+      ],
+      "hits": [
+        {
+          "title": "Claude Opus 4.5 Achieves 50%-Time Horizon Of Around 4 hrs 49 ...",
+          "url": "https://www.lesswrong.com/posts/q5ejXr4CRuPxkgzJD/claude-opus-4-5-achieves-50-time-horizon-of-around-4-hrs-49",
+          "quote": "Dec 19, 2025 · We estimate that, on our tasks, Claude Opus 4.5 has a 50%-time horizon of around 4 hrs 49 mins (95% confidence interval of 1 hr 49 mins to 20 hrs 25 mins). While we're still working through evaluations for other recent models, this is our highest published time horizon to date.",
+          "host": "lesswrong.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Task-Completion Time Horizons of Frontier AI Models - METR",
+          "url": "https://metr.org/time-horizons/",
+          "quote": "May 8, 2026 · To estimate the time horizons of frontier AI agents, we first estimate the duration it takes a human expert to complete each of our tasks. For each agent, we fit a logistic curve to predict the probability it successfully completes tasks as a function of human task duration.",
+          "host": "metr.org",
+          "tier": 1,
+          "stance": "unknown"
+        },
+        {
+          "title": "Anthropic's Claude Opus 4.5 can tackle some tasks lasting ...",
+          "url": "https://the-decoder.com/anthropics-claude-opus-4-5-can-tackle-some-tasks-lasting-nearly-five-hours/",
+          "quote": "Dec 21, 2025 · At the 80 percent success rate, the time horizon drops to just 27 minutes, about the same as older models, so Opus 4.5 mainly shines on longer tasks. The theoretical upper limit of over 20 hours is likely noise from limited test data, METR says.",
+          "host": "the-decoder.com",
+          "tier": 3,
+          "stance": "unknown"
+        },
+        {
+          "title": "METR Analysis: Claude Opus 4.5 Extends Agentic Time Horizon",
+          "url": "https://pseedr.com/platforms/metr-analysis-claude-opus-45-extends-agentic-time-horizon",
+          "quote": "Dec 20, 2025 · This figure represents the highest time horizon METR has published to date, suggesting a substantial improvement in the model's ability to navigate extended, complex tasks compared to its predecessors. However, the report offers critical nuance regarding reliability.",
+          "host": "pseedr.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "METR on X: \"We estimate that, on our tasks, Claude Opus 4.5 has a 50%-time horizon of around 4 hrs 49 mins (95% confidence interval of 1 hr 49 mins to 20 hrs 25 mins). While we're still working through evaluations for other recent models, this is our highest published time horizon to date.\" / X",
+          "url": "https://x.com/METR_Evals/status/2002203627377574113",
+          "quote": "December 20, 2025 - While we're still working through evaluations for other recent models, this is our highest published time horizon to date. ... We estimate that, on our tasks, Claude Opus 4.5 has a 50%-time horizon of around 4 hrs 49 mins (95% confidence interval ...",
+          "host": "x.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "r/singularity on Reddit: Claude Opus 4.6 is going exponential on METR's 50%-time-horizon benchmark, beating all predictions",
+          "url": "https://www.reddit.com/r/singularity/comments/1ra4lrn/claude_opus_46_is_going_exponential_on_metrs/",
+          "quote": "February 20, 2026 - Latest METR results show Claude Opus 4.5 has a 50%-time horizon of around 4 hrs 49 mins, the biggest jump in LLM capabilities ever ... \"In early May, the best superforecasters predicted that, by the end of the year, the longest METR 80% task ...",
+          "host": "reddit.com",
+          "tier": 5,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c05",
+      "quote": "that number is doubling approximately every seven months, with recent data suggesting it may be accelerating to as fast as every four months.",
+      "label": "verifiable",
+      "queries": [
+        "METR task horizon doubling time seven months AI",
+        "METR autonomy task length doubling every four months"
+      ],
+      "hits": [
+        {
+          "title": "Measuring AI Ability to Complete Long Software Tasks - METR",
+          "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
+          "quote": "March 19, 2025 - We propose measuring AI performance in terms of the *length* of tasks AI agents can complete. We show that this metric has been consistently exponentially increasing over the past 6 years, with a doubling time of around 7 months.",
+          "host": "metr.org",
+          "tier": 1,
+          "stance": "unknown"
+        },
+        {
+          "title": "Are AI time-horizons (still) doubling every 7 months? | by Anatol Wegner | Medium",
+          "url": "https://medium.com/@AIchats/are-ai-time-horizons-still-doubling-every-7-months-6262ed2bcc6a",
+          "quote": "March 11, 2026 - You have essentially reverse-engineered the vulnerability in their chosen metric. By combining a logistic regression with a logarithmically scaled x-axis on a dataset that is heavily right-skewed (very few data points at the high end), the methodology becomes hypersensitive to the outcome of literally one or two tasks. Let’s break down exactly why this happens and what it means fo",
+          "host": "medium.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Are AI time horizon doubling every seven months? | by Anatol Wegner | Medium",
+          "url": "https://medium.com/@AIchats/are-ai-time-horizon-doubling-every-seven-months-e337162eec83",
+          "quote": "September 21, 2025 - The main claim is that the “50%-task-completion time horizon” for AI models has been “doubling approximately every seven months since 2019” (Abstract, Figure 1).",
+          "host": "medium.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Time Horizon 1.1 - METR",
+          "url": "https://metr.org/blog/2026-1-29-time-horizon-1-1/",
+          "quote": "January 29, 2026 - The trend in time horizon is somewhat sensitive to task composition. Our original time horizon dataset, released in March 2025, showed a smooth trend with the frontier time-horizon doubling around every 7 months over the period 2019 to 2025.",
+          "host": "metr.org",
+          "tier": 1,
+          "stance": "unknown"
+        },
+        {
+          "title": "METR time horizon doubles every 4 months — AI 2027 Tracker",
+          "url": "https://ai2027-tracker.com/predictions/metr-doubling/",
+          "quote": "May 25, 2026 - ... The scenario cites METR’s time horizon benchmark as a key metric for measuring agent capability. It predicts the time horizon (how long an AI agent can work autonomously on a task) doubles approximately every 4 months.",
+          "host": "ai2027-tracker.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "The METR Chart: How AI Autonomy Is Reshaping the Future of Work",
+          "url": "https://andreaiorio.com/en/blog/metr-chart-ai-future-work/",
+          "quote": "May 18, 2026 - A new benchmark from METR (Model ... actions to completing hours of autonomous work—and this capability is now doubling approximately every three to four months....",
+          "host": "andreaiorio.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Are We There Yet? Evaluating METR’s Eval of AI’s Ability to Complete Tasks of Different Lengths",
+          "url": "https://empiricrafting.substack.com/p/are-we-there-yet-evaluating-metrs",
+          "quote": "December 15, 2025 - Seth and Andrey are back to evaluating ... paper’s central claim is that the “effective horizon” of AI agents—the length of tasks they can complete autonomously—is doubling every 7 months....",
+          "host": "empiricrafting.substack.com",
+          "tier": 4,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c06",
+      "quote": "Amodei has said that AI models \"substantially smarter than almost all humans at almost all tasks\" are on track for 2026 or 2027.",
+      "label": "verifiable",
+      "queries": [
+        "Amodei AI smarter than humans 2026 2027",
+        "Dario Amodei essay machines of loving grace 2027"
+      ],
+      "hits": [
+        {
+          "title": "Anthropic CEO: \"AI smarter than humans as of 2027\" - ITdaily",
+          "url": "https://itdaily.com/news/innovation/anthropic-ai-smarter-than-humans/",
+          "quote": "Jan 24, 2025 · According to Anthropic chief David Amodei, it is only a matter of time before artificial intelligence surpasses humans. That could be the case as early as two years from now.",
+          "host": "itdaily.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Dario Amodei Doubled Down On His AI Jobs Warning ... - Forbes",
+          "url": "https://www.forbes.com/sites/kolawolesamueladebayo/2026/02/21/dario-amodei-doubled-down-on-his-ai-jobs-warning-heres-whats-different-now/",
+          "quote": "Feb 21, 2026 · In May 2025, Anthropic CEO Dario Amodei told Axios that AI could wipe out half of all entry-level white-collar jobs within five years. That prediction sparked a firestorm. When I spoke to...",
+          "host": "forbes.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "AI may surpass humans in most tasks by 2027: Anthropic CEO ...",
+          "url": "https://cdotimes.com/2025/02/22/ai-may-surpass-humans-in-most-tasks-by-2027-anthropic-ceo-the-express-tribune/",
+          "quote": "Mar 12, 2026 · Anthropic CEO Dario Amodei has predicted that artificial intelligence (AI) could surpass human capabilities “in almost everything” within the next two to three years.",
+          "host": "cdotimes.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Dario Amodei’s thought experiment for 2027: imagine the ...",
+          "url": "https://scienceblog.com/t-amodei-country-geniuses-2027-50-million/",
+          "quote": "Aug 30, 2026 · Amodei set out the scenario in his January 2026 essay The Adolescence of Technology. His formal definition begins with a model, or perhaps several interacting models, that is better than the strongest humans across most relevant intellectual fields.",
+          "host": "scienceblog.com",
+          "tier": 4,
+          "stance": "unknown"
+        },
+        {
+          "title": "Dario Amodei — Machines of Loving Grace",
+          "url": "https://darioamodei.com/essay/machines-of-loving-grace",
+          "quote": "The resources used to train the model can be repurposed to run millions of instances of it (this matches projected cluster sizes by ~2027), and the model can absorb information and generate actions at roughly 10x-100x human speed5.",
+          "host": "darioamodei.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Dario Amodei — The Adolescence of Technology",
+          "url": "https://darioamodei.com/essay/the-adolescence-of-technology",
+          "quote": "In my essay Machines of Loving Grace, I tried to lay out the dream of a civilization that had made it through to adulthood, where the risks had been addressed and powerful AI was applied with skill and compassion to raise the quality of life for everyone. I suggested that AI could contribute to enormous advances in biology, neuroscience, economic development, global peace, and work and meaning.",
+          "host": "darioamodei.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Machines of Loving Grace - Essay review of Dario's Amodei, CEO of Anthropic by Venture Europe: Entrepreneurship | Technology | Venture Capital | Eu/Acc",
+          "url": "https://creators.spotify.com/pod/profile/ventureeurope/episodes/Machines-of-Loving-Grace---Essay-review-of-Darios-Amodei--CEO-of-Anthropic-e2uqmg4",
+          "quote": "In this essay, Dario Amodei characterizes the current state of artificial intelligence as a \"technological adolescence,\" representing a pivotal rite of passage that will determine humanity's future survival.",
+          "host": "creators.spotify.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Dario Amodei’s “Machines of Loving Grace” and the Limits of the Empiricist’s Utopia | by Gil Pignol | Medium",
+          "url": "https://medium.com/@gp2030/dario-amodeis-machines-of-loving-grace-and-the-limits-of-the-empiricist-s-utopia-4687628bae8f",
+          "quote": "May 20, 2026 - The essay is a detailed, carefully hedged, section-by-section case that powerful AI, if developed safely, will cure most disease, double the human lifespan, eliminate most poverty, strengthen democratic governance, and expand what Amodei calls “biological freedom” and “cognitive freedom,” all within five to ten years of achieving a threshold he describes as “a country of geniuses in",
+          "host": "medium.com",
+          "tier": 5,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c07",
+      "quote": "GPT-5.3-Codex is our first model that was instrumental in creating itself. The Codex team used early versions to debug its own training, manage its own deployment, and diagnose test results and evaluations.",
+      "label": "verifiable",
+      "queries": [
+        "GPT-5.3-Codex self-training debugging deployment",
+        "OpenAI GPT-5.3-Codex announcement official"
+      ],
+      "hits": [
+        {
+          "title": "Introducing GPT-5.3-Codex | OpenAI",
+          "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+          "quote": "The Codex team used early versions to debug its own training, manage its own deployment, and diagnose test results and evaluations—our team was blown away by how much Codex was able to accelerate its own development.",
+          "host": "openai.com",
+          "tier": 1,
+          "stance": "unknown"
+        },
+        {
+          "title": "GPT 5.3 Codex Is Here And It Debugged Its Own Training Says OpenAI - Dataconomy",
+          "url": "https://dataconomy.com/2026/02/06/gpt-5-3-codex-is-here-and-it-debugged-its-own-training-says-openai/",
+          "quote": "February 6, 2026 - OpenAI describes GPT-5.3-Codex as its first model instrumental in creating itself. The company explains that developers leveraged early versions of the model during its development process. These versions assisted in specific technical tasks essential to building the final product. In a blog post announcing the model, OpenAI states: “The Codex team used early versions to debug i",
+          "host": "dataconomy.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "GPT-5.3 Codex Explained: OpenAI's Self-Developing Agent | Let's Data Science",
+          "url": "https://www.letsdatascience.com/blog/gpt-5-3-codex-openai-just-released-an-ai-that-helped-build-itself",
+          "quote": "February 6, 2026 - But the timing is not the story. The story is that GPT-5.3 Codex helped debug its own training, manage its own deployment, and evaluate its own test results.",
+          "host": "letsdatascience.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "OpenAI Launches GPT-5.3-Codex as the \"First Self-Developing\" AI Coding Model",
+          "url": "https://winbuzzer.com/2026/02/05/openai-gpt-5-3-codex-self-developing-ai-coding-model-xcxwbn/",
+          "quote": "February 5, 2026 - GPT-5.3-Codex represents a first for OpenAI: it is the first model instrumental in creating itself. Early versions of the system helped debug and deploy parts of itself during development, including debugging its own training, managing its deployment, and diagnosing test results and evaluations...",
+          "host": "winbuzzer.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "GPT-5.3-Codex - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/GPT-5.3-Codex",
+          "quote": "July 16, 2026 - GPT-5.3-Codex (Generative Pre-trained Transformer 5.3 Codex) is a large language model (LLM) announced and released by OpenAI on February 5, 2026.",
+          "host": "en.wikipedia.org",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Introducing GPT-5.3-Codex-Spark | OpenAI",
+          "url": "https://openai.com/index/introducing-gpt-5-3-codex-spark/",
+          "quote": "Introducing GPT-5.3-Codex-Spark—our first real-time coding model. 15x faster generation, 128k context, now in research preview for ChatGPT Pro users.",
+          "host": "openai.com",
+          "tier": 1,
+          "stance": "unknown"
+        },
+        {
+          "title": "GPT-5.3-Codex System Card OpenAI February 5, 2026 1",
+          "url": "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+          "quote": "The Cyber Range results show GPT-5.3-Codex as a clear step up from prior models. It solves · all scenarios except three: EDR Evasion, CA/DNS Hijacking, and Leaked Token. Among these · three, GPT-5.1-Codex-Max is the only previous model that solves any of them (solving Leaked",
+          "host": "cdn.openai.com",
+          "tier": 1,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c08",
+      "quote": "Dario Amodei, the CEO of Anthropic, says AI is now writing \"much of the code\" at his company, and that the feedback loop between current AI and next-generation AI is \"gathering steam month by month.\"",
+      "label": "verifiable",
+      "queries": [
+        "Dario Amodei AI writing much of the code Anthropic",
+        "Amodei AI feedback loop gathering steam quote source"
+      ],
+      "hits": [
+        {
+          "title": "Anthropic CEO Dario Amodei Predicts AI to Write 90% of Code",
+          "url": "https://www.startuphub.ai/ai-news/artificial-intelligence/2026/anthropic-ceo-dario-amodei-predicts-ai-to-write-90-of-code",
+          "quote": "Aug 28, 2026 · Anthropic CEO Dario Amodei made bold predictions on AI's impact on coding, stating AI could write 90% of code in 3-6 months and nearly all in 12 months.",
+          "host": "startuphub.ai",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Anthropic CEO: AI Will Be Writing 90% of Code in 3 to 6 ...Top Stories90% of code at Anthropic now written by AI, CEO Dario Amodei ...How Anthropic CEO Dario Amodei’s Writings Help Explain A.I ...Anthropic CEO Dario Amodei says AI will write 90% of code in ...Dario Amodei: ‘We Owe It to Humanity’ to Slow Down AI - The ...Anthropic CEO Predicts AI Will Take Over Coding in 12 Months",
+          "url": "https://www.businessinsider.com/anthropic-ceo-ai-90-percent-code-3-to-6-months-2025-3",
+          "quote": "Mar 14, 2025 · Dario Amodei, the CEO of the AI startup Anthropic, said on Monday that AI, and not software developers, could be writing all of the code in our software in a year. \"I think we will be there in... Show more Anthropic CEO Dario Amodei confirmed that 90% of the code inside the AI startup is now being written by its AI models. Amodei made the comment during a conversation with Salesforc",
+          "host": "businessinsider.com",
+          "tier": 3,
+          "stance": "unknown"
+        },
+        {
+          "title": "90% of code at Anthropic now written by AI, CEO Dario Amodei ...",
+          "url": "https://www.msn.com/en-in/money/news/90-of-code-at-anthropic-now-written-by-ai-ceo-dario-amodei-says-humans-still-essential/ar-AA1OBoqm",
+          "quote": "Anthropic CEO Dario Amodei confirmed that 90% of the code inside the AI startup is now being written by its AI models. Amodei made the comment during a conversation with Salesforce CEO Marc...",
+          "host": "msn.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "How Anthropic CEO Dario Amodei’s Writings Help Explain A.I ...",
+          "url": "https://www.nytimes.com/2026/09/17/technology/dario-amodei-anthropic-essays-ai.html",
+          "quote": "1 day ago · The collected essays of Dario Amodei help explain why some people are so worried about artificial intelligence.",
+          "host": "nytimes.com",
+          "tier": 3,
+          "stance": "unknown"
+        },
+        {
+          "title": "Dario Amodei — The Adolescence of Technology",
+          "url": "https://darioamodei.com/essay/the-adolescence-of-technology",
+          "quote": "Because AI is now writing much ... This feedback loop is gathering steam month by month, and may be only 1–2 years away from a point where the current generation of AI autonomously builds the next....",
+          "host": "darioamodei.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Amodei Believes “AI-Enabled Autocracy” Could Be Imminent – The Health Care Blog",
+          "url": "https://thehealthcareblog.com/blog/2026/02/13/amodei-believes-ai-enabled-autocracy-could-be-imminent/",
+          "quote": "February 13, 2026 - The challenge for him is the speed of change with generative AI which he clearly states is alarming. As he says, “Because AI is now writing much of the code at Anthropic, it is already substantially accelerating the rate of our progress in building the next generation of AI systems. This feedback ...",
+          "host": "thehealthcareblog.com",
+          "tier": 4,
+          "stance": "unknown"
+        },
+        {
+          "title": "The AI Feedback Loop: Dario Amodei on Why AI Is Now Designing Its Own Upgrades - YouTube",
+          "url": "https://www.youtube.com/shorts/QKpIxUWSQ6M",
+          "quote": "Is artificial intelligence going to suddenly \"wake up\" and run out of control? Anthropic CEO Dario Amodei says that's the wrong way to look at the future. He... Published: August 16, 2026",
+          "host": "youtube.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "Amodei Says Slow Down. Should We Believe Him? 🤖 - DEV Community",
+          "url": "https://dev.to/dvalin99/amodei-says-slow-down-should-we-believe-him-2l76",
+          "quote": "4 days ago - A few days ago Dario Amodei, CEO of Anthropic, posted a long thread on X asking the industry to slow down AI development. Not \"we should be careful\", but a direct call to reduce the pace at which model capabilities are being pushed forward.",
+          "host": "dev.to",
+          "tier": 5,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c09",
+      "quote": "Dario Amodei, who is probably the most safety-focused CEO in the AI industry, has publicly predicted that AI will eliminate 50% of entry-level white-collar jobs within one to five years.",
+      "label": "opinion",
+      "queries": [],
+      "hits": []
+    },
+    {
+      "id": "c10",
+      "quote": "In 2022, AI couldn't do basic arithmetic reliably. It would confidently tell you that 7 × 8 = 54.",
+      "label": "opinion",
+      "queries": [],
+      "hits": []
+    },
+    {
+      "id": "c11",
+      "quote": "By 2023, it could pass the bar exam.",
+      "label": "verifiable",
+      "queries": [
+        "GPT-4 pass bar exam 2023",
+        "OpenAI GPT-4 bar exam score report"
+      ],
+      "hits": [
+        {
+          "title": "GPT-4 Passes the Bar Exam by Daniel Martin Katz, Michael ...",
+          "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4389233",
+          "quote": "Mar 15, 2023 · In this paper, we experimentally evaluate the zero-shot performance of a preliminary version of GPT-4 against prior generations of GPT on the entire Uniform Bar",
+          "host": "papers.ssrn.com",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "GPT-4 passes the bar exam | Philosophical Transactions of the ...",
+          "url": "https://royalsocietypublishing.org/rsta/article/382/2270/20230254/112538/GPT-4-passes-the-bar-examGPT-4-passes-the-Bar-Exam",
+          "quote": "Feb 26, 2024 · In order to analyse whether GPT-4 could pass the Bar Exam, we collected relevant materials for each of the three separate UBE components. For the MEE and the MPT, we collected the most recently released questions from the July 2022 Bar Examination.",
+          "host": "royalsocietypublishing.org",
+          "tier": 5,
+          "stance": "unknown"
+        },
+        {
+          "title": "GPT-4 Technical Report - OpenAIGPT-4 Technical Report - arXiv.orgGPT-4's 90th-percentile bar score traces to an uncited ...[2303.08774] GPT-4 Technical Report - ar5ivRe-evaluating GPT-4’s bar exam performance - Springer",
+          "url": "https://cdn.openai.com/papers/gpt-4.pdf",
+          "quote": "We tested GPT-4 on a diverse set of benchmarks, including simulating exams that were originally designed for humans.4 We did no specific training for these exams. A minority of the problems in the exams were seen by the model during training; for each exam we run a variant with these questions removed and report the lower score of the two. We belie... See full list on cdn.openai.com Son of an acto",
+          "host": "cdn.openai.com",
+          "tier": 1,
+          "stance": "unknown"
+        },
+        {
+          "title": "GPT-4 Technical Report - arXiv.org",
+          "url": "https://arxiv.org/html/2303.08774v4",
+          "quote": "While less capable than humans in many real-world scenarios, GPT-4 exhibits human-level performance on various professional and academic benchmarks, including passing a simulated bar exam with a score around the top 10% of test takers.",
+          "host": "arxiv.org",
+          "tier": 2,
+          "stance": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "c12",
+      "quote": "Anthropic has documented their own AI attempting deception, manipulation, and blackmail in controlled tests.",
+      "label": "verifiable",
+      "queries": [],
+      "hits": []
+    },
+    {
+      "id": "c13",
+      "quote": "the single most serious national security threat we've faced in a century, possibly ever.",
+      "label": "opinion",
+      "queries": [],
+      "hits": []
+    },
+    {
+      "id": "c14",
+      "quote": "He wrote a 20,000-word essay about it last month, framing this moment as a test of whether humanity is mature enough to handle what it's creating.",
+      "label": "verifiable",
+      "queries": [],
+      "hits": []
+    }
+  ]
+}

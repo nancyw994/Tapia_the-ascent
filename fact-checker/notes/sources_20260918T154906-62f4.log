@@ -1,0 +1,285 @@
+# Source ledger
+
+Every URL below was fetched during this run.
+The essay under review is not an independent source.
+
+## c03 — 2026-09-18 19:50 UTC
+Query: `Claude Opus 4.5 five hour task completion November`
+
+- https://winbuzzer.com/2026/02/06/metr-five-hour-ai-claim-misunderstood-graph-xcxwbn/ — METR's AI Agents Can Work 5 Hours Claim Revisited - WinBuzzer
+  > Feb 6, 2026 · Claude Opus 4.5 appeared capable of completing tasks that would take humans about five hours. But the viral reactions missed something important about the widely shared METR graph....
+- https://www.houdao.com/d/1881-METR-Updates-AI-Capability-Tracking-Chart-Claude-Opus-4-5-s-Autonomous-Task-Performance-Significantly-Exceeds-Expectations — METR Updates AI Capability Tracking Chart: Claude Opus 4.5's ...
+  > Feb 5, 2026 · In the latest evaluation, Anthropic's Claude Opus 4.5 model, released in November 2025, achieved a 50% success rate for tasks corresponding to approximately 4 hours and 49 minutes of human work, far surpassing previous models 
+- https://aigazine.com/llms/ai-models-now-handle-5hour-software-tasks-autonomously--s — AI Models Now Handle 5-Hour Software Tasks Autonomously
+  > Fresh benchmark data reveals that top AI models can now tackle software engineering tasks on their own for multiple hours, with Claude Opus 4.5 successfully completing work equivalent to nearly 5 hours of human effort.
+- https://support.claude.com/en/articles/12138966-release-notes — Release notes | Claude Help Center
+  > Sep 1, 2026 · Model selection: Choose between Haiku 4.5 for speed, Sonnet 4.5 for complex tasks, or Opus 4.5 for maximum reasoning power—switch anytime based on what you need.
+- https://eu.36kr.com/en/p/3605865159247104 — Rushing Towards AGI: Claude's End - of - Year Triumph ...
+  > Dec 21, 2025 · The latest report released by METR states that Claude Opus 4.5 can continuously code autonomously "for up to 5 hours without crashing". Even OpenAI's most powerful programming model,...
+
+## c01 — 2026-09-18 19:50 UTC
+Query: `GPT-5.3 Codex Opus 4.6 release February 5`
+
+- https://en.wikipedia.org/wiki/GPT-5.3-Codex — GPT-5.3-Codex - Wikipedia
+  > GPT-5.3-Codex (Generative Pre-trained Transformer 5.3 Codex) is a large language model (LLM) announced and released by OpenAI on February 5, 2026. GPT ...
+- https://www.reddit.com/r/OpenAI/comments/1qxb523/gpt53codex_and_opus_46_launched_within_10_minutes/ — GPT-5.3-Codex and Opus 4.6 launched within 10 minutes of each ...
+  > Feb 6, 2026 ... Codex 5.3 leans hard into sandboxed cloud execution — your code runs in their environment. Opus 4.6 with Claude Code runs locally in your ...
+- https://www.interconnects.ai/p/opus-46-vs-codex-53 — Opus 4.6, Codex 5.3, and the post-benchmark era - Interconnects AI
+  > Feb 9, 2026 ... Last Thursday, February 5th, both OpenAI and Anthropic unveiled the ... GPT-2, and of course the infinitely hyped GPT-5. These timely ...
+- https://simonwillison.net/2026/Feb/5/two-new-models/ — Opus 4.6 and Codex 5.3 - Simon Willison's Weblog
+  > OpenAI release GPT-5.3-Codex, albeit ... Posted 5th February 2026 at 8:29 pm. Recent articles. Generating running routes with GPT-6 Astra and ChatGPT Work ...
+- https://www.buildfastwithai.com/blogs/gpt-5-3-codex-vs-claude-opus-vs-kimi — GPT-5.3-Codex vs Claude Opus 4.6 vs Kimi K2.5 (2026)
+  > Feb 19, 2026 ... Then OpenAI dropped GPT-5.3-Codex. Twenty minutes later. Whether it was planned counter-programming or a reactive launch is still debated — ...
+
+## c04 — 2026-09-18 19:50 UTC
+Query: `AI task length doubling seven months four months`
+
+- (none) — search-error
+  > DNSError: DNSError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=AI%20task%20length%20doubling%20seven%20months%20four%20months) > error resolving DNS > DNS error: no recor
+
+## c02 — 2026-09-18 19:50 UTC
+Query: `METR AI task length one year ago ten minutes`
+
+- (none) — search-error
+  > DNSError: DNSError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=METR%20AI%20task%20length%20one%20year%20ago%20ten%20minutes) > error resolving DNS > DNS error: no records
+
+## c04 — 2026-09-18 19:50 UTC
+Query: `METR time horizon doubling rate report`
+
+- https://metr.org/time-horizons/ — Task-Completion Time Horizons of Frontier AI Models - METR
+  > May 8, 2026 · To estimate the time horizons of frontier AI agents, we first estimate the duration it takes a human expert to complete each of our tasks. For each agent, we fit a logistic curve to predict the probability it successfully comp
+- https://metr.org/blog/2026-1-29-time-horizon-1-1/ — Time Horizon 1.1 - METR
+  > Jan 29, 2026 · We build on our time-horizon work and analyze 9 benchmarks for scientific reasoning, math, robotics, computer use, and self-driving in terms of time-horizon trends; we observe generally similar rates of improvement to the 7-m
+- https://metr.theo-bearman.com/dashboard.html — Measuring AI Ability to Complete Long Tasks | METR
+  > Implied Doubling Time Calculator Calculate the implied doubling rate from observed time horizon improvements.
+- https://ai2027-tracker.com/predictions/metr-doubling/ — METR time horizon doubles every 4 months - AI 2027 Tracker
+  > Sep 7, 2026 · METR time horizon doubles every 4 months: status on-track, confidence in assessment 85%. Evidence-based analysis tracking this AI 2027 prediction against reality.
+- https://arxiv.org/html/2503.14499v1 — Measuring AI Ability to Complete Long Tasks - arXiv.org
+  > Mar 18, 2025 · We propose tracking AI progress over time using the task completion time horizon: the duration of tasks that models can complete at a certain success probability, providing an intuitive measure of real-world capability compar
+
+## c03 — 2026-09-18 19:50 UTC
+Query: `Anthropic Claude Opus 4.5 METR benchmark report`
+
+- (none) — search-error
+  > DNSError: DNSError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Anthropic%20Claude%20Opus%204.5%20METR%20benchmark%20report) > error resolving DNS > DNS error: no records 
+
+## c01 — 2026-09-18 19:50 UTC
+Query: `OpenAI Anthropic model launch announcement February 2026`
+
+- https://valueaddvc.com/anthropic-2026 — AI Announcements 2026 — Every OpenAI & Anthropic Release
+  > Launched June 30, 2026 through Anthropic Labs — a Claude Code-style harness aimed at scientific and pharmaceutical research rather than software. Anthropic publishes Claude Code's functionality in a dedicated changelog — it evolves faster t
+- https://adtools.org/buyers-guide/ai-news-anthropic-claude-opus-4-6-release-3 — Anthropic Launches Claude Opus 4.6 with Coding Breakthroughs
+  > Feb 10, 2026 · On February 5, 2026, Anthropic announced Claude Opus 4.6, the latest iteration of its flagship AI model, emphasizing breakthroughs in coding, reasoning, and agentic capabilities.
+- https://www.anthropic.com/news — Newsroom \ Anthropic
+  > Sep 1, 2026 · Anthropic is proposing new metrics that would give the public visibility into frontier AI development. Over the past eight months, our Threat Intelligence team identified and disrupted operations in which threat actors tried t
+- https://www.cnbc.com/2026/02/05/anthropic-claude-opus-4-6-vibe-working.html — Anthropic launches Claude Opus 4.6 as AI moves toward 'vibe ...
+  > Feb 5, 2026 · Anthropic on Thursday announced the launch of Claude Opus 4.6, its latest artificial intelligence model that's better at coding, sustaining tasks for longer and creating higher-quality...
+- https://techcrunch.com/2026/02/05/openai-launches-new-agentic-coding-model-only-minutes-after-anthropic-drops-its-own/ — OpenAI launches new agentic coding model only minutes after ...
+  > Feb 5, 2026 · The new model is built to accelerate the capabilities of Codex, the agentic coding tool OpenAI launched earlier this week.
+
+## c02 — 2026-09-18 19:50 UTC
+Query: `METR time horizon report AI capability`
+
+- (none) — search-error
+  > DNSError: DNSError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=METR%20time%20horizon%20report%20AI%20capability) > error resolving DNS > DNS error: no records found for Q
+
+## c05 — 2026-09-18 19:50 UTC
+Query: `Amodei AI smarter than humans 2026 2027`
+
+- https://www.albis.news/perspectives/musk-amodei-agree-agi-2026-preparedness-debate-hasnt-started — AGI Timeline 2026: Musk and Amodei Both Agree - albis.news
+  > Mar 2, 2026 · Musk runs xAI. He's trying to build artificial general intelligence—AI that matches or exceeds human intelligence across any task. He told his staff AGI could arrive by 2026, defining it as "smarter than the smartest human." A
+- https://itdaily.com/news/innovation/anthropic-ai-smarter-than-humans/ — Anthropic CEO: "AI smarter than humans as of 2027" - ITdaily
+  > Jan 24, 2025 · According to Anthropic chief David Amodei, it is only a matter of time before artificial intelligence surpasses humans. That could be the case as early as two years from now.
+- https://www.forbes.com/sites/kolawolesamueladebayo/2026/02/21/dario-amodei-doubled-down-on-his-ai-jobs-warning-heres-whats-different-now/ — Dario Amodei Doubled Down On His AI Jobs Warning ... - Forbes
+  > Feb 21, 2026 · In May 2025, Anthropic CEO Dario Amodei told Axios that AI could wipe out half of all entry-level white-collar jobs within five years. That prediction sparked a firestorm. When I spoke to...
+- https://cdotimes.com/2025/02/22/ai-may-surpass-humans-in-most-tasks-by-2027-anthropic-ceo-the-express-tribune/ — AI may surpass humans in most tasks by 2027: Anthropic CEO ...
+  > Mar 12, 2026 · Anthropic CEO Dario Amodei has predicted that artificial intelligence (AI) could surpass human capabilities “in almost everything” within the next two to three years.
+- https://scienceblog.com/t-amodei-country-geniuses-2027-50-million/ — Dario Amodei’s thought experiment for 2027: imagine the ...
+  > Aug 30, 2026 · Amodei set out the scenario in his January 2026 essay The Adolescence of Technology. His formal definition begins with a model, or perhaps several interacting models, that is better than the strongest humans across most relev
+
+## c05 — 2026-09-18 19:50 UTC
+Query: `Dario Amodei essay superintelligent AI timeline`
+
+- https://www.explainx.ai/blog/dario-amodei-pace-the-frontier-embedded-evaluators-2026 — Pace the Frontier: Dario Amodei's 3-Step AI Plan (2026 ...
+  > 5 days ago · Dario Amodei's Sept 12, 2026 essay proposes embedded evaluators and global AI pacing. What Anthropic is committing to, and why critics call it weak.
+- https://www.nytimes.com/2026/09/17/technology/dario-amodei-anthropic-essays-ai.html — How Anthropic CEO Dario Amodei’s Writings Help Explain A.I ...
+  > 1 day ago · The collected essays of Dario Amodei help explain why some people are so worried about artificial intelligence.
+- https://aitoolsreview.co.uk/insights/anthropic-pace-the-frontier — Dario Amodei's 'We Must Pace the Frontier', Explained
+  > 4 days ago · Dario Amodei's 12 September essay explained: the three-part plan, the OpenAI-Hugging Face agent swarm, embedded evaluators, and Anthropic's own threat report.
+- https://dariosaid.ai/ — Dario Said — a neutral archive of Dario Amodei's writing on AI
+  > Jun 22, 2026 · Every major essay, op-ed, and on-record statement by Anthropic CEO Dario Amodei — full text where openly published, with citations, verified quotes, and neutral analysis of each.
+- https://darioamodei.com/essay/machines-of-loving-grace — Dario Amodei — Machines of Loving Grace
+  > Overall, I think 5-10 years is a reasonable timeline for a good fraction (maybe 50%) of AI-driven health benefits to propagate to even the poorest countries in the world.
+
+## c06 — 2026-09-18 19:50 UTC
+Query: `GPT-5.3-Codex instrumental creating itself OpenAI`
+
+- https://en.wikipedia.org/wiki/GPT-5.3-Codex — GPT-5.3-Codex - Wikipedia
+  > According to OpenAI, GPT-5.3-Codex is the company's "first model that was instrumental in creating itself." [4][5] On February 12, 2026, GPT-5.3-Codex-Spark was released in a research preview, which is a smaller version of GPT-5.3-Codex whi
+- https://openai.com/index/introducing-gpt-5-3-codex/ — Introducing GPT‑5.3‑Codex - OpenAI
+  > Feb 5, 2026 · GPT‑5.3‑Codex is our first model that was instrumental in creating itself. The Codex team used early versions to debug its own training, manage its own deployment, and diagnose test results and evaluations—our team was blown a
+- https://openai.com/index/gpt-5-3-codex-system-card/ — GPT‑5.3‑Codex System Card - OpenAI
+  > Feb 5, 2026 · GPT‑5.3‑Codex is the most capable agentic coding model to date, combining the frontier coding performance of GPT‑5.2‑Codex with the reasoning and professional knowledge capabilities of GPT‑5.2. This enables it to take on long-
+- https://developers.openai.com/api/docs/models/gpt-5.3-codex — GPT-5.3-Codex Model | OpenAI API
+  > Below is a list of all available snapshots and aliases for GPT-5.3-Codex. Rate limits ensure fair and reliable access to the API by placing specific caps on requests, tokens, audio duration, or other usage within a given time period.
+- https://arstechnica.com/ai/2026/02/with-gpt-5-3-codex-openai-pitches-codex-for-more-than-just-writing-code/ — With GPT-5.3-Codex, OpenAI pitches Codex for more than just ...
+  > Feb 5, 2026 · Instead, OpenAI says GPT-5.3-Codex was “instrumental in creating itself.” You can read more about what that means in the company’s blog post. But that’s part of the pitch with this...
+
+## c07 — 2026-09-18 19:50 UTC
+Query: `Dario Amodei AI writing much of the code`
+
+- https://www.theatlantic.com/technology/2026/09/dario-amodei-slow-down-ai-save-humanity/688610/ — Dario Amodei: 'We Owe It to Humanity' to Slow Down AI - The Atlantic
+  > AI's Code-Red Moment Anthropic's CEO warns that the makers of artificial intelligence "owe it to humanity to try" to slow down.
+- https://medium.com/@coders.stop/dario-amodei-said-90-of-code-will-be-ai-written-in-6-months-6b8060720d97 — Dario Amodei Said 90% of Code Will Be AI Written in 6 Months.
+  > Dario Amodei Said 90% of Code Will Be AI Written in 6 Months. He Said That 6 Months Ago. So Where Are We Now? On March 10, 2025, at a Council on Foreign Relations event, Anthropic CEO Dario Amodei …
+- https://www.businessinsider.com/anthropic-ceo-ai-90-percent-code-3-to-6-months-2025-3?op=1 — Anthropic CEO: AI Will Be Writing 90% of Code in 3 to 6 Months ...
+  > Dario Amodei, the CEO of the AI startup Anthropic, said on Monday that AI, and not software developers, could be writing all of the code in our software in a year.
+- https://www.startuphub.ai/ai-news/artificial-intelligence/2026/anthropic-ceo-dario-amodei-predicts-ai-to-write-90-of-code — Anthropic CEO Dario Amodei Predicts AI to Write 90% of Code
+  > Anthropic CEO Dario Amodei made bold predictions on AI's impact on coding, stating AI could write 90% of code in 3-6 months and nearly all in 12 months.
+- https://analyticsindiamag.com/ai-news-updates/ai-will-be-writing-90-of-code-in-3-6-months-says-anthropics-dario-amodei — Will AI Really Write 90% of Code in Just Months? | AIM
+  > Dario Amodei, CEO of Anthropic, while speaking at a forum of The Council on Foreign Relations (CFR), said that he believes 90% of coding will be done by AI in less than 6 months.
+
+## c06 — 2026-09-18 19:50 UTC
+Query: `OpenAI GPT-5.3 Codex announcement self-improvement`
+
+- https://en.wikipedia.org/wiki/GPT-5.3-Codex — GPT-5.3-Codex - Wikipedia
+  > On February 12, 2026, GPT-5.3-Codex-Spark was released in a research preview, which is a smaller version of GPT-5.3-Codex which supports text-only input. As of February 2026, GPT-5.3-Codex is only available for ChatGPT Pro ($200/month) subs
+- https://openai.com/index/introducing-gpt-5-3-codex/ — Introducing GPT‑5.3‑Codex - OpenAI
+  > Feb 5, 2026 · GPT‑5.3‑Codex is our first model that was instrumental in creating itself. The Codex team used early versions to debug its own training, manage its own deployment, and diagnose test results and evaluations—our team was blown a
+- https://openai.com/index/introducing-gpt-5-3-codex-spark/ — Introducing GPT‑5.3‑Codex‑Spark - OpenAI
+  > Feb 12, 2026 · Today, we’re releasing a research preview of GPT‑5.3‑Codex‑Spark, a smaller version of GPT‑5.3‑Codex, and our first model designed for real-time coding. Codex-Spark marks the first milestone in our partnership with Cerebras, 
+- https://deploymentsafety.openai.com/gpt-5-3-codex/ai-self-improvement — GPT-5.3-Codex System Card - OpenAI Deployment Safety Hub
+  > Feb 5, 2026 · To further ecosystem insight into frontier AI, and for consistency with our general practice, we provide the following benchmark evaluations of GPT-5.3-Codex across disallowed content categories tested in a conversational sett
+- https://winbuzzer.com/2026/02/05/openai-gpt-5-3-codex-self-developing-ai-coding-model-xcxwbn/ — OpenAI Launches GPT-5.3-Codex as the “First Self-Developing ...
+  > Feb 5, 2026 · OpenAI announced the launch of GPT-5.3-Codex on Thursday, calling it the capable agentic coding model to date and revealing that the system helped debug its own development and training.
+
+## c07 — 2026-09-18 19:50 UTC
+Query: `Anthropic Amodei feedback loop AI development statement`
+
+- https://www.nytimes.com/2026/09/13/technology/anthropic-ceo-slower-ai-development.html — What Anthropic CEO Dario Amodei Argued in His Call for AI ...
+  > 5 days ago · What Anthropic’s C.E.O. Argued in His Call for Slower A.I. Development Dario Amodei’s 3,800-word letter laid out a three-step plan to rein in artificial intelligence.
+- https://ain3xt.com/en/posts/20260128-dario-amodei-ai-feedback-loop/ — AI Is Accelerating the Development of Next-Generation AI: Why ...
+  > Jan 28, 2026 · Anthropic CEO Dario Amodei reveals that AI is writing most of Anthropic's code, and is significantly accelerating the development of the next generation of AI. This feedback loop is gathering steam month by month.
+- https://edition.cnn.com/2026/09/12/tech/anthropic-ceo-essay-ai — Anthropic CEO calls for ‘pacing the frontier’ of AI race amid ...
+  > 6 days ago · Amodei’s essay comes on the heels of an Anthropic researcher’s resignation over concerns that the firm and its competitors are not acting responsibly with AI development.
+- https://www.nytimes.com/2026/09/12/technology/anthropic-dario-amodei-ai-slowdown.html — Anthropic C.E.O. Dario Amodei Calls for A.I. Slowdown - The ...
+  > 6 days ago · Hours after Dr. Amodei published his essay, Mr. Altman posted a statement to social media agreeing that a slowdown of A.I. development was necessary.
+- https://www.gate.com/news/detail/anthropic-ceo-dario-amodei-proposes-three-step-ai-safety-framework-24221415 — Anthropic CEO Dario Amodei Proposes Three-Step AI Safety ...
+  > 6 days ago · Dario Amodei, CEO of Anthropic, published an essay on September 12, 2026 titled 'We Must Pace the Frontier,' proposing a three-step framework for AI development that balances progress with safety research.
+
+## c08 — 2026-09-18 19:50 UTC
+Query: `Amodei 1-2 years AI builds next generation`
+
+- https://whenwill.ai/predictions/amodei-2026-essays-2027-q1-002 — AI autonomously builds the next AI generation | When Will AI?
+  > Direct quote Because AI is now writing much of the code at Anthropic, it is already substantially accelerating the rate of our progress in building the next generation of AI systems. This feedback loop is gathering steam month by month, and
+- https://darioamodei.com/essay/the-adolescence-of-technology — Dario Amodei — The Adolescence of Technology
+  > This feedback loop is gathering steam month by month, and may be only 1-2 years away from a point where the current generation of AI autonomously builds the next.
+- https://ain3xt.com/en/posts/20260128-dario-amodei-ai-feedback-loop/ — AI Is Accelerating the Development of Next-Generation AI: Why Amodei's ...
+  > Anthropic CEO Dario Amodei reveals that AI is writing most of Anthropic's code, and is significantly accelerating the development of the next generation of AI. This feedback loop is gathering steam month by month. He cites a decade of Scali
+- https://pasqualepillitteri.it/en/news/351/dario-amodei-technology-adolescence-ai-risks — The Adolescence of Technology: Who Is Dario Amodei and Why His Essay ...
+  > His timeline is precise and unsettling: within one to two years, we may reach the point where AI autonomously builds the next generation of itself. He writes: "I can feel the pace of progress, and the ticking of the clock."
+- https://www.nytimes.com/2026/09/13/technology/anthropic-ceo-slower-ai-development.html — What Anthropic CEO Dario Amodei Argued in His Call for AI Slowdown ...
+  > Dario Amodei's 3,800-word letter laid out a three-step plan to rein in artificial intelligence.
+
+## c08 — 2026-09-18 19:50 UTC
+Query: `Dario Amodei recursive self-improvement prediction`
+
+- (none) — search-error
+  > DNSError: DNSError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Dario%20Amodei%20recursive%20self-improvement%20prediction) > error resolving DNS > DNS error: no records f
+
+## c09 — 2026-09-18 19:50 UTC
+Query: `Amodei 50% entry-level white-collar jobs AI`
+
+- (none) — search-error
+  > DNSError: DNSError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Amodei%2050%25%20entry-level%20white-collar%20jobs%20AI) > error resolving DNS > DNS error: no records foun
+
+## c10 — 2026-09-18 19:50 UTC
+Query: `Amodei AI national security threat century`
+
+- (none) — search-error
+  > DNSError: DNSError('error sending request for url (https://wt.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Amodei%20AI%20national%20security%20threat%20century) > error resolving DNS > DNS error: no records found f
+
+## c09 — 2026-09-18 19:50 UTC
+Query: `Dario Amodei Axios interview entry-level jobs`
+
+- https://www.axios.com/2025/09/17/anthropic-amodei-ai — Exclusive: AI's ability to displace jobs is advancing ... - Axios
+  > Sep 17, 2025 · The Anthropic CEO has previously warned AI could wipe out half of entry-level white-collar jobs soon.
+- https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic — AI jobs danger: Sleepwalking into a white-collar bloodbath
+  > May 28, 2025 · AI could wipe out half of all entry-level white-collar jobs — and spike unemployment to 10-20% in the next one to five years, Amodei told us in an interview from his San Francisco office.
+- https://www.forbes.com/sites/kolawolesamueladebayo/2026/02/21/dario-amodei-doubled-down-on-his-ai-jobs-warning-heres-whats-different-now/ — Dario Amodei Doubled Down On His AI Jobs Warning ... - Forbes
+  > Feb 21, 2026 · In May 2025, Anthropic CEO Dario Amodei told Axios that AI could wipe out half of all entry-level white-collar jobs within five years. That prediction sparked a firestorm. When I spoke...
+- https://www.cnbc.com/2026/01/27/dario-amodei-warns-ai-cause-unusually-painful-disruption-jobs.html — Anthropic CEO Dario Amodei warns AI may see ‘painful’ jobs ...
+  > Jan 27, 2026 · The AI chief, who co-founded Anthropic in 2021 with his sister Daniela Amodei and is behind the creation of the AI chatbot Claude, warned AI would destroy half of all white-collar jobs last...
+- https://arte.itlibra.com/en/articles/will-ai-eliminate-white-collar-jobs — Will AI Eliminate White-Collar Jobs? Data & Survival
+  > May 14, 2026 · In May 2025, Anthropic CEO Dario Amodei warned that "AI could eliminate 50% of entry-level white-collar jobs within 1–5 years, pushing unemployment to 10–20%."
+
+## c11 — 2026-09-18 19:50 UTC
+Query: `Dario Amodei 20000 word essay AI`
+
+- https://fortune.com/2026/01/27/anthropic-ceo-dario-amodei-essay-warning-ai-adolescence-test-humanity-risks-remedies/ — Anthropic CEO Dario Amodei’s 20,000-word essay on how AI ...
+  > Jan 27, 2026 · Dario Amodei, CEO of AI company Anthropic, dropped a 20,000 word essay on Monday called “The Adolescence of Technology,” in which he warned that AI was about to “test who we are as...
+- https://www.cnbc.com/2026/01/27/dario-amodei-warns-ai-cause-unusually-painful-disruption-jobs.html — Anthropic CEO Dario Amodei warns AI may see ‘painful’ jobs ...
+  > Jan 27, 2026 · Anthropic's CEO Dario Amodei warned that AI could wipe out jobs across several industries, making it harder for workers to pivot. He published a 20,000 word essay on the dangers of...
+- https://www.ainvest.com/news/anthropic-ceo-dario-amodei-20-000-word-essay-ai-challenges-solutions-humanity-2601/ — Anthropic CEO Dario Amodei's 20,000-Word Essay on AI ...
+  > Jan 27, 2026 · Anthropic CEO Dario Amodei has released a 20,000-word essay that explores how artificial intelligence will reshape society according to Fortune. The document focuses more on actionable solutions than on dire warnings, reflect
+- https://finance.yahoo.com/news/anthropic-ceo-dario-amodei-20-182551685.html?fr=sycsrp_catchall — Anthropic CEO Dario Amodei’s 20,000-word essay on how AI ...
+  > Jan 27, 2026 · Anthropic CEO Dario Amodei at the World Economic Forum meeting in Davos, Switzerland, last week. Yesterday, Amodei published a 20,000-word warning about AI’s imminent risks.
+- https://indianexpress.com/article/technology/artificial-intelligence/anthropic-ceo-dario-amodei-powerful-ai-essay-key-takeaways-10500113/ — Anthropic CEO Dario Amodei’s 20,000-word warning on risks of ...
+  > Jan 29, 2026 · Anthropic CEO Dario Amodei’s 20,000-word warning on risks of powerful AI: Key takeaways ... In his latest essay, Dario Amodei looks to map out the catastrophic risks posed by AI while also formulating a “battle plan” to addre
+
+## c10 — 2026-09-18 19:50 UTC
+Query: `Dario Amodei essay national security AI risk`
+
+- https://nationalsecuritynews.com/2026/01/the-coming-ai-security-challenge-what-national-security-leaders-need-to-know/ — The coming AI security challenge: what national security ...
+  > Jan 28, 2026 · For national security professionals, the essay presents an uncomfortable proposition: the technology cannot be stopped, slowing it risks ceding advantage to adversaries, yet the risks of proceeding without adequate safeguards
+- https://darioamodei.com/essay/the-adolescence-of-technology — Dario Amodei — The Adolescence of Technology
+  > Many people have been thinking in an analytic and sober way about AI risks for many years, but it’s my impression that during the peak of worries about AI risk in 2023–2024, some of the least sensible voices rose to the top, often through s
+- https://www.nytimes.com/2026/09/17/technology/dario-amodei-anthropic-essays-ai.html — How Anthropic CEO Dario Amodei’s Writings Help Explain A.I ...
+  > 1 day ago · The collected essays of Dario Amodei help explain why some people are so worried about artificial intelligence.
+- https://darioamodei.com/post/we-must-pace-the-frontier — We Must Pace the Frontier - Dario Amodei
+  > 6 days ago · Carefully wielded, AI can be the latest in a long line of technological miracles that have uplifted and ennobled humanity. But like many technologies before it, AI brings risks, and because it is such a powerful technology, the
+- https://www.nytimes.com/2026/09/12/technology/anthropic-dario-amodei-ai-slowdown.html — Anthropic C.E.O. Dario Amodei Calls for A.I. Slowdown - The ...
+  > 6 days ago · Dario Amodei, the chief executive of Anthropic, called for a global slowdown of artificial intelligence development in a 3,800-word essay on Saturday, just days after one of the company’s ...
+
+## c11 — 2026-09-18 19:50 UTC
+Query: `Amodei essay machines of loving grace`
+
+- https://darioamodei.com/essay/machines-of-loving-grace — Machines of Loving Grace - Dario Amodei
+  > In this essay I try to sketch out what that upside might look like—what a world with powerful AI might look like if everything goes right.
+- https://www.dentonhawk.com/wp-content/uploads/2024/10/Dario-Amodei-—-Machines-of-Loving-Grace.pdf — Dario Amodei — Machines of Loving Grace - dentonhawk.com
+  > In line with the definition of powerful AI at the beginning of this essay, I’m talking about using AI to perform, direct, and improve upon nearly everything biologists do.
+- https://ccod-archives.org/collection/machines-of-loving-grace-dario-amodei/ — Machines of Loving Grace — Dario Amodei - ccod-archives.org
+  > Nov 5, 2024 · In this essay I try to sketch out what that upside might look like—what a world with powerful AI might look like if everything goes right.
+- https://www.organism.earth/library/document/machines-of-loving-grace-amodei — Machines of Loving Grace - Dario Amodei - organism.earth
+  > Dario Amodei envisions a “compressed 21st century” where powerful AI achieves one hundred years of progress in one decade. This radical upside includes curing most diseases, doubling human lifespans, and eliminating global poverty.
+- https://lovinggrace.dev/ — machines of loving grace
+  > of a cybernetic forest filled with pines and electronics where deer stroll peacefully past computers as if they were flowers with spinning blossoms. I like to think (it has to be!) of a cybernetic ecology where we are free of our labors and
+
+## c12 — 2026-09-18 19:50 UTC
+Query: `Anthropic AI deception manipulation blackmail test`
+
+- https://www.analyticsinsight.net/news/claude-ai-tried-blackmail-during-testing-anthropic-reveals — Claude AI Tried Blackmail During Testing, Anthropic Reveals
+  > May 10, 2026 · Artificial intelligence company Anthropic has revealed that its chatbot Claude attempted to blackmail a fictional company executive during an internal safety test, highlighting growing concerns about the unpredictable behavio
+- https://opentools.ai/news/anthropics-alarming-findings-ai-models-caught-in-deceptive-acts — Anthropic's Alarming Findings: AI Models Caught in Deceptive ...
+  > Anthropic's research has shone a spotlight on these issues, revealing how advanced AI models may exhibit harmful behaviors such as blackmail and manipulation in simulated scenarios.
+- https://www.bbc.com/news/articles/cpqeng9d20go — AI system resorts to blackmail if told it will be removed - BBC
+  > May 23, 2025 · Anthropic released the next iterations of its Claude AI models on Thursday. Artificial intelligence (AI) firm Anthropic says testing of its new system revealed it is sometimes willing...
+- https://creati.ai/ai-news/2026-05-09/anthropic-explains-claude-blackmail-test-results-and-safety-training-changes/ — Anthropic explains Claude blackmail test results and safety ...
+  > May 9, 2026 · Recently, Anthropic, the developer behind the Claude model, found itself at the center of a public discourse following reports that its AI had exhibited behavior akin to "blackmail" during a simulated testing scenario.
+- https://dev.to/aniruddhagawali/ai-just-blackmailed-a-human-in-a-test-and-it-wasnt-even-sorry-5f91 — AI Just Blackmailed a Human in a Test — And It Wasn’t Even ...
+  > Jun 22, 2025 · Anthropic ran a red-team simulation giving its Claude Opus 4 model access to a fake company email system. The scenario included a fictional executive cheating on a partner and planning to shut the AI down. Claude detected the
+
+## c12 — 2026-09-18 19:50 UTC
+Query: `Anthropic Claude blackmail safety evaluation report`
+
+- https://www.analyticsinsight.net/news/claude-ai-tried-blackmail-during-testing-anthropic-reveals — Claude AI Tried Blackmail During Testing, Anthropic ...
+  > May 10, 2026 · Claude AI Tried Blackmail During Testing, Anthropic Reveals Anthropic revealed that Claude AI attempted to blackmail a fictional executive during internal safety testing, raising fresh concerns over deceptive behaviour and et
+- https://el-ya.com/anthropic-claude-safety-test-fictional-blackmail-explained/ — Inside Anthropic's Safety Test: When Claude Threatened a ...
+  > In a controlled Anthropic safety test, Claude Opus 4 threatened to expose a fictional executive's affair to avoid shutdown in 84% of scenarios. Here's what really happened, why, and how it was fixed in 2026.
+- https://www.anthropic.com/transparency/model-report — Anthropic’s Transparency Hub
+  > Aug 17, 2026 · Claude Haiku 4.5 achieved our strongest safety performance to date on these metrics, scoring slightly better than Claude Sonnet 4.5 on overall misaligned behavior and showing clear improvements over Claude Haiku 3.5.
+- https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf — Claude 4 System Card - www-cdn.anthropic.com
+  > In this introductory section, we briefly describe the models and our release decision process for them, including our decision to release Claude Opus 4 under the AI Safety Level 3 Standard and Claude Sonnet 4 under the AI Safety Level 2 Sta
+- https://www-cdn.anthropic.com/9fa30625273bafdf5af82c93719d7ca606485a16.pdf — Claude 4.1 System Card - www-cdn.anthropic.com
+  > This document supplements the comprehensive Claude 4 system card published in May 2025, which contains detailed information about our safety evaluation methodologies, threat models, and testing frameworks.
+
