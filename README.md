@@ -21,5 +21,16 @@ Pitch: [`fact-checker/docs/judges_summary.md`](fact-checker/docs/judges_summary.
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+export OPENROUTER_API_KEY='your-key'   # same terminal as the server; do not commit
+python3 fact-checker/web/server.py
+```
+
+Open http://127.0.0.1:8000
+
+The agent-started server does **not** inherit a key you exported in another tab. Restart the server in the terminal where you ran `export`. You can also put `OPENROUTER_API_KEY=...` in a gitignored `.env` next to this README.
+
+CLI without the webpage (local Ollama):
+
+```bash
 python3 fact-checker/pipeline/run.py
 ```

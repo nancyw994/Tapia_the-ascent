@@ -1,0 +1,46 @@
+{
+  "classifications": [
+    {
+      "claim_id": "c01",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "This is about a specific blog post by a named person that went viral."
+    },
+    {
+      "claim_id": "c02",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "This describes the content and style of the specific blog post mentioned in c01."
+    },
+    {
+      "claim_id": "c03",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "This refers to a specific claim made by 'he' (Shumer) in the blog post."
+    },
+    {
+      "claim_id": "c04",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "This describes a specific omission by Shumer regarding a named benchmark (METR's task-time benchmark)."
+    },
+    {
+      "claim_id": "c05",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "This is a testable, general statement about the capability limits of AI systems."
+    },
+    {
+      "claim_id": "c06",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "This refers to a specific METR study and Shumer's specific act of ignoring it."
+    },
+    {
+      "claim_id": "c07",
+      "type": "scientific_general",
+      "label_color": "blue",
+      "reason": "This is a general testable claim about the distribution of user experiences/reports."
+    }
+  ]
+}

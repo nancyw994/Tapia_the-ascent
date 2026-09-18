@@ -16,24 +16,61 @@ FALLBACK_MODELS = [
 
 
 # Teammates: replace "xxx" with your own OpenRouter key (starts with sk-or-).
-# While it is still "xxx", the key is read from the environment or ~/.hermes/.env instead.
+# While it is still "xxx", the key is read from the environment, repo .env, or ~/.hermes/.env.
+# Never commit a real key.
 OPENROUTER_API_KEY = "xxx"
 
 
+def _read_key_from_env_file(path: Path) -> tuple[str, str]:
+    """Return (key, status) where status is missing|empty|ok."""
+    if not path.is_file():
+        return "", "missing"
+    found_blank = False
+    for line in path.read_text(encoding="utf-8").splitlines():
+        s = line.strip()
+        if not s or s.startswith("#"):
+            continue
+        if s.startswith("export "):
+            s = s[7:].strip()
+        name, _, value = s.partition("=")
+        if name.strip() != "OPENROUTER_API_KEY":
+            continue
+        key = value.strip().strip("\"'")
+        if key and key != "xxx":
+            return key, "ok"
+        found_blank = True
+    return "", "empty" if found_blank else "missing"
+
+
 def _load_api_key() -> str:
-    """Use OPENROUTER_API_KEY above, else the environment, else Hermes' ~/.hermes/.env."""
+    """Constant above, then process env, then local .env files, then ~/.hermes/.env."""
     if OPENROUTER_API_KEY and OPENROUTER_API_KEY != "xxx":
         return OPENROUTER_API_KEY
-    key = os.environ.get("OPENROUTER_API_KEY")
+    key = (os.environ.get("OPENROUTER_API_KEY") or "").strip()
     if key:
         return key
-    env_file = Path.home() / ".hermes" / ".env"
-    if env_file.exists():
-        for line in env_file.read_text().splitlines():
-            name, _, value = line.partition("=")
-            if name.strip() == "OPENROUTER_API_KEY" and value.strip():
-                return value.strip().strip("\"'")
-    raise RuntimeError("OPENROUTER_API_KEY not found in the environment or ~/.hermes/.env")
+    root = Path(__file__).resolve().parents[1]
+    saw_empty = False
+    for path in (
+        Path.cwd() / ".env",
+        root / ".env",
+        root / "fact-checker" / ".env",
+        Path.home() / ".hermes" / ".env",
+    ):
+        key, status = _read_key_from_env_file(path)
+        if status == "ok":
+            return key
+        if status == "empty":
+            saw_empty = True
+    if saw_empty:
+        raise RuntimeError(
+            "Found .env but OPENROUTER_API_KEY is empty. Open .env in the project root "
+            "and paste your key right after the equals sign, then restart the server."
+        )
+    raise RuntimeError(
+        "OPENROUTER_API_KEY is not set. Paste it into the gitignored .env next to README "
+        "(OPENROUTER_API_KEY=sk-or-...) or export it in the same terminal as the server."
+    )
 
 
 def ask_llm(

@@ -1,0 +1,39 @@
+{
+  "claims": [
+    {
+      "claim_id": "c01",
+      "sentence": "In his book _The Anxious Generation_, Jonathan Haidt makes an observation about the effect of social media that is even more true for AI: “Like young trees exposed to wind, children who are routinely exposed to small risks grow up to become adults who can handle much larger risks without panicking.",
+      "reason": "An attributed quote to a named author that can be verified against the book."
+    },
+    {
+      "claim_id": "c02",
+      "sentence": "China has gone the furthest. Its rules restrict AI companion apps broadly, bar designs that foster emotional dependence, and ban virtual relatives and romantic partners for minors.",
+      "reason": "A specific factual claim about Chinese regulatory policy that can be verified."
+    },
+    {
+      "claim_id": "c03",
+      "sentence": "It is being used in nearly 2,000 U.S. hospitals.",
+      "reason": "A specific quantitative claim about Viz.ai's adoption that can be verified."
+    },
+    {
+      "claim_id": "c04",
+      "sentence": "The Gates Foundation has 19 years left of the 20 years in which it will spend its remaining $200 billion.",
+      "reason": "A specific financial and timeline claim about the foundation's spending plan."
+    },
+    {
+      "claim_id": "c05",
+      "sentence": "The foundation’s goals include cutting the number of children who die every year in half again, as was done from 2000 to 2024.",
+      "reason": "A specific historical and future statistical claim about child mortality reduction."
+    },
+    {
+      "claim_id": "c06",
+      "sentence": "After the attacks of 9/11, the U.S. government went through its biggest reorganization since World War II for the purpose of improving just one function, national security.",
+      "reason": "A historical claim about government reorganization that can be checked."
+    },
+    {
+      "claim_id": "c07",
+      "sentence": "My dad died of Alzheimer’s in 2020.",
+      "reason": "A specific factual/biographical claim with a date that can be verified."
+    }
+  ]
+}

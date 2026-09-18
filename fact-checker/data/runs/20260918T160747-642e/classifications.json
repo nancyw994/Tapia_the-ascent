@@ -1,0 +1,46 @@
+{
+  "classifications": [
+    {
+      "claim_id": "c01",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It refers to a specific claim made by Jonathan Haidt in a named book."
+    },
+    {
+      "claim_id": "c02",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It describes specific regulatory actions by a named country, China, regarding AI apps."
+    },
+    {
+      "claim_id": "c03",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It is a specific, verifiable statement about current usage in a specific number of U.S. hospitals."
+    },
+    {
+      "claim_id": "c04",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It refers to specific financial and time details of a named organization, the Gates Foundation."
+    },
+    {
+      "claim_id": "c05",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It describes a specific goal of a named organization, the Gates Foundation, referencing a specific past achievement."
+    },
+    {
+      "claim_id": "c06",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It refers to a specific historical event, the 9/11 attacks, and its consequences."
+    },
+    {
+      "claim_id": "c07",
+      "type": "event",
+      "label_color": "orange",
+      "reason": "It is a personal statement about a specific event, the death of the speaker's father."
+    }
+  ]
+}

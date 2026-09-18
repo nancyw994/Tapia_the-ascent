@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
+import yaml
 from openai import OpenAI
 
 try:
@@ -97,8 +98,49 @@ def extract_json_array(text: str) -> list[Any]:
         return []
 
 
-def chat(client: OpenAI | ApiClient, model: str, system: str, user: str, max_tokens: int = 1800) -> str:
+def _api_messages(system: str, user: str) -> list[dict]:
+    """The exact framing ask_llm uses, so streaming sends the same prompt as ask_llm does."""
+    spec = yaml.safe_dump({"instructions": system}, sort_keys=False, allow_unicode=True)
+    return [
+        {"role": "system", "content": "Follow the YAML specification below when answering.\n\n" + spec},
+        {"role": "user", "content": user},
+    ]
+
+
+def stream_api(model: str, system: str, user: str, on_token) -> str:
+    """Stream one OpenRouter reply, calling on_token(text, is_reasoning) for each delta.
+
+    ask_llm returns only the finished string, so the live view builds its own client from
+    llm_client's key and model settings rather than changing that file.
+    """
+    import llm_client as cfg
+
+    client = OpenAI(api_key=cfg._load_api_key(), base_url=cfg.OPENROUTER_BASE_URL)
+    stream = client.chat.completions.create(
+        model=model,
+        messages=_api_messages(system, user),
+        temperature=0.0,
+        stream=True,
+        extra_body={"models": [model, *cfg.FALLBACK_MODELS]},
+    )
+    parts: list[str] = []
+    for chunk in stream:
+        if not chunk.choices:
+            continue
+        delta = chunk.choices[0].delta
+        # Providers that expose a separate thinking channel send it as `reasoning`.
+        if thought := (getattr(delta, "reasoning", None) or ""):
+            on_token(thought, True)
+        if text := (getattr(delta, "content", None) or ""):
+            parts.append(text)
+            on_token(text, False)
+    return "".join(parts)
+
+
+def chat(client: OpenAI | ApiClient, model: str, system: str, user: str, max_tokens: int = 1800, on_token=None) -> str:
     if isinstance(client, ApiClient):
+        if on_token is not None:
+            return stream_api(model, system, user, on_token).strip()
         from llm_client import ask_llm
 
         return ask_llm({"instructions": system}, user, model=model).strip()
@@ -178,8 +220,13 @@ def is_reprint(hit: dict[str, str], quote: str, essay_url: str = "") -> bool:
     url = (hit.get("url") or "").lower()
     title = (hit.get("title") or "").lower()
     snippet = hit.get("quote") or ""
-    if essay_url and essay_url.rstrip("/") in url:
-        return True
+    if essay_url:
+        cleaned = essay_url.rstrip("/").lower()
+        if cleaned in url:
+            return True
+        essay_host = host(essay_url)
+        if essay_host and host(url) == essay_host:
+            return True
     if "shumer.dev" in url or "somethingbig.ai" in url:
         return True
     if "something big is happening" in title:

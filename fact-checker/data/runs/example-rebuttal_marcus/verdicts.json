@@ -1,0 +1,79 @@
+{
+  "verdicts": [
+    {
+      "claim_id": "c01",
+      "verdict": "NOT_FAKE",
+      "confidence": 90,
+      "reason": "The exact sentence is a direct quote from Gary Marcus's Substack post, and multiple independent sources (Fortune, Yahoo Finance, CNBC) confirm that Matt Shumer's blog post went viral around this time. The claim accurately reflects the source material without altering scope or key details.",
+      "supporting_source_ids": [
+        "c01_s1",
+        "c01_s2",
+        "c01_s3",
+        "c01_s4"
+      ]
+    },
+    {
+      "claim_id": "c02",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 40,
+      "reason": "Sources confirm the quote 'I am no longer needed for the actual technical work of my job' appears in the viral essay, but none of the provided snippets mention or confirm the other quoted phrase 'I know this is real because it happened to me first.' Without evidence for that specific quote, the claim's full accuracy cannot be verified.",
+      "supporting_source_ids": [
+        "c02_s1",
+        "c02_s2"
+      ]
+    },
+    {
+      "claim_id": "c03",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 30,
+      "reason": "The sources provide context about a viral blog post claiming AI can disrupt knowledge work, and one anecdotal counterexample of an AI coding error, but none directly confirm or refute whether the original author provided data on error-free complex app generation. The snippets are too thin and off-topic to verify the specific claim about lack of supporting data.",
+      "supporting_source_ids": [
+        "c03_s1",
+        "c03_s2"
+      ]
+    },
+    {
+      "claim_id": "c04",
+      "verdict": "FAKE",
+      "confidence": 55,
+      "reason": "The sources confirm that METR's benchmark uses a 50% success threshold, matching that part of the claim, but none of the snippets indicate the benchmark is limited to coding tasks; instead they describe it as covering general 'agentic' tasks of varying length. This mischaracterization of the benchmark's scope makes the claim inaccurate despite the correct 50% detail.",
+      "supporting_source_ids": [
+        "c04_s1",
+        "c04_s2",
+        "c04_s3",
+        "c04_s4"
+      ]
+    },
+    {
+      "claim_id": "c05",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 30,
+      "reason": "The sources discuss METR's time-horizon benchmarks and trends in AI task duration but do not directly confirm or refute the specific claim that no AI system can reliably perform any five-hour task humans can do without error. The evidence is about benchmark methodology and trend slopes, not a direct assessment of current AI reliability at the five-hour mark.",
+      "supporting_source_ids": [
+        "c05_s1",
+        "c05_s2",
+        "c05_s3"
+      ]
+    },
+    {
+      "claim_id": "c06",
+      "verdict": "NOT_FAKE",
+      "confidence": 70,
+      "reason": "The sources confirm a METR RCT where developers took 19% longer (were slower) when using AI tools, despite having forecast productivity gains from AI beforehand. This matches the claim that coders perceived/expected productivity gains while actually experiencing a loss, supporting the assertion that such a study exists distinct from other METR findings.",
+      "supporting_source_ids": [
+        "c06_s1",
+        "c06_s2",
+        "c06_s3"
+      ]
+    },
+    {
+      "claim_id": "c07",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "confidence": 20,
+      "reason": "The sources discuss general trends in AI coding tool adoption and trust but do not directly address whether users report the tools as 'usually perfect.' None of the snippets provide specific evidence confirming or denying this particular claim about user sentiment.",
+      "supporting_source_ids": [
+        "c07_s1"
+      ]
+    }
+  ]
+}
