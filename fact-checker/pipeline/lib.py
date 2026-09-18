@@ -162,8 +162,13 @@ def is_reprint(hit: dict[str, str], quote: str, essay_url: str = "") -> bool:
     url = (hit.get("url") or "").lower()
     title = (hit.get("title") or "").lower()
     snippet = hit.get("quote") or ""
-    if essay_url and essay_url.rstrip("/") in url:
-        return True
+    if essay_url:
+        cleaned = essay_url.rstrip("/").lower()
+        if cleaned in url:
+            return True
+        essay_host = host(essay_url)
+        if essay_host and host(url) == essay_host:
+            return True
     if "shumer.dev" in url or "somethingbig.ai" in url:
         return True
     if "something big is happening" in title:

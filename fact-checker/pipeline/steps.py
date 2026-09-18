@@ -140,7 +140,7 @@ def _rank(claim: dict, hits: list[dict], model: str) -> dict[int, dict]:
         return {}  # unscored sources are still shown, flagged as such
 
 
-def _sources_for(claim: dict, queries: list[str], log_path: Path, model: str) -> list[dict]:
+def _sources_for(claim: dict, queries: list[str], log_path: Path, model: str, essay_url: str = "") -> list[dict]:
     seen: set[str] = set()
     hits: list[dict] = []
     for query in queries:
@@ -150,7 +150,7 @@ def _sources_for(claim: dict, queries: list[str], log_path: Path, model: str) ->
         for hit in batch:
             url = hit.get("url") or ""
             # Drop empty results and pages that just quote the claim back (not independent).
-            if url and url not in seen and not is_reprint(hit, claim["sentence"]):
+            if url and url not in seen and not is_reprint(hit, claim["sentence"], essay_url):
                 seen.add(url)
                 hits.append(hit)
     hits = hits[:8]
@@ -180,7 +180,7 @@ def _sources_for(claim: dict, queries: list[str], log_path: Path, model: str) ->
     return sources
 
 
-def find_sources(claims: list[dict], log_path: Path, model: str = DEFAULT_MODEL) -> list[dict]:
+def find_sources(claims: list[dict], log_path: Path, model: str = DEFAULT_MODEL, essay_url: str = "") -> list[dict]:
     plan = _ask(
         "plan_queries.md",
         [{"claim_id": c["claim_id"], "sentence": c["sentence"]} for c in claims],
@@ -193,7 +193,7 @@ def find_sources(claims: list[dict], log_path: Path, model: str = DEFAULT_MODEL)
         planned = plan.get(claim["claim_id"]) or []
         queries = [str(q).strip() for q in planned if str(q).strip()][:2] or [claim["sentence"][:120]]
         try:
-            return {"claim_id": claim["claim_id"], "sources": _sources_for(claim, queries, log_path, model)}
+            return {"claim_id": claim["claim_id"], "sources": _sources_for(claim, queries, log_path, model, essay_url)}
         except Exception as exc:  # noqa: BLE001  one claim failing must not sink the others
             return {"claim_id": claim["claim_id"], "sources": [], "error": f"{type(exc).__name__}: {exc}"}
 

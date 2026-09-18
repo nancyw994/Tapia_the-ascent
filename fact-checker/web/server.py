@@ -3,14 +3,15 @@
 
     python web/server.py            # http://127.0.0.1:8000
 
-The page uploads a .md (or .txt) article, then calls one step at a time; the user reviews each
-result and clicks Next. Every step's result is also saved to data/runs/<session_id>/.
+The page uploads a .md/.txt article or pastes a URL (fetched into article.md), then calls one step
+at a time. Every step's result is saved to data/runs/<session_id>/.
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import secrets
 import sys
 import threading
@@ -23,6 +24,7 @@ WEB = Path(__file__).resolve().parent
 sys.path.insert(0, str(WEB.parent / "pipeline"))
 
 import steps  # noqa: E402
+from fetch_article import fetch_url_markdown  # noqa: E402
 from lib import ROOT, write_json  # noqa: E402
 
 ARTICLE_TYPES = {".md", ".txt"}
@@ -43,6 +45,10 @@ lock = threading.Lock()
 sessions: dict[str, dict] = {}
 
 
+class Server(ThreadingHTTPServer):
+    allow_reuse_address = True
+
+
 def run_step(session: dict, step: str) -> dict:
     key, needs, filename = STEP_INFO[step]
     data = session["data"]
@@ -53,7 +59,7 @@ def run_step(session: dict, step: str) -> dict:
     elif step == "classify":
         result = steps.classify_claims(data["claims"])
     elif step == "sources":
-        result = steps.find_sources(data["claims"], session["log"])
+        result = steps.find_sources(data["claims"], session["log"], essay_url=session.get("essay_url") or "")
     else:
         result = steps.decide_verdicts(data["claims"], data["evidence"])
     for later in DATA_ORDER[DATA_ORDER.index(key) :]:
@@ -82,7 +88,7 @@ class Handler(BaseHTTPRequestHandler):
         elif path == "/api/sample" and SAMPLE.is_file():
             self._json(200, {"filename": SAMPLE.name, "text": SAMPLE.read_text(encoding="utf-8")})
         else:
-            self._json(404, {"error": "not found"})
+            self._json(404, {"error": f"not found: GET {path}"})
 
     def do_POST(self) -> None:  # noqa: N802
         path = urlparse(self.path).path
@@ -99,32 +105,54 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(400, {"error": "invalid JSON"})
         if path == "/api/upload":
             self._upload(body)
+        elif path == "/api/from-url":
+            self._from_url(body)
         elif path == "/api/step":
             self._step(body)
         else:
-            self._json(404, {"error": "not found"})
+            self._json(404, {"error": f"not found: POST {path}. Restart the server if you just added Fetch link."})
 
-    def _upload(self, body: dict) -> None:
-        filename, text = str(body.get("filename") or ""), body.get("text")
-        if Path(filename).suffix.lower() not in ARTICLE_TYPES:
-            return self._json(400, {"error": "please upload a .md or .txt file"})
-        if not isinstance(text, str) or len(text.strip()) < MIN_CHARS:
+    def _start_session(self, filename: str, text: str, essay_url: str = "") -> None:
+        if len(text.strip()) < MIN_CHARS:
             return self._json(400, {"error": f"the article is too short (need at least {MIN_CHARS} characters)"})
         if len(text) > MAX_CHARS:
             return self._json(413, {"error": f"the article is too long (limit {MAX_CHARS:,} characters)"})
         session_id = f"{datetime.now():%Y%m%dT%H%M%S}-{secrets.token_hex(2)}"
         run_dir = ROOT / "data" / "runs" / session_id
         run_dir.mkdir(parents=True, exist_ok=True)
-        (run_dir / f"article{Path(filename).suffix.lower()}").write_text(text, encoding="utf-8")
+        article_path = run_dir / "article.md"
+        article_path.write_text(text, encoding="utf-8")
+        if essay_url:
+            write_json(run_dir / "source.json", {"url": essay_url, "filename": filename})
         with lock:
             sessions[session_id] = {
                 "article": text,
+                "essay_url": essay_url,
                 "data": {},
                 "dir": run_dir,
                 "log": ROOT / "notes" / f"sources_{session_id}.log",
                 "running": False,
             }
-        self._json(200, {"session_id": session_id})
+        self._json(200, {"session_id": session_id, "filename": filename, "chars": len(text), "url": essay_url, "text": text})
+
+    def _upload(self, body: dict) -> None:
+        filename, text = str(body.get("filename") or ""), body.get("text")
+        if Path(filename).suffix.lower() not in ARTICLE_TYPES:
+            return self._json(400, {"error": "please upload a .md or .txt file"})
+        if not isinstance(text, str):
+            return self._json(400, {"error": "missing article text"})
+        self._start_session(filename, text)
+
+    def _from_url(self, body: dict) -> None:
+        url = str(body.get("url") or "").strip()
+        try:
+            text, canonical = fetch_url_markdown(url)
+        except ValueError as exc:
+            return self._json(400, {"error": str(exc)})
+        except Exception as exc:  # noqa: BLE001
+            return self._json(500, {"error": f"{type(exc).__name__}: {exc}"})
+        header = f"# Source\n\n{canonical}\n\n"
+        self._start_session("article.md", header + text + "\n", essay_url=canonical)
 
     def _step(self, body: dict) -> None:
         step = body.get("step")
@@ -139,6 +167,8 @@ class Handler(BaseHTTPRequestHandler):
             self._json(200, run_step(session, step))
         except ValueError as exc:
             self._json(400, {"error": str(exc)})
+        except RuntimeError as exc:
+            self._json(500, {"error": str(exc)})
         except Exception as exc:  # noqa: BLE001
             self._json(500, {"error": f"{type(exc).__name__}: {exc}"})
         finally:
@@ -149,7 +179,14 @@ def main() -> None:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--port", type=int, default=8000)
     args = p.parse_args()
-    server = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
+    try:
+        from llm_client import _load_api_key
+
+        os.environ["OPENROUTER_API_KEY"] = _load_api_key()
+        print("OpenRouter: API key loaded")
+    except RuntimeError as exc:
+        print(f"OpenRouter: {exc}")
+    server = Server(("127.0.0.1", args.port), Handler)
     print(f"Claim checker UI: http://127.0.0.1:{args.port}")
     server.serve_forever()
 
